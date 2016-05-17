@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		1981117F1BB74D9D2B6661BA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F82754A037F78859AEDBF99B /* libPods.a */; };
 		ABA301DF1CEAFCC700693AC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA301DE1CEAFCC700693AC6 /* main.m */; };
-		ABA301E21CEAFCC700693AC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA301E11CEAFCC700693AC6 /* AppDelegate.m */; };
 		ABA301EB1CEAFCC700693AC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA301E91CEAFCC700693AC6 /* Main.storyboard */; };
 		ABA301ED1CEAFCC700693AC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA301EC1CEAFCC700693AC6 /* Assets.xcassets */; };
 		ABA301F01CEAFCC700693AC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA301EE1CEAFCC700693AC6 /* LaunchScreen.storyboard */; };
 		ABA301FB1CEAFCC700693AC6 /* QixinFinanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA301FA1CEAFCC700693AC6 /* QixinFinanceTests.m */; };
 		ABA302061CEAFCC700693AC6 /* QixinFinanceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA302051CEAFCC700693AC6 /* QixinFinanceUITests.m */; };
+		ABA302291CEB071200693AC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA302151CEB071200693AC6 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,6 @@
 		39D3FB5AAE129DB0C9DFE79B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		ABA301DA1CEAFCC600693AC6 /* QixinFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QixinFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA301DE1CEAFCC700693AC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		ABA301E01CEAFCC700693AC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		ABA301E11CEAFCC700693AC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		ABA301EA1CEAFCC700693AC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABA301EC1CEAFCC700693AC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABA301EF1CEAFCC700693AC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +48,8 @@
 		ABA302011CEAFCC700693AC6 /* QixinFinanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QixinFinanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA302051CEAFCC700693AC6 /* QixinFinanceUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QixinFinanceUITests.m; sourceTree = "<group>"; };
 		ABA302071CEAFCC700693AC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABA302141CEB071200693AC6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ABA302151CEB071200693AC6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DC2CC466DFED286C272AB859 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F82754A037F78859AEDBF99B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,8 +122,14 @@
 		ABA301DC1CEAFCC700693AC6 /* QixinFinance */ = {
 			isa = PBXGroup;
 			children = (
-				ABA301E01CEAFCC700693AC6 /* AppDelegate.h */,
-				ABA301E11CEAFCC700693AC6 /* AppDelegate.m */,
+				ABA302131CEB071200693AC6 /* AppDelegate */,
+				ABA302161CEB071200693AC6 /* Controllers */,
+				ABA3021B1CEB071200693AC6 /* Models */,
+				ABA302201CEB071200693AC6 /* Plist */,
+				ABA302211CEB071200693AC6 /* Resource */,
+				ABA302221CEB071200693AC6 /* Util */,
+				ABA302231CEB071200693AC6 /* Vendor */,
+				ABA302241CEB071200693AC6 /* Views */,
 				ABA301E91CEAFCC700693AC6 /* Main.storyboard */,
 				ABA301EC1CEAFCC700693AC6 /* Assets.xcassets */,
 				ABA301EE1CEAFCC700693AC6 /* LaunchScreen.storyboard */,
@@ -157,6 +163,160 @@
 				ABA302071CEAFCC700693AC6 /* Info.plist */,
 			);
 			path = QixinFinanceUITests;
+			sourceTree = "<group>";
+		};
+		ABA302131CEB071200693AC6 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				ABA302141CEB071200693AC6 /* AppDelegate.h */,
+				ABA302151CEB071200693AC6 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		ABA302161CEB071200693AC6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ABA302171CEB071200693AC6 /* Forum */,
+				ABA302181CEB071200693AC6 /* Homepage */,
+				ABA302191CEB071200693AC6 /* Information */,
+				ABA3021A1CEB071200693AC6 /* Personal */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ABA302171CEB071200693AC6 /* Forum */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Forum;
+			sourceTree = "<group>";
+		};
+		ABA302181CEB071200693AC6 /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		ABA302191CEB071200693AC6 /* Information */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Information;
+			sourceTree = "<group>";
+		};
+		ABA3021A1CEB071200693AC6 /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
+		ABA3021B1CEB071200693AC6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ABA3021C1CEB071200693AC6 /* Forum */,
+				ABA3021D1CEB071200693AC6 /* Homepage */,
+				ABA3021E1CEB071200693AC6 /* Information */,
+				ABA3021F1CEB071200693AC6 /* Personal */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ABA3021C1CEB071200693AC6 /* Forum */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Forum;
+			sourceTree = "<group>";
+		};
+		ABA3021D1CEB071200693AC6 /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		ABA3021E1CEB071200693AC6 /* Information */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Information;
+			sourceTree = "<group>";
+		};
+		ABA3021F1CEB071200693AC6 /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
+		ABA302201CEB071200693AC6 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		ABA302211CEB071200693AC6 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		ABA302221CEB071200693AC6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		ABA302231CEB071200693AC6 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		ABA302241CEB071200693AC6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ABA302251CEB071200693AC6 /* Forum */,
+				ABA302261CEB071200693AC6 /* Homepage */,
+				ABA302271CEB071200693AC6 /* Information */,
+				ABA302281CEB071200693AC6 /* Personal */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ABA302251CEB071200693AC6 /* Forum */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Forum;
+			sourceTree = "<group>";
+		};
+		ABA302261CEB071200693AC6 /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		ABA302271CEB071200693AC6 /* Information */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Information;
+			sourceTree = "<group>";
+		};
+		ABA302281CEB071200693AC6 /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Personal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,7 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABA301E21CEAFCC700693AC6 /* AppDelegate.m in Sources */,
+				ABA302291CEB071200693AC6 /* AppDelegate.m in Sources */,
 				ABA301DF1CEAFCC700693AC6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
