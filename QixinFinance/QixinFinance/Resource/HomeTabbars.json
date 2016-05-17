@@ -1,0 +1,29 @@
+{
+    "tabBarMenus":
+    [
+     {
+     "image":"homepagetab",
+     "select_image":"homepagetab",
+     "title":"首页",
+     "storybordId":"homePageSB"
+     },
+     {
+     "image":"informationtab",
+     "select_image":"informationtab",
+     "title":"资讯",
+     "storybordId":"informationSB"
+     },
+     {
+     "image":"forumtab",
+     "select_image":"forumtab",
+     "title":"论坛",
+     "storybordId":"forumSB"
+     },
+     {
+     "image":"personaltab",
+     "select_image":"personaltab",
+     "title":"个人",
+     "storybordId":"personalSB"
+     }
+     ],
+}
