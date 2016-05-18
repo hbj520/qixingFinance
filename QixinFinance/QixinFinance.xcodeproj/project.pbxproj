@@ -30,12 +30,12 @@
 		CC4911691CEC192600BA58FD /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4911531CEC192600BA58FD /* JSONModelError.m */; };
 		CC49116A1CEC192600BA58FD /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4911561CEC192600BA58FD /* NSArray+JSONModel.m */; };
 		CC49116B1CEC192600BA58FD /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CC49115A1CEC192600BA58FD /* JSONAPI.m */; };
-		CC49116C1CEC192600BA58FD /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CC49115C1CEC192600BA58FD /* JSONHTTPClient.m */; };
 		CC49116D1CEC192600BA58FD /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = CC49115E1CEC192600BA58FD /* JSONModel+networking.m */; };
 		CC49116E1CEC192600BA58FD /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4911611CEC192600BA58FD /* JSONKeyMapper.m */; };
 		CC49116F1CEC192600BA58FD /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4911631CEC192600BA58FD /* JSONValueTransformer.m */; };
 		CC4911701CEC192600BA58FD /* LICENSE_jsonmodel.txt in Resources */ = {isa = PBXBuildFile; fileRef = CC4911641CEC192600BA58FD /* LICENSE_jsonmodel.txt */; };
 		CC4911711CEC192600BA58FD /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CC4911651CEC192600BA58FD /* README.md */; };
+		CC524FF51CEC6A7A00E69DFC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC524FF41CEC6A7A00E69DFC /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,6 @@
 		ABA301EA1CEAFCC700693AC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABA301EC1CEAFCC700693AC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		ABA301EF1CEAFCC700693AC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		ABA301F11CEAFCC700693AC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		ABA301F61CEAFCC700693AC6 /* QixinFinanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QixinFinanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA301FA1CEAFCC700693AC6 /* QixinFinanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QixinFinanceTests.m; sourceTree = "<group>"; };
 		ABA301FC1CEAFCC700693AC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,6 +106,7 @@
 		CC4911631CEC192600BA58FD /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
 		CC4911641CEC192600BA58FD /* LICENSE_jsonmodel.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_jsonmodel.txt; sourceTree = "<group>"; };
 		CC4911651CEC192600BA58FD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CC524FF41CEC6A7A00E69DFC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = QixinFinance/Info.plist; sourceTree = SOURCE_ROOT; };
 		DC2CC466DFED286C272AB859 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F82754A037F78859AEDBF99B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -312,7 +312,7 @@
 		ABA302201CEB071200693AC6 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
-				ABA301F11CEAFCC700693AC6 /* Info.plist */,
+				CC524FF41CEC6A7A00E69DFC /* Info.plist */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -615,6 +615,7 @@
 				ABA301ED1CEAFCC700693AC6 /* Assets.xcassets in Resources */,
 				CC4911701CEC192600BA58FD /* LICENSE_jsonmodel.txt in Resources */,
 				ABA301EB1CEAFCC700693AC6 /* Main.storyboard in Resources */,
+				CC524FF51CEC6A7A00E69DFC /* Info.plist in Resources */,
 				ABA302361CEB08D100693AC6 /* Personal.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
