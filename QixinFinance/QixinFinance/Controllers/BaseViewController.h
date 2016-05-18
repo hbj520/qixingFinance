@@ -11,6 +11,4 @@
 @interface BaseViewController : UIViewController
 //显示启鑫财富图标
 - (void)showTitleView;
-//显示定位图标
-- (void)showLocalItemBtn;
 @end
