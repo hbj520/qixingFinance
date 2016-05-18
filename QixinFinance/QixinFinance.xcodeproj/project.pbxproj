@@ -23,6 +23,37 @@
 		ABA302391CEB090500693AC6 /* HomeTabbars.json in Resources */ = {isa = PBXBuildFile; fileRef = ABA302381CEB090500693AC6 /* HomeTabbars.json */; };
 		ABA3023D1CEB17F300693AC6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA3023C1CEB17F300693AC6 /* BaseViewController.m */; };
 		ABA302401CEB18F300693AC6 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA3023F1CEB18F300693AC6 /* HomepageViewController.m */; };
+		CCD4D5E41CEC92EE009B4550 /* ThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */; };
+		CCD4D5E81CEC930C009B4550 /* ThreeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5E61CEC930C009B4550 /* ThreeCollectionViewCell.m */; };
+		CCD4D5E91CEC930C009B4550 /* ThreeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D5E71CEC930C009B4550 /* ThreeCollectionViewCell.xib */; };
+		CCD4D5ED1CEC943B009B4550 /* recommandLoanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5EB1CEC943B009B4550 /* recommandLoanTableViewCell.m */; };
+		CCD4D5EE1CEC943B009B4550 /* recommandLoanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D5EC1CEC943B009B4550 /* recommandLoanTableViewCell.xib */; };
+		CCD4D5F21CEC9454009B4550 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5F01CEC9454009B4550 /* ActivityTableViewCell.m */; };
+		CCD4D5F31CEC9454009B4550 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D5F11CEC9454009B4550 /* ActivityTableViewCell.xib */; };
+		CCD4D5F71CEC946D009B4550 /* bankLoanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5F51CEC946D009B4550 /* bankLoanTableViewCell.m */; };
+		CCD4D5F81CEC946D009B4550 /* bankLoanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D5F61CEC946D009B4550 /* bankLoanTableViewCell.xib */; };
+		CCD4D5FC1CEC9482009B4550 /* HotCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5FA1CEC9482009B4550 /* HotCardTableViewCell.m */; };
+		CCD4D5FD1CEC9482009B4550 /* HotCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D5FB1CEC9482009B4550 /* HotCardTableViewCell.xib */; };
+		CCD4D6011CEC94B6009B4550 /* financialSelectedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5FF1CEC94B6009B4550 /* financialSelectedTableViewCell.m */; };
+		CCD4D6021CEC94B6009B4550 /* financialSelectedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6001CEC94B6009B4550 /* financialSelectedTableViewCell.xib */; };
+		CCD4D6061CEC9755009B4550 /* financialProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D6041CEC9755009B4550 /* financialProductTableViewCell.m */; };
+		CCD4D6071CEC9755009B4550 /* financialProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6051CEC9755009B4550 /* financialProductTableViewCell.xib */; };
+		CCD4D6151CECA028009B4550 /* foumtab.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6091CECA028009B4550 /* foumtab.png */; };
+		CCD4D6161CECA028009B4550 /* 启鑫app首页_03.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D60A1CECA028009B4550 /* 启鑫app首页_03.png */; };
+		CCD4D6171CECA028009B4550 /* 启鑫app首页_05.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D60B1CECA028009B4550 /* 启鑫app首页_05.png */; };
+		CCD4D6181CECA028009B4550 /* 启鑫app首页_09.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D60C1CECA028009B4550 /* 启鑫app首页_09.png */; };
+		CCD4D6191CECA028009B4550 /* 启鑫app首页_12.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D60D1CECA028009B4550 /* 启鑫app首页_12.png */; };
+		CCD4D61A1CECA028009B4550 /* 启鑫app首页_14.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D60E1CECA028009B4550 /* 启鑫app首页_14.png */; };
+		CCD4D61B1CECA028009B4550 /* 启鑫app首页_16.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D60F1CECA028009B4550 /* 启鑫app首页_16.png */; };
+		CCD4D61C1CECA028009B4550 /* 启鑫app首页_21.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6101CECA028009B4550 /* 启鑫app首页_21.png */; };
+		CCD4D61D1CECA028009B4550 /* 启鑫app首页_24.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6111CECA028009B4550 /* 启鑫app首页_24.png */; };
+		CCD4D61E1CECA028009B4550 /* 启鑫app首页_28.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6121CECA028009B4550 /* 启鑫app首页_28.png */; };
+		CCD4D61F1CECA028009B4550 /* 启鑫app首页_30.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6131CECA028009B4550 /* 启鑫app首页_30.png */; };
+		CCD4D6201CECA028009B4550 /* 启鑫app首页_34.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6141CECA028009B4550 /* 启鑫app首页_34.png */; };
+		CCD4D6221CECA095009B4550 /* loanIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6211CECA095009B4550 /* loanIcon.png */; };
+		CCD4D6241CECA0DF009B4550 /* hotCard.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6231CECA0DF009B4550 /* hotCard.png */; };
+		CCD4D6261CECA123009B4550 /* product.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6251CECA123009B4550 /* product.png */; };
+		CCD4D6281CECA1E5009B4550 /* activity.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6271CECA1E5009B4550 /* activity.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +100,45 @@
 		ABA3023C1CEB17F300693AC6 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		ABA3023E1CEB18F300693AC6 /* HomepageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepageViewController.h; sourceTree = "<group>"; };
 		ABA3023F1CEB18F300693AC6 /* HomepageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepageViewController.m; sourceTree = "<group>"; };
+		CCD4D5E21CEC92EE009B4550 /* ThreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeTableViewCell.h; path = QixinFinance/ThreeTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeTableViewCell.m; path = QixinFinance/ThreeTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		CCD4D5E51CEC930C009B4550 /* ThreeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeCollectionViewCell.h; path = QixinFinance/ThreeCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		CCD4D5E61CEC930C009B4550 /* ThreeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeCollectionViewCell.m; path = QixinFinance/ThreeCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
+		CCD4D5E71CEC930C009B4550 /* ThreeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ThreeCollectionViewCell.xib; path = QixinFinance/ThreeCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		CCD4D5EA1CEC943B009B4550 /* recommandLoanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = recommandLoanTableViewCell.h; path = QixinFinance/recommandLoanTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		CCD4D5EB1CEC943B009B4550 /* recommandLoanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = recommandLoanTableViewCell.m; path = QixinFinance/recommandLoanTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		CCD4D5EC1CEC943B009B4550 /* recommandLoanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = recommandLoanTableViewCell.xib; path = QixinFinance/recommandLoanTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		CCD4D5EF1CEC9454009B4550 /* ActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityTableViewCell.h; path = QixinFinance/ActivityTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		CCD4D5F01CEC9454009B4550 /* ActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityTableViewCell.m; path = QixinFinance/ActivityTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		CCD4D5F11CEC9454009B4550 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActivityTableViewCell.xib; path = QixinFinance/ActivityTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		CCD4D5F41CEC946D009B4550 /* bankLoanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bankLoanTableViewCell.h; path = QixinFinance/bankLoanTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		CCD4D5F51CEC946D009B4550 /* bankLoanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bankLoanTableViewCell.m; path = QixinFinance/bankLoanTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		CCD4D5F61CEC946D009B4550 /* bankLoanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = bankLoanTableViewCell.xib; path = QixinFinance/bankLoanTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		CCD4D5F91CEC9482009B4550 /* HotCardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HotCardTableViewCell.h; path = QixinFinance/HotCardTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		CCD4D5FA1CEC9482009B4550 /* HotCardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HotCardTableViewCell.m; path = QixinFinance/HotCardTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		CCD4D5FB1CEC9482009B4550 /* HotCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HotCardTableViewCell.xib; path = QixinFinance/HotCardTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		CCD4D5FE1CEC94B6009B4550 /* financialSelectedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = financialSelectedTableViewCell.h; path = QixinFinance/financialSelectedTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		CCD4D5FF1CEC94B6009B4550 /* financialSelectedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = financialSelectedTableViewCell.m; path = QixinFinance/financialSelectedTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		CCD4D6001CEC94B6009B4550 /* financialSelectedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = financialSelectedTableViewCell.xib; path = QixinFinance/financialSelectedTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		CCD4D6031CEC9755009B4550 /* financialProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = financialProductTableViewCell.h; path = QixinFinance/financialProductTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		CCD4D6041CEC9755009B4550 /* financialProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = financialProductTableViewCell.m; path = QixinFinance/financialProductTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		CCD4D6051CEC9755009B4550 /* financialProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = financialProductTableViewCell.xib; path = QixinFinance/financialProductTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		CCD4D6091CECA028009B4550 /* foumtab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foumtab.png; sourceTree = "<group>"; };
+		CCD4D60A1CECA028009B4550 /* 启鑫app首页_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "启鑫app首页_03.png"; sourceTree = "<group>"; };
+		CCD4D60B1CECA028009B4550 /* 启鑫app首页_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "启鑫app首页_05.png"; sourceTree = "<group>"; };
+		CCD4D60C1CECA028009B4550 /* 启鑫app首页_09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "启鑫app首页_09.png"; sourceTree = "<group>"; };
+		CCD4D60D1CECA028009B4550 /* 启鑫app首页_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "启鑫app首页_12.png"; sourceTree = "<group>"; };
+		CCD4D60E1CECA028009B4550 /* 启鑫app首页_14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "启鑫app首页_14.png"; sourceTree = "<group>"; };
+		CCD4D60F1CECA028009B4550 /* 启鑫app首页_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "启鑫app首页_16.png"; sourceTree = "<group>"; };
+		CCD4D6101CECA028009B4550 /* 启鑫app首页_21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "启鑫app首页_21.png"; sourceTree = "<group>"; };
+		CCD4D6111CECA028009B4550 /* 启鑫app首页_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "启鑫app首页_24.png"; sourceTree = "<group>"; };
+		CCD4D6121CECA028009B4550 /* 启鑫app首页_28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "启鑫app首页_28.png"; sourceTree = "<group>"; };
+		CCD4D6131CECA028009B4550 /* 启鑫app首页_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "启鑫app首页_30.png"; sourceTree = "<group>"; };
+		CCD4D6141CECA028009B4550 /* 启鑫app首页_34.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "启鑫app首页_34.png"; sourceTree = "<group>"; };
+		CCD4D6211CECA095009B4550 /* loanIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loanIcon.png; sourceTree = "<group>"; };
+		CCD4D6231CECA0DF009B4550 /* hotCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotCard.png; sourceTree = "<group>"; };
+		CCD4D6251CECA123009B4550 /* product.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = product.png; sourceTree = "<group>"; };
+		CCD4D6271CECA1E5009B4550 /* activity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity.png; sourceTree = "<group>"; };
 		DC2CC466DFED286C272AB859 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F82754A037F78859AEDBF99B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -141,6 +211,7 @@
 		ABA301DC1CEAFCC700693AC6 /* QixinFinance */ = {
 			isa = PBXGroup;
 			children = (
+				CCD4D6081CECA028009B4550 /* images */,
 				ABA302131CEB071200693AC6 /* AppDelegate */,
 				ABA302161CEB071200693AC6 /* Controllers */,
 				ABA3021B1CEB071200693AC6 /* Models */,
@@ -323,6 +394,29 @@
 		ABA302261CEB071200693AC6 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
+				CCD4D5E21CEC92EE009B4550 /* ThreeTableViewCell.h */,
+				CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */,
+				CCD4D5E51CEC930C009B4550 /* ThreeCollectionViewCell.h */,
+				CCD4D5E61CEC930C009B4550 /* ThreeCollectionViewCell.m */,
+				CCD4D5E71CEC930C009B4550 /* ThreeCollectionViewCell.xib */,
+				CCD4D5EF1CEC9454009B4550 /* ActivityTableViewCell.h */,
+				CCD4D5F01CEC9454009B4550 /* ActivityTableViewCell.m */,
+				CCD4D5F11CEC9454009B4550 /* ActivityTableViewCell.xib */,
+				CCD4D5EA1CEC943B009B4550 /* recommandLoanTableViewCell.h */,
+				CCD4D5EB1CEC943B009B4550 /* recommandLoanTableViewCell.m */,
+				CCD4D5EC1CEC943B009B4550 /* recommandLoanTableViewCell.xib */,
+				CCD4D5F41CEC946D009B4550 /* bankLoanTableViewCell.h */,
+				CCD4D5F51CEC946D009B4550 /* bankLoanTableViewCell.m */,
+				CCD4D5F61CEC946D009B4550 /* bankLoanTableViewCell.xib */,
+				CCD4D5F91CEC9482009B4550 /* HotCardTableViewCell.h */,
+				CCD4D5FA1CEC9482009B4550 /* HotCardTableViewCell.m */,
+				CCD4D5FB1CEC9482009B4550 /* HotCardTableViewCell.xib */,
+				CCD4D5FE1CEC94B6009B4550 /* financialSelectedTableViewCell.h */,
+				CCD4D5FF1CEC94B6009B4550 /* financialSelectedTableViewCell.m */,
+				CCD4D6001CEC94B6009B4550 /* financialSelectedTableViewCell.xib */,
+				CCD4D6031CEC9755009B4550 /* financialProductTableViewCell.h */,
+				CCD4D6041CEC9755009B4550 /* financialProductTableViewCell.m */,
+				CCD4D6051CEC9755009B4550 /* financialProductTableViewCell.xib */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -379,6 +473,29 @@
 				ABA301EC1CEAFCC700693AC6 /* Assets.xcassets */,
 			);
 			name = Image;
+			sourceTree = "<group>";
+		};
+		CCD4D6081CECA028009B4550 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				CCD4D6271CECA1E5009B4550 /* activity.png */,
+				CCD4D6251CECA123009B4550 /* product.png */,
+				CCD4D6231CECA0DF009B4550 /* hotCard.png */,
+				CCD4D6211CECA095009B4550 /* loanIcon.png */,
+				CCD4D6091CECA028009B4550 /* foumtab.png */,
+				CCD4D60A1CECA028009B4550 /* 启鑫app首页_03.png */,
+				CCD4D60B1CECA028009B4550 /* 启鑫app首页_05.png */,
+				CCD4D60C1CECA028009B4550 /* 启鑫app首页_09.png */,
+				CCD4D60D1CECA028009B4550 /* 启鑫app首页_12.png */,
+				CCD4D60E1CECA028009B4550 /* 启鑫app首页_14.png */,
+				CCD4D60F1CECA028009B4550 /* 启鑫app首页_16.png */,
+				CCD4D6101CECA028009B4550 /* 启鑫app首页_21.png */,
+				CCD4D6111CECA028009B4550 /* 启鑫app首页_24.png */,
+				CCD4D6121CECA028009B4550 /* 启鑫app首页_28.png */,
+				CCD4D6131CECA028009B4550 /* 启鑫app首页_30.png */,
+				CCD4D6141CECA028009B4550 /* 启鑫app首页_34.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -487,14 +604,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCD4D6221CECA095009B4550 /* loanIcon.png in Resources */,
+				CCD4D6161CECA028009B4550 /* 启鑫app首页_03.png in Resources */,
+				CCD4D6261CECA123009B4550 /* product.png in Resources */,
+				CCD4D6241CECA0DF009B4550 /* hotCard.png in Resources */,
+				CCD4D5E91CEC930C009B4550 /* ThreeCollectionViewCell.xib in Resources */,
+				CCD4D61C1CECA028009B4550 /* 启鑫app首页_21.png in Resources */,
 				ABA302391CEB090500693AC6 /* HomeTabbars.json in Resources */,
+				CCD4D61D1CECA028009B4550 /* 启鑫app首页_24.png in Resources */,
+				CCD4D61A1CECA028009B4550 /* 启鑫app首页_14.png in Resources */,
 				ABA302301CEB089900693AC6 /* Homepage.storyboard in Resources */,
 				ABA302321CEB08A500693AC6 /* Forum.storyboard in Resources */,
+				CCD4D61E1CECA028009B4550 /* 启鑫app首页_28.png in Resources */,
+				CCD4D6071CEC9755009B4550 /* financialProductTableViewCell.xib in Resources */,
 				ABA301F01CEAFCC700693AC6 /* LaunchScreen.storyboard in Resources */,
 				ABA302341CEB08BE00693AC6 /* Information.storyboard in Resources */,
+				CCD4D6021CEC94B6009B4550 /* financialSelectedTableViewCell.xib in Resources */,
+				CCD4D61F1CECA028009B4550 /* 启鑫app首页_30.png in Resources */,
 				ABA301ED1CEAFCC700693AC6 /* Assets.xcassets in Resources */,
+				CCD4D61B1CECA028009B4550 /* 启鑫app首页_16.png in Resources */,
+				CCD4D5FD1CEC9482009B4550 /* HotCardTableViewCell.xib in Resources */,
+				CCD4D5F81CEC946D009B4550 /* bankLoanTableViewCell.xib in Resources */,
+				CCD4D6281CECA1E5009B4550 /* activity.png in Resources */,
 				ABA301EB1CEAFCC700693AC6 /* Main.storyboard in Resources */,
+				CCD4D6191CECA028009B4550 /* 启鑫app首页_12.png in Resources */,
+				CCD4D6171CECA028009B4550 /* 启鑫app首页_05.png in Resources */,
+				CCD4D6151CECA028009B4550 /* foumtab.png in Resources */,
+				CCD4D5F31CEC9454009B4550 /* ActivityTableViewCell.xib in Resources */,
+				CCD4D6201CECA028009B4550 /* 启鑫app首页_34.png in Resources */,
+				CCD4D5EE1CEC943B009B4550 /* recommandLoanTableViewCell.xib in Resources */,
 				ABA302361CEB08D100693AC6 /* Personal.storyboard in Resources */,
+				CCD4D6181CECA028009B4550 /* 启鑫app首页_09.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,11 +707,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCD4D5FC1CEC9482009B4550 /* HotCardTableViewCell.m in Sources */,
 				ABA302291CEB071200693AC6 /* AppDelegate.m in Sources */,
 				ABA3023D1CEB17F300693AC6 /* BaseViewController.m in Sources */,
+				CCD4D5ED1CEC943B009B4550 /* recommandLoanTableViewCell.m in Sources */,
 				ABA302401CEB18F300693AC6 /* HomepageViewController.m in Sources */,
+				CCD4D5E81CEC930C009B4550 /* ThreeCollectionViewCell.m in Sources */,
+				CCD4D5F21CEC9454009B4550 /* ActivityTableViewCell.m in Sources */,
 				ABA3022D1CEB084400693AC6 /* HomeTabbarViewController.m in Sources */,
+				CCD4D6061CEC9755009B4550 /* financialProductTableViewCell.m in Sources */,
+				CCD4D6011CEC94B6009B4550 /* financialSelectedTableViewCell.m in Sources */,
+				CCD4D5E41CEC92EE009B4550 /* ThreeTableViewCell.m in Sources */,
 				ABA301DF1CEAFCC700693AC6 /* main.m in Sources */,
+				CCD4D5F71CEC946D009B4550 /* bankLoanTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
