@@ -13,12 +13,18 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="140" height="106"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="启鑫app首页_12.png" translatesAutoresizingMaskIntoConstraints="NO" id="qOT-rz-NPJ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="启鑫app首页_12.png" translatesAutoresizingMaskIntoConstraints="NO" id="qOT-rz-NPJ">
                         <rect key="frame" x="0.0" y="0.0" width="140" height="106"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="qOT-rz-NPJ" secondAttribute="trailing" id="2h6-Pf-Dar"/>
+                <constraint firstItem="qOT-rz-NPJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="I9i-kj-F89"/>
+                <constraint firstAttribute="bottom" secondItem="qOT-rz-NPJ" secondAttribute="bottom" id="fK6-Yb-nws"/>
+                <constraint firstItem="qOT-rz-NPJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fen-pk-hq0"/>
+            </constraints>
             <size key="customSize" width="140" height="106"/>
             <connections>
                 <outlet property="imgView" destination="qOT-rz-NPJ" id="ylh-if-KHp"/>

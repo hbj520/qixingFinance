@@ -39,6 +39,7 @@
 		CC8F06441CED6B7D00B4D945 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06431CED6B7D00B4D945 /* 6.png */; };
 		CC8F06461CED6BE900B4D945 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06451CED6BE900B4D945 /* 7.png */; };
 		CC8F06481CED6C8F00B4D945 /* 24DA9464-7555-490D-8C69-2323982B932E.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06471CED6C8F00B4D945 /* 24DA9464-7555-490D-8C69-2323982B932E.png */; };
+		CC8F064B1CED704D00B4D945 /* PersonPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F064A1CED704D00B4D945 /* PersonPageTableViewController.m */; };
 		CCD4D5E41CEC92EE009B4550 /* ThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */; };
 		CCD4D5E81CEC930C009B4550 /* ThreeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5E61CEC930C009B4550 /* ThreeCollectionViewCell.m */; };
 		CCD4D5E91CEC930C009B4550 /* ThreeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D5E71CEC930C009B4550 /* ThreeCollectionViewCell.xib */; };
@@ -133,6 +134,8 @@
 		CC8F06431CED6B7D00B4D945 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
 		CC8F06451CED6BE900B4D945 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		CC8F06471CED6C8F00B4D945 /* 24DA9464-7555-490D-8C69-2323982B932E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "24DA9464-7555-490D-8C69-2323982B932E.png"; sourceTree = "<group>"; };
+		CC8F06491CED704D00B4D945 /* PersonPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonPageTableViewController.h; path = QixinFinance/PersonPageTableViewController.h; sourceTree = SOURCE_ROOT; };
+		CC8F064A1CED704D00B4D945 /* PersonPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonPageTableViewController.m; path = QixinFinance/PersonPageTableViewController.m; sourceTree = SOURCE_ROOT; };
 		CCD4D5E21CEC92EE009B4550 /* ThreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeTableViewCell.h; path = QixinFinance/ThreeTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeTableViewCell.m; path = QixinFinance/ThreeTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		CCD4D5E51CEC930C009B4550 /* ThreeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeCollectionViewCell.h; path = QixinFinance/ThreeCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
@@ -331,6 +334,8 @@
 		ABA3021A1CEB071200693AC6 /* Personal */ = {
 			isa = PBXGroup;
 			children = (
+				CC8F06491CED704D00B4D945 /* PersonPageTableViewController.h */,
+				CC8F064A1CED704D00B4D945 /* PersonPageTableViewController.m */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -776,6 +781,7 @@
 				ABA3023D1CEB17F300693AC6 /* BaseViewController.m in Sources */,
 				CCD4D5ED1CEC943B009B4550 /* recommandLoanTableViewCell.m in Sources */,
 				ABA302401CEB18F300693AC6 /* HomepageViewController.m in Sources */,
+				CC8F064B1CED704D00B4D945 /* PersonPageTableViewController.m in Sources */,
 				CCD4D5E81CEC930C009B4550 /* ThreeCollectionViewCell.m in Sources */,
 				CC8F062F1CED58B900B4D945 /* SecondTableViewCell.m in Sources */,
 				CCD4D5F21CEC9454009B4550 /* ActivityTableViewCell.m in Sources */,

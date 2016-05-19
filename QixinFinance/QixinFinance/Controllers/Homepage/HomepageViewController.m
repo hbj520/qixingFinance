@@ -31,6 +31,18 @@
     [self congfigTableView];
 }
 
+- (void)cityLocation
+{
+    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn sizeToFit];
+    [btn setImage:[UIImage imageNamed:@"location"] forState:UIControlStateNormal];
+   
+    UIBarButtonItem * btnItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    self.navigationItem.rightBarButtonItem = btnItem;
+}
+
+
+
 - (void)congfigTableView
 {
     self.automaticallyAdjustsScrollViewInsets = NO;
