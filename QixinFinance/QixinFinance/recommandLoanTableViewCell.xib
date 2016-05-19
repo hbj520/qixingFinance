@@ -14,8 +14,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loanIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Nu-9c-S3Z">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loanIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Nu-9c-S3Z">
                         <rect key="frame" x="16" y="17" width="66" height="59"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="59" id="MFX-uT-Eba"/>
+                            <constraint firstAttribute="width" constant="66" id="R6y-Kx-S1x"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4，926人申请" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFs-nB-0Nb">
                         <rect key="frame" x="96" y="55" width="64" height="18"/>
@@ -29,13 +33,23 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="浦发银行-房抵贷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZd-Fj-1g0">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="浦发银行-房抵贷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZd-Fj-1g0">
                         <rect key="frame" x="96" y="26" width="129" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="129" id="RWJ-Jh-m8x"/>
+                            <constraint firstAttribute="height" constant="21" id="wOO-df-2aF"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="lZd-Fj-1g0" firstAttribute="leading" secondItem="8Nu-9c-S3Z" secondAttribute="trailing" constant="14" id="TeS-Mf-RLI"/>
+                    <constraint firstItem="8Nu-9c-S3Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bFq-qq-2t2"/>
+                    <constraint firstItem="lZd-Fj-1g0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26" id="bGF-jj-ksY"/>
+                    <constraint firstItem="8Nu-9c-S3Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="dS9-46-5Z2"/>
+                </constraints>
             </tableViewCellContentView>
         </tableViewCell>
     </objects>

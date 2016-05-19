@@ -26,9 +26,6 @@
                         <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hotCard.png" translatesAutoresizingMaskIntoConstraints="NO" id="a6F-Pj-ivL">
-                        <rect key="frame" x="16" y="51" width="296" height="111"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="推荐理由" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMH-Il-jgJ">
                         <rect key="frame" x="16" y="170" width="69" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -41,7 +38,16 @@
                         <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotCard.png" translatesAutoresizingMaskIntoConstraints="NO" id="a6F-Pj-ivL">
+                        <rect key="frame" x="12" y="50" width="296" height="111"/>
+                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="a6F-Pj-ivL" secondAttribute="bottom" constant="38" id="Jmk-ms-QbH"/>
+                    <constraint firstAttribute="trailing" secondItem="a6F-Pj-ivL" secondAttribute="trailing" constant="12" id="WPZ-mN-bEE"/>
+                    <constraint firstItem="a6F-Pj-ivL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="fLQ-DE-hQ0"/>
+                    <constraint firstItem="a6F-Pj-ivL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="50" id="j3V-Fd-stc"/>
+                </constraints>
             </tableViewCellContentView>
         </tableViewCell>
     </objects>
