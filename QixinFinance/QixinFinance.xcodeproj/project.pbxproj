@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1981117F1BB74D9D2B6661BA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F82754A037F78859AEDBF99B /* libPods.a */; };
-		AB76A5111CEC0B2A0001D961 /* CityButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AB76A5101CEC0B2A0001D961 /* CityButton.m */; };
 		ABA301DF1CEAFCC700693AC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA301DE1CEAFCC700693AC6 /* main.m */; };
 		ABA301EB1CEAFCC700693AC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA301E91CEAFCC700693AC6 /* Main.storyboard */; };
 		ABA301ED1CEAFCC700693AC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA301EC1CEAFCC700693AC6 /* Assets.xcassets */; };
@@ -24,6 +23,22 @@
 		ABA302391CEB090500693AC6 /* HomeTabbars.json in Resources */ = {isa = PBXBuildFile; fileRef = ABA302381CEB090500693AC6 /* HomeTabbars.json */; };
 		ABA3023D1CEB17F300693AC6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA3023C1CEB17F300693AC6 /* BaseViewController.m */; };
 		ABA302401CEB18F300693AC6 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA3023F1CEB18F300693AC6 /* HomepageViewController.m */; };
+		CC8F062A1CED51A100B4D945 /* FirstStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F06281CED51A100B4D945 /* FirstStyleTableViewCell.m */; };
+		CC8F062B1CED51A100B4D945 /* FirstStyleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06291CED51A100B4D945 /* FirstStyleTableViewCell.xib */; };
+		CC8F062F1CED58B900B4D945 /* SecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F062D1CED58B900B4D945 /* SecondTableViewCell.m */; };
+		CC8F06301CED58B900B4D945 /* SecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC8F062E1CED58B900B4D945 /* SecondTableViewCell.xib */; };
+		CC8F06321CED5B0100B4D945 /* testIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06311CED5B0100B4D945 /* testIcon.png */; };
+		CC8F06341CED5B2900B4D945 /* headIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06331CED5B2900B4D945 /* headIcon.png */; };
+		CC8F06361CED5B4100B4D945 /* viewCount.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06351CED5B4100B4D945 /* viewCount.png */; };
+		CC8F06381CED5B5D00B4D945 /* apply.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06371CED5B5D00B4D945 /* apply.png */; };
+		CC8F063A1CED6A8200B4D945 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06391CED6A8200B4D945 /* 1.png */; };
+		CC8F063C1CED6A9E00B4D945 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8F063B1CED6A9E00B4D945 /* 2.png */; };
+		CC8F063E1CED6AC200B4D945 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8F063D1CED6AC200B4D945 /* 3.png */; };
+		CC8F06401CED6ADA00B4D945 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8F063F1CED6ADA00B4D945 /* 4.png */; };
+		CC8F06421CED6AF600B4D945 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06411CED6AF600B4D945 /* 5.png */; };
+		CC8F06441CED6B7D00B4D945 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06431CED6B7D00B4D945 /* 6.png */; };
+		CC8F06461CED6BE900B4D945 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06451CED6BE900B4D945 /* 7.png */; };
+		CC8F06481CED6C8F00B4D945 /* 24DA9464-7555-490D-8C69-2323982B932E.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06471CED6C8F00B4D945 /* 24DA9464-7555-490D-8C69-2323982B932E.png */; };
 		CCD4D5E41CEC92EE009B4550 /* ThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */; };
 		CCD4D5E81CEC930C009B4550 /* ThreeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5E61CEC930C009B4550 /* ThreeCollectionViewCell.m */; };
 		CCD4D5E91CEC930C009B4550 /* ThreeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D5E71CEC930C009B4550 /* ThreeCollectionViewCell.xib */; };
@@ -76,8 +91,6 @@
 
 /* Begin PBXFileReference section */
 		39D3FB5AAE129DB0C9DFE79B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		AB76A50F1CEC0B2A0001D961 /* CityButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityButton.h; sourceTree = "<group>"; };
-		AB76A5101CEC0B2A0001D961 /* CityButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityButton.m; sourceTree = "<group>"; };
 		ABA301DA1CEAFCC600693AC6 /* QixinFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QixinFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA301DE1CEAFCC700693AC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ABA301EA1CEAFCC700693AC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +115,24 @@
 		ABA3023C1CEB17F300693AC6 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		ABA3023E1CEB18F300693AC6 /* HomepageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepageViewController.h; sourceTree = "<group>"; };
 		ABA3023F1CEB18F300693AC6 /* HomepageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepageViewController.m; sourceTree = "<group>"; };
+		CC8F06271CED51A100B4D945 /* FirstStyleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstStyleTableViewCell.h; path = QixinFinance/FirstStyleTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		CC8F06281CED51A100B4D945 /* FirstStyleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstStyleTableViewCell.m; path = QixinFinance/FirstStyleTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		CC8F06291CED51A100B4D945 /* FirstStyleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FirstStyleTableViewCell.xib; path = QixinFinance/FirstStyleTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		CC8F062C1CED58B900B4D945 /* SecondTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondTableViewCell.h; path = QixinFinance/SecondTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		CC8F062D1CED58B900B4D945 /* SecondTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondTableViewCell.m; path = QixinFinance/SecondTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		CC8F062E1CED58B900B4D945 /* SecondTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SecondTableViewCell.xib; path = QixinFinance/SecondTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		CC8F06311CED5B0100B4D945 /* testIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIcon.png; sourceTree = "<group>"; };
+		CC8F06331CED5B2900B4D945 /* headIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headIcon.png; sourceTree = "<group>"; };
+		CC8F06351CED5B4100B4D945 /* viewCount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = viewCount.png; sourceTree = "<group>"; };
+		CC8F06371CED5B5D00B4D945 /* apply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apply.png; sourceTree = "<group>"; };
+		CC8F06391CED6A8200B4D945 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		CC8F063B1CED6A9E00B4D945 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		CC8F063D1CED6AC200B4D945 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		CC8F063F1CED6ADA00B4D945 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		CC8F06411CED6AF600B4D945 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		CC8F06431CED6B7D00B4D945 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		CC8F06451CED6BE900B4D945 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		CC8F06471CED6C8F00B4D945 /* 24DA9464-7555-490D-8C69-2323982B932E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "24DA9464-7555-490D-8C69-2323982B932E.png"; sourceTree = "<group>"; };
 		CCD4D5E21CEC92EE009B4550 /* ThreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeTableViewCell.h; path = QixinFinance/ThreeTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeTableViewCell.m; path = QixinFinance/ThreeTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		CCD4D5E51CEC930C009B4550 /* ThreeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeCollectionViewCell.h; path = QixinFinance/ThreeCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
@@ -346,7 +377,6 @@
 		ABA302201CEB071200693AC6 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
-				CC524FF41CEC6A7A00E69DFC /* Info.plist */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -389,6 +419,12 @@
 		ABA302251CEB071200693AC6 /* Forum */ = {
 			isa = PBXGroup;
 			children = (
+				CC8F06271CED51A100B4D945 /* FirstStyleTableViewCell.h */,
+				CC8F06281CED51A100B4D945 /* FirstStyleTableViewCell.m */,
+				CC8F06291CED51A100B4D945 /* FirstStyleTableViewCell.xib */,
+				CC8F062C1CED58B900B4D945 /* SecondTableViewCell.h */,
+				CC8F062D1CED58B900B4D945 /* SecondTableViewCell.m */,
+				CC8F062E1CED58B900B4D945 /* SecondTableViewCell.xib */,
 			);
 			path = Forum;
 			sourceTree = "<group>";
@@ -480,6 +516,18 @@
 		CCD4D6081CECA028009B4550 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				CC8F06471CED6C8F00B4D945 /* 24DA9464-7555-490D-8C69-2323982B932E.png */,
+				CC8F06451CED6BE900B4D945 /* 7.png */,
+				CC8F06431CED6B7D00B4D945 /* 6.png */,
+				CC8F06411CED6AF600B4D945 /* 5.png */,
+				CC8F063F1CED6ADA00B4D945 /* 4.png */,
+				CC8F063D1CED6AC200B4D945 /* 3.png */,
+				CC8F06391CED6A8200B4D945 /* 1.png */,
+				CC8F063B1CED6A9E00B4D945 /* 2.png */,
+				CC8F06371CED5B5D00B4D945 /* apply.png */,
+				CC8F06351CED5B4100B4D945 /* viewCount.png */,
+				CC8F06331CED5B2900B4D945 /* headIcon.png */,
+				CC8F06311CED5B0100B4D945 /* testIcon.png */,
 				CCD4D6271CECA1E5009B4550 /* activity.png */,
 				CCD4D6251CECA123009B4550 /* product.png */,
 				CCD4D6231CECA0DF009B4550 /* hotCard.png */,
@@ -606,36 +654,50 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC8F063C1CED6A9E00B4D945 /* 2.png in Resources */,
 				CCD4D6221CECA095009B4550 /* loanIcon.png in Resources */,
 				CCD4D6161CECA028009B4550 /* 启鑫app首页_03.png in Resources */,
+				CC8F063E1CED6AC200B4D945 /* 3.png in Resources */,
 				CCD4D6261CECA123009B4550 /* product.png in Resources */,
 				CCD4D6241CECA0DF009B4550 /* hotCard.png in Resources */,
 				CCD4D5E91CEC930C009B4550 /* ThreeCollectionViewCell.xib in Resources */,
 				CCD4D61C1CECA028009B4550 /* 启鑫app首页_21.png in Resources */,
 				ABA302391CEB090500693AC6 /* HomeTabbars.json in Resources */,
 				CCD4D61D1CECA028009B4550 /* 启鑫app首页_24.png in Resources */,
+				CC8F06341CED5B2900B4D945 /* headIcon.png in Resources */,
+				CC8F062B1CED51A100B4D945 /* FirstStyleTableViewCell.xib in Resources */,
 				CCD4D61A1CECA028009B4550 /* 启鑫app首页_14.png in Resources */,
 				ABA302301CEB089900693AC6 /* Homepage.storyboard in Resources */,
 				ABA302321CEB08A500693AC6 /* Forum.storyboard in Resources */,
 				CCD4D61E1CECA028009B4550 /* 启鑫app首页_28.png in Resources */,
 				CCD4D6071CEC9755009B4550 /* financialProductTableViewCell.xib in Resources */,
 				ABA301F01CEAFCC700693AC6 /* LaunchScreen.storyboard in Resources */,
+				CC8F06361CED5B4100B4D945 /* viewCount.png in Resources */,
+				CC8F06321CED5B0100B4D945 /* testIcon.png in Resources */,
+				CC8F06461CED6BE900B4D945 /* 7.png in Resources */,
 				ABA302341CEB08BE00693AC6 /* Information.storyboard in Resources */,
 				CCD4D6021CEC94B6009B4550 /* financialSelectedTableViewCell.xib in Resources */,
 				CCD4D61F1CECA028009B4550 /* 启鑫app首页_30.png in Resources */,
+				CC8F06421CED6AF600B4D945 /* 5.png in Resources */,
 				ABA301ED1CEAFCC700693AC6 /* Assets.xcassets in Resources */,
 				CCD4D61B1CECA028009B4550 /* 启鑫app首页_16.png in Resources */,
+				CC8F063A1CED6A8200B4D945 /* 1.png in Resources */,
+				CC8F06401CED6ADA00B4D945 /* 4.png in Resources */,
 				CCD4D5FD1CEC9482009B4550 /* HotCardTableViewCell.xib in Resources */,
+				CC8F06441CED6B7D00B4D945 /* 6.png in Resources */,
 				CCD4D5F81CEC946D009B4550 /* bankLoanTableViewCell.xib in Resources */,
 				CCD4D6281CECA1E5009B4550 /* activity.png in Resources */,
 				ABA301EB1CEAFCC700693AC6 /* Main.storyboard in Resources */,
 				CCD4D6191CECA028009B4550 /* 启鑫app首页_12.png in Resources */,
 				CCD4D6171CECA028009B4550 /* 启鑫app首页_05.png in Resources */,
+				CC8F06381CED5B5D00B4D945 /* apply.png in Resources */,
 				CCD4D6151CECA028009B4550 /* foumtab.png in Resources */,
 				CCD4D5F31CEC9454009B4550 /* ActivityTableViewCell.xib in Resources */,
 				CCD4D6201CECA028009B4550 /* 启鑫app首页_34.png in Resources */,
 				CCD4D5EE1CEC943B009B4550 /* recommandLoanTableViewCell.xib in Resources */,
 				ABA302361CEB08D100693AC6 /* Personal.storyboard in Resources */,
+				CC8F06301CED58B900B4D945 /* SecondTableViewCell.xib in Resources */,
+				CC8F06481CED6C8F00B4D945 /* 24DA9464-7555-490D-8C69-2323982B932E.png in Resources */,
 				CCD4D6181CECA028009B4550 /* 启鑫app首页_09.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,17 +773,18 @@
 			files = (
 				CCD4D5FC1CEC9482009B4550 /* HotCardTableViewCell.m in Sources */,
 				ABA302291CEB071200693AC6 /* AppDelegate.m in Sources */,
-				CC4911681CEC192600BA58FD /* JSONModelClassProperty.m in Sources */,
 				ABA3023D1CEB17F300693AC6 /* BaseViewController.m in Sources */,
 				CCD4D5ED1CEC943B009B4550 /* recommandLoanTableViewCell.m in Sources */,
 				ABA302401CEB18F300693AC6 /* HomepageViewController.m in Sources */,
 				CCD4D5E81CEC930C009B4550 /* ThreeCollectionViewCell.m in Sources */,
+				CC8F062F1CED58B900B4D945 /* SecondTableViewCell.m in Sources */,
 				CCD4D5F21CEC9454009B4550 /* ActivityTableViewCell.m in Sources */,
 				ABA3022D1CEB084400693AC6 /* HomeTabbarViewController.m in Sources */,
 				CCD4D6061CEC9755009B4550 /* financialProductTableViewCell.m in Sources */,
 				CCD4D6011CEC94B6009B4550 /* financialSelectedTableViewCell.m in Sources */,
 				CCD4D5E41CEC92EE009B4550 /* ThreeTableViewCell.m in Sources */,
 				ABA301DF1CEAFCC700693AC6 /* main.m in Sources */,
+				CC8F062A1CED51A100B4D945 /* FirstStyleTableViewCell.m in Sources */,
 				CCD4D5F71CEC946D009B4550 /* bankLoanTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
