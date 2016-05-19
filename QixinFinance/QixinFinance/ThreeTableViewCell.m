@@ -29,11 +29,11 @@
     //初始化自定义的layout
     UICollectionViewFlowLayout * _flowLayout = [[UICollectionViewFlowLayout alloc] init];
     _flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    _flowLayout.minimumInteritemSpacing = 10;
+    _flowLayout.minimumInteritemSpacing = 12;
     _flowLayout.minimumLineSpacing = 10;
     _flowLayout.itemSize = CGSizeMake((ScreenWidth-30)/3, 106);
     _flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 106) collectionViewLayout:_flowLayout];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(12, 0, ScreenWidth, 106) collectionViewLayout:_flowLayout];
     //注册cell
     UINib *cellNib = [UINib nibWithNibName:@"ThreeCollectionViewCell" bundle:[NSBundle mainBundle]];
     [_collectionView registerNib:cellNib forCellWithReuseIdentifier:cellReuseId];

@@ -14,16 +14,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="140" height="106"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="启鑫app首页_12.png" translatesAutoresizingMaskIntoConstraints="NO" id="qOT-rz-NPJ">
-                        <rect key="frame" x="0.0" y="0.0" width="140" height="106"/>
+                        <rect key="frame" x="0.0" y="0.0" width="138" height="106"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ol-J2-LqF">
+                        <rect key="frame" x="138" y="13" width="2" height="80"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="2GK-Kc-enq"/>
+                            <constraint firstAttribute="width" constant="2" id="CR2-U3-f9a"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="qOT-rz-NPJ" secondAttribute="trailing" id="2h6-Pf-Dar"/>
-                <constraint firstItem="qOT-rz-NPJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="I9i-kj-F89"/>
-                <constraint firstAttribute="bottom" secondItem="qOT-rz-NPJ" secondAttribute="bottom" id="fK6-Yb-nws"/>
-                <constraint firstItem="qOT-rz-NPJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fen-pk-hq0"/>
+                <constraint firstAttribute="trailing" secondItem="6Ol-J2-LqF" secondAttribute="trailing" id="3ek-cx-NIj"/>
+                <constraint firstItem="6Ol-J2-LqF" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="GvT-WC-ewp"/>
+                <constraint firstItem="6Ol-J2-LqF" firstAttribute="leading" secondItem="qOT-rz-NPJ" secondAttribute="trailing" id="Ptu-KJ-rNf"/>
+                <constraint firstAttribute="bottom" secondItem="qOT-rz-NPJ" secondAttribute="bottom" id="S3e-Yc-4Oq"/>
+                <constraint firstAttribute="trailing" secondItem="6Ol-J2-LqF" secondAttribute="trailing" id="TDB-pe-W7r"/>
+                <constraint firstItem="qOT-rz-NPJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cSh-fE-FhV"/>
+                <constraint firstItem="qOT-rz-NPJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jmE-4r-I4W"/>
             </constraints>
             <size key="customSize" width="140" height="106"/>
             <connections>

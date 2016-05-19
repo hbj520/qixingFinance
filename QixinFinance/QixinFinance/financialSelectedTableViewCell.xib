@@ -14,19 +14,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="理财精选" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzT-8y-xuL">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="理财精选" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzT-8y-xuL">
                         <rect key="frame" x="18" y="14" width="75" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="0Yb-8i-FsD"/>
+                            <constraint firstAttribute="width" constant="75" id="pqY-RH-F4D"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="更多" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFo-cE-IR9">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="更多" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFo-cE-IR9">
                         <rect key="frame" x="260" y="11" width="32" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="H5G-y2-Qep"/>
+                            <constraint firstAttribute="width" constant="32" id="k8D-7x-9o3"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="OzT-8y-xuL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="0im-eE-9VX"/>
+                    <constraint firstAttribute="trailing" secondItem="XFo-cE-IR9" secondAttribute="trailing" constant="5" id="8aM-XF-6TA"/>
+                    <constraint firstItem="XFo-cE-IR9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ENg-pT-27r"/>
+                    <constraint firstItem="OzT-8y-xuL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XR7-cO-TQG"/>
+                </constraints>
             </tableViewCellContentView>
         </tableViewCell>
     </objects>

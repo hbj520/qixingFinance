@@ -46,6 +46,7 @@
 - (void)congfigTableView
 {
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.tableView.showsVerticalScrollIndicator = NO;
     [self.tableView registerClass:[ThreeTableViewCell class] forCellReuseIdentifier:@"homepageReused7"];
     [self.tableView registerClass:[ActivityTableViewCell class] forCellReuseIdentifier:@"homepageReused1"];
    // [self.tableView registerClass:[recommandLoanTableViewCell class] forCellReuseIdentifier:@"homepageReused2"];

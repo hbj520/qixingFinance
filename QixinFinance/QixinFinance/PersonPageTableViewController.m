@@ -18,6 +18,7 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.allowsMultipleSelection = NO;
 
     // Uncomment the following line to preserve selection between presentations.
