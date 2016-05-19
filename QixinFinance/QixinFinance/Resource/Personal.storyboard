@@ -96,41 +96,41 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxu-x0-Vqu">
-                                                    <rect key="frame" x="18" y="5" width="84" height="89"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxu-x0-Vqu">
+                                                    <rect key="frame" x="24" y="9" width="55" height="82"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="70" id="W6a-QC-3fm"/>
-                                                        <constraint firstAttribute="width" constant="70" id="Ye2-sH-BQf"/>
+                                                        <constraint firstAttribute="height" constant="82" id="ODS-Uo-AhX"/>
+                                                        <constraint firstAttribute="width" constant="55" id="d13-fP-Jzz"/>
                                                     </constraints>
                                                     <state key="normal" image="启鑫APP个人_12"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="og2-6c-yMW">
-                                                    <rect key="frame" x="220" y="4" width="80" height="91"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="og2-6c-yMW">
+                                                    <rect key="frame" x="235" y="8" width="56" height="82"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="Cfc-JI-ffQ"/>
-                                                        <constraint firstAttribute="height" constant="70" id="TzH-mP-9sc"/>
+                                                        <constraint firstAttribute="width" constant="56" id="3ds-5V-do7"/>
+                                                        <constraint firstAttribute="height" constant="82" id="yKU-Vq-Jye"/>
                                                     </constraints>
                                                     <state key="normal" image="启鑫APP个人_09"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHt-70-Sgs">
-                                                    <rect key="frame" x="116" y="5" width="89" height="90"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHt-70-Sgs">
+                                                    <rect key="frame" x="112" y="8" width="96" height="83"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="KqT-Vb-9RS"/>
-                                                        <constraint firstAttribute="height" constant="70" id="SpJ-OH-pvm"/>
+                                                        <constraint firstAttribute="width" constant="96" id="2wz-yY-JoV"/>
                                                     </constraints>
                                                     <state key="normal" image="启鑫APP个人_07"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="og2-6c-yMW" firstAttribute="centerY" secondItem="kra-8g-yAC" secondAttribute="centerY" id="5ZZ-VW-pLF"/>
-                                                <constraint firstItem="xxu-x0-Vqu" firstAttribute="centerY" secondItem="kra-8g-yAC" secondAttribute="centerY" id="64p-ar-e9Q"/>
-                                                <constraint firstItem="og2-6c-yMW" firstAttribute="leading" secondItem="wHt-70-Sgs" secondAttribute="trailing" constant="30" id="c3L-Bo-dOe"/>
-                                                <constraint firstItem="wHt-70-Sgs" firstAttribute="centerX" secondItem="kra-8g-yAC" secondAttribute="centerX" id="cJM-61-sDF"/>
-                                                <constraint firstItem="wHt-70-Sgs" firstAttribute="centerY" secondItem="kra-8g-yAC" secondAttribute="centerY" id="e7d-kM-pdj"/>
-                                                <constraint firstItem="wHt-70-Sgs" firstAttribute="leading" secondItem="xxu-x0-Vqu" secondAttribute="trailing" constant="30" id="xgX-Mi-k5L"/>
+                                                <constraint firstItem="wHt-70-Sgs" firstAttribute="top" secondItem="kra-8g-yAC" secondAttribute="top" constant="8" id="Pt5-kS-jhf"/>
+                                                <constraint firstAttribute="bottom" secondItem="wHt-70-Sgs" secondAttribute="bottom" constant="8" id="Qfa-Nn-8xo"/>
+                                                <constraint firstItem="wHt-70-Sgs" firstAttribute="top" secondItem="og2-6c-yMW" secondAttribute="top" id="Rrs-pp-BQu"/>
+                                                <constraint firstItem="xxu-x0-Vqu" firstAttribute="centerY" secondItem="wHt-70-Sgs" secondAttribute="centerY" id="itL-Mr-Qda"/>
+                                                <constraint firstItem="wHt-70-Sgs" firstAttribute="centerX" secondItem="kra-8g-yAC" secondAttribute="centerX" id="kwc-SQ-yLv"/>
+                                                <constraint firstItem="og2-6c-yMW" firstAttribute="leading" secondItem="wHt-70-Sgs" secondAttribute="trailing" constant="27" id="oWC-6B-53P"/>
+                                                <constraint firstItem="wHt-70-Sgs" firstAttribute="leading" secondItem="xxu-x0-Vqu" secondAttribute="trailing" constant="33" id="pto-Lf-7ur"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -219,14 +219,22 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WT4-rZ-ewW">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WT4-rZ-ewW">
                                                     <rect key="frame" x="183" y="5" width="96" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="96" id="YTy-e5-5N5"/>
+                                                        <constraint firstAttribute="height" constant="30" id="z1x-Xk-wVg"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <state key="normal" title="昨日收益  0.00元">
                                                         <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="WT4-rZ-ewW" secondAttribute="trailing" constant="8" id="8AS-vL-5Zc"/>
+                                                <constraint firstItem="WT4-rZ-ewW" firstAttribute="centerY" secondItem="yeJ-mU-usi" secondAttribute="centerY" id="L6y-fm-TZW"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -262,6 +270,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Wae-NM-J3p"/>
                     <connections>
+                        <outlet property="backgroundImg" destination="LD4-Nq-l8F" id="IGZ-eQ-Udb"/>
                         <outlet property="iconImg" destination="5iX-G7-Kwu" id="hMD-Ua-2fS"/>
                         <outlet property="userName" destination="P7C-mg-vfS" id="YFA-Xw-Nc4"/>
                     </connections>

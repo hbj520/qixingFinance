@@ -14,7 +14,12 @@
 #import "HotCardTableViewCell.h"
 #import "financialProductTableViewCell.h"
 #import "financialSelectedTableViewCell.h"
+#import "SDCycleScrollView.h"
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
 @interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource>
+{
+    NSMutableArray * _imgArray;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -26,17 +31,20 @@
     // Do any additional setup after loading the view.
     [self showTitleView];
    // [self showCityName];
+    [self cityLocation];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self congfigTableView];
+    
 }
 
 - (void)cityLocation
 {
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn sizeToFit];
-    [btn setImage:[UIImage imageNamed:@"location"] forState:UIControlStateNormal];
-   
+    btn.frame = CGRectMake(0, 0, 50, 30);
+    [btn setImage:[UIImage imageNamed:@"启鑫app首页_05"] forState:UIControlStateNormal];
+
+    
     UIBarButtonItem * btnItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.rightBarButtonItem = btnItem;
 }
@@ -57,25 +65,33 @@
    [self.tableView registerNib:[UINib nibWithNibName:@"recommandLoanTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell1"];
       [self.tableView registerNib:[UINib nibWithNibName:@"financialProductTableViewCell" bundle:nil] forCellReuseIdentifier:@"homepageReusedId6"];
     UIView * footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 45)];
-    footView.backgroundColor = [UIColor lightGrayColor];
-    UILabel * label1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 7, 80, 30)];
+    footView.backgroundColor = [UIColor colorWithRed:235 green:234 blue:237 alpha:1];
+    UILabel * label1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 7, 60, 30)];
     label1.textColor = [UIColor orangeColor];
-    label1.backgroundColor =  [UIColor lightGrayColor];
+    label1.backgroundColor =  [UIColor clearColor];
 
     label1.text = @"小编点评";
-    label1.font = [UIFont systemFontOfSize:12];
+    label1.font = [UIFont systemFontOfSize:11];
     UILabel * label2 = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(label1.frame), 7, 300, 30)];
     label2.textColor = [UIColor blackColor];
     label2.text = @"自动投标，操作方便；本息复投，提高资金利用率。";
-    label2.backgroundColor =  [UIColor lightGrayColor];
+    label2.backgroundColor =  [UIColor clearColor];
 
-    label2.font = [UIFont systemFontOfSize:11];
+    label2.font = [UIFont systemFontOfSize:10];
     [footView addSubview:label1];
     [footView addSubview:label2];
     self.tableView.tableFooterView = footView;
     UIView * headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
     headView.backgroundColor = [UIColor blackColor];
-    self.tableView.tableHeaderView = headView;
+    _imgArray  = [[NSMutableArray alloc] init];
+    NSString * imgPath = @"启鑫app首页_09.png";
+    for(NSInteger i = 0 ;i<3;i++){
+        [_imgArray addObject:imgPath];
+    }
+    
+    SDCycleScrollView * cycleView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, ScreenWidth,200 ) imageNamesGroup:_imgArray];
+    
+    self.tableView.tableHeaderView = cycleView;
 }
 
 

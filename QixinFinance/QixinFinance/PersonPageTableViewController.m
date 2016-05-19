@@ -7,7 +7,7 @@
 //
 
 #import "PersonPageTableViewController.h"
-
+#import "UIImage+ImageEffects.h"
 @interface PersonPageTableViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -30,6 +30,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    UIImage * bgImg = [UIImage imageNamed:@"启鑫APP个人_01"];
+    UIImage * bgImage = [bgImg applyLightEffect];
+    self.backgroundImg.image = bgImage;
     self.iconImg.layer.cornerRadius = self.iconImg.frame.size.width/2;
     [self.iconImg.layer setMasksToBounds:YES];
     [self.iconImg setImage:[UIImage imageNamed:@"启鑫APP个人_03"]];

@@ -7,6 +7,7 @@
 //
 
 #import "ThreeTableViewCell.h"
+
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 @implementation ThreeTableViewCell
 

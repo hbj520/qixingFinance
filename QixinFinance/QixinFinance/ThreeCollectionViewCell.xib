@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="140" height="106"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="启鑫app首页_12.png" translatesAutoresizingMaskIntoConstraints="NO" id="qOT-rz-NPJ">
-                        <rect key="frame" x="0.0" y="0.0" width="138" height="106"/>
+                        <rect key="frame" x="0.0" y="20" width="138" height="66"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ol-J2-LqF">
                         <rect key="frame" x="138" y="13" width="2" height="80"/>
@@ -29,12 +29,13 @@
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="6Ol-J2-LqF" secondAttribute="trailing" id="3ek-cx-NIj"/>
+                <constraint firstItem="qOT-rz-NPJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Bed-SQ-vz9"/>
                 <constraint firstItem="6Ol-J2-LqF" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="GvT-WC-ewp"/>
-                <constraint firstItem="6Ol-J2-LqF" firstAttribute="leading" secondItem="qOT-rz-NPJ" secondAttribute="trailing" id="Ptu-KJ-rNf"/>
-                <constraint firstAttribute="bottom" secondItem="qOT-rz-NPJ" secondAttribute="bottom" id="S3e-Yc-4Oq"/>
+                <constraint firstItem="qOT-rz-NPJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="I9e-F9-pIo"/>
+                <constraint firstItem="6Ol-J2-LqF" firstAttribute="leading" secondItem="qOT-rz-NPJ" secondAttribute="trailing" id="MZO-PW-uQi"/>
                 <constraint firstAttribute="trailing" secondItem="6Ol-J2-LqF" secondAttribute="trailing" id="TDB-pe-W7r"/>
-                <constraint firstItem="qOT-rz-NPJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cSh-fE-FhV"/>
-                <constraint firstItem="qOT-rz-NPJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jmE-4r-I4W"/>
+                <constraint firstItem="qOT-rz-NPJ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="XQ3-HQ-jtP"/>
+                <constraint firstAttribute="bottom" secondItem="qOT-rz-NPJ" secondAttribute="bottom" constant="20" id="wiZ-5B-Dya"/>
             </constraints>
             <size key="customSize" width="140" height="106"/>
             <connections>

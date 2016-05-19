@@ -10,6 +10,7 @@
 
 @interface PersonPageTableViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIImageView *iconImg;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImg;
 
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @end
