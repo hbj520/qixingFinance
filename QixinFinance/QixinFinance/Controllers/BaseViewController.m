@@ -30,14 +30,6 @@
     titleImagView.image = [UIImage imageNamed:@"navtitleview"];
     self.navigationItem.titleView = titleImagView;
 }
-- (void)showLocalItemBtn{
-    UIBarButtonItem *rightButtonItem1 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"location"] style:UIBarButtonItemStyleDone target:self action:@selector(LocalAct:)];
-    self.navigationItem.rightBarButtonItem = rightButtonItem1;
-//    UIBarButtonItem *rightButtonItemCityName = [[UIBarButtonItem alloc] initWithTitle:@"合肥" style:UIBarButtonItemStyleDone target:self action:@selector(LocalCityAct:)];
-//    NSArray *itemBtnArray = @[rightButtonItemCityName,rightButtonItem1];
-//    self.navigationItem.rightBarButtonItems = itemBtnArray;
-        self.navigationItem.rightBarButtonItem.tintColor = [UIColor grayColor];
-}
 - (void)LocalAct:(id)sender{
     
 }

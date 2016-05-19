@@ -120,7 +120,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+#pragma mark - PrivateMethod
+- (void)showCityName{
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"合肥" style:UIBarButtonItemStyleDone target:self action:@selector(cityAct:)];
+    barButtonItem.tintColor = [UIColor grayColor];
+    UIBarButtonItem *barbuttonItemImg = self.navigationItem.rightBarButtonItem;
+    NSArray *buttonItems = @[barButtonItem,barbuttonItemImg];
+   // [buttonItems addObject:barButtonItem];
+    self.navigationItem.rightBarButtonItems = buttonItems;
+}
+- (void)cityAct:(id)sender{
+    
+}
 /*
 #pragma mark - Navigation
 
