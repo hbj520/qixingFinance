@@ -28,7 +28,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="人申请" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DO0-sz-dml">
-                        <rect key="frame" x="144" y="55" width="90" height="19"/>
+                        <rect key="frame" x="144" y="55" width="45" height="19"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -44,13 +44,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.89%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6N-3H-C1v">
-                        <rect key="frame" x="202" y="53" width="47" height="23"/>
+                        <rect key="frame" x="202" y="53" width="44" height="23"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.12156862745098039" green="0.31372549019607843" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="月费率" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXq-OA-sFC">
-                        <rect key="frame" x="247" y="55" width="42" height="21"/>
+                        <rect key="frame" x="248" y="55" width="41" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -63,6 +63,12 @@
                     <constraint firstItem="8Nu-9c-S3Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="dS9-46-5Z2"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="applyCount" destination="GFs-nB-0Nb" id="cmW-MM-2tl"/>
+                <outlet property="img" destination="8Nu-9c-S3Z" id="WxA-JU-ntR"/>
+                <outlet property="percentNum" destination="S6N-3H-C1v" id="EWb-zV-7Th"/>
+                <outlet property="titleLabel" destination="lZd-Fj-1g0" id="AQw-h5-yhr"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

@@ -38,7 +38,7 @@
                             <constraint firstAttribute="width" constant="76" id="gtc-KO-v2b"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.38823529411764707" green="0.38039215686274508" blue="0.3843137254901961" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXc-EQ-ttE">
@@ -61,7 +61,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11.0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wad-G6-YeN">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11.0%↑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wad-G6-YeN">
                         <rect key="frame" x="246" y="22" width="54" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="54" id="ITP-Y9-Z9H"/>
@@ -87,6 +87,12 @@
                     <constraint firstItem="DoQ-9g-ooY" firstAttribute="top" secondItem="Pxj-ve-8pd" secondAttribute="bottom" constant="8" id="su8-Z9-yOF"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="Img" destination="qV4-Gc-8bI" id="9le-Ld-1Xr"/>
+                <outlet property="monthNum" destination="fXc-EQ-ttE" id="BZK-zk-wBW"/>
+                <outlet property="precentNum" destination="Wad-G6-YeN" id="tTc-Ii-TMG"/>
+                <outlet property="titleLabel" destination="Pxj-ve-8pd" id="y0X-7W-K3c"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

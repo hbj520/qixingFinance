@@ -64,20 +64,20 @@
     //[self.tableView registerClass:[financialProductTableViewCell class] forCellReuseIdentifier:@"homepageReusedId6"];
    [self.tableView registerNib:[UINib nibWithNibName:@"recommandLoanTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell1"];
       [self.tableView registerNib:[UINib nibWithNibName:@"financialProductTableViewCell" bundle:nil] forCellReuseIdentifier:@"homepageReusedId6"];
-    UIView * footView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 45)];
-    footView.backgroundColor = [UIColor colorWithRed:235 green:234 blue:237 alpha:1];
-    UILabel * label1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 7, 60, 30)];
-    label1.textColor = [UIColor orangeColor];
-    label1.backgroundColor =  [UIColor clearColor];
+    UIView * footView = [[UIView alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width-20, 30)];
+    footView.backgroundColor =[UIColor whiteColor];
+    UILabel * label1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 2, 60, 26)];
+    label1.textColor = [UIColor colorWithRed:236.0/255.0 green:138.0/255.0 blue:119.0/255.0 alpha:100];
+    label1.backgroundColor =  [UIColor colorWithRed:235.0/255.0 green:235.0/255.0 blue:235.0/255.0 alpha:100];
 
     label1.text = @"小编点评";
-    label1.font = [UIFont systemFontOfSize:11];
-    UILabel * label2 = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(label1.frame), 7, 300, 30)];
-    label2.textColor = [UIColor blackColor];
+    label1.font = [UIFont systemFontOfSize:9];
+    UILabel * label2 = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(label1.frame),2, ScreenWidth-40-80+5, 26)];
+    label2.textColor = [UIColor colorWithRed:59.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:100];
     label2.text = @"自动投标，操作方便；本息复投，提高资金利用率。";
-    label2.backgroundColor =  [UIColor clearColor];
+    label2.backgroundColor = [UIColor colorWithRed:235.0/255.0 green:235.0/255.0 blue:235.0/255.0 alpha:100];
 
-    label2.font = [UIFont systemFontOfSize:10];
+    label2.font = [UIFont systemFontOfSize:9];
     [footView addSubview:label1];
     [footView addSubview:label2];
     self.tableView.tableFooterView = footView;
@@ -158,13 +158,19 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section==0||indexPath.section==1||indexPath.section==3||indexPath.section==6) {
         return 106;
-    }else if (indexPath.section==2||indexPath.section==5){
+    }else if (indexPath.section ==  4){
+        return 230;
+    }
+    
+    else if (indexPath.section==2||indexPath.section==5){
         return 44;
     }else{
         return 200;
     }
 
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

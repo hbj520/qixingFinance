@@ -25,6 +25,9 @@
                     <constraint firstItem="AxB-fy-DbD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="y2v-Du-eT7"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="Img" destination="AxB-fy-DbD" id="od5-ZZ-WcZ"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="azL-l8-wwC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Qbb-Xw-S2d">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="Y9X-TS-dOT">
-            <objects>
-                <navigationController id="azL-l8-wwC" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="23V-kF-Uzo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="cQ3-gl-43z" kind="relationship" relationship="rootViewController" id="mQI-3q-CWz"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RXu-Na-c3u" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-160" y="309"/>
-        </scene>
-        <!--Person Page Table View Controller-->
+        <!--我的-->
         <scene sceneID="BaI-uu-oLL">
             <objects>
                 <tableViewController id="cQ3-gl-43z" customClass="PersonPageTableViewController" sceneMemberID="viewController">
@@ -60,26 +44,18 @@
                                                         <constraint firstAttribute="width" constant="92" id="z5l-wR-GaP"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="我的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="774-H2-R0c">
-                                                    <rect key="frame" x="119" y="25" width="64" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="VcB-jW-YL8"/>
-                                                        <constraint firstAttribute="width" constant="64" id="aIm-Up-aDJ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="5iX-G7-Kwu" firstAttribute="leading" secondItem="Y3c-Nc-hNX" secondAttribute="leading" constant="8" id="0zC-U8-a5Y"/>
                                                 <constraint firstItem="P7C-mg-vfS" firstAttribute="leading" secondItem="5iX-G7-Kwu" secondAttribute="trailing" constant="26" id="7XM-It-a4v"/>
+                                                <constraint firstAttribute="bottom" secondItem="LD4-Nq-l8F" secondAttribute="bottom" id="NoR-rz-T3h"/>
+                                                <constraint firstItem="LD4-Nq-l8F" firstAttribute="top" secondItem="Y3c-Nc-hNX" secondAttribute="top" id="Rmi-Lh-lzW"/>
                                                 <constraint firstItem="P7C-mg-vfS" firstAttribute="top" secondItem="Y3c-Nc-hNX" secondAttribute="top" constant="125" id="RsE-YD-cY1"/>
                                                 <constraint firstAttribute="bottom" secondItem="5iX-G7-Kwu" secondAttribute="bottom" constant="14" id="Udy-oX-hkJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="LD4-Nq-l8F" secondAttribute="bottom" id="cKH-lk-LBp"/>
-                                                <constraint firstItem="774-H2-R0c" firstAttribute="centerX" secondItem="Y3c-Nc-hNX" secondAttribute="centerX" id="cka-Ko-Eoa"/>
+                                                <constraint firstItem="LD4-Nq-l8F" firstAttribute="leading" secondItem="Y3c-Nc-hNX" secondAttribute="leading" id="fmU-Ki-MLm"/>
                                                 <constraint firstItem="LD4-Nq-l8F" firstAttribute="leading" secondItem="Y3c-Nc-hNX" secondAttribute="leading" id="j3f-TH-XS0"/>
-                                                <constraint firstItem="774-H2-R0c" firstAttribute="top" secondItem="Y3c-Nc-hNX" secondAttribute="top" constant="25" id="mKA-fK-7HQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="LD4-Nq-l8F" secondAttribute="trailing" id="qPa-lT-bRK"/>
                                                 <constraint firstItem="LD4-Nq-l8F" firstAttribute="top" secondItem="Y3c-Nc-hNX" secondAttribute="top" id="wxk-kO-uN8"/>
                                                 <constraint firstAttribute="trailing" secondItem="LD4-Nq-l8F" secondAttribute="trailing" id="zI6-1I-VC5"/>
                                             </constraints>
@@ -97,40 +73,40 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxu-x0-Vqu">
-                                                    <rect key="frame" x="24" y="9" width="55" height="82"/>
+                                                    <rect key="frame" x="24" y="8" width="55" height="83"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="82" id="ODS-Uo-AhX"/>
-                                                        <constraint firstAttribute="width" constant="55" id="d13-fP-Jzz"/>
+                                                        <constraint firstAttribute="height" constant="83" id="PTY-4a-RgY"/>
+                                                        <constraint firstAttribute="width" constant="55" id="fDt-Ki-iCr"/>
                                                     </constraints>
                                                     <state key="normal" image="启鑫APP个人_12"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="og2-6c-yMW">
-                                                    <rect key="frame" x="235" y="8" width="56" height="82"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="og2-6c-yMW">
+                                                    <rect key="frame" x="230" y="8" width="56" height="83"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="56" id="3ds-5V-do7"/>
-                                                        <constraint firstAttribute="height" constant="82" id="yKU-Vq-Jye"/>
+                                                        <constraint firstAttribute="height" constant="82" id="1oA-SD-CKr"/>
+                                                        <constraint firstAttribute="width" constant="56" id="W1S-Lu-sQZ"/>
                                                     </constraints>
                                                     <state key="normal" image="启鑫APP个人_09"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHt-70-Sgs">
-                                                    <rect key="frame" x="112" y="8" width="96" height="83"/>
+                                                    <rect key="frame" x="120" y="8" width="80" height="83"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="96" id="2wz-yY-JoV"/>
+                                                        <constraint firstAttribute="height" constant="83" id="8tc-dr-g97"/>
+                                                        <constraint firstAttribute="width" constant="80" id="rNa-eA-23D"/>
                                                     </constraints>
                                                     <state key="normal" image="启鑫APP个人_07"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="wHt-70-Sgs" firstAttribute="top" secondItem="kra-8g-yAC" secondAttribute="top" constant="8" id="Pt5-kS-jhf"/>
-                                                <constraint firstAttribute="bottom" secondItem="wHt-70-Sgs" secondAttribute="bottom" constant="8" id="Qfa-Nn-8xo"/>
-                                                <constraint firstItem="wHt-70-Sgs" firstAttribute="top" secondItem="og2-6c-yMW" secondAttribute="top" id="Rrs-pp-BQu"/>
-                                                <constraint firstItem="xxu-x0-Vqu" firstAttribute="centerY" secondItem="wHt-70-Sgs" secondAttribute="centerY" id="itL-Mr-Qda"/>
-                                                <constraint firstItem="wHt-70-Sgs" firstAttribute="centerX" secondItem="kra-8g-yAC" secondAttribute="centerX" id="kwc-SQ-yLv"/>
-                                                <constraint firstItem="og2-6c-yMW" firstAttribute="leading" secondItem="wHt-70-Sgs" secondAttribute="trailing" constant="27" id="oWC-6B-53P"/>
-                                                <constraint firstItem="wHt-70-Sgs" firstAttribute="leading" secondItem="xxu-x0-Vqu" secondAttribute="trailing" constant="33" id="pto-Lf-7ur"/>
+                                                <constraint firstItem="wHt-70-Sgs" firstAttribute="centerX" secondItem="kra-8g-yAC" secondAttribute="centerX" id="0af-uM-zbp"/>
+                                                <constraint firstItem="wHt-70-Sgs" firstAttribute="top" secondItem="og2-6c-yMW" secondAttribute="top" id="Ce9-D0-TUm"/>
+                                                <constraint firstItem="xxu-x0-Vqu" firstAttribute="top" secondItem="wHt-70-Sgs" secondAttribute="top" id="GbU-LM-buR"/>
+                                                <constraint firstItem="wHt-70-Sgs" firstAttribute="leading" secondItem="xxu-x0-Vqu" secondAttribute="trailing" constant="41" id="Pn5-hx-kiQ"/>
+                                                <constraint firstItem="wHt-70-Sgs" firstAttribute="top" secondItem="kra-8g-yAC" secondAttribute="top" constant="8" id="smM-R6-ueL"/>
+                                                <constraint firstItem="og2-6c-yMW" firstAttribute="leading" secondItem="wHt-70-Sgs" secondAttribute="trailing" constant="30" id="yG7-Jf-rwQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -146,7 +122,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="启鑫APP个人_18" translatesAutoresizingMaskIntoConstraints="NO" id="gqA-et-DOH">
-                                                    <rect key="frame" x="23" y="8" width="30" height="30"/>
+                                                    <rect key="frame" x="23" y="8" width="30" height="33"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="贷款进度查询" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRw-Tc-O0E">
                                                     <rect key="frame" x="66" y="11" width="180" height="21"/>
@@ -164,15 +140,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="启鑫APP个人_21" translatesAutoresizingMaskIntoConstraints="NO" id="igO-yw-Er5">
-                                                    <rect key="frame" x="23" y="8" width="30" height="30"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="完善贷款资料" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3D-w7-WLb">
                                                     <rect key="frame" x="66" y="11" width="180" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="启鑫APP个人_21" translatesAutoresizingMaskIntoConstraints="NO" id="igO-yw-Er5">
+                                                    <rect key="frame" x="23" y="6" width="30" height="33"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -188,7 +164,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="启鑫APP个人_23" translatesAutoresizingMaskIntoConstraints="NO" id="D54-cW-Npy">
-                                                    <rect key="frame" x="23" y="8" width="30" height="30"/>
+                                                    <rect key="frame" x="23" y="8" width="30" height="33"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="信用卡还款提醒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIY-LN-US1">
                                                     <rect key="frame" x="66" y="11" width="180" height="21"/>
@@ -211,7 +187,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="启鑫APP个人_25" translatesAutoresizingMaskIntoConstraints="NO" id="chr-n3-PNM">
-                                                    <rect key="frame" x="23" y="8" width="30" height="30"/>
+                                                    <rect key="frame" x="23" y="6" width="30" height="33"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我的理财" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yuf-kb-f5i">
                                                     <rect key="frame" x="66" y="11" width="80" height="21"/>
@@ -241,15 +217,15 @@
                             </tableViewSection>
                             <tableViewSection id="Mgp-iZ-5NW">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="J9r-ST-8HV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="J9r-ST-8HV">
                                         <rect key="frame" x="0.0" y="755" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J9r-ST-8HV" id="Usx-Vc-8JV">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="启鑫APP个人_28" translatesAutoresizingMaskIntoConstraints="NO" id="klJ-dg-XNc">
-                                                    <rect key="frame" x="23" y="8" width="30" height="30"/>
+                                                    <rect key="frame" x="23" y="8" width="30" height="33"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="设置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6m-5o-xZE">
                                                     <rect key="frame" x="66" y="11" width="180" height="21"/>
@@ -268,7 +244,7 @@
                             <outlet property="delegate" destination="cQ3-gl-43z" id="6Qv-Xh-Got"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Wae-NM-J3p"/>
+                    <navigationItem key="navigationItem" title="我的" id="Wae-NM-J3p"/>
                     <connections>
                         <outlet property="backgroundImg" destination="LD4-Nq-l8F" id="IGZ-eQ-Udb"/>
                         <outlet property="iconImg" destination="5iX-G7-Kwu" id="hMD-Ua-2fS"/>
@@ -277,7 +253,23 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxe-YP-HrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="254" y="309"/>
+            <point key="canvasLocation" x="-67" y="188"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Oux-Hz-MQL">
+            <objects>
+                <navigationController id="Qbb-Xw-S2d" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wz4-O8-XUv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cQ3-gl-43z" kind="relationship" relationship="rootViewController" id="4jR-Xz-1vR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vID-BZ-Bwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-456" y="215"/>
         </scene>
     </scenes>
     <resources>
