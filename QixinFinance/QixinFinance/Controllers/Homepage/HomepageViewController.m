@@ -55,6 +55,7 @@
 {
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.separatorStyle = NO;
     [self.tableView registerClass:[ThreeTableViewCell class] forCellReuseIdentifier:@"homepageReused7"];
     [self.tableView registerClass:[ActivityTableViewCell class] forCellReuseIdentifier:@"homepageReused1"];
    // [self.tableView registerClass:[recommandLoanTableViewCell class] forCellReuseIdentifier:@"homepageReused2"];
@@ -72,7 +73,7 @@
 
     label1.text = @"小编点评";
     label1.font = [UIFont systemFontOfSize:9];
-    UILabel * label2 = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(label1.frame),2, ScreenWidth-40-80+5, 26)];
+    UILabel * label2 = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(label1.frame),2, ScreenWidth-40-80+7, 26)];
     label2.textColor = [UIColor colorWithRed:59.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:100];
     label2.text = @"自动投标，操作方便；本息复投，提高资金利用率。";
     label2.backgroundColor = [UIColor colorWithRed:235.0/255.0 green:235.0/255.0 blue:235.0/255.0 alpha:100];
@@ -137,22 +138,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
-        return 10;
-    }else if (section == 1){
-        return 10;
-    }else if (section == 2){
+    if (section==0||section==1||section==2||section==4||section==5) {
         return 20;
-    }else if (section == 3){
-        return 4;
-    }else if (section == 4){
-        return 20;
-    }else if (section == 5){
-        return 20;
-    }else if (section == 6){
-        return 4;
+    }else{
+        return 1;
     }
-    return 1;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

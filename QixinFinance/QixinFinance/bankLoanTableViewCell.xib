@@ -7,26 +7,40 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="homepageReusedId3" id="KGk-i7-Jjw" customClass="bankLoanTableViewCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="homepageReusedId3" id="KGk-i7-Jjw" customClass="bankLoanTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="推荐贷款" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKG-ba-GJs">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推荐贷款" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKG-ba-GJs">
                         <rect key="frame" x="22" y="11" width="86" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="A8K-RD-QTk"/>
+                            <constraint firstAttribute="width" constant="86" id="bJk-Tz-UYY"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="更多产品" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0c-VM-B1t">
-                        <rect key="frame" x="224" y="11" width="63" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多产品&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0c-VM-B1t">
+                        <rect key="frame" x="224" y="11" width="75" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="A8r-kl-woo"/>
+                            <constraint firstAttribute="height" constant="21" id="Yp1-GV-oG2"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="U0c-VM-B1t" secondAttribute="trailing" constant="21" id="BzR-HA-2h9"/>
+                    <constraint firstItem="U0c-VM-B1t" firstAttribute="centerY" secondItem="kKG-ba-GJs" secondAttribute="centerY" id="Dhg-Tz-Csb"/>
+                    <constraint firstItem="kKG-ba-GJs" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XMc-kW-STk"/>
+                    <constraint firstItem="kKG-ba-GJs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="nY5-7T-OVz"/>
+                </constraints>
             </tableViewCellContentView>
         </tableViewCell>
     </objects>

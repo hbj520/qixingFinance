@@ -8,6 +8,7 @@
 
 #import "PersonPageTableViewController.h"
 #import "UIImage+ImageEffects.h"
+#import "HexColor.h"
 @interface PersonPageTableViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -18,10 +19,13 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+  //  self.tableView.bounces = NO;
    self.navigationController.navigationBar.translucent = NO;
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.allowsMultipleSelection = NO;
    
+    
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -31,6 +35,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+  
     UIImage * bgImg = [UIImage imageNamed:@"启鑫APP个人_01"];
     UIImage * bgImage = [bgImg applyLightEffect];
     self.backgroundImg.image = bgImage;
@@ -52,6 +57,22 @@
     return 10;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (self.view.frame.size.width<=320) {
+        if (scrollView.contentOffset.y>=100) {
+            [UIView animateWithDuration:1 animations:^{
+            self.tabBarController.tabBar.hidden = YES;
+            }];
+            
+        }else{
+            [UIView animateWithDuration:1 animations:^{
+                self.tabBarController.tabBar.hidden = NO;
+            }];
+
+        }
+    }
+}
 
 
 - (void)didReceiveMemoryWarning {
