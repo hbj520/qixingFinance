@@ -25,6 +25,15 @@
 		ABA302401CEB18F300693AC6 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA3023F1CEB18F300693AC6 /* HomepageViewController.m */; };
 		CC05EB651CF05C0C003B4B70 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = CC05EB641CF05C0C003B4B70 /* UINavigationBar+Awesome.m */; };
 		CC05EB681CF05CC3003B4B70 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC05EB671CF05CC3003B4B70 /* PersonViewController.m */; };
+		CC46B5F31CF171A500F84FA8 /* NinaBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46B5F21CF171A500F84FA8 /* NinaBaseView.m */; };
+		CC46B5F61CF171E200F84FA8 /* NinaPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46B5F51CF171E200F84FA8 /* NinaPagerView.m */; };
+		CC46B5F91CF1720F00F84FA8 /* TopTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46B5F81CF1720F00F84FA8 /* TopTabView.m */; };
+		CC46B6001CF1738900F84FA8 /* InfoHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46B5FF1CF1738900F84FA8 /* InfoHotViewController.m */; };
+		CC46B6031CF173A100F84FA8 /* InfoCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46B6021CF173A100F84FA8 /* InfoCardViewController.m */; };
+		CC46B6061CF173B700F84FA8 /* InfoFinicalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46B6051CF173B700F84FA8 /* InfoFinicalViewController.m */; };
+		CC46B6091CF173C300F84FA8 /* InfoLoanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46B6081CF173C300F84FA8 /* InfoLoanViewController.m */; };
+		CC46B60C1CF173D900F84FA8 /* InfoFinialGuardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46B60B1CF173D900F84FA8 /* InfoFinialGuardViewController.m */; };
+		CC46B60F1CF1743A00F84FA8 /* InforMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46B60E1CF1743A00F84FA8 /* InforMainViewController.m */; };
 		CC8F062A1CED51A100B4D945 /* FirstStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F06281CED51A100B4D945 /* FirstStyleTableViewCell.m */; };
 		CC8F062B1CED51A100B4D945 /* FirstStyleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06291CED51A100B4D945 /* FirstStyleTableViewCell.xib */; };
 		CC8F062F1CED58B900B4D945 /* SecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F062D1CED58B900B4D945 /* SecondTableViewCell.m */; };
@@ -102,6 +111,25 @@
 		CC05EB641CF05C0C003B4B70 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = SOURCE_ROOT; };
 		CC05EB661CF05CC3003B4B70 /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonViewController.h; path = QixinFinance/Controllers/PersonViewController.h; sourceTree = SOURCE_ROOT; };
 		CC05EB671CF05CC3003B4B70 /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonViewController.m; path = QixinFinance/Controllers/PersonViewController.m; sourceTree = SOURCE_ROOT; };
+		CC46B5F11CF171A500F84FA8 /* NinaBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NinaBaseView.h; sourceTree = SOURCE_ROOT; };
+		CC46B5F21CF171A500F84FA8 /* NinaBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NinaBaseView.m; sourceTree = SOURCE_ROOT; };
+		CC46B5F41CF171E200F84FA8 /* NinaPagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NinaPagerView.h; sourceTree = SOURCE_ROOT; };
+		CC46B5F51CF171E200F84FA8 /* NinaPagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NinaPagerView.m; sourceTree = SOURCE_ROOT; };
+		CC46B5F71CF1720F00F84FA8 /* TopTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTabView.h; sourceTree = SOURCE_ROOT; };
+		CC46B5F81CF1720F00F84FA8 /* TopTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTabView.m; sourceTree = SOURCE_ROOT; };
+		CC46B5FA1CF1724500F84FA8 /* UIParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIParameter.h; sourceTree = SOURCE_ROOT; };
+		CC46B5FE1CF1738900F84FA8 /* InfoHotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoHotViewController.h; sourceTree = SOURCE_ROOT; };
+		CC46B5FF1CF1738900F84FA8 /* InfoHotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoHotViewController.m; sourceTree = SOURCE_ROOT; };
+		CC46B6011CF173A100F84FA8 /* InfoCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoCardViewController.h; sourceTree = SOURCE_ROOT; };
+		CC46B6021CF173A100F84FA8 /* InfoCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCardViewController.m; sourceTree = SOURCE_ROOT; };
+		CC46B6041CF173B700F84FA8 /* InfoFinicalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoFinicalViewController.h; sourceTree = SOURCE_ROOT; };
+		CC46B6051CF173B700F84FA8 /* InfoFinicalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoFinicalViewController.m; sourceTree = SOURCE_ROOT; };
+		CC46B6071CF173C300F84FA8 /* InfoLoanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoLoanViewController.h; sourceTree = SOURCE_ROOT; };
+		CC46B6081CF173C300F84FA8 /* InfoLoanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoLoanViewController.m; sourceTree = SOURCE_ROOT; };
+		CC46B60A1CF173D900F84FA8 /* InfoFinialGuardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoFinialGuardViewController.h; sourceTree = SOURCE_ROOT; };
+		CC46B60B1CF173D900F84FA8 /* InfoFinialGuardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoFinialGuardViewController.m; sourceTree = SOURCE_ROOT; };
+		CC46B60D1CF1743A00F84FA8 /* InforMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InforMainViewController.h; sourceTree = SOURCE_ROOT; };
+		CC46B60E1CF1743A00F84FA8 /* InforMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InforMainViewController.m; sourceTree = SOURCE_ROOT; };
 		CC8F06271CED51A100B4D945 /* FirstStyleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstStyleTableViewCell.h; path = QixinFinance/FirstStyleTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		CC8F06281CED51A100B4D945 /* FirstStyleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstStyleTableViewCell.m; path = QixinFinance/FirstStyleTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		CC8F06291CED51A100B4D945 /* FirstStyleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FirstStyleTableViewCell.xib; path = QixinFinance/FirstStyleTableViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -300,6 +328,18 @@
 		ABA302191CEB071200693AC6 /* Information */ = {
 			isa = PBXGroup;
 			children = (
+				CC46B60D1CF1743A00F84FA8 /* InforMainViewController.h */,
+				CC46B60E1CF1743A00F84FA8 /* InforMainViewController.m */,
+				CC46B5FE1CF1738900F84FA8 /* InfoHotViewController.h */,
+				CC46B5FF1CF1738900F84FA8 /* InfoHotViewController.m */,
+				CC46B6011CF173A100F84FA8 /* InfoCardViewController.h */,
+				CC46B6021CF173A100F84FA8 /* InfoCardViewController.m */,
+				CC46B6041CF173B700F84FA8 /* InfoFinicalViewController.h */,
+				CC46B6051CF173B700F84FA8 /* InfoFinicalViewController.m */,
+				CC46B6071CF173C300F84FA8 /* InfoLoanViewController.h */,
+				CC46B6081CF173C300F84FA8 /* InfoLoanViewController.m */,
+				CC46B60A1CF173D900F84FA8 /* InfoFinialGuardViewController.h */,
+				CC46B60B1CF173D900F84FA8 /* InfoFinialGuardViewController.m */,
 			);
 			path = Information;
 			sourceTree = "<group>";
@@ -499,6 +539,13 @@
 		CC052DDB1CF167BD00B20F29 /* NinaPagerView */ = {
 			isa = PBXGroup;
 			children = (
+				CC46B5F11CF171A500F84FA8 /* NinaBaseView.h */,
+				CC46B5F21CF171A500F84FA8 /* NinaBaseView.m */,
+				CC46B5F41CF171E200F84FA8 /* NinaPagerView.h */,
+				CC46B5F51CF171E200F84FA8 /* NinaPagerView.m */,
+				CC46B5F71CF1720F00F84FA8 /* TopTabView.h */,
+				CC46B5F81CF1720F00F84FA8 /* TopTabView.m */,
+				CC46B5FA1CF1724500F84FA8 /* UIParameter.h */,
 			);
 			name = NinaPagerView;
 			sourceTree = "<group>";
@@ -734,12 +781,19 @@
 				CC8F06911CEDA17200B4D945 /* TAAbstractDotView.m in Sources */,
 				ABA302291CEB071200693AC6 /* AppDelegate.m in Sources */,
 				CC8F06811CEDA04800B4D945 /* SDCollectionViewCell.m in Sources */,
+				CC46B5F31CF171A500F84FA8 /* NinaBaseView.m in Sources */,
 				ABA3023D1CEB17F300693AC6 /* BaseViewController.m in Sources */,
 				CCD4D5ED1CEC943B009B4550 /* recommandLoanTableViewCell.m in Sources */,
+				CC46B6091CF173C300F84FA8 /* InfoLoanViewController.m in Sources */,
 				ABA302401CEB18F300693AC6 /* HomepageViewController.m in Sources */,
 				CC8F064B1CED704D00B4D945 /* PersonPageTableViewController.m in Sources */,
+				CC46B60F1CF1743A00F84FA8 /* InforMainViewController.m in Sources */,
+				CC46B6061CF173B700F84FA8 /* InfoFinicalViewController.m in Sources */,
+				CC46B60C1CF173D900F84FA8 /* InfoFinialGuardViewController.m in Sources */,
+				CC46B6001CF1738900F84FA8 /* InfoHotViewController.m in Sources */,
 				CC8F06A71CEDC3E600B4D945 /* UIImage+ImageEffects.m in Sources */,
 				CC8F06921CEDA17200B4D945 /* TAAnimatedDotView.m in Sources */,
+				CC46B5F91CF1720F00F84FA8 /* TopTabView.m in Sources */,
 				CCD4D5E81CEC930C009B4550 /* ThreeCollectionViewCell.m in Sources */,
 				CC8F062F1CED58B900B4D945 /* SecondTableViewCell.m in Sources */,
 				CC8F06941CEDA17200B4D945 /* TAPageControl.m in Sources */,
@@ -747,8 +801,10 @@
 				CC05EB651CF05C0C003B4B70 /* UINavigationBar+Awesome.m in Sources */,
 				ABA3022D1CEB084400693AC6 /* HomeTabbarViewController.m in Sources */,
 				CCD4D6061CEC9755009B4550 /* financialProductTableViewCell.m in Sources */,
+				CC46B5F61CF171E200F84FA8 /* NinaPagerView.m in Sources */,
 				CC05EB681CF05CC3003B4B70 /* PersonViewController.m in Sources */,
 				CCD4D6011CEC94B6009B4550 /* financialSelectedTableViewCell.m in Sources */,
+				CC46B6031CF173A100F84FA8 /* InfoCardViewController.m in Sources */,
 				CC8F06841CEDA0C000B4D945 /* SDCycleScrollView.m in Sources */,
 				CCD4D5E41CEC92EE009B4550 /* ThreeTableViewCell.m in Sources */,
 				ABA301DF1CEAFCC700693AC6 /* main.m in Sources */,
