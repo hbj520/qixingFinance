@@ -23,6 +23,8 @@
 		ABA302391CEB090500693AC6 /* HomeTabbars.json in Resources */ = {isa = PBXBuildFile; fileRef = ABA302381CEB090500693AC6 /* HomeTabbars.json */; };
 		ABA3023D1CEB17F300693AC6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA3023C1CEB17F300693AC6 /* BaseViewController.m */; };
 		ABA302401CEB18F300693AC6 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA3023F1CEB18F300693AC6 /* HomepageViewController.m */; };
+		CC05EB651CF05C0C003B4B70 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = CC05EB641CF05C0C003B4B70 /* UINavigationBar+Awesome.m */; };
+		CC05EB681CF05CC3003B4B70 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC05EB671CF05CC3003B4B70 /* PersonViewController.m */; };
 		CC8F062A1CED51A100B4D945 /* FirstStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F06281CED51A100B4D945 /* FirstStyleTableViewCell.m */; };
 		CC8F062B1CED51A100B4D945 /* FirstStyleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06291CED51A100B4D945 /* FirstStyleTableViewCell.xib */; };
 		CC8F062F1CED58B900B4D945 /* SecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F062D1CED58B900B4D945 /* SecondTableViewCell.m */; };
@@ -96,6 +98,10 @@
 		ABA3023C1CEB17F300693AC6 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		ABA3023E1CEB18F300693AC6 /* HomepageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepageViewController.h; sourceTree = "<group>"; };
 		ABA3023F1CEB18F300693AC6 /* HomepageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepageViewController.m; sourceTree = "<group>"; };
+		CC05EB631CF05C0C003B4B70 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = SOURCE_ROOT; };
+		CC05EB641CF05C0C003B4B70 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = SOURCE_ROOT; };
+		CC05EB661CF05CC3003B4B70 /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonViewController.h; path = QixinFinance/Controllers/PersonViewController.h; sourceTree = SOURCE_ROOT; };
+		CC05EB671CF05CC3003B4B70 /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonViewController.m; path = QixinFinance/Controllers/PersonViewController.m; sourceTree = SOURCE_ROOT; };
 		CC8F06271CED51A100B4D945 /* FirstStyleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstStyleTableViewCell.h; path = QixinFinance/FirstStyleTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		CC8F06281CED51A100B4D945 /* FirstStyleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstStyleTableViewCell.m; path = QixinFinance/FirstStyleTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		CC8F06291CED51A100B4D945 /* FirstStyleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FirstStyleTableViewCell.xib; path = QixinFinance/FirstStyleTableViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -303,6 +309,8 @@
 			children = (
 				CC8F06491CED704D00B4D945 /* PersonPageTableViewController.h */,
 				CC8F064A1CED704D00B4D945 /* PersonPageTableViewController.m */,
+				CC05EB661CF05CC3003B4B70 /* PersonViewController.h */,
+				CC05EB671CF05CC3003B4B70 /* PersonViewController.m */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -374,6 +382,7 @@
 		ABA302231CEB071200693AC6 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				CC052DDB1CF167BD00B20F29 /* NinaPagerView */,
 				CC8F067E1CED9FE300B4D945 /* SDCycleScrollView */,
 			);
 			path = Vendor;
@@ -487,6 +496,13 @@
 			name = Image;
 			sourceTree = "<group>";
 		};
+		CC052DDB1CF167BD00B20F29 /* NinaPagerView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = NinaPagerView;
+			sourceTree = "<group>";
+		};
 		CC8F067E1CED9FE300B4D945 /* SDCycleScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +529,8 @@
 			children = (
 				CC8F06A51CEDC3E600B4D945 /* UIImage+ImageEffects.h */,
 				CC8F06A61CEDC3E600B4D945 /* UIImage+ImageEffects.m */,
+				CC05EB631CF05C0C003B4B70 /* UINavigationBar+Awesome.h */,
+				CC05EB641CF05C0C003B4B70 /* UINavigationBar+Awesome.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -726,8 +744,10 @@
 				CC8F062F1CED58B900B4D945 /* SecondTableViewCell.m in Sources */,
 				CC8F06941CEDA17200B4D945 /* TAPageControl.m in Sources */,
 				CCD4D5F21CEC9454009B4550 /* ActivityTableViewCell.m in Sources */,
+				CC05EB651CF05C0C003B4B70 /* UINavigationBar+Awesome.m in Sources */,
 				ABA3022D1CEB084400693AC6 /* HomeTabbarViewController.m in Sources */,
 				CCD4D6061CEC9755009B4550 /* financialProductTableViewCell.m in Sources */,
+				CC05EB681CF05CC3003B4B70 /* PersonViewController.m in Sources */,
 				CCD4D6011CEC94B6009B4550 /* financialSelectedTableViewCell.m in Sources */,
 				CC8F06841CEDA0C000B4D945 /* SDCycleScrollView.m in Sources */,
 				CCD4D5E41CEC92EE009B4550 /* ThreeTableViewCell.m in Sources */,
