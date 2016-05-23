@@ -12,7 +12,7 @@
 //全屏宽和高大小
 #define FUll_VIEW_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define FUll_VIEW_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
-#define FUll_CONTENT_HEIGHT FUll_VIEW_HEIGHT - 64 - 49
+#define FUll_CONTENT_HEIGHT FUll_VIEW_HEIGHT - 64 
 //十六进制颜色值
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define PageBtn .0675 * FUll_VIEW_HEIGHT //6s下高度45

@@ -9,7 +9,9 @@
 #import "InfoHotViewController.h"
 
 @interface InfoHotViewController ()
-
+{
+    UIWebView * _webView;
+}
 @end
 
 @implementation InfoHotViewController
@@ -17,6 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor yellowColor];
+    _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    NSString * filePath = [[NSBundle mainBundle] pathForResource:@"all_loans" ofType:@"html"];
+ //   NSString * htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    NSURLRequest * request = [[NSURLRequest alloc] initWithURL:[NSURL  fileURLWithPath:filePath]];
+    [_webView loadRequest:request];
+    [_webView sizeToFit];
+    [self.view addSubview:_webView];
+   
+    
 }
 
 - (void)didReceiveMemoryWarning {

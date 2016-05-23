@@ -25,7 +25,7 @@
 - (instancetype)initWithTitles:(NSArray *)titles WithVCs:(NSArray *)childVCs WithColorArrays:(NSArray *)colors {
     if (self = [super init]) {
         //Need You Edit,title for the toptabbar
-        self.frame = CGRectMake(0, 10, FUll_VIEW_WIDTH, FUll_CONTENT_HEIGHT);
+        self.frame = CGRectMake(0, 0, FUll_VIEW_WIDTH, FUll_CONTENT_HEIGHT);
         myArray = titles;
         classArray = childVCs;
         colorArray = colors;

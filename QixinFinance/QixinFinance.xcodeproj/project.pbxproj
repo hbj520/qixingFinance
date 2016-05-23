@@ -48,6 +48,26 @@
 		CC8F06931CEDA17200B4D945 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F068E1CEDA17200B4D945 /* TADotView.m */; };
 		CC8F06941CEDA17200B4D945 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F06901CEDA17200B4D945 /* TAPageControl.m */; };
 		CC8F06A71CEDC3E600B4D945 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F06A61CEDC3E600B4D945 /* UIImage+ImageEffects.m */; };
+		CCD02B221CF30C0A00007728 /* aa.html in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B0B1CF30C0A00007728 /* aa.html */; };
+		CCD02B231CF30C0A00007728 /* all_loans.html in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B0C1CF30C0A00007728 /* all_loans.html */; };
+		CCD02B241CF30C0A00007728 /* aa.css in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B0E1CF30C0A00007728 /* aa.css */; };
+		CCD02B251CF30C0A00007728 /* all_loans.css in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B0F1CF30C0A00007728 /* all_loans.css */; };
+		CCD02B261CF30C0A00007728 /* jquery.mobile-1.4.5.min.css in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B101CF30C0A00007728 /* jquery.mobile-1.4.5.min.css */; };
+		CCD02B271CF30C0A00007728 /* list.css in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B111CF30C0A00007728 /* list.css */; };
+		CCD02B281CF30C0A00007728 /* public.css in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B121CF30C0A00007728 /* public.css */; };
+		CCD02B291CF30C0A00007728 /* slick.css in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B131CF30C0A00007728 /* slick.css */; };
+		CCD02B2A1CF30C0A00007728 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B141CF30C0A00007728 /* style.css */; };
+		CCD02B2B1CF30C0A00007728 /* 01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B161CF30C0A00007728 /* 01.jpg */; };
+		CCD02B2C1CF30C0A00007728 /* 02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B171CF30C0A00007728 /* 02.jpg */; };
+		CCD02B2D1CF30C0A00007728 /* aa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B181CF30C0A00007728 /* aa.jpg */; };
+		CCD02B2E1CF30C0A00007728 /* huo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B191CF30C0A00007728 /* huo.jpg */; };
+		CCD02B2F1CF30C0A00007728 /* locan01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B1A1CF30C0A00007728 /* locan01.jpg */; };
+		CCD02B301CF30C0A00007728 /* mj.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B1B1CF30C0A00007728 /* mj.png */; };
+		CCD02B311CF30C0A00007728 /* xia.png in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B1C1CF30C0A00007728 /* xia.png */; };
+		CCD02B321CF30C0A00007728 /* jquery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B1E1CF30C0A00007728 /* jquery.min.js */; };
+		CCD02B331CF30C0A00007728 /* jquery.mobile-1.4.5.min.js in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B1F1CF30C0A00007728 /* jquery.mobile-1.4.5.min.js */; };
+		CCD02B341CF30C0A00007728 /* slick.min.js in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B201CF30C0A00007728 /* slick.min.js */; };
+		CCD02B351CF30C0A00007728 /* list.html in Resources */ = {isa = PBXBuildFile; fileRef = CCD02B211CF30C0A00007728 /* list.html */; };
 		CCD4D5E41CEC92EE009B4550 /* ThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */; };
 		CCD4D5E81CEC930C009B4550 /* ThreeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5E61CEC930C009B4550 /* ThreeCollectionViewCell.m */; };
 		CCD4D5E91CEC930C009B4550 /* ThreeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D5E71CEC930C009B4550 /* ThreeCollectionViewCell.xib */; };
@@ -157,6 +177,26 @@
 		CC8F06901CEDA17200B4D945 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = SOURCE_ROOT; };
 		CC8F06A51CEDC3E600B4D945 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = SOURCE_ROOT; };
 		CC8F06A61CEDC3E600B4D945 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = SOURCE_ROOT; };
+		CCD02B0B1CF30C0A00007728 /* aa.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = aa.html; sourceTree = "<group>"; };
+		CCD02B0C1CF30C0A00007728 /* all_loans.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = all_loans.html; sourceTree = "<group>"; };
+		CCD02B0E1CF30C0A00007728 /* aa.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = aa.css; sourceTree = "<group>"; };
+		CCD02B0F1CF30C0A00007728 /* all_loans.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = all_loans.css; path = css/all_loans.css; sourceTree = "<group>"; };
+		CCD02B101CF30C0A00007728 /* jquery.mobile-1.4.5.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "jquery.mobile-1.4.5.min.css"; sourceTree = "<group>"; };
+		CCD02B111CF30C0A00007728 /* list.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = list.css; sourceTree = "<group>"; };
+		CCD02B121CF30C0A00007728 /* public.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = public.css; sourceTree = "<group>"; };
+		CCD02B131CF30C0A00007728 /* slick.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = slick.css; sourceTree = "<group>"; };
+		CCD02B141CF30C0A00007728 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		CCD02B161CF30C0A00007728 /* 01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpg; sourceTree = "<group>"; };
+		CCD02B171CF30C0A00007728 /* 02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02.jpg; sourceTree = "<group>"; };
+		CCD02B181CF30C0A00007728 /* aa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = aa.jpg; sourceTree = "<group>"; };
+		CCD02B191CF30C0A00007728 /* huo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = huo.jpg; sourceTree = "<group>"; };
+		CCD02B1A1CF30C0A00007728 /* locan01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = locan01.jpg; sourceTree = "<group>"; };
+		CCD02B1B1CF30C0A00007728 /* mj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mj.png; sourceTree = "<group>"; };
+		CCD02B1C1CF30C0A00007728 /* xia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xia.png; sourceTree = "<group>"; };
+		CCD02B1E1CF30C0A00007728 /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
+		CCD02B1F1CF30C0A00007728 /* jquery.mobile-1.4.5.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery.mobile-1.4.5.min.js"; sourceTree = "<group>"; };
+		CCD02B201CF30C0A00007728 /* slick.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = slick.min.js; sourceTree = "<group>"; };
+		CCD02B211CF30C0A00007728 /* list.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = list.html; sourceTree = "<group>"; };
 		CCD4D5E21CEC92EE009B4550 /* ThreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeTableViewCell.h; path = QixinFinance/ThreeTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeTableViewCell.m; path = QixinFinance/ThreeTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		CCD4D5E51CEC930C009B4550 /* ThreeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeCollectionViewCell.h; path = QixinFinance/ThreeCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
@@ -239,6 +279,7 @@
 		ABA301D11CEAFCC600693AC6 = {
 			isa = PBXGroup;
 			children = (
+				CCD02B0A1CF30C0A00007728 /* 启鑫 */,
 				ABA301DC1CEAFCC700693AC6 /* QixinFinance */,
 				ABA301F91CEAFCC700693AC6 /* QixinFinanceTests */,
 				ABA302041CEAFCC700693AC6 /* QixinFinanceUITests */,
@@ -595,6 +636,57 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
+		CCD02B0A1CF30C0A00007728 /* 启鑫 */ = {
+			isa = PBXGroup;
+			children = (
+				CCD02B0B1CF30C0A00007728 /* aa.html */,
+				CCD02B0C1CF30C0A00007728 /* all_loans.html */,
+				CCD02B0F1CF30C0A00007728 /* all_loans.css */,
+				CCD02B0D1CF30C0A00007728 /* css */,
+				CCD02B151CF30C0A00007728 /* images */,
+				CCD02B1D1CF30C0A00007728 /* js */,
+				CCD02B211CF30C0A00007728 /* list.html */,
+			);
+			path = "启鑫";
+			sourceTree = "<group>";
+		};
+		CCD02B0D1CF30C0A00007728 /* css */ = {
+			isa = PBXGroup;
+			children = (
+				CCD02B0E1CF30C0A00007728 /* aa.css */,
+				CCD02B101CF30C0A00007728 /* jquery.mobile-1.4.5.min.css */,
+				CCD02B111CF30C0A00007728 /* list.css */,
+				CCD02B121CF30C0A00007728 /* public.css */,
+				CCD02B131CF30C0A00007728 /* slick.css */,
+				CCD02B141CF30C0A00007728 /* style.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		CCD02B151CF30C0A00007728 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				CCD02B161CF30C0A00007728 /* 01.jpg */,
+				CCD02B171CF30C0A00007728 /* 02.jpg */,
+				CCD02B181CF30C0A00007728 /* aa.jpg */,
+				CCD02B191CF30C0A00007728 /* huo.jpg */,
+				CCD02B1A1CF30C0A00007728 /* locan01.jpg */,
+				CCD02B1B1CF30C0A00007728 /* mj.png */,
+				CCD02B1C1CF30C0A00007728 /* xia.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		CCD02B1D1CF30C0A00007728 /* js */ = {
+			isa = PBXGroup;
+			children = (
+				CCD02B1E1CF30C0A00007728 /* jquery.min.js */,
+				CCD02B1F1CF30C0A00007728 /* jquery.mobile-1.4.5.min.js */,
+				CCD02B201CF30C0A00007728 /* slick.min.js */,
+			);
+			path = js;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -701,23 +793,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCD02B2E1CF30C0A00007728 /* huo.jpg in Resources */,
+				CCD02B291CF30C0A00007728 /* slick.css in Resources */,
+				CCD02B281CF30C0A00007728 /* public.css in Resources */,
+				CCD02B2D1CF30C0A00007728 /* aa.jpg in Resources */,
+				CCD02B221CF30C0A00007728 /* aa.html in Resources */,
+				CCD02B2C1CF30C0A00007728 /* 02.jpg in Resources */,
+				CCD02B351CF30C0A00007728 /* list.html in Resources */,
+				CCD02B311CF30C0A00007728 /* xia.png in Resources */,
 				CCD4D5E91CEC930C009B4550 /* ThreeCollectionViewCell.xib in Resources */,
 				ABA302391CEB090500693AC6 /* HomeTabbars.json in Resources */,
 				CC8F062B1CED51A100B4D945 /* FirstStyleTableViewCell.xib in Resources */,
 				ABA302301CEB089900693AC6 /* Homepage.storyboard in Resources */,
+				CCD02B231CF30C0A00007728 /* all_loans.html in Resources */,
+				CCD02B321CF30C0A00007728 /* jquery.min.js in Resources */,
 				ABA302321CEB08A500693AC6 /* Forum.storyboard in Resources */,
 				CCD4D6071CEC9755009B4550 /* financialProductTableViewCell.xib in Resources */,
 				ABA301F01CEAFCC700693AC6 /* LaunchScreen.storyboard in Resources */,
+				CCD02B261CF30C0A00007728 /* jquery.mobile-1.4.5.min.css in Resources */,
 				ABA302341CEB08BE00693AC6 /* Information.storyboard in Resources */,
+				CCD02B301CF30C0A00007728 /* mj.png in Resources */,
+				CCD02B251CF30C0A00007728 /* all_loans.css in Resources */,
 				CCD4D6021CEC94B6009B4550 /* financialSelectedTableViewCell.xib in Resources */,
 				ABA301ED1CEAFCC700693AC6 /* Assets.xcassets in Resources */,
 				CCD4D5FD1CEC9482009B4550 /* HotCardTableViewCell.xib in Resources */,
+				CCD02B341CF30C0A00007728 /* slick.min.js in Resources */,
+				CCD02B2F1CF30C0A00007728 /* locan01.jpg in Resources */,
 				CCD4D5F81CEC946D009B4550 /* bankLoanTableViewCell.xib in Resources */,
 				ABA301EB1CEAFCC700693AC6 /* Main.storyboard in Resources */,
+				CCD02B271CF30C0A00007728 /* list.css in Resources */,
+				CCD02B241CF30C0A00007728 /* aa.css in Resources */,
 				CCD4D5F31CEC9454009B4550 /* ActivityTableViewCell.xib in Resources */,
 				CCD4D5EE1CEC943B009B4550 /* recommandLoanTableViewCell.xib in Resources */,
+				CCD02B2A1CF30C0A00007728 /* style.css in Resources */,
+				CCD02B331CF30C0A00007728 /* jquery.mobile-1.4.5.min.js in Resources */,
 				ABA302361CEB08D100693AC6 /* Personal.storyboard in Resources */,
 				CC8F06301CED58B900B4D945 /* SecondTableViewCell.xib in Resources */,
+				CCD02B2B1CF30C0A00007728 /* 01.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
