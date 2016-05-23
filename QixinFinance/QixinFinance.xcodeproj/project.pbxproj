@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1981117F1BB74D9D2B6661BA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F82754A037F78859AEDBF99B /* libPods.a */; };
+		AB76A5251CF292C20001D961 /* MyAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AB76A5241CF292C20001D961 /* MyAPI.m */; };
 		ABA301DF1CEAFCC700693AC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA301DE1CEAFCC700693AC6 /* main.m */; };
 		ABA301EB1CEAFCC700693AC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA301E91CEAFCC700693AC6 /* Main.storyboard */; };
 		ABA301ED1CEAFCC700693AC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA301EC1CEAFCC700693AC6 /* Assets.xcassets */; };
@@ -83,6 +84,8 @@
 
 /* Begin PBXFileReference section */
 		39D3FB5AAE129DB0C9DFE79B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		AB76A5231CF292C20001D961 /* MyAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAPI.h; sourceTree = SOURCE_ROOT; };
+		AB76A5241CF292C20001D961 /* MyAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAPI.m; sourceTree = SOURCE_ROOT; };
 		ABA301DA1CEAFCC600693AC6 /* QixinFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QixinFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA301DE1CEAFCC700693AC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ABA301EA1CEAFCC700693AC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -222,6 +225,15 @@
 				F82754A037F78859AEDBF99B /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB76A5221CF292B30001D961 /* MyAPI */ = {
+			isa = PBXGroup;
+			children = (
+				AB76A5231CF292C20001D961 /* MyAPI.h */,
+				AB76A5241CF292C20001D961 /* MyAPI.m */,
+			);
+			name = MyAPI;
 			sourceTree = "<group>";
 		};
 		ABA301D11CEAFCC600693AC6 = {
@@ -414,6 +426,7 @@
 		ABA302221CEB071200693AC6 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				AB76A5221CF292B30001D961 /* MyAPI */,
 				CC8F06A41CEDC3C800B4D945 /* Category */,
 			);
 			path = Util;
@@ -783,6 +796,7 @@
 				CC8F06811CEDA04800B4D945 /* SDCollectionViewCell.m in Sources */,
 				CC46B5F31CF171A500F84FA8 /* NinaBaseView.m in Sources */,
 				ABA3023D1CEB17F300693AC6 /* BaseViewController.m in Sources */,
+				AB76A5251CF292C20001D961 /* MyAPI.m in Sources */,
 				CCD4D5ED1CEC943B009B4550 /* recommandLoanTableViewCell.m in Sources */,
 				CC46B6091CF173C300F84FA8 /* InfoLoanViewController.m in Sources */,
 				ABA302401CEB18F300693AC6 /* HomepageViewController.m in Sources */,
