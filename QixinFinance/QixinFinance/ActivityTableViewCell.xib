@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="activity.png" translatesAutoresizingMaskIntoConstraints="NO" id="AxB-fy-DbD">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="activityimage" translatesAutoresizingMaskIntoConstraints="NO" id="AxB-fy-DbD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                     </imageView>
                 </subviews>
@@ -31,6 +31,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="activity.png" width="426" height="101"/>
+        <image name="activityimage" width="1080" height="234"/>
     </resources>
 </document>

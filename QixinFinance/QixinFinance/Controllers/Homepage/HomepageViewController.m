@@ -85,7 +85,7 @@
     UIView * headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
     headView.backgroundColor = [UIColor blackColor];
     _imgArray  = [[NSMutableArray alloc] init];
-    NSString * imgPath = @"启鑫app首页_09.png";
+    NSString * imgPath = @"cycleviewicon";
     for(NSInteger i = 0 ;i<3;i++){
         [_imgArray addObject:imgPath];
     }

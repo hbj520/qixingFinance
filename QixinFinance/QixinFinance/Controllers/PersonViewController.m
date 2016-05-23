@@ -31,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    imgArray = @[@"启鑫APP个人_icon1",@"启鑫APP个人_icon2",@"启鑫APP个人_icon3",@"启鑫APP个人_icon4",@"启鑫APP个人_icon5"];
+    imgArray = @[@"PersonProgressSearch",@"PersonEditingLoanInfo",@"PersonCreditCard",@"PersonManageFinical",@"PersonSetting"];
     descArray = @[@"贷款进度查询",@"完善贷款资料",@"信用卡还款提醒",@"我的理财",@"设置"];
     self.tableView.dataSource = self;
 
@@ -95,7 +95,7 @@
     [self.headIcon addGestureRecognizer:TapIcon];
     [self initPickView];
     self.backGroundImage.userInteractionEnabled = YES;
-    UIImage * backImg = [UIImage imageNamed:@"启鑫APP个人_01"];
+    UIImage * backImg = [UIImage imageNamed:@"PersonBackGroundIcon"];
     UIImage * backImage = [backImg applyLightEffect];
     self.backGroundImage.image = backImage;
     UITapGestureRecognizer *TapBackImg = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackImg:)];

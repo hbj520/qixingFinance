@@ -14,8 +14,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="product.png" translatesAutoresizingMaskIntoConstraints="NO" id="qV4-Gc-8bI">
-                        <rect key="frame" x="19" y="14" width="69" height="66"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="managefinicalselectedicon" translatesAutoresizingMaskIntoConstraints="NO" id="qV4-Gc-8bI">
+                        <rect key="frame" x="19" y="15" width="69" height="69"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="69" id="3Io-Oz-oGq"/>
                             <constraint firstAttribute="width" constant="69" id="7Po-ht-zRE"/>
@@ -28,7 +28,7 @@
                             <constraint firstAttribute="width" constant="131" id="UeU-Q4-fOv"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个月 期限" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoQ-9g-ooY">
@@ -58,7 +58,7 @@
                             <constraint firstAttribute="height" constant="21" id="jp1-u6-18B"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11.0%↑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wad-G6-YeN">
@@ -96,6 +96,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="product.png" width="68" height="69"/>
+        <image name="managefinicalselectedicon" width="68" height="69"/>
     </resources>
 </document>
