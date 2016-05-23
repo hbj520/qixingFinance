@@ -35,18 +35,7 @@
     descArray = @[@"贷款进度查询",@"完善贷款资料",@"信用卡还款提醒",@"我的理财",@"设置"];
     self.tableView.dataSource = self;
 
-    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
-    self.headIcon.userInteractionEnabled = YES;
-    UITapGestureRecognizer *TapIcon = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapIconAct:)];
-    [self.headIcon addGestureRecognizer:TapIcon];
-    [self initPickView];
-    self.backGroundImage.userInteractionEnabled = YES;
-    UIImage * backImg = [UIImage imageNamed:@"启鑫APP个人_01"];
-    UIImage * backImage = [backImg applyLightEffect];
-    self.backGroundImage.image = backImage;
-    UITapGestureRecognizer *TapBackImg = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackImg:)];
-    [self.backGroundImage addGestureRecognizer:TapBackImg];
-}
+  }
 
 - (void)tapBackImg:(UIGestureRecognizer *)ges{
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"打开照相机",@"从相册选取", nil];
@@ -100,6 +89,18 @@
     self.tableView.delegate = self;
     [self scrollViewDidScroll:self.tableView];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
+    self.headIcon.userInteractionEnabled = YES;
+    UITapGestureRecognizer *TapIcon = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapIconAct:)];
+    [self.headIcon addGestureRecognizer:TapIcon];
+    [self initPickView];
+    self.backGroundImage.userInteractionEnabled = YES;
+    UIImage * backImg = [UIImage imageNamed:@"启鑫APP个人_01"];
+    UIImage * backImage = [backImg applyLightEffect];
+    self.backGroundImage.image = backImage;
+    UITapGestureRecognizer *TapBackImg = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackImg:)];
+    [self.backGroundImage addGestureRecognizer:TapBackImg];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -215,6 +216,43 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 45;
+}
+
+#pragma mark -- 写跳转控制器的地方
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger i = indexPath.section * 10 + indexPath.row;
+    switch (i) {
+        case 0:
+        {
+            
+        }
+            break;
+            case 1:
+        {
+            
+        }
+            break;
+            
+            case 10:
+        {
+            
+        }
+            break;
+            case 20:
+        {
+            
+        }
+            break;
+            
+            case 30:
+        {
+            
+        }
+            break;
+              default:
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
