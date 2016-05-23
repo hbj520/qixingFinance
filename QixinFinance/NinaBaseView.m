@@ -116,9 +116,9 @@
             }
         }
         //创建tabTop下方总览线
-        topTabBottomLine = [UIView new];
-        topTabBottomLine.backgroundColor = UIColorFromRGB(0xcecece);
-        [_topTab addSubview:topTabBottomLine];
+    //    topTabBottomLine = [UIView new];
+      //  topTabBottomLine.backgroundColor = UIColorFromRGB(0xcecece);
+      //  [_topTab addSubview:topTabBottomLine];
         //创建选中移动线
         lineBottom = [UIView new];
         if (underline) {

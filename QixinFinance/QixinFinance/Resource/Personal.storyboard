@@ -45,7 +45,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U5Q-hS-33N">
                                             <rect key="frame" x="0.0" y="-64" width="320" height="229"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="启鑫APP个人_03" translatesAutoresizingMaskIntoConstraints="NO" id="omU-fQ-Xo3">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PersonHeadIcon" translatesAutoresizingMaskIntoConstraints="NO" id="omU-fQ-Xo3">
                                             <rect key="frame" x="18" y="80" width="77" height="77"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="77" id="KoY-Et-iAe"/>
@@ -77,7 +77,7 @@
                                                 <constraint firstAttribute="width" constant="50" id="FYn-TO-cIQ"/>
                                                 <constraint firstAttribute="height" constant="50" id="aHg-bf-hYm"/>
                                             </constraints>
-                                            <state key="normal" title="Button" image="启鑫APP个人浏览记录"/>
+                                            <state key="normal" title="Button" image="PersonViewRecord"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvs-IO-Hu2">
                                             <rect key="frame" x="23" y="190" width="50" height="50"/>
@@ -86,7 +86,7 @@
                                                 <constraint firstAttribute="width" constant="50" id="05y-Hg-hfX"/>
                                                 <constraint firstAttribute="height" constant="50" id="BHw-7M-ehM"/>
                                             </constraints>
-                                            <state key="normal" title="Button" image="启鑫APP个人推送"/>
+                                            <state key="normal" title="Button" image="PersonApply"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qdg-Gp-He1">
                                             <rect key="frame" x="243" y="190" width="50" height="50"/>
@@ -95,7 +95,7 @@
                                                 <constraint firstAttribute="width" constant="50" id="GJa-cd-48I"/>
                                                 <constraint firstAttribute="height" constant="50" id="eon-By-7rd"/>
                                             </constraints>
-                                            <state key="normal" title="Button" image="启鑫APP个人收藏"/>
+                                            <state key="normal" title="Button" image="PersonCollection"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推送" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zX9-Ym-A6f">
                                             <rect key="frame" x="23" y="248" width="50" height="20"/>
@@ -465,8 +465,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="PersonApply" width="113" height="112"/>
+        <image name="PersonCollection" width="114" height="112"/>
+        <image name="PersonHeadIcon" width="216" height="214"/>
+        <image name="PersonViewRecord" width="113" height="112"/>
         <image name="启鑫APP个人_01" width="1080" height="670"/>
-        <image name="启鑫APP个人_03" width="216" height="214"/>
+        <image name="启鑫APP个人_03" width="68" height="69"/>
         <image name="启鑫APP个人_18" width="61" height="66"/>
         <image name="启鑫APP个人_21" width="62" height="53"/>
         <image name="启鑫APP个人_23" width="62" height="45"/>

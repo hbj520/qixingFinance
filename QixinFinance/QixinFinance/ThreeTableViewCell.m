@@ -60,7 +60,7 @@
     return 1;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSArray * imgArray = @[@"启鑫app首页_12.png",@"启鑫app首页_14",@"启鑫app首页_16"];
+    NSArray * imgArray = @[@"loanmoneybtn",@"creditcardbtn",@"managefinicalbtn"];
     //重用cell
     ThreeCollectionViewCell *cell = [_collectionView dequeueReusableCellWithReuseIdentifier:cellReuseId forIndexPath:indexPath];
     cell.imgView.image = [UIImage imageNamed:imgArray[indexPath.item]];
