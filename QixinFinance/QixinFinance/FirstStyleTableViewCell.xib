@@ -14,19 +14,62 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c6X-e4-eQa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backImg" translatesAutoresizingMaskIntoConstraints="NO" id="qId-ng-EDu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="141"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="128" id="FUq-uc-zvr"/>
+                            <constraint firstAttribute="height" constant="141" id="ZL1-vA-ALi"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="c6X-e4-eQa" secondAttribute="trailing" id="RxP-TJ-gfM"/>
-                    <constraint firstItem="c6X-e4-eQa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Tmm-c0-hk6"/>
-                    <constraint firstItem="c6X-e4-eQa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Tqg-dZ-Vd9"/>
+                    <constraint firstItem="m9r-24-mA6" firstAttribute="leading" secondItem="2rh-zX-My1" secondAttribute="trailing" id="06A-2G-UZY"/>
+                    <constraint firstItem="Cui-b4-sQM" firstAttribute="leading" secondItem="5UL-PK-3Ia" secondAttribute="trailing" constant="32" id="7wr-LK-qP5"/>
+                    <constraint firstItem="hKf-wj-yFf" firstAttribute="top" secondItem="5PT-6X-kWy" secondAttribute="bottom" constant="5" id="BsT-Fd-nYX"/>
+                    <constraint firstItem="m9r-24-mA6" firstAttribute="leading" secondItem="E8m-Hp-Did" secondAttribute="trailing" constant="40" id="Cfi-j9-8CZ"/>
+                    <constraint firstItem="YZg-He-OJS" firstAttribute="centerY" secondItem="hKf-wj-yFf" secondAttribute="centerY" id="D0k-c1-lYw"/>
+                    <constraint firstItem="qId-ng-EDu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="DKE-8V-ckL"/>
+                    <constraint firstItem="5UL-PK-3Ia" firstAttribute="leading" secondItem="opu-Ui-vuf" secondAttribute="trailing" constant="15" id="GVi-Gw-bYO"/>
+                    <constraint firstAttribute="trailing" secondItem="m9r-24-mA6" secondAttribute="trailing" constant="23" id="LPe-tu-Qem"/>
+                    <constraint firstItem="uiN-pA-vio" firstAttribute="centerY" secondItem="YZg-He-OJS" secondAttribute="centerY" id="MOr-lD-HJx"/>
+                    <constraint firstItem="2rh-zX-My1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="MiF-dY-guz"/>
+                    <constraint firstItem="m9r-24-mA6" firstAttribute="top" secondItem="2rh-zX-My1" secondAttribute="top" id="PLX-ai-aVt"/>
+                    <constraint firstItem="qId-ng-EDu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="TMI-4V-qhd"/>
+                    <constraint firstItem="5UL-PK-3Ia" firstAttribute="top" secondItem="E8m-Hp-Did" secondAttribute="bottom" constant="40" id="V2r-YL-iBy"/>
+                    <constraint firstItem="5UL-PK-3Ia" firstAttribute="top" secondItem="qId-ng-EDu" secondAttribute="bottom" constant="17" id="ZeX-DK-PNV"/>
+                    <constraint firstItem="GyY-vd-4Co" firstAttribute="top" secondItem="qId-ng-EDu" secondAttribute="bottom" constant="17" id="cVq-WX-42W"/>
+                    <constraint firstItem="OwO-fg-tGK" firstAttribute="centerY" secondItem="uiN-pA-vio" secondAttribute="centerY" id="cZL-hU-ihX"/>
+                    <constraint firstItem="qId-ng-EDu" firstAttribute="height" secondItem="2rh-zX-My1" secondAttribute="height" id="dZ5-nT-0Jh"/>
+                    <constraint firstItem="uiN-pA-vio" firstAttribute="centerX" secondItem="5UL-PK-3Ia" secondAttribute="centerX" id="duC-ye-9Uf"/>
+                    <constraint firstItem="E8m-Hp-Did" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="idi-bf-osS"/>
+                    <constraint firstItem="opu-Ui-vuf" firstAttribute="top" secondItem="qId-ng-EDu" secondAttribute="bottom" constant="8" id="l0l-bq-MmN"/>
+                    <constraint firstItem="Cui-b4-sQM" firstAttribute="top" secondItem="qId-ng-EDu" secondAttribute="bottom" constant="17" id="lUM-gl-xUX"/>
+                    <constraint firstItem="opu-Ui-vuf" firstAttribute="leading" secondItem="GyY-vd-4Co" secondAttribute="trailing" constant="15" id="mVq-eQ-IwH"/>
+                    <constraint firstItem="2rh-zX-My1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="83" id="n03-DP-HDh"/>
+                    <constraint firstItem="5PT-6X-kWy" firstAttribute="top" secondItem="qId-ng-EDu" secondAttribute="bottom" constant="17" id="oOS-3p-JPU"/>
+                    <constraint firstItem="OwO-fg-tGK" firstAttribute="centerX" secondItem="Cui-b4-sQM" secondAttribute="centerX" id="oy6-48-orr"/>
+                    <constraint firstItem="opu-Ui-vuf" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="p9w-2r-1n0"/>
+                    <constraint firstAttribute="trailing" secondItem="qId-ng-EDu" secondAttribute="trailing" id="s42-e8-gmW"/>
+                    <constraint firstItem="hKf-wj-yFf" firstAttribute="centerX" secondItem="5PT-6X-kWy" secondAttribute="centerX" id="tEa-ku-SDa"/>
+                    <constraint firstItem="GyY-vd-4Co" firstAttribute="leading" secondItem="5PT-6X-kWy" secondAttribute="trailing" constant="32" id="upf-yY-ghk"/>
+                    <constraint firstItem="YZg-He-OJS" firstAttribute="centerX" secondItem="GyY-vd-4Co" secondAttribute="centerX" id="xDy-5c-D8E"/>
+                    <constraint firstAttribute="bottom" secondItem="opu-Ui-vuf" secondAttribute="bottom" constant="17" id="zsX-h7-g44"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="dZ5-nT-0Jh"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
+            <point key="canvasLocation" x="351" y="416"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="backImg" width="1080" height="448"/>
+        <image name="creditBtn" width="153" height="157"/>
+        <image name="inputImg" width="670" height="90"/>
+        <image name="loanpopleBtn" width="154" height="157"/>
+        <image name="mortBtn" width="152" height="157"/>
+        <image name="resultBtn" width="284" height="90"/>
+        <image name="workBtn" width="153" height="157"/>
+    </resources>
 </document>
