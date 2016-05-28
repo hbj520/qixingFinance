@@ -159,6 +159,13 @@
                     <constraint firstItem="2fv-vn-hzN" firstAttribute="top" secondItem="CRi-Sz-PhI" secondAttribute="bottom" constant="22" id="yko-xQ-AlW"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="bgImg" destination="CRi-Sz-PhI" id="NDM-V7-yYB"/>
+                <outlet property="btncredit" destination="ufZ-HU-7DO" id="MFG-yq-TCk"/>
+                <outlet property="btnloanpeople" destination="fJG-sv-jPR" id="Lt4-2V-fWL"/>
+                <outlet property="btnmort" destination="2fv-vn-hzN" id="Ahk-fz-pkx"/>
+                <outlet property="btnwork" destination="KOQ-BN-3Cw" id="Epe-uV-puy"/>
+            </connections>
             <point key="canvasLocation" x="351" y="416"/>
         </tableViewCell>
     </objects>

@@ -47,6 +47,10 @@
     if (indexPath.section==0) {
         FirstStyleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        __weak FormuViewController * weakself = self;
+        cell.block = ^(){
+            [weakself pushVC];
+        };
         return cell;
     }else{
         SecondTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celltwo" forIndexPath:indexPath];
@@ -73,6 +77,13 @@
     }else{
         return 320;
     }
+}
+
+- (void)pushVC
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
+    FormuViewController *VC = (FormuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

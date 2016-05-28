@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void(^clickBtn)();
 @interface FirstStyleTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *bgImg;
+@property (weak, nonatomic) IBOutlet UIButton *btnwork;
+@property (weak, nonatomic) IBOutlet UIButton *btnloanpeople;
+@property (weak, nonatomic) IBOutlet UIButton *btnmort;
+@property (weak, nonatomic) IBOutlet UIButton *btncredit;
+@property(nonatomic,copy)clickBtn block;
 @end

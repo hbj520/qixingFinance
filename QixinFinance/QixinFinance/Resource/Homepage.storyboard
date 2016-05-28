@@ -69,7 +69,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmP-5K-UQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="79" y="224"/>
+            <point key="canvasLocation" x="-208" y="180"/>
         </scene>
         <!--贷款-->
         <scene sceneID="9aO-Ng-JSK">
@@ -88,7 +88,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bsh-i5-hY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639" y="216"/>
+            <point key="canvasLocation" x="134" y="174"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pYb-eF-etZ">
+            <objects>
+                <navigationController id="6RW-Qz-8lQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wKJ-Jq-RZ3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Xeu-OW-MKi" kind="relationship" relationship="rootViewController" id="nXC-c4-hCD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSF-w9-3gE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="346" y="-16"/>
+        </scene>
+        <!--全部贷款-->
+        <scene sceneID="r2b-zX-ZHw">
+            <objects>
+                <viewController storyboardIdentifier="AllLoan" id="Xeu-OW-MKi" customClass="AllLoanViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EeZ-LG-90w"/>
+                        <viewControllerLayoutGuide type="bottom" id="oZ9-LF-a6D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c7K-sG-gKn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="全部贷款" id="eFv-Dm-SUU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qwh-uZ-RyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="679" y="22"/>
         </scene>
     </scenes>
 </document>

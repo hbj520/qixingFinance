@@ -13,8 +13,14 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    [self.btnmort addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)btnClick
+{
+    self.block();
+    NSLog(@"bug");
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
