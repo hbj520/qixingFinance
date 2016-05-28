@@ -84,6 +84,7 @@
 		CCD4D6021CEC94B6009B4550 /* financialSelectedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6001CEC94B6009B4550 /* financialSelectedTableViewCell.xib */; };
 		CCD4D6061CEC9755009B4550 /* financialProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D6041CEC9755009B4550 /* financialProductTableViewCell.m */; };
 		CCD4D6071CEC9755009B4550 /* financialProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6051CEC9755009B4550 /* financialProductTableViewCell.xib */; };
+		CCD663D61CF96D9400E83FD2 /* HomeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD663D51CF96D9400E83FD2 /* HomeDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,6 +224,8 @@
 		CCD4D6031CEC9755009B4550 /* financialProductTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = financialProductTableViewCell.h; path = QixinFinance/financialProductTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		CCD4D6041CEC9755009B4550 /* financialProductTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = financialProductTableViewCell.m; path = QixinFinance/financialProductTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		CCD4D6051CEC9755009B4550 /* financialProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = financialProductTableViewCell.xib; path = QixinFinance/financialProductTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		CCD663D41CF96D9400E83FD2 /* HomeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDetailViewController.h; sourceTree = "<group>"; };
+		CCD663D51CF96D9400E83FD2 /* HomeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDetailViewController.m; sourceTree = "<group>"; };
 		DC2CC466DFED286C272AB859 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F82754A037F78859AEDBF99B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -370,6 +373,8 @@
 			children = (
 				ABA3023E1CEB18F300693AC6 /* HomepageViewController.h */,
 				ABA3023F1CEB18F300693AC6 /* HomepageViewController.m */,
+				CCD663D41CF96D9400E83FD2 /* HomeDetailViewController.h */,
+				CCD663D51CF96D9400E83FD2 /* HomeDetailViewController.m */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -935,6 +940,7 @@
 				CC46B5F61CF171E200F84FA8 /* NinaPagerView.m in Sources */,
 				CC05EB681CF05CC3003B4B70 /* PersonViewController.m in Sources */,
 				CCD4D6011CEC94B6009B4550 /* financialSelectedTableViewCell.m in Sources */,
+				CCD663D61CF96D9400E83FD2 /* HomeDetailViewController.m in Sources */,
 				CC97D4A71CF59546007DB11D /* FormuViewController.m in Sources */,
 				CC46B6031CF173A100F84FA8 /* InfoCardViewController.m in Sources */,
 				CC8F06841CEDA0C000B4D945 /* SDCycleScrollView.m in Sources */,

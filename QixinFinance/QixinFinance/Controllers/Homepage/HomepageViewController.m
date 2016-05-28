@@ -15,6 +15,7 @@
 #import "financialProductTableViewCell.h"
 #import "financialSelectedTableViewCell.h"
 #import "SDCycleScrollView.h"
+#import "HomeDetailViewController.h"
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 @interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -160,7 +161,13 @@
 
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section==3) {
+        HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
