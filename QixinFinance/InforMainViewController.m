@@ -43,7 +43,7 @@
 
     NinaPagerView *ninaPagerView = [[NinaPagerView alloc] initWithTitles:titleArray WithVCs:vcsArray WithColorArrays:colorArray];
     
-    [self.navigationController.navigationBar addSubview:ninaPagerView];
+    [self.navigationController.view addSubview:ninaPagerView];
 
 }
 

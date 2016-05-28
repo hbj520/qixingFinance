@@ -16,6 +16,7 @@
 #import "financialSelectedTableViewCell.h"
 #import "SDCycleScrollView.h"
 #import "HomeDetailViewController.h"
+#import "FormuViewController.h"
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 @interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -112,6 +113,10 @@
 {
     if (indexPath.section==0) {
         ThreeTableViewCell * cell = [[ThreeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:@"homepageReused7"];
+        __weak HomepageViewController *weakself = self;
+        cell.block = ^(){
+            [weakself clickLoan];
+        };
             return cell;
     }else if (indexPath.section==1){
         ActivityTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"ActivityTableViewCell" owner:self options:nil] lastObject];
@@ -165,7 +170,7 @@
 {
     if (indexPath.section==3) {
         HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
-        [self presentViewController:vc animated:YES completion:nil];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
@@ -185,6 +190,17 @@
 - (void)cityAct:(id)sender{
     
 }
+
+- (void)clickLoan
+{
+//    FormuViewController * vc = [[FormuViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
+   FormuViewController *VC = (FormuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MoreLoan"];
+    [self.navigationController pushViewController:VC animated:YES];
+
+}
+
 /*
 #pragma mark - Navigation
 

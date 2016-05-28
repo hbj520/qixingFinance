@@ -58,6 +58,13 @@
                         <rect key="frame" x="0.0" y="39" width="320" height="260"/>
                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                     </webView>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGO-tk-Z6X">
+                        <rect key="frame" x="8" y="49" width="38" height="21"/>
+                        <state key="normal" title="&lt;"/>
+                        <connections>
+                            <action selector="goback:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="VMg-EA-3CE"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="44K-5Z-mCx" secondAttribute="trailing" id="16W-ga-cFa"/>
@@ -72,6 +79,9 @@
                     <constraint firstItem="Usg-Hf-ZaU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="39" id="sZg-aq-jZD"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="webView" destination="44K-5Z-mCx" id="U3K-rE-Ujc"/>
+            </connections>
             <point key="canvasLocation" x="457" y="399"/>
         </tableViewCell>
     </objects>

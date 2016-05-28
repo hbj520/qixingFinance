@@ -13,6 +13,16 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    NSString *urlString = [NSString stringWithFormat:@"http://60.173.235.34:9999/qixin/app/nos_qx_loanlist"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    [self.webView loadRequest:request];
+
+}
+- (IBAction)goback:(id)sender {
+    if (self.webView.canGoBack)
+    {
+        [self.webView goBack];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

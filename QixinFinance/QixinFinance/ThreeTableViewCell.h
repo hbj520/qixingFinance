@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "ThreeCollectionViewCell.h"
 #import "ThreeCollectionViewCell.h"
+typedef void(^pushVC)();
 static NSString *cellReuseId = @"cellId";
 @interface ThreeTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 {
     UICollectionView *_collectionView;
 }
-
+@property(nonatomic,copy)pushVC block;
 
 @end

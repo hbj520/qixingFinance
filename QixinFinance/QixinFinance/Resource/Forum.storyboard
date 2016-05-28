@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="-207" y="321"/>
         </scene>
-        <!--贷款-->
+        <!--View Controller-->
         <scene sceneID="Aah-Ib-VZF">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="5Cn-hy-7B5" customClass="FormuViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="5Cn-hy-7B5" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fZV-QB-q1l"/>
                         <viewControllerLayoutGuide type="bottom" id="wAp-4a-MZm"/>
@@ -32,24 +32,9 @@
                     <view key="view" contentMode="scaleToFill" id="bEV-Ru-Aq7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hFZ-hq-5JE">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="hFZ-hq-5JE" firstAttribute="top" secondItem="fZV-QB-q1l" secondAttribute="bottom" id="Td8-GM-cHH"/>
-                            <constraint firstItem="wAp-4a-MZm" firstAttribute="top" secondItem="hFZ-hq-5JE" secondAttribute="bottom" id="Ywz-aA-tdn"/>
-                            <constraint firstItem="hFZ-hq-5JE" firstAttribute="leading" secondItem="bEV-Ru-Aq7" secondAttribute="leading" id="a8t-1u-wxv"/>
-                            <constraint firstAttribute="trailing" secondItem="hFZ-hq-5JE" secondAttribute="trailing" id="cUD-eD-1AS"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="贷款" id="Gu6-cU-e8O"/>
-                    <connections>
-                        <outlet property="tableView" destination="hFZ-hq-5JE" id="OTm-8B-WJE"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="Gu6-cU-e8O"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WF6-Aw-The" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

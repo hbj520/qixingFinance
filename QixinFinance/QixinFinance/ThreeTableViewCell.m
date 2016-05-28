@@ -7,7 +7,7 @@
 //
 
 #import "ThreeTableViewCell.h"
-
+#import "FormuViewController.h"
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 @implementation ThreeTableViewCell
 
@@ -68,6 +68,14 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%ld",indexPath.item);
+    if (indexPath.item==0) {
+    self.block();
+    }
+    
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

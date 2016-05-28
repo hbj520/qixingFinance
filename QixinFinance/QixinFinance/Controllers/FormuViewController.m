@@ -10,8 +10,8 @@
 #import "FirstStyleTableViewCell.h"
 #import "SecondTableViewCell.h"
 @interface FormuViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property(nonatomic,strong)UITableView * tableView;
 @end
 
 @implementation FormuViewController
@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    [self.view addSubview:self.tableView];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self configUI];
