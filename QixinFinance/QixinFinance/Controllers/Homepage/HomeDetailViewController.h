@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface HomeDetailViewController : BaseViewController
-
+@property(nonatomic,copy)NSString * uid;
 @end

@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -21,14 +23,21 @@
                             <constraint firstAttribute="width" constant="66" id="R6y-Kx-S1x"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4，926" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFs-nB-0Nb">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4，926" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFs-nB-0Nb">
                         <rect key="frame" x="96" y="53" width="47" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="47" id="0Lq-Sm-Vnc"/>
+                            <constraint firstAttribute="height" constant="21" id="hJy-4M-bBn"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.1803921568627451" green="0.37647058823529411" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="人申请" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DO0-sz-dml">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人申请" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DO0-sz-dml">
                         <rect key="frame" x="144" y="55" width="45" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="45" id="nLF-88-vAG"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -43,24 +52,38 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.89%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6N-3H-C1v">
-                        <rect key="frame" x="202" y="53" width="44" height="23"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.89%" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6N-3H-C1v">
+                        <rect key="frame" x="208" y="53" width="38" height="23"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.12156862745098039" green="0.31372549019607843" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="月费率" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXq-OA-sFC">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月费率" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXq-OA-sFC">
                         <rect key="frame" x="248" y="55" width="41" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="41" id="Ela-Ej-1Gq"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="DO0-sz-dml" firstAttribute="firstBaseline" secondItem="GFs-nB-0Nb" secondAttribute="firstBaseline" id="BtB-Yn-Msx"/>
+                    <constraint firstItem="DO0-sz-dml" firstAttribute="leading" secondItem="GFs-nB-0Nb" secondAttribute="trailing" constant="1" id="EQm-li-ksV"/>
+                    <constraint firstItem="DO0-sz-dml" firstAttribute="baseline" secondItem="TXq-OA-sFC" secondAttribute="baseline" id="EQo-gr-IpM"/>
+                    <constraint firstItem="GFs-nB-0Nb" firstAttribute="top" secondItem="lZd-Fj-1g0" secondAttribute="bottom" constant="6" id="JfR-f2-mIy"/>
                     <constraint firstItem="lZd-Fj-1g0" firstAttribute="leading" secondItem="8Nu-9c-S3Z" secondAttribute="trailing" constant="14" id="TeS-Mf-RLI"/>
+                    <constraint firstItem="DO0-sz-dml" firstAttribute="centerY" secondItem="S6N-3H-C1v" secondAttribute="centerY" id="VHF-4y-Xbc"/>
+                    <constraint firstItem="TXq-OA-sFC" firstAttribute="leading" secondItem="S6N-3H-C1v" secondAttribute="trailing" constant="2" id="WOk-3L-opH"/>
                     <constraint firstItem="8Nu-9c-S3Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bFq-qq-2t2"/>
                     <constraint firstItem="lZd-Fj-1g0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26" id="bGF-jj-ksY"/>
+                    <constraint firstItem="DO0-sz-dml" firstAttribute="baseline" secondItem="S6N-3H-C1v" secondAttribute="baseline" id="bNZ-XD-dUX"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="TXq-OA-sFC" secondAttribute="trailing" constant="23" id="cUJ-eq-0nr"/>
                     <constraint firstItem="8Nu-9c-S3Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="dS9-46-5Z2"/>
+                    <constraint firstItem="DO0-sz-dml" firstAttribute="top" secondItem="TXq-OA-sFC" secondAttribute="top" id="hHN-sq-jlK"/>
+                    <constraint firstItem="DO0-sz-dml" firstAttribute="bottom" secondItem="GFs-nB-0Nb" secondAttribute="bottom" id="ohd-a3-J5i"/>
+                    <constraint firstItem="DO0-sz-dml" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="144" id="ydW-mo-66h"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

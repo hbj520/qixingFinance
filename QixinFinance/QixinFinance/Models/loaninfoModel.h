@@ -13,7 +13,7 @@
 @property(nonatomic,copy)NSString * imgthumb;
 @property(nonatomic,copy)NSString * mrate;
 @property(nonatomic,copy)NSString *name;
-@property(nonatomic,copy)NSString * number;
-- (id)initWithloanId:(NSString*)loanId imgthumb:(NSString*)imgthumb mrate:(NSString*)mrate name:(NSString*)name number:(NSString*)number;
+@property(nonatomic,copy)NSNumber * number;
+- (id)initWithloanId:(NSString*)loanId imgthumb:(NSString*)imgthumb mrate:(NSString*)mrate name:(NSString*)name number:(NSNumber*)number;
 - (NSMutableArray *)buildWithData:(NSArray *)data;
 @end

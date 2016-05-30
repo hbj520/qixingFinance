@@ -19,10 +19,13 @@
 #import "FormuViewController.h"
 #import "MyAPI.h"
 #import "loaninfoModel.h"
+#import "gfselectModel.h"
+#import "adverModel.h"
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 @interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray * _imgArray;
+    NSMutableArray * imageArray;
     NSMutableArray * selectData;
     NSMutableArray * loaninfoData;
 }
@@ -47,8 +50,21 @@
 - (void)loadData
 {
     [[MyAPI sharedAPI] getHomepageDataWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
+        imageArray = arrays[0];
+        selectData = arrays[1];
         loaninfoData = arrays[2];
+        
         [self.tableView reloadData];
+        _imgArray  = [[NSMutableArray alloc] init];
+     //   NSString * imgPath = @"cycleviewicon";
+        for(NSInteger i = 0 ;i<3;i++){
+            adverModel * model = imageArray[0];
+            [_imgArray addObject:model.adimageUrl];
+        }
+        
+        SDCycleScrollView * cycleView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, ScreenWidth,200 ) imageURLStringsGroup:_imgArray];
+        
+        self.tableView.tableHeaderView = cycleView;
     } errorResult:^(NSError *enginerError) {
         
     }];
@@ -58,7 +74,7 @@
 {
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(0, 0, 50, 30);
-    [btn setImage:[UIImage imageNamed:@"启鑫app首页_05"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"rightnavbutton"] forState:UIControlStateNormal];
 
     
     UIBarButtonItem * btnItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
@@ -98,17 +114,8 @@
     [footView addSubview:label1];
     [footView addSubview:label2];
     self.tableView.tableFooterView = footView;
-    UIView * headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
-    headView.backgroundColor = [UIColor blackColor];
-    _imgArray  = [[NSMutableArray alloc] init];
-    NSString * imgPath = @"cycleviewicon";
-    for(NSInteger i = 0 ;i<3;i++){
-        [_imgArray addObject:imgPath];
-    }
     
-    SDCycleScrollView * cycleView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, ScreenWidth,200 ) imageNamesGroup:_imgArray];
-    
-    self.tableView.tableHeaderView = cycleView;
+   
 }
 
 
@@ -141,6 +148,7 @@
         return cell;
     }else if (indexPath.section==3){
         loaninfoModel * model = loaninfoData[indexPath.row];
+        NSLog(@"%@",model);
         recommandLoanTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
         cell.model = model;
         return cell;
@@ -153,7 +161,10 @@
         return cell;
 
     }else if (indexPath.section==6){
+        gfselectModel * model = selectData[indexPath.row];
+        
         financialProductTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"homepageReusedId6" forIndexPath:indexPath];
+        cell.model = model;
         return cell;
     }
     return nil;
@@ -185,9 +196,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section==3) {
+        loaninfoModel * model = loaninfoData[indexPath.row];
+        
         HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
+        vc.uid = model.loanId;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.section==6){
+        gfselectModel * model = selectData[indexPath.row];
+        HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
+        vc.uid = model.selectId;
         [self.navigationController pushViewController:vc animated:YES];
     }
+    
 }
 
 - (void)didReceiveMemoryWarning {

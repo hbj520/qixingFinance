@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view.
     webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.view addSubview:webView];
-    NSString *urlString = [NSString stringWithFormat:@"http://60.173.235.34:9999/qixin/app/nos_qx_loaninfo/28"];
+    NSString *urlString = [NSString stringWithFormat:@"http://60.173.235.34:9999/qixin/app/nos_qx_loaninfo/%@",self.uid];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     [webView loadRequest:request];
 

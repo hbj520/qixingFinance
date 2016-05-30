@@ -9,7 +9,7 @@
 #import "loaninfoModel.h"
 
 @implementation loaninfoModel
-- (id)initWithloanId:(NSString*)loanId imgthumb:(NSString*)imgthumb mrate:(NSString*)mrate name:(NSString*)name number:(NSString*)number
+- (id)initWithloanId:(NSString*)loanId imgthumb:(NSString*)imgthumb mrate:(NSString*)mrate name:(NSString*)name number:(NSNumber*)number
 {
     loaninfoModel * model = [[loaninfoModel alloc] init];
     model.loanId = loanId;
@@ -28,7 +28,7 @@
         NSString * imgthumb = dict[@"imgthumb"];
         NSString * mrate = dict[@"mrate"];
         NSString * name = dict[@"name"];
-        NSString * number = dict[@"number"];
+        NSNumber * number = dict[@"number"];
         loaninfoModel * model = [[loaninfoModel alloc] initWithloanId:loanId imgthumb:imgthumb mrate:mrate name:name number:number];
         [loaninfoArray addObject:model];
     }

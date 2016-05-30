@@ -15,6 +15,13 @@
     // Initialization code
 }
 
+-(void)setModel:(gfselectModel *)model
+{
+    self.titleLabel.text = model.name;
+    self.monthNum.text = model.deadline;
+    
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

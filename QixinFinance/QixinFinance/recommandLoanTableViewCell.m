@@ -17,8 +17,12 @@
 - (void)setModel:(loaninfoModel *)model
 {
     [self.img sd_setImageWithURL:[NSURL URLWithString:model.imgthumb]];
-    self.percentNum.text = [NSString stringWithFormat:@"%ld ",[model.mrate integerValue]*100];
-    self.applyCount.text = model.number;
+    self.percentNum.text = model.mrate;
+    //self.applyCount.text = model.number.stringValue;
+  
+   // self.applyCount.text = model.number.stringValue;
+int applycount = [model.number intValue];
+    self.applyCount.text = [NSString stringWithFormat:@"%d",applycount];
     self.titleLabel.text = model.name;
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
