@@ -7,7 +7,7 @@
 //
 #import "UIView+MJExtension.h"
 #import "CHDDropDownMenu.h"
-
+#import "selectView.h"
 #define CHD_SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define CHD_SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 
@@ -60,7 +60,7 @@ static const CGFloat cellHeight = 40.0f;
     CGRect orginalFrame;
     BOOL isShow;
     UIView *bgView;
-    BOOL  inx;
+    selectView * selectV;
 }
 
 - (void)initWithFrame:(CGRect)frame showOnView:(UIView*)view AllDataArr:(NSMutableArray*)arr showArr:(NSMutableArray *)showArr
@@ -70,18 +70,22 @@ static const CGFloat cellHeight = 40.0f;
         self.showArr = showArr;
         if (!showArr) {
             self.showArr = arr;
-        }
-     
+       }
+
         for (int i=0; i<arr.count; i++) {
             chdButton *button = [[chdButton alloc] initWithFrame:CGRectMake(i*(CGRectGetWidth(frame)/arr.count), 0, CGRectGetWidth(frame)/arr.count, CGRectGetHeight(frame))];
             button.tag = 100 + i;
-            [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+            if(button.tag==103){
+                [button addTarget:self action:@selector(btnFilter:) forControlEvents:UIControlEventTouchUpInside];
+            }
+            else{  [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+            }
             NSArray *temp = self.showArr[i];
             chdModel *model = [temp firstObject];
             [button setTitle:model.text forState:UIControlStateNormal];
             button.titleLabel.textAlignment = NSTextAlignmentCenter;
             button.backgroundColor = [UIColor whiteColor];
-            button.layer.borderColor = [UIColor lightGrayColor].CGColor;
+            button.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
             button.layer.borderWidth = 0.4;
             [button setImage:[UIImage imageNamed:@"up1"] forState:UIControlStateNormal];
             button.imageView.transform = CGAffineTransformMakeRotation(M_PI);
@@ -123,6 +127,9 @@ static const CGFloat cellHeight = 40.0f;
         }
         
         [view addSubview:ChdTable];
+        selectV = [[selectView alloc]initWithFrame:CGRectMake(0, 100, view.frame.size.width, view.frame.size.height - 64)];
+        selectV.hidden =YES;
+        [view addSubview:selectV];
         self.backgroundColor = [UIColor orangeColor];
     }
     
@@ -155,7 +162,7 @@ static const CGFloat cellHeight = 40.0f;
 - (void)buttonClick:(chdButton*)button
 {
     
- 
+    
     if (button.tag - 100 == currentSelect) {
         if (isShow) {
             [self hideCurrent];
@@ -166,9 +173,30 @@ static const CGFloat cellHeight = 40.0f;
     }else{
         [self showIndex:button.tag - 100];
         isShow = YES;
-    
+        
     }
 }
+
+- (void)btnFilter:(UIButton*)btn
+{if(btn.tag - 100 == currentSelect){
+    if (isShow) {
+        selectV.hidden = YES;
+        btn.imageView.transform = CGAffineTransformMakeRotation(0);
+    }else{
+        selectV.hidden = NO;
+        btn.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+        
+    }
+    isShow = !isShow;
+}else{
+    selectV.hidden = NO;
+    btn.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+    currentSelect = 3;
+    isShow = YES;
+}
+}
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_AllDataArr[currentSelect] count];
@@ -248,16 +276,19 @@ static const CGFloat cellHeight = 40.0f;
         if (cellHeight * [_AllDataArr[currentSelect] count]>CHD_SCREEN_HEIGHT-CGRectGetMaxY(self.frame)) {
             ChdTable.mj_h = CHD_SCREEN_HEIGHT - CGRectGetMaxY(self.frame);
         }else{
-        ChdTable.mj_h = cellHeight * [_AllDataArr[currentSelect] count];
+            ChdTable.mj_h = cellHeight * [_AllDataArr[currentSelect] count];
         }
         btn.imageView.transform = CGAffineTransformMakeRotation(0);
     }];
 }
+
 - (void)hideCurrent
 {
     chdButton *btn = self.subviews[currentSelect];
     [UIView animateWithDuration:0.2 animations:^{
+        
         ChdTable.frame = orginalFrame;
+        
         btn.imageView.transform = CGAffineTransformMakeRotation(M_PI);
     }];
     bgView.frame = orginalFrame;
@@ -289,11 +320,11 @@ static const CGFloat cellHeight = 40.0f;
     
 }
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end

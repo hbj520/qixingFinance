@@ -21,7 +21,7 @@
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inputImg" translatesAutoresizingMaskIntoConstraints="NO" id="Hg2-TM-Yza">
-                        <rect key="frame" x="15" y="98" width="201" height="31"/>
+                        <rect key="frame" x="15" y="98" width="202" height="31"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="2g4-Q8-iWH"/>
                         </constraints>
@@ -84,7 +84,7 @@
                             <constraint firstAttribute="width" constant="65" id="Zou-Wa-fTt"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="网贷达人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGV-ow-KDA">
@@ -94,7 +94,7 @@
                             <constraint firstAttribute="height" constant="21" id="ZrI-Hf-ByY"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="抵押贷" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tke-7o-TMD">
@@ -104,7 +104,7 @@
                             <constraint firstAttribute="height" constant="21" id="m6L-WQ-sOg"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="信用贷" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDx-gB-NXW">
@@ -114,7 +114,7 @@
                             <constraint firstAttribute="height" constant="21" id="PyE-0k-2zo"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入贷款金额" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eLE-pa-rq6">
@@ -144,7 +144,7 @@
                     <constraint firstAttribute="trailing" secondItem="CRi-Sz-PhI" secondAttribute="trailing" id="TAZ-4g-Kht"/>
                     <constraint firstItem="CRi-Sz-PhI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WEK-KT-Xjk"/>
                     <constraint firstItem="LGV-ow-KDA" firstAttribute="centerX" secondItem="fJG-sv-jPR" secondAttribute="centerX" id="azA-RU-z3L"/>
-                    <constraint firstItem="3i2-uh-q0v" firstAttribute="leading" secondItem="Hg2-TM-Yza" secondAttribute="trailing" constant="1" id="bHf-60-gx0"/>
+                    <constraint firstItem="3i2-uh-q0v" firstAttribute="leading" secondItem="Hg2-TM-Yza" secondAttribute="trailing" id="bHf-60-gx0"/>
                     <constraint firstItem="Tke-7o-TMD" firstAttribute="top" secondItem="2fv-vn-hzN" secondAttribute="bottom" constant="4" id="dIF-pK-1aT"/>
                     <constraint firstAttribute="bottom" secondItem="3i2-uh-q0v" secondAttribute="bottom" constant="120" id="elQ-7G-5Qn"/>
                     <constraint firstItem="WDx-gB-NXW" firstAttribute="centerX" secondItem="ufZ-HU-7DO" secondAttribute="centerX" id="gdv-95-Z0J"/>

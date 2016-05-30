@@ -33,6 +33,7 @@ typedef void (^ErrorBlock) (NSError *enginerError);
  *  @param errorResult 
  */
 - (void)requestMoreLoanListWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
-
-
+/**
+ *  
+ */
 @end
