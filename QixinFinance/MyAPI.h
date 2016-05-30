@@ -26,4 +26,5 @@ typedef void (^ErrorBlock) (NSError *enginerError);
  */
 - (void)requestMoreLoanListWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 
+-  (void)requestMoreLoanInfo;
 @end
