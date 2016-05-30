@@ -160,8 +160,8 @@
 		CC8F06901CEDA17200B4D945 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = SOURCE_ROOT; };
 		CC8F06A51CEDC3E600B4D945 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = SOURCE_ROOT; };
 		CC8F06A61CEDC3E600B4D945 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = SOURCE_ROOT; };
-		CC97D4A51CF59546007DB11D /* FormuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormuViewController.h; sourceTree = "<group>"; };
-		CC97D4A61CF59546007DB11D /* FormuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormuViewController.m; sourceTree = "<group>"; };
+		CC97D4A51CF59546007DB11D /* FormuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormuViewController.h; path = ../FormuViewController.h; sourceTree = "<group>"; };
+		CC97D4A61CF59546007DB11D /* FormuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormuViewController.m; path = ../FormuViewController.m; sourceTree = "<group>"; };
 		CCD4D5E21CEC92EE009B4550 /* ThreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeTableViewCell.h; path = QixinFinance/ThreeTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeTableViewCell.m; path = QixinFinance/ThreeTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		CCD4D5E51CEC930C009B4550 /* ThreeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeCollectionViewCell.h; path = QixinFinance/ThreeCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
@@ -333,6 +333,8 @@
 		ABA302181CEB071200693AC6 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
+				CC97D4A61CF59546007DB11D /* FormuViewController.m */,
+				CC97D4A51CF59546007DB11D /* FormuViewController.h */,
 				ABA3023E1CEB18F300693AC6 /* HomepageViewController.h */,
 				ABA3023F1CEB18F300693AC6 /* HomepageViewController.m */,
 				CCD663D41CF96D9400E83FD2 /* HomeDetailViewController.h */,
@@ -376,8 +378,8 @@
 		ABA3021B1CEB071200693AC6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CCFB22F71CF9ADC500F7892A /* Homepage */,
 				ABA3021C1CEB071200693AC6 /* Forum */,
-				ABA3021D1CEB071200693AC6 /* Homepage */,
 				ABA3021E1CEB071200693AC6 /* Information */,
 				ABA3021F1CEB071200693AC6 /* Personal */,
 			);
@@ -389,13 +391,6 @@
 			children = (
 			);
 			path = Forum;
-			sourceTree = "<group>";
-		};
-		ABA3021D1CEB071200693AC6 /* Homepage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Homepage;
 			sourceTree = "<group>";
 		};
 		ABA3021E1CEB071200693AC6 /* Information */ = {
@@ -604,10 +599,15 @@
 		CC97D4A41CF59526007DB11D /* Formu */ = {
 			isa = PBXGroup;
 			children = (
-				CC97D4A51CF59546007DB11D /* FormuViewController.h */,
-				CC97D4A61CF59546007DB11D /* FormuViewController.m */,
 			);
 			name = Formu;
+			sourceTree = "<group>";
+		};
+		CCFB22F71CF9ADC500F7892A /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Homepage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

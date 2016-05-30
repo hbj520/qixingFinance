@@ -8,7 +8,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/AFURLResponseSerialization.h>
 #import "MyAPI.h"
-#define BaseUrl @"http://60.173.235.34:9999/svnupdate/app/"
+#define BaseUrl @"http://60.173.235.34:9999/qixin/app"
 //tools
 
 //models
@@ -43,6 +43,16 @@
 - (void)cancelAllOperation{
     [self.manager.operationQueue cancelAllOperations];
 }
-
+- (void)requestMoreLoanListWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
+{
+    [self.manager POST:@"nos_qx_select" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSArray * data = responseObject[@"data"];
+        result(YES,@"12323",data);
+       
+       
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        
+    }];
+}
 
 @end

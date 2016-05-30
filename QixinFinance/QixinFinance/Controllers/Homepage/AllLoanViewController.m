@@ -7,7 +7,7 @@
 //
 
 #import "AllLoanViewController.h"
-
+#import "MyAPI.h"
 @interface AllLoanViewController ()
 
 @end
@@ -17,6 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+[[MyAPI sharedAPI] requestMoreLoanListWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
+    NSLog(@"%@",arrays);
+} errorResult:^(NSError *enginerError) {
+    
+}];
+    
 }
 
 - (void)didReceiveMemoryWarning {

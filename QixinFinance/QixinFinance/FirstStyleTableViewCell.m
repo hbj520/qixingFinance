@@ -14,6 +14,9 @@
     [super awakeFromNib];
     // Initialization code
     [self.btnmort addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+     [self.btnwork addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+     [self.btnloanpeople addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+     [self.btncredit addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)btnClick
