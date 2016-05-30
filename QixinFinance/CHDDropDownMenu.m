@@ -162,8 +162,8 @@ static const CGFloat cellHeight = 40.0f;
 
 - (void)buttonClick:(chdButton*)button
 {
-    
-    
+    [button setTitleColor:[UIColor colorWithRed:21/255.0 green:48/255.0 blue:121/255.0 alpha:1] forState:UIControlStateNormal];
+    button.titleLabel.textColor = [UIColor whiteColor];
     if (button.tag - 100 == currentSelect) {
         if (isShow) {
             [self hideCurrent];
@@ -179,19 +179,29 @@ static const CGFloat cellHeight = 40.0f;
 }
 
 - (void)btnFilter:(UIButton*)btn
-{if(btn.tag - 100 == currentSelect){
+{[btn setTitleColor:[UIColor colorWithRed:21/255.0 green:48/255.0 blue:121/255.0 alpha:1] forState:UIControlStateNormal];
+    if(btn.tag - 100 == currentSelect){
     if (isShow) {
-        selectV.hidden = YES;
+       
+        [UIView animateWithDuration:0.2 animations:^{
+             selectV.hidden = YES;
         btn.imageView.transform = CGAffineTransformMakeRotation(0);
+        }];
     }else{
-        selectV.hidden = NO;
-        btn.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+        
+        [UIView animateWithDuration:0.2 animations:^{
+            selectV.hidden = NO;
+            btn.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+        }];
         
     }
     isShow = !isShow;
 }else{
-    selectV.hidden = NO;
-    btn.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+  
+    [UIView animateWithDuration:0.2 animations:^{
+          selectV.hidden = NO;
+        btn.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+    }];
     currentSelect = 3;
     isShow = YES;
 }
