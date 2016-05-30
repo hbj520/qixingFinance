@@ -75,10 +75,17 @@
     if (indexPath.section==0) {
         return 250;
     }else{
-        return 320;
+        return 450;
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section==1){
+        [self.tableView setContentOffset:CGPointMake(0, 180)];
+      
+    }
+}
 - (void)pushVC
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];

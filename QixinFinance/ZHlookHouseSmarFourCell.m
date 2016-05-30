@@ -7,10 +7,11 @@
 //
 
 #import "ZHlookHouseSmarFourCell.h"
-
+#define width [UIScreen mainScreen].bounds.size.width
 @implementation ZHlookHouseSmarFourCell
 - (id)initWithFrame:(CGRect)frame
 {
+    
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
@@ -24,7 +25,7 @@
     _nameLabel.numberOfLines = 0;
     _nameLabel.textAlignment = NSTextAlignmentCenter;
     _nameLabel.userInteractionEnabled = YES;
-    _nameLabel.frame = CGRectMake(0, 0, (375 - 60)/4, 30);
+    _nameLabel.frame = CGRectMake(0, 0, (width - 60)/4, 30);
     if (self.selected) {
        
     }

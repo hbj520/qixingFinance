@@ -165,6 +165,7 @@
                 <outlet property="btnloanpeople" destination="fJG-sv-jPR" id="Lt4-2V-fWL"/>
                 <outlet property="btnmort" destination="2fv-vn-hzN" id="Ahk-fz-pkx"/>
                 <outlet property="btnwork" destination="KOQ-BN-3Cw" id="Epe-uV-puy"/>
+                <outlet property="input" destination="eLE-pa-rq6" id="XA6-0q-cit"/>
             </connections>
             <point key="canvasLocation" x="351" y="416"/>
         </tableViewCell>

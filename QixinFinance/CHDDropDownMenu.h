@@ -15,6 +15,7 @@
 //需自定义数据模型请更改此类
 @interface chdModel : NSObject
 @property (nonatomic,copy) NSString *text;
+@property(nonatomic,copy)NSString * uid;
 @property BOOL isSub;
 @property BOOL isSelect;
 @end

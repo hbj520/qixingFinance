@@ -74,6 +74,7 @@
 		CCD4D6061CEC9755009B4550 /* financialProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D6041CEC9755009B4550 /* financialProductTableViewCell.m */; };
 		CCD4D6071CEC9755009B4550 /* financialProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6051CEC9755009B4550 /* financialProductTableViewCell.xib */; };
 		CCD663D61CF96D9400E83FD2 /* HomeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD663D51CF96D9400E83FD2 /* HomeDetailViewController.m */; };
+		CCEBF12B1CFC3AA200615F10 /* sortModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEBF12A1CFC3AA200615F10 /* sortModel.m */; };
 		CCFB22771CF995D100F7892A /* AllLoanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFB22761CF995D100F7892A /* AllLoanViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -214,6 +215,8 @@
 		CCD4D6051CEC9755009B4550 /* financialProductTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = financialProductTableViewCell.xib; path = QixinFinance/financialProductTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		CCD663D41CF96D9400E83FD2 /* HomeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDetailViewController.h; sourceTree = "<group>"; };
 		CCD663D51CF96D9400E83FD2 /* HomeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDetailViewController.m; sourceTree = "<group>"; };
+		CCEBF1291CFC3AA200615F10 /* sortModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sortModel.h; sourceTree = "<group>"; };
+		CCEBF12A1CFC3AA200615F10 /* sortModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sortModel.m; sourceTree = "<group>"; };
 		CCFB22751CF995D100F7892A /* AllLoanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllLoanViewController.h; sourceTree = "<group>"; };
 		CCFB22761CF995D100F7892A /* AllLoanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLoanViewController.m; sourceTree = "<group>"; };
 		DC2CC466DFED286C272AB859 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -297,11 +300,11 @@
 		ABA301DC1CEAFCC700693AC6 /* QixinFinance */ = {
 			isa = PBXGroup;
 			children = (
+				ABA302211CEB071200693AC6 /* Resource */,
+				CCEBF1261CFC301800615F10 /* Vendor */,
 				ABA302131CEB071200693AC6 /* AppDelegate */,
 				ABA302161CEB071200693AC6 /* Controllers */,
-				ABA3021B1CEB071200693AC6 /* Models */,
 				ABA302201CEB071200693AC6 /* Plist */,
-				ABA302211CEB071200693AC6 /* Resource */,
 				ABA302221CEB071200693AC6 /* Util */,
 				ABA302231CEB071200693AC6 /* Vendor */,
 				ABA302241CEB071200693AC6 /* Views */,
@@ -360,14 +363,15 @@
 		ABA302181CEB071200693AC6 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
-				CC97D4A61CF59546007DB11D /* FormuViewController.m */,
 				CC97D4A51CF59546007DB11D /* FormuViewController.h */,
+				CC97D4A61CF59546007DB11D /* FormuViewController.m */,
 				ABA3023E1CEB18F300693AC6 /* HomepageViewController.h */,
 				ABA3023F1CEB18F300693AC6 /* HomepageViewController.m */,
 				CCD663D41CF96D9400E83FD2 /* HomeDetailViewController.h */,
 				CCD663D51CF96D9400E83FD2 /* HomeDetailViewController.m */,
 				CCFB22751CF995D100F7892A /* AllLoanViewController.h */,
 				CCFB22761CF995D100F7892A /* AllLoanViewController.m */,
+				ABA3021B1CEB071200693AC6 /* Models */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -410,7 +414,8 @@
 				ABA3021E1CEB071200693AC6 /* Information */,
 				ABA3021F1CEB071200693AC6 /* Personal */,
 			);
-			path = Models;
+			name = Models;
+			path = ../../Models;
 			sourceTree = "<group>";
 		};
 		ABA3021C1CEB071200693AC6 /* Forum */ = {
@@ -463,8 +468,6 @@
 		ABA302231CEB071200693AC6 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				CC052DDB1CF167BD00B20F29 /* NinaPagerView */,
-				CC8F067E1CED9FE300B4D945 /* SDCycleScrollView */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				CC46B5FA1CF1724500F84FA8 /* UIParameter.h */,
 			);
 			name = NinaPagerView;
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		CC8F067E1CED9FE300B4D945 /* SDCycleScrollView */ = {
@@ -610,21 +614,12 @@
 				CC8F06901CEDA17200B4D945 /* TAPageControl.m */,
 			);
 			name = SDCycleScrollView;
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		CC8F06A41CEDC3C800B4D945 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				CC492B051CFC21D000FE5568 /* selectView.h */,
-				CC492B061CFC21D000FE5568 /* selectView.m */,
-				CC492B071CFC21D000FE5568 /* selectViewTableViewCell.h */,
-				CC492B081CFC21D000FE5568 /* selectViewTableViewCell.m */,
-				CC492B091CFC21D000FE5568 /* ZHlookHouseSmarFourCell.h */,
-				CC492B0A1CFC21D000FE5568 /* ZHlookHouseSmarFourCell.m */,
-				CC492B0B1CFC21D000FE5568 /* selectheaderView.h */,
-				CC492B0C1CFC21D000FE5568 /* selectheaderView.m */,
-				CC492AF41CFBD38C00FE5568 /* CHDDropDownMenu.h */,
-				CC492AF51CFBD38C00FE5568 /* CHDDropDownMenu.m */,
 				CC492AF61CFBD38C00FE5568 /* UIView+MJExtension.h */,
 				CC492AF71CFBD38C00FE5568 /* UIView+MJExtension.m */,
 				CC8F06A51CEDC3E600B4D945 /* UIImage+ImageEffects.h */,
@@ -642,6 +637,41 @@
 			name = Formu;
 			sourceTree = "<group>";
 		};
+		CCEBF1261CFC301800615F10 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				CCEBF1281CFC31C600615F10 /* CHDDropDownMenu */,
+				CCEBF1271CFC313E00615F10 /* selectView */,
+				CC8F067E1CED9FE300B4D945 /* SDCycleScrollView */,
+				CC052DDB1CF167BD00B20F29 /* NinaPagerView */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		CCEBF1271CFC313E00615F10 /* selectView */ = {
+			isa = PBXGroup;
+			children = (
+				CC492B051CFC21D000FE5568 /* selectView.h */,
+				CC492B061CFC21D000FE5568 /* selectView.m */,
+				CC492B071CFC21D000FE5568 /* selectViewTableViewCell.h */,
+				CC492B081CFC21D000FE5568 /* selectViewTableViewCell.m */,
+				CC492B091CFC21D000FE5568 /* ZHlookHouseSmarFourCell.h */,
+				CC492B0A1CFC21D000FE5568 /* ZHlookHouseSmarFourCell.m */,
+				CC492B0B1CFC21D000FE5568 /* selectheaderView.h */,
+				CC492B0C1CFC21D000FE5568 /* selectheaderView.m */,
+			);
+			name = selectView;
+			sourceTree = "<group>";
+		};
+		CCEBF1281CFC31C600615F10 /* CHDDropDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				CC492AF41CFBD38C00FE5568 /* CHDDropDownMenu.h */,
+				CC492AF51CFBD38C00FE5568 /* CHDDropDownMenu.m */,
+			);
+			name = CHDDropDownMenu;
+			sourceTree = "<group>";
+		};
 		CCFB22F71CF9ADC500F7892A /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,6 +681,8 @@
 				CC492AFE1CFBE40A00FE5568 /* gfselectModel.m */,
 				CC492B001CFBE41B00FE5568 /* loaninfoModel.h */,
 				CC492B011CFBE41B00FE5568 /* loaninfoModel.m */,
+				CCEBF1291CFC3AA200615F10 /* sortModel.h */,
+				CCEBF12A1CFC3AA200615F10 /* sortModel.m */,
 			);
 			name = Homepage;
 			sourceTree = "<group>";
@@ -725,6 +757,7 @@
 				TargetAttributes = {
 					ABA301D91CEAFCC600693AC6 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 3L5Q37H6H3;
 					};
 					ABA301F51CEAFCC700693AC6 = {
 						CreatedOnToolsVersion = 7.3;
@@ -897,6 +930,7 @@
 				CC8F06931CEDA17200B4D945 /* TADotView.m in Sources */,
 				CCD4D5F71CEC946D009B4550 /* bankLoanTableViewCell.m in Sources */,
 				CC492AFF1CFBE40A00FE5568 /* gfselectModel.m in Sources */,
+				CCEBF12B1CFC3AA200615F10 /* sortModel.m in Sources */,
 				CC8F06881CEDA15B00B4D945 /* UIView+SDExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1043,7 +1077,9 @@
 			baseConfigurationReference = DC2CC466DFED286C272AB859 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = QixinFinance/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.QixinFinance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1055,7 +1091,9 @@
 			baseConfigurationReference = 39D3FB5AAE129DB0C9DFE79B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = QixinFinance/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.youyou.QixinFinance;
 				PRODUCT_NAME = "$(TARGET_NAME)";

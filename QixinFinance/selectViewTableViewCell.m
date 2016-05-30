@@ -34,8 +34,7 @@
     
     
     indexAry = dataSource[self.i];
-    NSLog(@"%lu////////\n",self.i);
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     
     _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width,60) collectionViewLayout:layout];
     _collectionView.delegate=self;

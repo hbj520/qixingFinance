@@ -15,6 +15,7 @@
 #import "adverModel.h"
 #import "gfselectModel.h"
 #import "loaninfoModel.h"
+#import "sortModel.h"
 @interface MyAPI()
 @property NSString *mBaseUrl;
 @property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
@@ -73,8 +74,11 @@
 - (void)requestMoreLoanListWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
 {
     [self.manager POST:@"nos_qx_select" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        NSArray * data = responseObject[@"data"];
-        result(YES,@"12323",data);
+        NSDictionary * data = responseObject[@"data"];
+        NSArray * sortArray = data[@"sort"];
+        NSMutableArray * sortData = [[sortModel alloc] buildWithData:sortArray];
+        
+        result(YES,@"12323",@[sortData,@""]);
        
        
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
