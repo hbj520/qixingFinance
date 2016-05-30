@@ -12,9 +12,9 @@
 //tools
 
 //models
-
-
-
+#import "adverModel.h"
+#import "gfselectModel.h"
+#import "loaninfoModel.h"
 @interface MyAPI()
 @property NSString *mBaseUrl;
 @property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
@@ -43,6 +43,33 @@
 - (void)cancelAllOperation{
     [self.manager.operationQueue cancelAllOperations];
 }
+
+- (void)getHomepageDataWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
+{
+    [self.manager POST:@"nos_qx_index" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSString *status = responseObject[@"status"];
+        if ([status isEqualToString:@"-1"]) {//超时处理
+            result(NO,@"登录超时",nil);
+        }
+        if ([status isEqualToString:@"1"]) {
+            NSDictionary *data = responseObject[@"data"];
+            NSDictionary * adDict = data[@"adver_ban"];
+            NSArray * selectArray = data[@"gfselect"];
+            NSArray * loanArray = data[@"loaninfo"];
+            //首页滚动视图数据赋值
+            NSMutableArray * adverData = [[adverModel alloc] buildData:adDict];
+            NSMutableArray * selectData = [[gfselectModel alloc] buildWithData:selectArray];
+            NSMutableArray * loanData = [[loaninfoModel alloc] buildWithData:loanArray];
+            result(YES,@"获取成功",@[adverData,selectData,loanData]);
+        }else{
+            result(NO,@"获取失败",nil);
+        }
+
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+
 - (void)requestMoreLoanListWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
 {
     [self.manager POST:@"nos_qx_select" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {

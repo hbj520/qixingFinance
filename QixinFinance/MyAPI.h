@@ -18,6 +18,14 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 
 //取消所有网路全部请求
 - (void)cancelAllOperation;
+
+/**
+ *  获取首页信息
+ *
+ *  @return
+ */
+
+- (void)getHomepageDataWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 /**
  *
  *筛选数据
@@ -26,5 +34,5 @@ typedef void (^ErrorBlock) (NSError *enginerError);
  */
 - (void)requestMoreLoanListWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 
--  (void)requestMoreLoanInfo;
+
 @end

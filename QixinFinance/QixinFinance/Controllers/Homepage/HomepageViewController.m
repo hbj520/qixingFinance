@@ -17,10 +17,14 @@
 #import "SDCycleScrollView.h"
 #import "HomeDetailViewController.h"
 #import "FormuViewController.h"
+#import "MyAPI.h"
+#import "loaninfoModel.h"
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 @interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSMutableArray * _imgArray;
+    NSMutableArray * selectData;
+    NSMutableArray * loaninfoData;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -37,7 +41,17 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self congfigTableView];
-    
+    [self loadData];
+}
+
+- (void)loadData
+{
+    [[MyAPI sharedAPI] getHomepageDataWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
+        loaninfoData = arrays[2];
+        [self.tableView reloadData];
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
 }
 
 - (void)cityLocation
@@ -126,7 +140,9 @@
         bankLoanTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"bankLoanTableViewCell" owner:self options:nil]  lastObject];
         return cell;
     }else if (indexPath.section==3){
+        loaninfoModel * model = loaninfoData[indexPath.row];
         recommandLoanTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
+        cell.model = model;
         return cell;
     }else if (indexPath.section==4){
         HotCardTableViewCell * cell =  [[[NSBundle mainBundle] loadNibNamed:@"HotCardTableViewCell" owner:self options:nil] lastObject];

@@ -66,8 +66,21 @@
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, self.view.frame.size.height-40)];
     [self.view addSubview:_webView];
     [self.view sendSubviewToBack:_webView];
+    UIButton * backbtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 50, 45, 45)];
+  //  backbtn.backgroundColor = [UIColor redColor];
+    [backbtn setTitle:@"back" forState:UIControlStateNormal];
+    [backbtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [backbtn addTarget:self action:@selector(goback) forControlEvents:UIControlEventTouchUpInside];
+    [_webView addSubview:backbtn];
     NSURLRequest * request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://60.173.235.34:9999/qixin/app/nos_qx_loanlist"]];
     [_webView loadRequest:request];
+}
+
+- (void)goback
+{
+    if ([_webView canGoBack]) {
+        [_webView goBack];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
