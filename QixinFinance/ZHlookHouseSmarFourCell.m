@@ -43,22 +43,10 @@
 -(void)setName:(NSString *)name{
     _nameLabel.text = name;
      _nameLabel.backgroundColor = [UIColor colorWithRed:227/255.0 green:228/255.0 blue:230/255.0 alpha:1];
+    // _nameLabel.backgroundColor = [UIColor clearColor];
 }
 -(void)layoutSubviews{
     [super layoutSubviews];
 }
 
-- (void)setSelected:(BOOL)selected
-{
-    [super setSelected:selected];
-    self.inx = !self.inx;
-   
-    if (self.selected==YES) {
-        if (_inx) {
-            self.selected = YES;
-        }else{
-            self.selected = NO;
-        }
-    }
-}
 @end

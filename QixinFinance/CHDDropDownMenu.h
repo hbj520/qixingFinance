@@ -33,7 +33,7 @@
 @end
 
 @interface CHDDropDownMenu : UIView<UITableViewDataSource,UITableViewDelegate>
-- (void)initWithFrame:(CGRect)frame showOnView:(UIView*)view AllDataArr:(NSMutableArray*)arr showArr:(NSMutableArray *)showArr;
+- (CHDDropDownMenu*)initWithFrame:(CGRect)frame showOnView:(UIView*)view AllDataArr:(NSMutableArray*)arr showArr:(NSMutableArray *)showArr;
 //使某列某行被选中,默认均选中第0行。 可调用此方法更改默认。
 - (void)selectClum:(NSInteger)colum Row:(NSInteger)row;
 @property (nonatomic,retain) NSMutableArray *AllDataArr;

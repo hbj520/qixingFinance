@@ -10,8 +10,9 @@
 #import "CHDDropDownMenu.h"
 #import "MyAPI.h"
 #import "sortModel.h"
+
 #define CHD_SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
-@interface AllLoanViewController ()
+@interface AllLoanViewController ()<chdMenuDelegate>
 {
     UIWebView * _webView;
     NSMutableArray * sortArray;
@@ -26,6 +27,7 @@
     [self loadData];
     //列表展示的模型
        _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, self.view.frame.size.height-40)];
+  
     [self.view addSubview:_webView];
     [self.view sendSubviewToBack:_webView];
     UIButton * backbtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 50, 45, 45)];
@@ -45,6 +47,7 @@
         sortArray = arrays[0];
         NSMutableArray *arr = [NSMutableArray array];
         NSArray * arrymoney = @[@"5",@"10",@"15",@"20",@"25",@"50",@"100",@"200",@"500",@"1000"];
+       
         NSArray * arrymonth = @[@"3个月",@"6个月",@"12个月",@"2年",@"3年",@"5年",@"10年"];
       //  NSArray * arraysort = @[@"默认排序",@"总利息",@"月还款"];
         NSMutableArray *temp1 = [NSMutableArray array];
@@ -69,6 +72,7 @@
             model1 = sortArray[i];
             chdModel * model = [[chdModel alloc]init];
             model.text = model1.name;
+            model.uid = model1.sort;
             [temp3 addObject:model];
         }
         chdModel * model = [[chdModel alloc]init];
@@ -80,16 +84,30 @@
         [arr addObject:temp4];
         //若列表展示内容与按钮展示内容相同则showArr传nil即可。
         
-        [[CHDDropDownMenu alloc] initWithFrame:CGRectMake(0,64,CHD_SCREEN_WIDTH, 40) showOnView:self.view AllDataArr:arr showArr:nil];
-
+      CHDDropDownMenu * menu =  [[CHDDropDownMenu alloc] initWithFrame:CGRectMake(0,64,CHD_SCREEN_WIDTH, 40) showOnView:self.view AllDataArr:arr showArr:nil];
+        menu.delegate = self;
     } errorResult:^(NSError *enginerError) {
         
     }];
 }
 
+
+/**
+ *  前三组数据回调
+ *
+ *  @param colum
+ *  @param row
+ *  @param model 数据模型包含要传递的id
+ */
+- (void)selectColum:(NSInteger)colum Row:(NSInteger)row Model:(chdModel *)model
+{
+    NSLog(@"%@",model.uid);
+}
+
 - (void)goback
 {
     if ([_webView canGoBack]) {
+      
         [_webView goBack];
     }
 }

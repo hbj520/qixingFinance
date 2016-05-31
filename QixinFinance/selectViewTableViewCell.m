@@ -39,6 +39,7 @@
     _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width,60) collectionViewLayout:layout];
     _collectionView.delegate=self;
     _collectionView.dataSource=self;
+    _collectionView.allowsMultipleSelection = NO;
     _collectionView.backgroundColor = [UIColor whiteColor];
     [self addSubview:_collectionView];
     
@@ -65,13 +66,14 @@
     
     if (kk == indexPath.row) {
         index++;
-        if (1) {
+        NSLog(@"%ld",(long)kk);
+        if(index%2==1){
             myBig.nameLabel.backgroundColor = [UIColor colorWithRed:122/255.0 green:142/255.0 blue:182/255.0 alpha:1];
             myBig.nameLabel.textColor = [UIColor whiteColor];
-        }else{
-       // myBig.nameLabel.backgroundColor = [UIColor colorWithRed:122/255.0 green:142/255.0 blue:182/255.0 alpha:1];
-       myBig.nameLabel.textColor = [UIColor blackColor];
         }
+//        myBig.nameLabel.backgroundColor = [UIColor blackColor];
+//       myBig.nameLabel.textColor = [UIColor blackColor];
+        
     }else{
         myBig.nameLabel.textColor = [UIColor blackColor];
     }
@@ -99,7 +101,7 @@
     kk=indexPath.row;
     
     NSLog(@"%ld",indexPath.item);
-    [_collectionView reloadData];
+ [_collectionView reloadData];
 }
 //返回这个UICollectionView是否可以被选择
 -(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath

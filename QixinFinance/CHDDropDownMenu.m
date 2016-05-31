@@ -63,7 +63,7 @@ static const CGFloat cellHeight = 40.0f;
     selectView * selectV;
 }
 
-- (void)initWithFrame:(CGRect)frame showOnView:(UIView*)view AllDataArr:(NSMutableArray*)arr showArr:(NSMutableArray *)showArr
+- (CHDDropDownMenu*)initWithFrame:(CGRect)frame showOnView:(UIView*)view AllDataArr:(NSMutableArray*)arr showArr:(NSMutableArray *)showArr
 {
     if ([super initWithFrame:frame]) {
         self.AllDataArr = arr;
@@ -133,7 +133,7 @@ static const CGFloat cellHeight = 40.0f;
         [view addSubview:selectV];
         self.backgroundColor = [UIColor orangeColor];
     }
-    
+    return self;
 }
 - (void)bgViewClick:(UITapGestureRecognizer*)tap
 {
@@ -314,6 +314,7 @@ static const CGFloat cellHeight = 40.0f;
     //*************  本段代码用于选择相同选项时不在回调，不需要可注掉  ****************
     chdModel *modelLast = self.AllDataArr[currentSelect][indexPath.row];
     if (modelLast.isSelect) {
+        
         [self hideCurrent];
         isShow = NO;
         
@@ -327,10 +328,9 @@ static const CGFloat cellHeight = 40.0f;
     [self hideCurrent];
     isShow = NO;
     chdModel *model = self.AllDataArr[currentSelect][indexPath.row];
-    if ([self.delegate respondsToSelector:@selector(selectClum:Row:)]) {
+       
         [self.delegate selectColum:currentSelect Row:indexPath.row Model:model];
-    }
-    NSLog(@"%@",model.text);
+   
     
 }
 /*
