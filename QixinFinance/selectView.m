@@ -32,7 +32,7 @@
 }
 
 -(void)setTableView{
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height-100) style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStyleGrouped];
     
 //    _tableView.delegate = self.myNav;
     dataSource = @[[NSArray arrayWithObjects:@{@"num":@[@"不限",@"上班族",@"企业主",@"个体户",@"学生",@"自由职业"]}, nil],[NSArray arrayWithObjects:@{@"num":@[@"不限",@"车辆抵押",@"房产抵押",@"其他抵押",@"信用卡",@"担保"]}, nil],[NSArray arrayWithObjects:@{@"num":@[@"不限",@"分期还款",@"到期还款",@"随借随还"]}, nil],[NSArray arrayWithObjects:@{@"num":@[@"不限",@"银行",@"小贷公司",@"典当行"]}, nil]];
@@ -77,15 +77,15 @@
        return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section==0||indexPath.section==1||indexPath.section==3) {
-        return 80;
+    if (indexPath.section==0||indexPath.section==1) {
+        return 95;
     }
     else{
-        return 45;
+        return 40;
     }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 40;
+    return 30;
 }
 
 

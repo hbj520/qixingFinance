@@ -162,6 +162,7 @@ static const CGFloat cellHeight = 40.0f;
 
 - (void)buttonClick:(chdButton*)button
 {
+    selectV.hidden = YES;
     [button setTitleColor:[UIColor colorWithRed:21/255.0 green:48/255.0 blue:121/255.0 alpha:1] forState:UIControlStateNormal];
     button.titleLabel.textColor = [UIColor whiteColor];
     if (button.tag - 100 == currentSelect) {
@@ -179,7 +180,9 @@ static const CGFloat cellHeight = 40.0f;
 }
 
 - (void)btnFilter:(UIButton*)btn
-{[btn setTitleColor:[UIColor colorWithRed:21/255.0 green:48/255.0 blue:121/255.0 alpha:1] forState:UIControlStateNormal];
+{
+    ChdTable.hidden = YES;
+    [btn setTitleColor:[UIColor colorWithRed:21/255.0 green:48/255.0 blue:121/255.0 alpha:1] forState:UIControlStateNormal];
     if(btn.tag - 100 == currentSelect){
     if (isShow) {
        
