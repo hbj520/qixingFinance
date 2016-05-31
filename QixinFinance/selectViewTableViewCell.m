@@ -12,7 +12,7 @@
 @interface selectViewTableViewCell ()<UICollectionViewDataSource,UICollectionViewDelegate>{
     NSArray *indexAry;
     NSInteger kk;
-    BOOL inx;
+    NSInteger index;
     NSArray * dataSource;
 }
 
@@ -64,8 +64,14 @@
     _collectionView.frame = CGRectMake(0, 0, self.frame.size.width, ([[[indexAry objectAtIndex:0]objectForKey:@"num"] count]/4 + [[[indexAry objectAtIndex:0]objectForKey:@"num"] count]%4) * 40);
     
     if (kk == indexPath.row) {
-        myBig.nameLabel.backgroundColor = [UIColor colorWithRed:122/255.0 green:142/255.0 blue:182/255.0 alpha:1];
-       myBig.nameLabel.textColor = [UIColor whiteColor];
+        index++;
+        if (1) {
+            myBig.nameLabel.backgroundColor = [UIColor colorWithRed:122/255.0 green:142/255.0 blue:182/255.0 alpha:1];
+            myBig.nameLabel.textColor = [UIColor whiteColor];
+        }else{
+       // myBig.nameLabel.backgroundColor = [UIColor colorWithRed:122/255.0 green:142/255.0 blue:182/255.0 alpha:1];
+       myBig.nameLabel.textColor = [UIColor blackColor];
+        }
     }else{
         myBig.nameLabel.textColor = [UIColor blackColor];
     }

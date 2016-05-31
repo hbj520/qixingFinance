@@ -86,4 +86,22 @@
     }];
 }
 
+- (void)getMoreLoanWithSort:(NSString*)sort jtype:(NSString*)jtype mtype:(NSString*)mtype rtype:(NSString*)rtype btype:(NSString*)btype month:(NSString*)month money:(NSString*)money
+{
+    NSDictionary * parameters = @{
+                                  @"sort":sort,
+                                  @"jtype":jtype,
+                                  @"mtype":mtype,
+                                  @"rtype":rtype,
+                                  @"btype":btype,
+                                  @"month":month,
+                                  @"money":money
+                                  };
+    [self.manager POST:@"nos_qx_loanlist" parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        
+    }];
+}
+
 @end
