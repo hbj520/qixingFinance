@@ -11,5 +11,6 @@
 @interface selectViewTableViewCell : UITableViewCell
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 @property(nonatomic,assign) NSInteger i ;
+@property(nonatomic,strong)NSMutableArray * array;
 -(void)setCollectionView;
 @end

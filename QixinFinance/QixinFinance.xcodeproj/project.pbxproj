@@ -58,6 +58,7 @@
 		CC8F06941CEDA17200B4D945 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F06901CEDA17200B4D945 /* TAPageControl.m */; };
 		CC8F06A71CEDC3E600B4D945 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F06A61CEDC3E600B4D945 /* UIImage+ImageEffects.m */; };
 		CC97D4A71CF59546007DB11D /* FormuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC97D4A61CF59546007DB11D /* FormuViewController.m */; };
+		CC9F709A1CFD70580051EC17 /* typelistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F70991CFD70580051EC17 /* typelistModel.m */; };
 		CCD4D5E41CEC92EE009B4550 /* ThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */; };
 		CCD4D5E81CEC930C009B4550 /* ThreeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5E61CEC930C009B4550 /* ThreeCollectionViewCell.m */; };
 		CCD4D5E91CEC930C009B4550 /* ThreeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D5E71CEC930C009B4550 /* ThreeCollectionViewCell.xib */; };
@@ -190,6 +191,8 @@
 		CC8F06A61CEDC3E600B4D945 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = SOURCE_ROOT; };
 		CC97D4A51CF59546007DB11D /* FormuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FormuViewController.h; path = ../FormuViewController.h; sourceTree = "<group>"; };
 		CC97D4A61CF59546007DB11D /* FormuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FormuViewController.m; path = ../FormuViewController.m; sourceTree = "<group>"; };
+		CC9F70981CFD70580051EC17 /* typelistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = typelistModel.h; sourceTree = "<group>"; };
+		CC9F70991CFD70580051EC17 /* typelistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = typelistModel.m; sourceTree = "<group>"; };
 		CCD4D5E21CEC92EE009B4550 /* ThreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeTableViewCell.h; path = QixinFinance/ThreeTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeTableViewCell.m; path = QixinFinance/ThreeTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		CCD4D5E51CEC930C009B4550 /* ThreeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeCollectionViewCell.h; path = QixinFinance/ThreeCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
@@ -683,6 +686,8 @@
 				CC492B011CFBE41B00FE5568 /* loaninfoModel.m */,
 				CCEBF1291CFC3AA200615F10 /* sortModel.h */,
 				CCEBF12A1CFC3AA200615F10 /* sortModel.m */,
+				CC9F70981CFD70580051EC17 /* typelistModel.h */,
+				CC9F70991CFD70580051EC17 /* typelistModel.m */,
 			);
 			name = Homepage;
 			sourceTree = "<group>";
@@ -904,6 +909,7 @@
 				CC46B6001CF1738900F84FA8 /* InfoHotViewController.m in Sources */,
 				CC492B021CFBE41B00FE5568 /* loaninfoModel.m in Sources */,
 				CC8F06A71CEDC3E600B4D945 /* UIImage+ImageEffects.m in Sources */,
+				CC9F709A1CFD70580051EC17 /* typelistModel.m in Sources */,
 				CC8F06921CEDA17200B4D945 /* TAAnimatedDotView.m in Sources */,
 				CC46B5F91CF1720F00F84FA8 /* TopTabView.m in Sources */,
 				CCD4D5E81CEC930C009B4550 /* ThreeCollectionViewCell.m in Sources */,

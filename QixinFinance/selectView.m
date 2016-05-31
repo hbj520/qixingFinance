@@ -7,6 +7,7 @@
 //
 
 #import "selectView.h"
+#import "MyAPI.h"
 #import "selectViewTableViewCell.h"
 #import "selectheaderView.h"
 @interface selectView ()<UITableViewDataSource,UITableViewDelegate>{
@@ -23,8 +24,17 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-           indexAry = [NSArray arrayWithObjects:@{@"num":@[@"职业身份",@"抵押类型",@"还款方式",@"机构类型"]}, nil];
-        [self setTableView];
+             
+        [[MyAPI sharedAPI] requestMoreLoanListWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
+        
+            dataSource = @[[NSArray arrayWithObjects:@{@"num":arrays[2]}, nil],[NSArray arrayWithObjects:@{@"num":arrays[3]}, nil],[NSArray arrayWithObjects:@{@"num":arrays[1]}, nil],[NSArray arrayWithObjects:@{@"num":arrays[4]}, nil]];
+             indexAry = [NSArray arrayWithObjects:@{@"num":arrays[5]}, nil];
+            [self setTableView];
+            [self.tableView reloadData];
+        } errorResult:^(NSError *enginerError) {
+            
+        }];
+     //   [self setTableView];
         
      
     }
@@ -35,7 +45,7 @@
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStyleGrouped];
     
 //    _tableView.delegate = self.myNav;
-    dataSource = @[[NSArray arrayWithObjects:@{@"num":@[@"不限",@"上班族",@"企业主",@"个体户",@"学生",@"自由职业"]}, nil],[NSArray arrayWithObjects:@{@"num":@[@"不限",@"车辆抵押",@"房产抵押",@"其他抵押",@"信用卡",@"担保"]}, nil],[NSArray arrayWithObjects:@{@"num":@[@"不限",@"分期还款",@"到期还款",@"随借随还"]}, nil],[NSArray arrayWithObjects:@{@"num":@[@"不限",@"银行",@"小贷公司",@"典当行"]}, nil]];
+//    dataSource = @[[NSArray arrayWithObjects:@{@"num":@[@"不限",@"上班族",@"企业主",@"个体户",@"学生",@"自由职业"]}, nil],[NSArray arrayWithObjects:@{@"num":@[@"不限",@"车辆抵押",@"房产抵押",@"其他抵押",@"信用卡",@"担保"]}, nil],[NSArray arrayWithObjects:@{@"num":@[@"不限",@"分期还款",@"到期还款",@"随借随还"]}, nil],[NSArray arrayWithObjects:@{@"num":@[@"不限",@"银行",@"小贷公司",@"典当行"]}, nil]];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -71,7 +81,7 @@
 //    }
     selectViewTableViewCell * cell = [[selectViewTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellName"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.i = indexPath.section;
+    cell.array = dataSource[indexPath.section];
     [cell setCollectionView];
     
        return cell;

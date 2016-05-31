@@ -16,6 +16,7 @@
 #import "gfselectModel.h"
 #import "loaninfoModel.h"
 #import "sortModel.h"
+#import "typelistModel.h"
 @interface MyAPI()
 @property NSString *mBaseUrl;
 @property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
@@ -77,8 +78,25 @@
         NSDictionary * data = responseObject[@"data"];
         NSArray * sortArray = data[@"sort"];
         NSMutableArray * sortData = [[sortModel alloc] buildWithData:sortArray];
+       
+        NSArray *btypelistArray = data[@"btype"][@"list"];
+        NSMutableArray * blistArray = [[typelistModel alloc] buildWithData:btypelistArray];
         
-        result(YES,@"12323",@[sortData,@""]);
+        NSArray *jtypeArray = data[@"jtype"][@"list"];
+        NSMutableArray * jlistArray = [[typelistModel alloc] buildWithData:jtypeArray];
+        
+        NSArray * mtypeArray = data[@"mtype"][@"list"];
+        NSMutableArray *mlistArray = [[typelistModel alloc] buildWithData:mtypeArray];
+        
+        NSArray * rtypeArray = data[@"rtype"][@"list"];
+        NSMutableArray * rlistArray = [[typelistModel alloc] buildWithData:rtypeArray];
+        
+        NSString *bname = data[@"btype"][@"name"];
+        NSString * jname = data[@"jtype"][@"name"];
+        NSString * mname =  data[@"mtype"][@"name"];
+         NSString * rname =  data[@"rtype"][@"name"];
+        NSMutableArray * nameArray = @[bname,jname,mname,rname];
+        result(YES,@"12323",@[sortData,blistArray,jlistArray,mlistArray,rlistArray,nameArray]);
        
        
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {

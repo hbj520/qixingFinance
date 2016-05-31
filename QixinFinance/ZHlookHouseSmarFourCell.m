@@ -45,6 +45,8 @@
      _nameLabel.backgroundColor = [UIColor colorWithRed:227/255.0 green:228/255.0 blue:230/255.0 alpha:1];
     // _nameLabel.backgroundColor = [UIColor clearColor];
 }
+
+
 -(void)layoutSubviews{
     [super layoutSubviews];
 }

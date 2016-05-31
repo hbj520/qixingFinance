@@ -9,6 +9,7 @@
 #import "selectViewTableViewCell.h"
 #import "ZHlookHouseSmarFourCell.h"
 #import "selectView.h"
+#import "typelistModel.h"
 @interface selectViewTableViewCell ()<UICollectionViewDataSource,UICollectionViewDelegate>{
     NSArray *indexAry;
     NSInteger kk;
@@ -30,16 +31,13 @@
     return self;
 }
 -(void)setCollectionView{
-    dataSource = @[[NSArray arrayWithObjects:@{@"num":@[@"不限",@"上班族",@"企业主",@"个体户",@"学生",@"自由职业"]}, nil],[NSArray arrayWithObjects:@{@"num":@[@"不限",@"车辆抵押",@"房产抵押",@"其他抵押",@"信用卡",@"担保"]}, nil],[NSArray arrayWithObjects:@{@"num":@[@"不限",@"分期还款",@"到期还款",@"随借随还"]}, nil],[NSArray arrayWithObjects:@{@"num":@[@"不限",@"银行",@"小贷公司",@"典当行"]}, nil]];
     
-    
-    indexAry = dataSource[self.i];
+    indexAry = self.array;
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     
     _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width,60) collectionViewLayout:layout];
     _collectionView.delegate=self;
     _collectionView.dataSource=self;
-    _collectionView.allowsMultipleSelection = NO;
     _collectionView.backgroundColor = [UIColor whiteColor];
     [self addSubview:_collectionView];
     
@@ -58,19 +56,20 @@
     if (!myBig) {
         myBig = [collectionView dequeueReusableCellWithReuseIdentifier:@"Four" forIndexPath:indexPath];
     }
-
-    [myBig setName:[[[indexAry objectAtIndex:0]objectForKey:@"num"]objectAtIndex:indexPath.row]];
+    typelistModel * model = [[[indexAry objectAtIndex:0] objectForKey:@"num"] objectAtIndex:indexPath.row] ;
+    [myBig setName:model.dname];
+ //   [myBig setName:[[[indexAry objectAtIndex:0]objectForKey:@"num"]  objectAtIndex:indexPath.row]];
 //    if (indexPath.row == [[[indexAry objectAtIndex:0]objectForKey:@"num"] count] - 1) {
 //    }
     _collectionView.frame = CGRectMake(0, 0, self.frame.size.width, ([[[indexAry objectAtIndex:0]objectForKey:@"num"] count]/4 + [[[indexAry objectAtIndex:0]objectForKey:@"num"] count]%4) * 40);
     
     if (kk == indexPath.row) {
-        index++;
-        NSLog(@"%ld",(long)kk);
-        if(index%2==1){
+      
+       // NSLog(@"%d",index);
+        
             myBig.nameLabel.backgroundColor = [UIColor colorWithRed:122/255.0 green:142/255.0 blue:182/255.0 alpha:1];
             myBig.nameLabel.textColor = [UIColor whiteColor];
-        }
+       
 //        myBig.nameLabel.backgroundColor = [UIColor blackColor];
 //       myBig.nameLabel.textColor = [UIColor blackColor];
         
@@ -101,7 +100,7 @@
     kk=indexPath.row;
     
     NSLog(@"%ld",indexPath.item);
- [_collectionView reloadData];
+    [_collectionView reloadData];
 }
 //返回这个UICollectionView是否可以被选择
 -(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath
