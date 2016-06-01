@@ -11,6 +11,7 @@
 #import "SecondTableViewCell.h"
 #import "LoanInfoTableViewCell.h"
 #import "HomeDetailViewController.h"
+#import <MJRefresh/MJRefresh.h>
 #import "MyAPI.h"
 @interface FormuViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -26,11 +27,32 @@
     // Do any additional setup after loading the view.
         self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
        [self.view addSubview:self.tableView];
+    [self addMJRefreshHasHeader:NO withHasFooter:YES];
     self.tableView.separatorStyle = NO;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self loadData];
+    
+   [self loadData];
     [self configUI];
+}
+
+- (void)addMJRefreshHasHeader:(BOOL)isHavHeader withHasFooter:(BOOL)isHavFooter
+{
+    if (isHavHeader) {
+        self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(reloadData) ];
+        [self.tableView.header beginRefreshing];
+    }
+    if (isHavFooter) {
+        self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
+        
+    }
+}
+
+
+
+- (void)loadMore
+{
+    [self.tableView reloadData];
 }
 
 
@@ -38,11 +60,14 @@
 {
 [[MyAPI sharedAPI] getIoaninfoWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
     if (success) {
+      
+        [self.tableView.footer endRefreshing];
         moreloanArray = arrays;
         [self.tableView reloadData];
     }
 } errorResult:^(NSError *enginerError) {
-    
+   
+    [self.tableView.footer endRefreshing];
 }];
 }
 
@@ -94,8 +119,11 @@
 {
     if (section==0) {
         return 0;
-    }else{
+    }else if (section==1){
         return 20;
+    }
+    else{
+        return 2;
     }
     
     
