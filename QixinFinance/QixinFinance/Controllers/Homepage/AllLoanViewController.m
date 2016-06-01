@@ -9,11 +9,14 @@
 #import "AllLoanViewController.h"
 #import "CHDDropDownMenu.h"
 #import "MyAPI.h"
+#import "moneyModel.h"
+#import "monthModel.h"
 #import "sortModel.h"
 #define CHD_SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 @interface AllLoanViewController ()<chdMenuDelegate>
 {
-    UIWebView * _webView;
+    NSMutableArray * moneyArray;
+    NSMutableArray * monthArray;
     NSMutableArray * sortArray;
 }
 @end
@@ -32,6 +35,8 @@
 {
     [[MyAPI sharedAPI] requestMoreLoanListWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
         sortArray = arrays[0];
+        moneyArray = arrays[6];
+        monthArray = arrays[7];
         NSMutableArray *arr = [NSMutableArray array];
         NSArray * arrymoney = @[@"5",@"10",@"15",@"20",@"25",@"50",@"100",@"200",@"500",@"1000"];
        
@@ -41,16 +46,21 @@
         NSMutableArray *temp2 = [NSMutableArray array];
         NSMutableArray *temp3 = [NSMutableArray array];
         NSMutableArray *temp4 = [NSMutableArray array];
-        for(int i = 0;i<10;i++){
-            
+        for(int i = 0;i<moneyArray.count;i++){
+            moneyModel * model1 = [[moneyModel alloc] init];
+            model1 = moneyArray[i];
             chdModel * model = [[chdModel alloc] init];
-            model.text = [NSString stringWithFormat:@"%@万元",arrymoney[i]];
+            model.text = model1.value;
+            model.uid = model1.money;
             [temp1 addObject:model];
         }
         
-        for(int i=0;i<7;i++){
+        for(int i=0;i<monthArray.count;i++){
+            monthModel * model1 = [[monthModel alloc] init];
+            model1 = monthArray[i];
             chdModel *model = [[chdModel alloc]init];
-            model.text = arrymonth[i];
+            model.text = model1.value;
+            model.uid = model1.month;
             [temp2 addObject:model];
         }
         

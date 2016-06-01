@@ -18,6 +18,8 @@
 #import "moreloaninfoModel.h"
 #import "sortModel.h"
 #import "typelistModel.h"
+#import "moneyModel.h"
+#import "monthModel.h"
 
 @interface MyAPI()
 @property NSString *mBaseUrl;
@@ -97,8 +99,15 @@
         NSString * jname = data[@"jtype"][@"name"];
         NSString * mname =  data[@"mtype"][@"name"];
          NSString * rname =  data[@"rtype"][@"name"];
+        
+        NSArray * moneyArray = data[@"money"];
+        NSMutableArray * moneyArray1 = [[moneyModel alloc] buildWithData:moneyArray];
+        
+        NSArray * monthArray = data[@"month"];
+        NSMutableArray * monthArray1 = [[monthModel alloc] buildWithData:monthArray];
+    
         NSMutableArray * nameArray = @[bname,jname,mname,rname];
-        result(YES,@"12323",@[sortData,blistArray,jlistArray,mlistArray,rlistArray,nameArray]);
+        result(YES,@"12323",@[sortData,blistArray,jlistArray,mlistArray,rlistArray,nameArray,moneyArray1,monthArray1]);
        
        
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
