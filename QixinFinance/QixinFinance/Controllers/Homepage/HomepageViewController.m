@@ -198,11 +198,12 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section==3) {
         loaninfoModel * model = loaninfoData[indexPath.row];
-        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
         HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
         vc.uid = model.loanId;
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section==6){
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
         gfselectModel * model = selectData[indexPath.row];
         HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
         vc.uid = model.selectId;

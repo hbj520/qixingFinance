@@ -9,8 +9,13 @@
 #import "FormuViewController.h"
 #import "FirstStyleTableViewCell.h"
 #import "SecondTableViewCell.h"
+#import "LoanInfoTableViewCell.h"
+#import "HomeDetailViewController.h"
+#import "MyAPI.h"
 @interface FormuViewController ()<UITableViewDelegate,UITableViewDataSource>
-
+{
+    NSMutableArray * moreloanArray;
+}
 @property(nonatomic,strong)UITableView * tableView;
 @end
 
@@ -20,26 +25,47 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
         self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
-    [self.view addSubview:self.tableView];
+       [self.view addSubview:self.tableView];
+    self.tableView.separatorStyle = NO;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self loadData];
     [self configUI];
+}
+
+
+- (void)loadData
+{
+[[MyAPI sharedAPI] getIoaninfoWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
+    if (success) {
+        moreloanArray = arrays;
+        [self.tableView reloadData];
+    }
+} errorResult:^(NSError *enginerError) {
+    
+}];
 }
 
 - (void)configUI
 {
     [self.tableView registerNib:[UINib nibWithNibName:@"FirstStyleTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell1"];
    [self.tableView registerNib:[UINib nibWithNibName:@"SecondTableViewCell" bundle:nil] forCellReuseIdentifier:@"celltwo"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"LoanInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell3"];
 }
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (section==2) {
+        return moreloanArray.count;
+    }else{
     return 1;
+    }
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -52,9 +78,14 @@
             [weakself pushVC];
         };
         return cell;
-    }else{
+    }else if(indexPath.section==1){
         SecondTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celltwo" forIndexPath:indexPath];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    }else{
+        moreloaninfoModel * model = moreloanArray[indexPath.row];
+        LoanInfoTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell3" forIndexPath:indexPath];
+        cell.model = model;
         return cell;
     }
 }
@@ -74,16 +105,21 @@
 {
     if (indexPath.section==0) {
         return 250;
-    }else{
-        return 450;
+    }else if (indexPath.section==1){
+        return 47;
+    }
+    else{
+        return 90;
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section==1){
-        [self.tableView setContentOffset:CGPointMake(0, 180)];
-      
+    if (indexPath.section==2) {
+        moreloaninfoModel * model = moreloanArray[indexPath.row];
+        HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
+        vc.uid = model.infoId;
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 - (void)pushVC

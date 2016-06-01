@@ -69,7 +69,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmP-5K-UQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-208" y="180"/>
+            <point key="canvasLocation" x="-275" y="40"/>
         </scene>
         <!--贷款-->
         <scene sceneID="9aO-Ng-JSK">
@@ -88,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bsh-i5-hY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134" y="174"/>
+            <point key="canvasLocation" x="70" y="30"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pYb-eF-etZ">
@@ -104,7 +104,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSF-w9-3gE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="346" y="-16"/>
+            <point key="canvasLocation" x="441" y="-25"/>
         </scene>
         <!--全部贷款-->
         <scene sceneID="r2b-zX-ZHw">
@@ -123,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwh-uZ-RyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679" y="22"/>
+            <point key="canvasLocation" x="777" y="-25"/>
         </scene>
     </scenes>
 </document>

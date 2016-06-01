@@ -15,8 +15,10 @@
 #import "adverModel.h"
 #import "gfselectModel.h"
 #import "loaninfoModel.h"
+#import "moreloaninfoModel.h"
 #import "sortModel.h"
 #import "typelistModel.h"
+
 @interface MyAPI()
 @property NSString *mBaseUrl;
 @property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
@@ -102,6 +104,18 @@
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         
     }];
+}
+
+- (void)getIoaninfoWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
+{
+[self.manager POST:@"nos_qx_loanlist" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    NSDictionary * data = responseObject[@"data"];
+    NSArray * loanInfoArray = data[@"loaninfo"];
+    NSMutableArray * moreloanInfoArray = [[moreloaninfoModel alloc] buildWithData:loanInfoArray];
+    result(YES,@"123",moreloanInfoArray);
+} failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+    
+}];
 }
 
 - (void)getMoreLoanWithSort:(NSString*)sort jtype:(NSString*)jtype mtype:(NSString*)mtype rtype:(NSString*)rtype btype:(NSString*)btype month:(NSString*)month money:(NSString*)money

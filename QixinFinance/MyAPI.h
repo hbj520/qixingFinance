@@ -33,6 +33,8 @@ typedef void (^ErrorBlock) (NSError *enginerError);
  *  @param errorResult 
  */
 - (void)requestMoreLoanListWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
+- (void)getIoaninfoWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 /**
  *  筛选详情页面的webView回调
  */
