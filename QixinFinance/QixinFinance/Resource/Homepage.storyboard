@@ -90,7 +90,7 @@
         <!--Banner Detail View Controller-->
         <scene sceneID="4hS-Hl-RcD">
             <objects>
-                <viewController storyboardIdentifier="Banner" id="9rG-9I-Xjo" customClass="BannerDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Banner" automaticallyAdjustsScrollViewInsets="NO" id="9rG-9I-Xjo" customClass="BannerDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CyK-QH-i5F"/>
                         <viewControllerLayoutGuide type="bottom" id="hho-cC-Mfw"/>

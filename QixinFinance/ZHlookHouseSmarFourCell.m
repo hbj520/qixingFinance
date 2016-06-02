@@ -48,11 +48,20 @@
 
 - (void)setSelected:(BOOL)selected{
     [super setSelected:selected];
-    if (selected) {
-        //选中时
-        _nameLabel.backgroundColor = [UIColor orangeColor];
-    }else{
+    _inx = !_inx;
+    if (_inx) {
+       
+        if (selected) {
+            _nameLabel.textColor = [UIColor whiteColor];
+            _nameLabel.backgroundColor = [UIColor colorWithRed:122/255.0 green:142/255.0 blue:182/255.0 alpha:1];
+
+        }else{
+            selected = NO;
+        }
+    }
+    else{
         //非选中
+        _nameLabel.textColor = [UIColor blackColor];
         _nameLabel.backgroundColor = [UIColor colorWithRed:227/255.0 green:228/255.0 blue:230/255.0 alpha:1];
     }
 }
