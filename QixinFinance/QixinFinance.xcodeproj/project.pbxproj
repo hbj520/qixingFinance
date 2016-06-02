@@ -65,6 +65,8 @@
 		CC97D4A71CF59546007DB11D /* FormuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC97D4A61CF59546007DB11D /* FormuViewController.m */; };
 		CC9F709A1CFD70580051EC17 /* typelistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9F70991CFD70580051EC17 /* typelistModel.m */; };
 		CCABDA301CFFD13100B5657F /* JobInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCABDA2F1CFFD13100B5657F /* JobInfoModel.m */; };
+		CCABDA341CFFDE4400B5657F /* JobInfoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCABDA321CFFDE4400B5657F /* JobInfoCollectionViewCell.m */; };
+		CCABDA351CFFDE4400B5657F /* JobInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCABDA331CFFDE4400B5657F /* JobInfoCollectionViewCell.xib */; };
 		CCD4D5E41CEC92EE009B4550 /* ThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */; };
 		CCD4D5E81CEC930C009B4550 /* ThreeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5E61CEC930C009B4550 /* ThreeCollectionViewCell.m */; };
 		CCD4D5E91CEC930C009B4550 /* ThreeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D5E71CEC930C009B4550 /* ThreeCollectionViewCell.xib */; };
@@ -210,6 +212,9 @@
 		CC9F70991CFD70580051EC17 /* typelistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = typelistModel.m; sourceTree = "<group>"; };
 		CCABDA2E1CFFD13100B5657F /* JobInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobInfoModel.h; sourceTree = "<group>"; };
 		CCABDA2F1CFFD13100B5657F /* JobInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JobInfoModel.m; sourceTree = "<group>"; };
+		CCABDA311CFFDE4400B5657F /* JobInfoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobInfoCollectionViewCell.h; path = QixinFinance/Models/JobInfoCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		CCABDA321CFFDE4400B5657F /* JobInfoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobInfoCollectionViewCell.m; path = QixinFinance/Models/JobInfoCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
+		CCABDA331CFFDE4400B5657F /* JobInfoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JobInfoCollectionViewCell.xib; path = QixinFinance/Models/JobInfoCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		CCD4D5E21CEC92EE009B4550 /* ThreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeTableViewCell.h; path = QixinFinance/ThreeTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeTableViewCell.m; path = QixinFinance/ThreeTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		CCD4D5E51CEC930C009B4550 /* ThreeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeCollectionViewCell.h; path = QixinFinance/ThreeCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
@@ -509,6 +514,9 @@
 				CC8F06271CED51A100B4D945 /* FirstStyleTableViewCell.h */,
 				CC8F06281CED51A100B4D945 /* FirstStyleTableViewCell.m */,
 				CC8F06291CED51A100B4D945 /* FirstStyleTableViewCell.xib */,
+				CCABDA311CFFDE4400B5657F /* JobInfoCollectionViewCell.h */,
+				CCABDA321CFFDE4400B5657F /* JobInfoCollectionViewCell.m */,
+				CCABDA331CFFDE4400B5657F /* JobInfoCollectionViewCell.xib */,
 				CC8F062C1CED58B900B4D945 /* SecondTableViewCell.h */,
 				CC8F062D1CED58B900B4D945 /* SecondTableViewCell.m */,
 				CC8F062E1CED58B900B4D945 /* SecondTableViewCell.xib */,
@@ -841,6 +849,7 @@
 				CCD4D5FD1CEC9482009B4550 /* HotCardTableViewCell.xib in Resources */,
 				CCD4D5F81CEC946D009B4550 /* bankLoanTableViewCell.xib in Resources */,
 				ABA301EB1CEAFCC700693AC6 /* Main.storyboard in Resources */,
+				CCABDA351CFFDE4400B5657F /* JobInfoCollectionViewCell.xib in Resources */,
 				CCD4D5F31CEC9454009B4550 /* ActivityTableViewCell.xib in Resources */,
 				CCD4D5EE1CEC943B009B4550 /* recommandLoanTableViewCell.xib in Resources */,
 				ABA302361CEB08D100693AC6 /* Personal.storyboard in Resources */,
@@ -937,6 +946,7 @@
 				CC46B6061CF173B700F84FA8 /* InfoFinicalViewController.m in Sources */,
 				CC46B60C1CF173D900F84FA8 /* InfoFinialGuardViewController.m in Sources */,
 				CC46B6001CF1738900F84FA8 /* InfoHotViewController.m in Sources */,
+				CCABDA341CFFDE4400B5657F /* JobInfoCollectionViewCell.m in Sources */,
 				CC492B021CFBE41B00FE5568 /* loaninfoModel.m in Sources */,
 				CC8F06A71CEDC3E600B4D945 /* UIImage+ImageEffects.m in Sources */,
 				CC9F709A1CFD70580051EC17 /* typelistModel.m in Sources */,

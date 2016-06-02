@@ -116,13 +116,13 @@
     }];
 }
 
-- (void)getIoaninfoWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
+- (void)getrecommandIoaninfoWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
 {
-[self.manager POST:@"nos_qx_loanlist" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+[self.manager POST:@"nos_qx_loanrec" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
     NSDictionary * data = responseObject[@"data"];
     NSArray * loanInfoArray = data[@"loaninfo"];
     NSMutableArray * moreloanInfoArray = [[moreloaninfoModel alloc] buildWithData:loanInfoArray];
-    result(YES,@"123",moreloanInfoArray);
+    result(YES,@"SUCCESS",moreloanInfoArray);
 } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
     
 }];
@@ -130,21 +130,21 @@
 
 - (void)getJobInfoWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
 {
-    [self.manager POST:@"" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    [self.manager POST:@"nos_qx_jobtype" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary * data = responseObject[@"data"];
-        NSDictionary * workdict = data[@"jtype"][@"1"];
+        NSDictionary * workdict = data[@"1"];
         JobInfoModel * model1 = [[JobInfoModel alloc] buildWithData:workdict];
         
-        NSDictionary * qiyedict =  data[@"jtype"][@"2"];
+        NSDictionary * qiyedict =  data[@"2"];
         JobInfoModel * model2 = [[JobInfoModel alloc] buildWithData:qiyedict];
         
-        NSDictionary *  freedict = data[@"jtype"][@"3"];
+        NSDictionary *  freedict = data[@"3"];
         JobInfoModel * model3 = [[JobInfoModel alloc] buildWithData:freedict];
         
-        NSDictionary * studict = data[@"jtype"][@"4"];
+        NSDictionary * studict = data[@"4"];
         JobInfoModel * model4 = [[JobInfoModel alloc] buildWithData:studict];
         
-        NSDictionary *  dict = data[@"jtype"][@"5"];
+        NSDictionary *  dict = data[@"5"];
         JobInfoModel * model5 = [[JobInfoModel alloc] buildWithData:dict];
         
         NSArray * jobArray = @[model1,model2,model3,model4,model5];

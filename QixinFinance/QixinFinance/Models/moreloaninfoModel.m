@@ -29,7 +29,7 @@
         NSString * mrate = dict[@"mrate"];
         NSString * name = dict[@"name"];
         NSNumber * number = dict[@"number"];
-        NSString * thumbimg = dict[@"thumbimg"];
+        NSString * thumbimg = dict[@"image"];
         moreloaninfoModel * model = [[moreloaninfoModel alloc] initWithinfoId:infoId mrate:mrate name:name number:number thumbimg:thumbimg];
         [moreloaninfoArray addObject:model];
     }

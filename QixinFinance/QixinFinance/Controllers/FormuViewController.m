@@ -11,6 +11,7 @@
 #import "SecondTableViewCell.h"
 #import "LoanInfoTableViewCell.h"
 #import "HomeDetailViewController.h"
+#import "AllLoanViewController.h"
 #import <MJRefresh/MJRefresh.h>
 #import "MyAPI.h"
 @interface FormuViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -27,7 +28,7 @@
     // Do any additional setup after loading the view.
         self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
        [self.view addSubview:self.tableView];
-    [self addMJRefreshHasHeader:NO withHasFooter:YES];
+   // [self addMJRefreshHasHeader:NO withHasFooter:YES];
     self.tableView.separatorStyle = NO;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -36,39 +37,23 @@
     [self configUI];
 }
 
-- (void)addMJRefreshHasHeader:(BOOL)isHavHeader withHasFooter:(BOOL)isHavFooter
-{
-    if (isHavHeader) {
-        self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(reloadData) ];
-        [self.tableView.header beginRefreshing];
-    }
-    if (isHavFooter) {
-        self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
-        
-    }
-}
 
 
 
-- (void)loadMore
-{
-    [self.tableView reloadData];
-}
+
 
 
 - (void)loadData
 {
-[[MyAPI sharedAPI] getIoaninfoWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
+[[MyAPI sharedAPI] getrecommandIoaninfoWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
     if (success) {
       
-        [self.tableView.footer endRefreshing];
-        moreloanArray = arrays;
+                moreloanArray = arrays;
         [self.tableView reloadData];
     }
 } errorResult:^(NSError *enginerError) {
    
-    [self.tableView.footer endRefreshing];
-}];
+    }];
 }
 
 - (void)configUI
@@ -98,11 +83,7 @@
     if (indexPath.section==0) {
         FirstStyleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        __weak FormuViewController * weakself = self;
-        cell.block = ^(){
-            [weakself pushVC];
-        };
-        return cell;
+             return cell;
     }else if(indexPath.section==1){
         SecondTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celltwo" forIndexPath:indexPath];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -143,6 +124,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section==1) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
+        FormuViewController *VC = (FormuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
+        [self.navigationController pushViewController:VC animated:YES];    }
+    
     if (indexPath.section==2) {
         moreloaninfoModel * model = moreloanArray[indexPath.row];
         HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
@@ -150,6 +136,7 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
+
 - (void)pushVC
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];

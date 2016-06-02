@@ -17,6 +17,7 @@
 #import "SDCycleScrollView.h"
 #import "HomeDetailViewController.h"
 #import "FormuViewController.h"
+#import "AllLoanViewController.h"
 #import "MyAPI.h"
 #import "loaninfoModel.h"
 #import "gfselectModel.h"
@@ -196,6 +197,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section==2) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
+        FormuViewController *VC = (FormuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
+        [self.navigationController pushViewController:VC animated:YES];    }
     if (indexPath.section==3) {
         loaninfoModel * model = loaninfoData[indexPath.row];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];

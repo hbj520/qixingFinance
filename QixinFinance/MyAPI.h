@@ -49,7 +49,13 @@ typedef void (^ErrorBlock) (NSError *enginerError);
  */
 - (void)getJobInfoWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 
-- (void)getIoaninfoWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+/**
+ *  推荐贷款
+ *
+ *  @param result      推荐贷款模型
+ *  @param errorResult 
+ */
+- (void)getrecommandIoaninfoWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 /**
  *  筛选详情页面
  */
