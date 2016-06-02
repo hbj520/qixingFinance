@@ -20,6 +20,7 @@
 #import "typelistModel.h"
 #import "moneyModel.h"
 #import "monthModel.h"
+#import "JobInfoModel.h"
 
 @interface MyAPI()
 @property NSString *mBaseUrl;
@@ -107,7 +108,7 @@
         NSMutableArray * monthArray1 = [[monthModel alloc] buildWithData:monthArray];
     
         NSMutableArray * nameArray = @[bname,jname,mname,rname];
-        result(YES,@"12323",@[sortData,blistArray,jlistArray,mlistArray,rlistArray,nameArray,moneyArray1,monthArray1]);
+        result(YES,@"SUCCESS",@[sortData,blistArray,jlistArray,mlistArray,rlistArray,nameArray,moneyArray1,monthArray1]);
        
        
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
@@ -125,6 +126,32 @@
 } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
     
 }];
+}
+
+- (void)getJobInfoWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
+{
+    [self.manager POST:@"" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary * data = responseObject[@"data"];
+        NSDictionary * workdict = data[@"jtype"][@"1"];
+        JobInfoModel * model1 = [[JobInfoModel alloc] buildWithData:workdict];
+        
+        NSDictionary * qiyedict =  data[@"jtype"][@"2"];
+        JobInfoModel * model2 = [[JobInfoModel alloc] buildWithData:qiyedict];
+        
+        NSDictionary *  freedict = data[@"jtype"][@"3"];
+        JobInfoModel * model3 = [[JobInfoModel alloc] buildWithData:freedict];
+        
+        NSDictionary * studict = data[@"jtype"][@"4"];
+        JobInfoModel * model4 = [[JobInfoModel alloc] buildWithData:studict];
+        
+        NSDictionary *  dict = data[@"jtype"][@"5"];
+        JobInfoModel * model5 = [[JobInfoModel alloc] buildWithData:dict];
+        
+        NSArray * jobArray = @[model1,model2,model3,model4,model5];
+        result(YES,@"SUCCESS",jobArray);
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        
+    }];
 }
 
 - (void)getMoreLoanWithSort:(NSString*)sort jtype:(NSString*)jtype mtype:(NSString*)mtype rtype:(NSString*)rtype btype:(NSString*)btype month:(NSString*)month money:(NSString*)money

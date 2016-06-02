@@ -34,9 +34,24 @@ typedef void (^ErrorBlock) (NSError *enginerError);
  */
 - (void)requestMoreLoanListWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 
+/**
+ *  贷款详情列表页数据
+ *
+ *  @param result    详情数据模型数组
+ *  @param errorResult 错误信息
+ */
+
+/**
+ *  职业身份信息
+ *
+ *  @param result      身份信息模型数组
+ *  @param errorResult 
+ */
+- (void)getJobInfoWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
 - (void)getIoaninfoWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 /**
- *  筛选详情页面的webView回调
+ *  筛选详情页面
  */
 /**
  *

@@ -57,7 +57,7 @@
                             <constraint firstAttribute="width" constant="50" id="QkZ-8o-SAn"/>
                             <constraint firstAttribute="height" constant="50" id="zDn-YK-JVg"/>
                         </constraints>
-                        <state key="normal" image="creditBtn"/>
+                        <state key="normal" image="creditImg"/>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJG-sv-jPR">
                         <rect key="frame" x="94" y="162" width="50" height="50"/>
@@ -67,15 +67,6 @@
                             <constraint firstAttribute="height" constant="50" id="ulA-Ox-4Py"/>
                         </constraints>
                         <state key="normal" image="peopleLoan"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOQ-BN-3Cw">
-                        <rect key="frame" x="12" y="162" width="50" height="50"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="50" id="BW6-19-6xA"/>
-                            <constraint firstAttribute="height" constant="50" id="kc2-2m-D7S"/>
-                        </constraints>
-                        <state key="normal" image="workBtn"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上班族" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tz6-o4-lCW">
                         <rect key="frame" x="5" y="216" width="65" height="21"/>
@@ -126,6 +117,15 @@
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOQ-BN-3Cw">
+                        <rect key="frame" x="12" y="162" width="50" height="50"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="BW6-19-6xA"/>
+                            <constraint firstAttribute="height" constant="50" id="kc2-2m-D7S"/>
+                        </constraints>
+                        <state key="normal" image="workImg"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Tz6-o4-lCW" firstAttribute="top" secondItem="KOQ-BN-3Cw" secondAttribute="bottom" constant="4" id="1xm-mk-nyL"/>
@@ -172,11 +172,11 @@
     </objects>
     <resources>
         <image name="backImg" width="1080" height="448"/>
-        <image name="creditBtn" width="153" height="157"/>
+        <image name="creditImg" width="153" height="157"/>
         <image name="inputImg" width="670" height="90"/>
         <image name="loanImg" width="152" height="157"/>
         <image name="peopleLoan" width="154" height="157"/>
         <image name="resultBtn" width="284" height="90"/>
-        <image name="workBtn" width="153" height="157"/>
+        <image name="workImg" width="153" height="157"/>
     </resources>
 </document>
