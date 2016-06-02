@@ -13,6 +13,8 @@
 #import "HomeDetailViewController.h"
 #import "AllLoanViewController.h"
 #import <MJRefresh/MJRefresh.h>
+#import "JobInfoModel.h"
+#import "CHDDropDownMenu.h"
 #import "MyAPI.h"
 @interface FormuViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -83,11 +85,22 @@
     if (indexPath.section==0) {
         FirstStyleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        __weak FormuViewController * weakself = self;
+        cell.block = ^(JobInfoModel* model){
+            
+            
+            
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
+            FormuViewController *VC = (FormuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
+            
+            [weakself.navigationController pushViewController:VC animated:YES];
+            
+        };
              return cell;
     }else if(indexPath.section==1){
         SecondTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celltwo" forIndexPath:indexPath];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
+              return cell;
     }else{
         moreloaninfoModel * model = moreloanArray[indexPath.row];
         LoanInfoTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell3" forIndexPath:indexPath];
@@ -139,9 +152,13 @@
 
 - (void)pushVC
 {
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
     FormuViewController *VC = (FormuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
     [self.navigationController pushViewController:VC animated:YES];
+}
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

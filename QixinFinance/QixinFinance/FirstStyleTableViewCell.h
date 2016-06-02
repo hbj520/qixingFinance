@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class JobInfoModel;
+typedef void (^PushMoreLoanPage)(JobInfoModel * model);
 @interface FirstStyleTableViewCell : UITableViewCell<UICollectionViewDelegate,UICollectionViewDataSource>
 {
     NSArray * dataSource;
@@ -16,4 +17,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bgImg;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+@property(nonatomic,copy)PushMoreLoanPage  block;
 @end

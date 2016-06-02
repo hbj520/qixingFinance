@@ -19,15 +19,18 @@
     return model;
 }
 
-- (NSMutableArray *)buildData:(NSDictionary *)data
+- (NSMutableArray *)buildData:(NSArray *)data
 {
     NSMutableArray *bannerArray = [NSMutableArray array];
-    NSString * adId = data[@"id"];
-    NSString *imageurl = data[@"imgthumb"];
-    NSString * link = data[@"link"];
-    NSString *name = data[@"name"];
+    for(NSDictionary * dict in data){
+    NSString * adId = dict[@"id"];
+    NSString *imageurl = dict[@"imgthumb"];
+    NSString * link = dict[@"link"];
+    NSString *name = dict[@"name"];
     adverModel * model = [[adverModel alloc] initWithLink:link imageurl:imageurl adName:name adId:adId];
-    [bannerArray addObject:model];
+         [bannerArray addObject:model];
+    }
+   
     return bannerArray;
 }
 

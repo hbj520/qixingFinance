@@ -51,6 +51,22 @@
     [self.manager.operationQueue cancelAllOperations];
 }
 
+- (void)getHomepageBannerWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
+{
+    [self.manager POST:@"nos_qx_indexbanner" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSString * status = responseObject[@"status"];
+        if ([status isEqualToString:@"1"]) {
+            NSArray * data = responseObject[@"data"][@"adver_ban"];
+           
+                NSMutableArray * adArray = [[adverModel alloc] buildData:data];
+            
+            result(YES,@"SUCCESS",adArray);
+        }
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        
+    }];
+}
+
 - (void)getHomepageDataWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
 {
     [self.manager POST:@"nos_qx_index" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -60,14 +76,14 @@
         }
         if ([status isEqualToString:@"1"]) {
             NSDictionary *data = responseObject[@"data"];
-            NSDictionary * adDict = data[@"adver_ban"];
+         //   NSDictionary * adDict = data[@"adver_ban"];
             NSArray * selectArray = data[@"gfselect"];
             NSArray * loanArray = data[@"loaninfo"];
             //首页滚动视图数据赋值
-            NSMutableArray * adverData = [[adverModel alloc] buildData:adDict];
+           // NSMutableArray * adverData = [[adverModel alloc] buildData:adDict];
             NSMutableArray * selectData = [[gfselectModel alloc] buildWithData:selectArray];
             NSMutableArray * loanData = [[loaninfoModel alloc] buildWithData:loanArray];
-            result(YES,@"获取成功",@[adverData,selectData,loanData]);
+            result(YES,@"获取成功",@[selectData,loanData]);
         }else{
             result(NO,@"获取失败",nil);
         }
@@ -107,7 +123,7 @@
         NSArray * monthArray = data[@"month"];
         NSMutableArray * monthArray1 = [[monthModel alloc] buildWithData:monthArray];
     
-        NSMutableArray * nameArray = @[bname,jname,mname,rname];
+        NSMutableArray * nameArray = @[jname,mname,bname,rname];
         result(YES,@"SUCCESS",@[sortData,blistArray,jlistArray,mlistArray,rlistArray,nameArray,moneyArray1,monthArray1]);
        
        

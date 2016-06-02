@@ -63,19 +63,19 @@
 //    }
     _collectionView.frame = CGRectMake(0, 0, self.frame.size.width, ([[[indexAry objectAtIndex:0]objectForKey:@"num"] count]/4 + [[[indexAry objectAtIndex:0]objectForKey:@"num"] count]%4) * 40);
     
-    if (kk == indexPath.row) {
-      
-       // NSLog(@"%d",index);
-        
-            myBig.nameLabel.backgroundColor = [UIColor colorWithRed:122/255.0 green:142/255.0 blue:182/255.0 alpha:1];
-            myBig.nameLabel.textColor = [UIColor whiteColor];
-       
-//        myBig.nameLabel.backgroundColor = [UIColor blackColor];
-//       myBig.nameLabel.textColor = [UIColor blackColor];
-        
-    }else{
-        myBig.nameLabel.textColor = [UIColor blackColor];
-    }
+//    if (kk == indexPath.row) {
+//      
+//       // NSLog(@"%d",index);
+//        
+//            myBig.nameLabel.backgroundColor = [UIColor colorWithRed:122/255.0 green:142/255.0 blue:182/255.0 alpha:1];
+//            myBig.nameLabel.textColor = [UIColor whiteColor];
+//       
+////        myBig.nameLabel.backgroundColor = [UIColor blackColor];
+////       myBig.nameLabel.textColor = [UIColor blackColor];
+//        
+//    }else{
+//        myBig.nameLabel.textColor = [UIColor blackColor];
+//    }
     return myBig;
 }
 
@@ -100,7 +100,7 @@
     kk=indexPath.row;
     
     NSLog(@"%ld",indexPath.item);
-    [_collectionView reloadData];
+ //   [_collectionView reloadData];
 }
 //返回这个UICollectionView是否可以被选择
 -(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath

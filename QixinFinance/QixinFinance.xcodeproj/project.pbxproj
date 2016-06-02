@@ -26,6 +26,7 @@
 		ABA302401CEB18F300693AC6 /* HomepageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA3023F1CEB18F300693AC6 /* HomepageViewController.m */; };
 		CC05EB651CF05C0C003B4B70 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = CC05EB641CF05C0C003B4B70 /* UINavigationBar+Awesome.m */; };
 		CC05EB681CF05CC3003B4B70 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC05EB671CF05CC3003B4B70 /* PersonViewController.m */; };
+		CC230EFB1D0020D6007933FD /* BannerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC230EFA1D0020D6007933FD /* BannerDetailViewController.m */; };
 		CC46B5F31CF171A500F84FA8 /* NinaBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46B5F21CF171A500F84FA8 /* NinaBaseView.m */; };
 		CC46B5F61CF171E200F84FA8 /* NinaPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46B5F51CF171E200F84FA8 /* NinaPagerView.m */; };
 		CC46B5F91CF1720F00F84FA8 /* TopTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC46B5F81CF1720F00F84FA8 /* TopTabView.m */; };
@@ -136,6 +137,8 @@
 		CC05EB641CF05C0C003B4B70 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = SOURCE_ROOT; };
 		CC05EB661CF05CC3003B4B70 /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonViewController.h; path = QixinFinance/Controllers/PersonViewController.h; sourceTree = SOURCE_ROOT; };
 		CC05EB671CF05CC3003B4B70 /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonViewController.m; path = QixinFinance/Controllers/PersonViewController.m; sourceTree = SOURCE_ROOT; };
+		CC230EF91D0020D6007933FD /* BannerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerDetailViewController.h; sourceTree = "<group>"; };
+		CC230EFA1D0020D6007933FD /* BannerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerDetailViewController.m; sourceTree = "<group>"; };
 		CC46B5F11CF171A500F84FA8 /* NinaBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NinaBaseView.h; sourceTree = SOURCE_ROOT; };
 		CC46B5F21CF171A500F84FA8 /* NinaBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NinaBaseView.m; sourceTree = SOURCE_ROOT; };
 		CC46B5F41CF171E200F84FA8 /* NinaPagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NinaPagerView.h; sourceTree = SOURCE_ROOT; };
@@ -392,6 +395,8 @@
 				CC97D4A61CF59546007DB11D /* FormuViewController.m */,
 				ABA3023E1CEB18F300693AC6 /* HomepageViewController.h */,
 				ABA3023F1CEB18F300693AC6 /* HomepageViewController.m */,
+				CC230EF91D0020D6007933FD /* BannerDetailViewController.h */,
+				CC230EFA1D0020D6007933FD /* BannerDetailViewController.m */,
 				CCD663D41CF96D9400E83FD2 /* HomeDetailViewController.h */,
 				CCD663D51CF96D9400E83FD2 /* HomeDetailViewController.m */,
 				CCFB22751CF995D100F7892A /* AllLoanViewController.h */,
@@ -960,6 +965,7 @@
 				CC8F06941CEDA17200B4D945 /* TAPageControl.m in Sources */,
 				CCD4D5F21CEC9454009B4550 /* ActivityTableViewCell.m in Sources */,
 				CC05EB651CF05C0C003B4B70 /* UINavigationBar+Awesome.m in Sources */,
+				CC230EFB1D0020D6007933FD /* BannerDetailViewController.m in Sources */,
 				ABA3022D1CEB084400693AC6 /* HomeTabbarViewController.m in Sources */,
 				CC492AFC1CFBE3F500FE5568 /* adverModel.m in Sources */,
 				CCD4D6061CEC9755009B4550 /* financialProductTableViewCell.m in Sources */,

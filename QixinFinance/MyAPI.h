@@ -19,6 +19,14 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 //取消所有网路全部请求
 - (void)cancelAllOperation;
 
+
+/**
+ *  首页banner
+ *
+ *  @param result      banner模型数组
+ *  @param errorResult 
+ */
+- (void)getHomepageBannerWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 /**
  *  获取首页信息
  *

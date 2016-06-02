@@ -14,5 +14,5 @@
 @property(nonatomic,copy)NSString *adId;
 @property(nonatomic,copy)NSString *link;
 - (id)initWithLink:(NSString *)link imageurl:(NSString *)imageurl adName:(NSString*)adName adId:(NSString*)adId;
-- (NSMutableArray *)buildData:(NSDictionary *)data;
+- (NSMutableArray *)buildData:(NSArray *)data;
 @end

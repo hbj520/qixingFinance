@@ -18,17 +18,19 @@
 #import "HomeDetailViewController.h"
 #import "FormuViewController.h"
 #import "AllLoanViewController.h"
+#import "BannerDetailViewController.h"
 #import "MyAPI.h"
 #import "loaninfoModel.h"
 #import "gfselectModel.h"
 #import "adverModel.h"
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
-@interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate>
 {
     NSMutableArray * _imgArray;
     NSMutableArray * imageArray;
     NSMutableArray * selectData;
     NSMutableArray * loaninfoData;
+    SDCycleScrollView * _headView;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -48,25 +50,46 @@
     [self loadData];
 }
 
+
+/**
+ *  创建滚动视图
+ */
+- (void)configPageView
+{
+    [[MyAPI sharedAPI] getHomepageBannerWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
+        imageArray = arrays;
+        for(adverModel * model in imageArray){
+            [_imgArray addObject:model.adimageUrl];
+        }
+        _headView= [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, ScreenWidth,200 ) imageURLStringsGroup:_imgArray];
+         _headView.delegate = self;
+        self.tableView.tableHeaderView = _headView;
+        
+       
+        
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+
+}
 - (void)loadData
 {
+    
+    
     [[MyAPI sharedAPI] getHomepageDataWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
-        imageArray = arrays[0];
-        selectData = arrays[1];
-        loaninfoData = arrays[2];
-        
+        //imageArray = arrays[0];
+        selectData = arrays[0];
+        loaninfoData = arrays[1];
+        [self configPageView];
         [self.tableView reloadData];
         _imgArray  = [[NSMutableArray alloc] init];
      //   NSString * imgPath = @"cycleviewicon";
         for(NSInteger i = 0 ;i<3;i++){
-            adverModel * model = imageArray[0];
-            [_imgArray addObject:model.adimageUrl];
+            //adverModel * model = imageArray[0];
+           // [_imgArray addObject:model.adimageUrl];
         }
         
-        SDCycleScrollView * cycleView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, ScreenWidth,200 ) imageURLStringsGroup:_imgArray];
-        
-        self.tableView.tableHeaderView = cycleView;
-    } errorResult:^(NSError *enginerError) {
+            } errorResult:^(NSError *enginerError) {
         
     }];
 }
@@ -118,6 +141,8 @@
     
    
 }
+
+
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -234,6 +259,9 @@
     
 }
 
+/**
+ *  点击贷款按钮
+ */
 - (void)clickLoan
 {
 //    FormuViewController * vc = [[FormuViewController alloc] init];
@@ -242,6 +270,21 @@
    FormuViewController *VC = (FormuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MoreLoan"];
     [self.navigationController pushViewController:VC animated:YES];
 
+}
+
+/**
+ *  点击头部滚动视图
+ *
+ *  @param cycleScrollView <#cycleScrollView description#>
+ *  @param index           <#index description#>
+ */
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
+    BannerDetailViewController *VC = (BannerDetailViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Banner"];
+  adverModel *model = [_imgArray objectAtIndex:index];
+    //VC.bannerUrl = model.link;
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 /*

@@ -38,11 +38,8 @@
         moneyArray = arrays[6];
         monthArray = arrays[7];
         NSMutableArray *arr = [NSMutableArray array];
-        NSArray * arrymoney = @[@"5",@"10",@"15",@"20",@"25",@"50",@"100",@"200",@"500",@"1000"];
        
-        NSArray * arrymonth = @[@"3个月",@"6个月",@"12个月",@"2年",@"3年",@"5年",@"10年"];
-      //  NSArray * arraysort = @[@"默认排序",@"总利息",@"月还款"];
-        NSMutableArray *temp1 = [NSMutableArray array];
+             NSMutableArray *temp1 = [NSMutableArray array];
         NSMutableArray *temp2 = [NSMutableArray array];
         NSMutableArray *temp3 = [NSMutableArray array];
         NSMutableArray *temp4 = [NSMutableArray array];
@@ -82,6 +79,8 @@
         //若列表展示内容与按钮展示内容相同则showArr传nil即可。
         
       CHDDropDownMenu * menu =  [[CHDDropDownMenu alloc] initWithFrame:CGRectMake(0,64,CHD_SCREEN_WIDTH, 40) showOnView:self.view AllDataArr:arr showArr:nil];
+        menu.tag = 10;
+        
         menu.delegate = self;
     } errorResult:^(NSError *enginerError) {
         
@@ -101,6 +100,9 @@
     NSLog(@"%@",model.uid);
 }
 
+- (IBAction)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 
 - (void)didReceiveMemoryWarning {

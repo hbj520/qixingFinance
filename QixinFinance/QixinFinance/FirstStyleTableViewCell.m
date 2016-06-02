@@ -73,6 +73,14 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    JobInfoModel * model = [[JobInfoModel alloc] init];
+    model = dataSource[indexPath.item];
+    self.block(model);
+    
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [self.input endEditing:YES];

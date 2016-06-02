@@ -46,7 +46,16 @@
     // _nameLabel.backgroundColor = [UIColor clearColor];
 }
 
-
+- (void)setSelected:(BOOL)selected{
+    [super setSelected:selected];
+    if (selected) {
+        //选中时
+        _nameLabel.backgroundColor = [UIColor orangeColor];
+    }else{
+        //非选中
+        _nameLabel.backgroundColor = [UIColor colorWithRed:227/255.0 green:228/255.0 blue:230/255.0 alpha:1];
+    }
+}
 -(void)layoutSubviews{
     [super layoutSubviews];
 }

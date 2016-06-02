@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5d9-zU-5la" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1288" y="174"/>
+            <point key="canvasLocation" x="-1386" y="-66"/>
         </scene>
         <!--Homepage View Controller-->
         <scene sceneID="obT-vv-6uu">
@@ -53,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pp6-Q6-wSZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-846" y="174"/>
+            <point key="canvasLocation" x="-1032" y="-66"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eEY-YC-ykB">
@@ -69,7 +69,63 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmP-5K-UQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-275" y="40"/>
+            <point key="canvasLocation" x="-625" y="-66"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8Wf-ym-5Ul">
+            <objects>
+                <navigationController id="io8-Ql-u5h" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZMC-Nr-6de">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9rG-9I-Xjo" kind="relationship" relationship="rootViewController" id="dNM-q4-W1u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QFp-Bc-tyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1176" y="578"/>
+        </scene>
+        <!--Banner Detail View Controller-->
+        <scene sceneID="4hS-Hl-RcD">
+            <objects>
+                <viewController storyboardIdentifier="Banner" id="9rG-9I-Xjo" customClass="BannerDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CyK-QH-i5F"/>
+                        <viewControllerLayoutGuide type="bottom" id="hho-cC-Mfw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qss-SN-12j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9PM-7Z-WnF">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9PM-7Z-WnF" secondAttribute="trailing" id="Htg-Dz-T0S"/>
+                            <constraint firstItem="9PM-7Z-WnF" firstAttribute="top" secondItem="CyK-QH-i5F" secondAttribute="bottom" id="e46-B0-WFY"/>
+                            <constraint firstItem="hho-cC-Mfw" firstAttribute="top" secondItem="9PM-7Z-WnF" secondAttribute="bottom" id="vN0-4t-FfM"/>
+                            <constraint firstItem="9PM-7Z-WnF" firstAttribute="leading" secondItem="Qss-SN-12j" secondAttribute="leading" id="zLe-Jh-8P1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="p9l-ZB-yQs">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="1x8-GQ-Jea">
+                            <connections>
+                                <action selector="back:" destination="9rG-9I-Xjo" id="B5G-tf-Ql6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="9PM-7Z-WnF" id="2kY-W0-0sz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pl6-gq-P5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-772" y="578"/>
         </scene>
         <!--贷款-->
         <scene sceneID="9aO-Ng-JSK">
@@ -84,11 +140,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="贷款" id="Lun-7j-2X1"/>
+                    <navigationItem key="navigationItem" title="贷款" id="Gp3-JN-pcM">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="gE5-8t-ZbS">
+                            <connections>
+                                <action selector="back:" destination="mxX-Tr-zNi" id="RaO-Hi-e0i"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bsh-i5-hY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="30"/>
+            <point key="canvasLocation" x="-274" y="-66"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pYb-eF-etZ">
@@ -104,7 +166,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSF-w9-3gE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="441" y="-25"/>
+            <point key="canvasLocation" x="115" y="-66"/>
         </scene>
         <!--全部贷款-->
         <scene sceneID="r2b-zX-ZHw">
@@ -119,11 +181,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="全部贷款" id="eFv-Dm-SUU"/>
+                    <navigationItem key="navigationItem" title="全部贷款" id="eFv-Dm-SUU">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="9aR-AU-glB">
+                            <connections>
+                                <action selector="back:" destination="Xeu-OW-MKi" id="P3G-gK-jrF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwh-uZ-RyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="777" y="-25"/>
+            <point key="canvasLocation" x="463" y="-66"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="13" height="20"/>
+    </resources>
 </document>
