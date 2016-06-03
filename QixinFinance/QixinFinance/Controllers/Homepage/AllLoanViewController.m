@@ -12,12 +12,19 @@
 #import "moneyModel.h"
 #import "monthModel.h"
 #import "sortModel.h"
+#import "moreloaninfoModel.h"
+#import "LoanInfoTableViewCell.h"
+#import "HomeDetailViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 #define CHD_SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
-@interface AllLoanViewController ()<chdMenuDelegate>
+@interface AllLoanViewController ()<chdMenuDelegate,UITableViewDelegate,UITableViewDataSource>
 {
+    
     NSMutableArray * moneyArray;
     NSMutableArray * monthArray;
     NSMutableArray * sortArray;
+    NSArray * moreLoanListArray;
+    UITableView * _tableView;
 }
 @end
 
@@ -27,6 +34,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self loadData];
+    [self configTableView];
+  
     //列表展示的模型
       }
 
@@ -79,14 +88,65 @@
         //若列表展示内容与按钮展示内容相同则showArr传nil即可。
         
       CHDDropDownMenu * menu =  [[CHDDropDownMenu alloc] initWithFrame:CGRectMake(0,64,CHD_SCREEN_WIDTH, 40) showOnView:self.view AllDataArr:arr showArr:nil];
-        menu.tag = 10;
         
         menu.delegate = self;
     } errorResult:^(NSError *enginerError) {
         
     }];
+    
+    [[MyAPI sharedAPI] getMoreLoanWithSort:@"" jtype:@"" mtype:@"" rtype:@"" btype:@"" month:@"" money:@"" page:@"" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        NSLog(@"%lu",(unsigned long)arrays.count);
+        moreLoanListArray = arrays;
+        [_tableView reloadData];
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+    
+   }
+
+- (void)configTableView
+{
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,90, CHD_SCREEN_WIDTH, self.view.frame.size.height-120) style:UITableViewStylePlain];
+    [_tableView registerNib:[UINib nibWithNibName:@"LoanInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell3"];
+    _tableView.delegate= self;
+    _tableView.dataSource= self;
+    [self.view addSubview:_tableView];
+    
+    
 }
 
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return moreLoanListArray.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 90;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LoanInfoTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell3" forIndexPath:indexPath];
+    moreloaninfoModel  * model = [[moreloaninfoModel alloc] init];
+    model = moreLoanListArray[indexPath.row];
+    cell.model = model;
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    moreloaninfoModel * model = moreLoanListArray[indexPath.row];
+    HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
+    vc.uid = model.infoId;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 /**
  *  前三组数据回调

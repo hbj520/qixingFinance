@@ -170,7 +170,7 @@
     }];
 }
 
-- (void)getMoreLoanWithSort:(NSString*)sort jtype:(NSString*)jtype mtype:(NSString*)mtype rtype:(NSString*)rtype btype:(NSString*)btype month:(NSString*)month money:(NSString*)money
+- (void)getMoreLoanWithSort:(NSString*)sort jtype:(NSString*)jtype mtype:(NSString*)mtype rtype:(NSString*)rtype btype:(NSString*)btype month:(NSString*)month money:(NSString*)money page:(NSString *)page  Result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
 {
     NSDictionary * parameters = @{
                                   @"sort":sort,
@@ -179,10 +179,14 @@
                                   @"rtype":rtype,
                                   @"btype":btype,
                                   @"month":month,
-                                  @"money":money
+                                  @"money":money,
+                                  @"page":page
                                   };
     [self.manager POST:@"nos_qx_loanlist" parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-        
+        NSDictionary * data = responseObject[@"data"];
+        NSArray * loanInfoArray = data[@"loaninfo"];
+        NSMutableArray * moreloanInfoArray = [[moreloaninfoModel alloc] buildWithData:loanInfoArray];
+        result(YES,@"SUCCESS",moreloanInfoArray);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         
     }];

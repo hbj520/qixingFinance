@@ -78,5 +78,5 @@ typedef void (^ErrorBlock) (NSError *enginerError);
  *  @param month month的id
  *  @param money money的id
  */
-- (void)getMoreLoanWithSort:(NSString*)sort jtype:(NSString*)jtype mtype:(NSString*)mtype rtype:(NSString*)rtype btype:(NSString*)btype month:(NSString*)month money:(NSString*)money;
+- (void)getMoreLoanWithSort:(NSString*)sort jtype:(NSString*)jtype mtype:(NSString*)mtype rtype:(NSString*)rtype btype:(NSString*)btype month:(NSString*)month money:(NSString*)money page:(NSString*)page  Result:(ArrayBlock)result  errorResult:(ErrorBlock)errorResult;
 @end
