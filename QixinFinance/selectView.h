@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 typedef  void(^transIndexBlock)(NSInteger index);
+
 @interface selectView : UIView
 
 -(id)initWithFrame:(CGRect)frame;
-
 @end

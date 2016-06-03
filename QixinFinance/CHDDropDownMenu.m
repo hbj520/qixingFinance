@@ -128,8 +128,8 @@ static const CGFloat cellHeight = 40.0f;
         
         [view addSubview:ChdTable];
         selectV = [[selectView alloc]initWithFrame:CGRectMake(0, 100, view.frame.size.width, view.frame.size.height - 100)];
-    
-        selectV.hidden =YES;
+        CHDDropDownMenu * weakself = self;
+               selectV.hidden =YES;
         [view addSubview:selectV];
         self.backgroundColor = [UIColor orangeColor];
     }

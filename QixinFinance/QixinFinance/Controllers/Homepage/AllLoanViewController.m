@@ -105,7 +105,7 @@
 
 - (void)loadLoanListData
 {
-    [[MyAPI sharedAPI] getMoreLoanWithSort:self.sort jtype:self.jtype mtype:@"" rtype:@"" btype:@"" month:self.month money:self.money page:@"1" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
+    [[MyAPI sharedAPI] getMoreLoanWithSort:self.sort jtype:self.jtype mtype:@"" rtype:@"" btype:@""month:self.month money:self.money page:@"1" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
         NSLog(@"%lu",(unsigned long)arrays.count);
        moreLoanListArray = arrays[0];
        

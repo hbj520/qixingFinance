@@ -95,11 +95,9 @@
     typelistModel * model = [[typelistModel alloc] init];
     
       model = [[indexAry objectAtIndex:0]objectForKey:@"num"][kk];
-  NSLog(@"%@ %@",model.fromname,model.listid);
     
    
-
-    
+ 
  //   [_collectionView reloadData];
 }
 //返回这个UICollectionView是否可以被选择

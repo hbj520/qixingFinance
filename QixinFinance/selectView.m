@@ -9,6 +9,7 @@
 #import "selectView.h"
 #import "MyAPI.h"
 #import "selectViewTableViewCell.h"
+#import "typelistModel.h"
 #import "selectheaderView.h"
 @interface selectView ()<UITableViewDataSource,UITableViewDelegate>{
     NSArray *indexAry;
@@ -57,8 +58,7 @@
 
 - (void)finish
 {
-    
-    self.hidden = YES;
+     self.hidden = YES;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -79,9 +79,10 @@
 //        
 //    }
     selectViewTableViewCell * cell = [[selectViewTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellName"];
+   
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.array = dataSource[indexPath.section];
-    [cell setCollectionView];
+        [cell setCollectionView];
     
        return cell;
 }

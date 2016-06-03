@@ -39,4 +39,9 @@
 @property (nonatomic,retain) NSMutableArray *AllDataArr;
 @property (nonatomic,retain) NSMutableArray *showArr;
 @property (nonatomic,weak) __weak id<chdMenuDelegate>delegate;
+@property(nonatomic,copy)NSString * jtype;
+@property(nonatomic,copy)NSString * btype;
+@property(nonatomic,copy)NSString * mtype;
+@property(nonatomic,copy)NSString * rtype;
+
 @end
