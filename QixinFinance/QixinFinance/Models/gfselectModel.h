@@ -14,7 +14,8 @@
 @property(nonatomic,copy)NSString * selectId;
 @property(nonatomic,copy)NSString *imgthumb;
 @property(nonatomic,copy)NSString *name;
-- (id)initWithParameter:(NSString *)selectId  deadline:(NSString *)deadline earnings:(NSString*)earnings imgthumb:(NSString *)imgthumb selectname:(NSString *)selectname;
+@property(nonatomic,copy)NSString * url;
+- (id)initWithParameter:(NSString *)selectId  deadline:(NSString *)deadline earnings:(NSString*)earnings imgthumb:(NSString *)imgthumb selectname:(NSString *)selectname selecturl:(NSString*)selecturl;
 - (NSMutableArray *)buildWithData:(NSArray *)data;
 
 @end

@@ -11,6 +11,7 @@
 @interface HomeDetailViewController ()
 {
     UIWebView * webView;
+    NSString * urlString;
 }
 @end
 
@@ -21,8 +22,15 @@
     // Do any additional setup after loading the view.
     webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.view addSubview:webView];
-    NSString *urlString = [NSString stringWithFormat:@"http://60.173.235.34:9999/qixin/app/nos_qx_loaninfo/%@",self.uid];
+    if(self.uid.length!=0){
+    urlString = [NSString stringWithFormat:@"http://60.173.235.34:9999/qixin/app/nos_qx_loaninfo/%@",self.uid];
+    }else if (self.url.length!=0){
+        urlString =  self.url;
+    }else{
+        urlString = @"";
+    }
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    
     [webView loadRequest:request];
 
     

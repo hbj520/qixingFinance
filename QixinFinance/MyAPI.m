@@ -186,7 +186,8 @@
         NSDictionary * data = responseObject[@"data"];
         NSArray * loanInfoArray = data[@"loaninfo"];
         NSMutableArray * moreloanInfoArray = [[moreloaninfoModel alloc] buildWithData:loanInfoArray];
-        result(YES,@"SUCCESS",moreloanInfoArray);
+        
+        result(YES,@"SUCCESS",@[moreloanInfoArray]);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         
     }];

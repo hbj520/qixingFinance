@@ -7,7 +7,7 @@
 //
 
 #import "financialProductTableViewCell.h"
-
+#import <SDWebImage/UIImageView+WebCache.h>
 @implementation financialProductTableViewCell
 
 - (void)awakeFromNib {
@@ -19,7 +19,8 @@
 {
     self.titleLabel.text = model.name;
     self.monthNum.text = model.deadline;
-    
+    self.precentNum.text = model.earnings;
+    [self.Img sd_setImageWithURL:[NSURL URLWithString:model.imgthumb] placeholderImage:[UIImage imageNamed:@""]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

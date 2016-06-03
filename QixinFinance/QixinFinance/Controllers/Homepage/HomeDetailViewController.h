@@ -10,4 +10,5 @@
 
 @interface HomeDetailViewController : BaseViewController
 @property(nonatomic,copy)NSString * uid;
+@property(nonatomic,copy)NSString * url;
 @end

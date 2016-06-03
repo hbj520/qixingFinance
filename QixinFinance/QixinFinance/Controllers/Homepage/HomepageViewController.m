@@ -236,7 +236,7 @@
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         gfselectModel * model = selectData[indexPath.row];
         HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
-        vc.uid = model.selectId;
+        vc.url= model.url;
         [self.navigationController pushViewController:vc animated:YES];
     }
     

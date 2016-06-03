@@ -9,4 +9,5 @@
 #import "BaseViewController.h"
 
 @interface BannerDetailViewController : BaseViewController
-@property (nonatomic,strong) NSString *bannerUrl;@end
+@property (nonatomic,strong) NSString *bannerUrl;
+@end

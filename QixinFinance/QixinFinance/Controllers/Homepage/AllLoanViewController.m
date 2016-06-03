@@ -23,7 +23,7 @@
     NSMutableArray * moneyArray;
     NSMutableArray * monthArray;
     NSMutableArray * sortArray;
-    NSArray * moreLoanListArray;
+    NSMutableArray * moreLoanListArray;
     UITableView * _tableView;
 }
 @end
@@ -96,7 +96,7 @@
     
     [[MyAPI sharedAPI] getMoreLoanWithSort:@"" jtype:@"" mtype:@"" rtype:@"" btype:@"" month:@"" money:@"" page:@"" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
         NSLog(@"%lu",(unsigned long)arrays.count);
-        moreLoanListArray = arrays;
+        moreLoanListArray = arrays[0];
         [_tableView reloadData];
     } errorResult:^(NSError *enginerError) {
         
@@ -134,6 +134,9 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LoanInfoTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell3" forIndexPath:indexPath];
+    cell.selectedBackgroundView = [UIView new];
+    cell.selectedBackgroundView.frame = cell.frame;
+    cell.selectedBackgroundView.backgroundColor = [UIColor whiteColor];
     moreloaninfoModel  * model = [[moreloaninfoModel alloc] init];
     model = moreLoanListArray[indexPath.row];
     cell.model = model;
