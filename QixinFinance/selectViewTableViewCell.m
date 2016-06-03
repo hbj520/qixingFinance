@@ -96,10 +96,21 @@
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return 5;
 }
+
+
+#pragma mark -- 筛选传值
+/**
+ *  当选中时候可以传递一个listid
+ *
+ *  @param collectionView
+ *  @param indexPath
+ */
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     kk=indexPath.row;
+    typelistModel * model = [[typelistModel alloc] init];
     
-    NSLog(@"%ld",indexPath.item);
+      model = [[indexAry objectAtIndex:0]objectForKey:@"num"][kk];
+    NSLog(@"%@",model.listid);
  //   [_collectionView reloadData];
 }
 //返回这个UICollectionView是否可以被选择

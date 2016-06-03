@@ -34,6 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self loadData];
+    [self loadLoanListData];
     [self configTableView];
   
     //列表展示的模型
@@ -94,19 +95,25 @@
         
     }];
     
-    [[MyAPI sharedAPI] getMoreLoanWithSort:@"" jtype:@"" mtype:@"" rtype:@"" btype:@"" month:@"" money:@"" page:@"" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
+    
+   }
+
+- (void)loadLoanListData
+{
+    [[MyAPI sharedAPI] getMoreLoanWithSort:@"" jtype:@"" mtype:@"" rtype:@"" btype:@"" month:@"" money:@"" page:@"1" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
         NSLog(@"%lu",(unsigned long)arrays.count);
-        moreLoanListArray = arrays[0];
+       moreLoanListArray = arrays[0];
+       
         [_tableView reloadData];
     } errorResult:^(NSError *enginerError) {
         
     }];
-    
-   }
+
+}
 
 - (void)configTableView
 {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,90, CHD_SCREEN_WIDTH, self.view.frame.size.height-120) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,65, CHD_SCREEN_WIDTH, self.view.frame.size.height-120) style:UITableViewStylePlain];
     [_tableView registerNib:[UINib nibWithNibName:@"LoanInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell3"];
     _tableView.delegate= self;
     _tableView.dataSource= self;
