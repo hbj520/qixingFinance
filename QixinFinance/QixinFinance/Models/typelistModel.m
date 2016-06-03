@@ -9,11 +9,12 @@
 #import "typelistModel.h"
 
 @implementation typelistModel
-- (id)initWithdname:(NSString *)dname listid:(NSString *)listid
+- (id)initWithdname:(NSString *)dname listid:(NSString *)listid fromname:(NSString *)fromname
 {
     typelistModel * model = [[typelistModel alloc] init];
     model.dname = dname;
     model.listid = listid;
+    model.fromname = fromname;
     return model;
 }
 
@@ -23,7 +24,8 @@
     for(NSDictionary * dict in data){
         NSString * dname = dict[@"dname"];
         NSString * listid = dict[@"id"];
-        typelistModel * model = [[typelistModel alloc] initWithdname:dname listid:listid];
+        NSString * fromname = dict[@"fromname"];
+        typelistModel * model = [[typelistModel alloc] initWithdname:dname listid:listid fromname:fromname];
         [typelistArray addObject:model];
     }
     return typelistArray;

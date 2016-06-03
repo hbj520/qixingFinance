@@ -11,6 +11,7 @@
 @interface typelistModel : NSObject
 @property(nonatomic,copy)NSString*dname;
 @property(nonatomic,copy)NSString*listid;
-- (id)initWithdname:(NSString*)dname listid:(NSString*)listid;
+@property(nonatomic,copy)NSString *fromname;
+- (id)initWithdname:(NSString*)dname listid:(NSString*)listid fromname:(NSString*)fromname;
 - (NSMutableArray *)buildWithData:(NSArray*)data;
 @end

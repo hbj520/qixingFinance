@@ -10,6 +10,7 @@
 #import "ZHlookHouseSmarFourCell.h"
 #import "selectView.h"
 #import "typelistModel.h"
+#import "Config.h"
 @interface selectViewTableViewCell ()<UICollectionViewDataSource,UICollectionViewDelegate>{
     NSArray *indexAry;
     NSInteger kk;
@@ -58,24 +59,8 @@
     }
     typelistModel * model = [[[indexAry objectAtIndex:0] objectForKey:@"num"] objectAtIndex:indexPath.row] ;
     [myBig setName:model.dname];
- //   [myBig setName:[[[indexAry objectAtIndex:0]objectForKey:@"num"]  objectAtIndex:indexPath.row]];
-//    if (indexPath.row == [[[indexAry objectAtIndex:0]objectForKey:@"num"] count] - 1) {
-//    }
-    _collectionView.frame = CGRectMake(0, 0, self.frame.size.width, ([[[indexAry objectAtIndex:0]objectForKey:@"num"] count]/4 + [[[indexAry objectAtIndex:0]objectForKey:@"num"] count]%4) * 40);
+     _collectionView.frame = CGRectMake(0, 0, self.frame.size.width, ([[[indexAry objectAtIndex:0]objectForKey:@"num"] count]/4 + [[[indexAry objectAtIndex:0]objectForKey:@"num"] count]%4) * 40);
     
-//    if (kk == indexPath.row) {
-//      
-//       // NSLog(@"%d",index);
-//        
-//            myBig.nameLabel.backgroundColor = [UIColor colorWithRed:122/255.0 green:142/255.0 blue:182/255.0 alpha:1];
-//            myBig.nameLabel.textColor = [UIColor whiteColor];
-//       
-////        myBig.nameLabel.backgroundColor = [UIColor blackColor];
-////       myBig.nameLabel.textColor = [UIColor blackColor];
-//        
-//    }else{
-//        myBig.nameLabel.textColor = [UIColor blackColor];
-//    }
     return myBig;
 }
 
@@ -110,7 +95,11 @@
     typelistModel * model = [[typelistModel alloc] init];
     
       model = [[indexAry objectAtIndex:0]objectForKey:@"num"][kk];
-    NSLog(@"%@",model.listid);
+  NSLog(@"%@ %@",model.fromname,model.listid);
+    
+   
+
+    
  //   [_collectionView reloadData];
 }
 //返回这个UICollectionView是否可以被选择

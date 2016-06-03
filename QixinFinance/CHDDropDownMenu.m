@@ -181,7 +181,7 @@ static const CGFloat cellHeight = 40.0f;
 
 - (void)btnFilter:(UIButton*)btn
 {
-    ChdTable.hidden = YES;
+    ChdTable.hidden =YES;
     [btn setTitleColor:[UIColor colorWithRed:21/255.0 green:48/255.0 blue:121/255.0 alpha:1] forState:UIControlStateNormal];
     if(btn.tag - 100 == currentSelect){
     if (isShow) {

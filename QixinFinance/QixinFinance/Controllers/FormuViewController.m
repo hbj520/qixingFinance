@@ -91,8 +91,8 @@
             
             
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
-            FormuViewController *VC = (FormuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
-            
+            AllLoanViewController *VC = (AllLoanViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
+            VC.jtype = model.jobid;
             [weakself.navigationController pushViewController:VC animated:YES];
             
         };
@@ -108,6 +108,8 @@
         return cell;
     }
 }
+
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -139,15 +141,19 @@
 {
     if (indexPath.section==1) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
-        FormuViewController *VC = (FormuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
-        [self.navigationController pushViewController:VC animated:YES];    }
+       AllLoanViewController *VC = (AllLoanViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
+        VC.jtype = @"";
+        [self.navigationController pushViewController:VC animated:YES];
+    }
     
-    if (indexPath.section==2) {
+   else if (indexPath.section==2) {
         moreloaninfoModel * model = moreloanArray[indexPath.row];
         HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
         vc.uid = model.infoId;
         [self.navigationController pushViewController:vc animated:YES];
-    }
+   }else{
+       
+   }
 }
 
 - (void)pushVC

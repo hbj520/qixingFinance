@@ -15,6 +15,7 @@
 #import "moreloaninfoModel.h"
 #import "LoanInfoTableViewCell.h"
 #import "HomeDetailViewController.h"
+#import "Config.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #define CHD_SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 @interface AllLoanViewController ()<chdMenuDelegate,UITableViewDelegate,UITableViewDataSource>
@@ -32,9 +33,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.money = @"";
+    self.month = @"";
+    self.sort = @"";
+    
     // Do any additional setup after loading the view.
     [self loadData];
-    [self loadLoanListData];
+  [self loadLoanListData];
     [self configTableView];
   
     //列表展示的模型
@@ -100,7 +105,7 @@
 
 - (void)loadLoanListData
 {
-    [[MyAPI sharedAPI] getMoreLoanWithSort:@"" jtype:@"" mtype:@"" rtype:@"" btype:@"" month:@"" money:@"" page:@"1" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
+    [[MyAPI sharedAPI] getMoreLoanWithSort:self.sort jtype:self.jtype mtype:@"" rtype:@"" btype:@"" month:self.month money:self.money page:@"1" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
         NSLog(@"%lu",(unsigned long)arrays.count);
        moreLoanListArray = arrays[0];
        
@@ -167,6 +172,19 @@
  */
 - (void)selectColum:(NSInteger)colum Row:(NSInteger)row Model:(chdModel *)model
 {
+    
+    if(colum==0){
+        if (row==0) {
+         self.money = @"";
+        }else{
+        self.money = model.uid;
+        }
+    }else if (colum==1){
+        self.month = model.uid;
+    }else if (colum==2){
+        self.sort = model.uid;
+    }
+    [self loadLoanListData];
     NSLog(@"%@",model.uid);
 }
 

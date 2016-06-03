@@ -34,7 +34,7 @@
         } errorResult:^(NSError *enginerError) {
             
         }];
-     //   [self setTableView];
+    
         
      
     }
@@ -44,8 +44,6 @@
 -(void)setTableView{
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) style:UITableViewStyleGrouped];
     
-//    _tableView.delegate = self.myNav;
-//    dataSource = @[[NSArray arrayWithObjects:@{@"num":@[@"不限",@"上班族",@"企业主",@"个体户",@"学生",@"自由职业"]}, nil],[NSArray arrayWithObjects:@{@"num":@[@"不限",@"车辆抵押",@"房产抵押",@"其他抵押",@"信用卡",@"担保"]}, nil],[NSArray arrayWithObjects:@{@"num":@[@"不限",@"分期还款",@"到期还款",@"随借随还"]}, nil],[NSArray arrayWithObjects:@{@"num":@[@"不限",@"银行",@"小贷公司",@"典当行"]}, nil]];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -59,6 +57,7 @@
 
 - (void)finish
 {
+    
     self.hidden = YES;
 }
 

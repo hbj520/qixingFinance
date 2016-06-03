@@ -45,6 +45,7 @@
 		CC492B0E1CFC21D000FE5568 /* selectViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC492B081CFC21D000FE5568 /* selectViewTableViewCell.m */; };
 		CC492B0F1CFC21D000FE5568 /* ZHlookHouseSmarFourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC492B0A1CFC21D000FE5568 /* ZHlookHouseSmarFourCell.m */; };
 		CC492B101CFC21D000FE5568 /* selectheaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC492B0C1CFC21D000FE5568 /* selectheaderView.m */; };
+		CC55A5151D015A43001B2CF6 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = CC55A5141D015A43001B2CF6 /* Config.m */; };
 		CC8F062A1CED51A100B4D945 /* FirstStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F06281CED51A100B4D945 /* FirstStyleTableViewCell.m */; };
 		CC8F062B1CED51A100B4D945 /* FirstStyleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06291CED51A100B4D945 /* FirstStyleTableViewCell.xib */; };
 		CC8F062F1CED58B900B4D945 /* SecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F062D1CED58B900B4D945 /* SecondTableViewCell.m */; };
@@ -176,6 +177,8 @@
 		CC492B0A1CFC21D000FE5568 /* ZHlookHouseSmarFourCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHlookHouseSmarFourCell.m; sourceTree = SOURCE_ROOT; };
 		CC492B0B1CFC21D000FE5568 /* selectheaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectheaderView.h; sourceTree = SOURCE_ROOT; };
 		CC492B0C1CFC21D000FE5568 /* selectheaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = selectheaderView.m; sourceTree = SOURCE_ROOT; };
+		CC55A5131D015A43001B2CF6 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		CC55A5141D015A43001B2CF6 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		CC8F06271CED51A100B4D945 /* FirstStyleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstStyleTableViewCell.h; path = QixinFinance/FirstStyleTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		CC8F06281CED51A100B4D945 /* FirstStyleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstStyleTableViewCell.m; path = QixinFinance/FirstStyleTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		CC8F06291CED51A100B4D945 /* FirstStyleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FirstStyleTableViewCell.xib; path = QixinFinance/FirstStyleTableViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -328,6 +331,7 @@
 		ABA301DC1CEAFCC700693AC6 /* QixinFinance */ = {
 			isa = PBXGroup;
 			children = (
+				CC55A5121D015A26001B2CF6 /* Helper */,
 				ABA302211CEB071200693AC6 /* Resource */,
 				CCEBF1261CFC301800615F10 /* Vendor */,
 				ABA302131CEB071200693AC6 /* AppDelegate */,
@@ -629,6 +633,15 @@
 			);
 			name = NinaPagerView;
 			path = Vendor;
+			sourceTree = "<group>";
+		};
+		CC55A5121D015A26001B2CF6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CC55A5131D015A43001B2CF6 /* Config.h */,
+				CC55A5141D015A43001B2CF6 /* Config.m */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		CC8F067E1CED9FE300B4D945 /* SDCycleScrollView */ = {
@@ -940,6 +953,7 @@
 				CC969A601CFEB03A00FCB736 /* moneyModel.m in Sources */,
 				CC492AF81CFBD38C00FE5568 /* CHDDropDownMenu.m in Sources */,
 				ABA3023D1CEB17F300693AC6 /* BaseViewController.m in Sources */,
+				CC55A5151D015A43001B2CF6 /* Config.m in Sources */,
 				AB76A5251CF292C20001D961 /* MyAPI.m in Sources */,
 				CCD4D5ED1CEC943B009B4550 /* recommandLoanTableViewCell.m in Sources */,
 				CC46B6091CF173C300F84FA8 /* InfoLoanViewController.m in Sources */,
