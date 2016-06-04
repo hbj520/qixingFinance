@@ -15,6 +15,7 @@
 #import "moreloaninfoModel.h"
 #import "LoanInfoTableViewCell.h"
 #import "HomeDetailViewController.h"
+#import "selectView.h"
 #import "Config.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #define CHD_SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
@@ -41,7 +42,8 @@
     [self loadData];
   [self loadLoanListData];
     [self configTableView];
-  
+//   selectView * selectV = [[selectView alloc]initWithFrame:CGRectMake(0, 100,self.view.frame.size.width, self.view.frame.size.height - 100)];
+//    [self.view addSubview:selectV];
     //列表展示的模型
       }
 
@@ -94,7 +96,7 @@
         //若列表展示内容与按钮展示内容相同则showArr传nil即可。
         
       CHDDropDownMenu * menu =  [[CHDDropDownMenu alloc] initWithFrame:CGRectMake(0,64,CHD_SCREEN_WIDTH, 40) showOnView:self.view AllDataArr:arr showArr:nil];
-        
+
         menu.delegate = self;
     } errorResult:^(NSError *enginerError) {
         

@@ -30,6 +30,7 @@
     // Do any additional setup after loading the view.
         self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
        [self.view addSubview:self.tableView];
+   
    // [self addMJRefreshHasHeader:NO withHasFooter:YES];
     self.tableView.separatorStyle = NO;
     self.tableView.delegate = self;

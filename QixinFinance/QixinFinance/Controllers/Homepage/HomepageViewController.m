@@ -224,7 +224,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section==2) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
-        FormuViewController *VC = (FormuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
+       AllLoanViewController *VC = (AllLoanViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
+        VC.jtype = @"";
         [self.navigationController pushViewController:VC animated:YES];    }
     if (indexPath.section==3) {
         loaninfoModel * model = loaninfoData[indexPath.row];

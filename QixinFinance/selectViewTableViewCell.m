@@ -96,8 +96,17 @@
     
       model = [[indexAry objectAtIndex:0]objectForKey:@"num"][kk];
     
-   
- 
+    
+    NSLog(@"%@,%@",model.fromname, model.listid);
+    if ([model.fromname isEqualToString:@"4"]) {
+        
+    }else if ([model.fromname isEqualToString:@"3"]){
+        
+    }else if ([model.fromname isEqualToString:@"5"]){
+        
+    }else{
+        
+    }
  //   [_collectionView reloadData];
 }
 //返回这个UICollectionView是否可以被选择

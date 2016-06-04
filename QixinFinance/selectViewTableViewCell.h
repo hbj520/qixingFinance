@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void (^selectViewBlock)(NSString * str1,NSString * str2,NSString * str3,NSString * str4);
 @interface selectViewTableViewCell : UITableViewCell
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 @property(nonatomic,assign) NSInteger i ;
 @property(nonatomic,strong)NSMutableArray * array;
-
+@property(nonatomic,copy)NSString * jtype;
+@property(nonatomic,copy)NSString * btype;
+@property(nonatomic,copy)NSString *rtype;
+@property(nonatomic,copy)NSString * mtype;
 -(void)setCollectionView;
 
 @end
