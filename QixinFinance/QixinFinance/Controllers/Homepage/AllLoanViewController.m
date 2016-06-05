@@ -126,7 +126,7 @@
         button.font = [UIFont systemFontOfSize:15];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
-        [button addTarget:self action:@selector(hideselectV) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:@selector(hideselectV:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
         
         menu.delegate = self;
@@ -137,11 +137,20 @@
     
    }
 
-- (void)hideselectV
+- (void)hideselectV:(UIButton*)btn
 {
-    bool hide = selectV.hidden;
-    hide = !hide;
-    selectV.hidden = hide;
+   
+    [UIView animateWithDuration:0.2 animations:^{
+         bool hide = selectV.hidden;
+           hide = !hide;
+        selectV.hidden = hide;
+        if(hide==YES){
+        btn.imageView.transform = CGAffineTransformMakeRotation(0);
+        }else{
+            btn.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+        }
+    }];
+
 }
 
 - (void)loadLoanListData
