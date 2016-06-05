@@ -7,6 +7,10 @@
 //
 
 #import "BaseViewController.h"
+/**
+ *  筛选框特有的button类
+ */
+
 
 @interface AllLoanViewController : BaseViewController
 @property(nonatomic,copy)NSString * sort;

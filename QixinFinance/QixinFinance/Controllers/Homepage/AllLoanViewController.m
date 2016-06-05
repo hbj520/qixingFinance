@@ -27,8 +27,12 @@
     NSMutableArray * sortArray;
     NSMutableArray * moreLoanListArray;
     UITableView * _tableView;
+    selectView * selectV;
 }
 @end
+
+
+
 
 @implementation AllLoanViewController
 
@@ -37,15 +41,28 @@
     self.money = @"";
     self.month = @"";
     self.sort = @"";
-    
+    self.mtype = @"";
+    self.rtype = @"";
+    self.btype = @"";
     // Do any additional setup after loading the view.
     [self loadData];
   [self loadLoanListData];
     [self configTableView];
-//   selectView * selectV = [[selectView alloc]initWithFrame:CGRectMake(0, 100,self.view.frame.size.width, self.view.frame.size.height - 100)];
-//    [self.view addSubview:selectV];
+    selectV = [[selectView alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height - 100)];
+    selectV.hidden = YES;
+    __weak AllLoanViewController * weakself = self;
+    selectV.block = ^(NSString * str1,NSString * str2,NSString * str3,NSString * str4){
+        NSLog(@"%@  %@  %@  %@",str1,str2,str3,str4);
+        weakself.mtype =  str2;
+        weakself.btype = str3;
+        weakself.rtype = str4;
+        [weakself loadLoanListData];
+    };
+    
+    [self.view addSubview:selectV];
     //列表展示的模型
       }
+
 
 
 - (void)loadData
@@ -96,7 +113,22 @@
         //若列表展示内容与按钮展示内容相同则showArr传nil即可。
         
       CHDDropDownMenu * menu =  [[CHDDropDownMenu alloc] initWithFrame:CGRectMake(0,64,CHD_SCREEN_WIDTH, 40) showOnView:self.view AllDataArr:arr showArr:nil];
-
+      
+        
+        chdButton * button = [[chdButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4*3, 64, self.view.frame.size.width/4, 40)];
+        [button setTitle:@"筛选" forState:UIControlStateNormal];
+        button.titleLabel.textAlignment = NSTextAlignmentCenter;
+        button.backgroundColor = [UIColor whiteColor];
+        button.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
+        button.layer.borderWidth = 0.4;
+        [button setImage:[UIImage imageNamed:@"up1"] forState:UIControlStateNormal];
+        button.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+        button.font = [UIFont systemFontOfSize:15];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
+        [button addTarget:self action:@selector(hideselectV) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        
         menu.delegate = self;
     } errorResult:^(NSError *enginerError) {
         
@@ -105,9 +137,16 @@
     
    }
 
+- (void)hideselectV
+{
+    bool hide = selectV.hidden;
+    hide = !hide;
+    selectV.hidden = hide;
+}
+
 - (void)loadLoanListData
 {
-    [[MyAPI sharedAPI] getMoreLoanWithSort:self.sort jtype:self.jtype mtype:@"" rtype:@"" btype:@""month:self.month money:self.money page:@"1" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
+    [[MyAPI sharedAPI] getMoreLoanWithSort:self.sort jtype:self.jtype mtype:self.mtype rtype:self.rtype btype:self.btype month:self.month money:self.money page:@"1" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
         NSLog(@"%lu",(unsigned long)arrays.count);
        moreLoanListArray = arrays[0];
        

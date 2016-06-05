@@ -17,5 +17,5 @@ typedef void (^selectViewBlock)(NSString * str1,NSString * str2,NSString * str3,
 @property(nonatomic,copy)NSString *rtype;
 @property(nonatomic,copy)NSString * mtype;
 -(void)setCollectionView;
-
+@property(nonatomic,copy)selectViewBlock block;
 @end

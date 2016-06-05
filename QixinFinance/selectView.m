@@ -58,7 +58,15 @@
 
 - (void)finish
 {
-     self.hidden = YES;
+   self.hidden = YES;
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    NSString * str1 = [defaults objectForKey:@"2"];
+    NSString * str2 = [defaults objectForKey:@"4"];
+    NSString * str3 = [defaults objectForKey:@"5"];
+    NSString * str4 = [defaults objectForKey:@"3"];
+  //  NSLog(@"%@  %@  %@ %@",str2,str1,str3,str4);
+    self.block(str2,str1,str3,str4);
+    //self.block(self.jtype,self.jtype,self.mtype,self.rtype);
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -67,6 +75,8 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
 }
+
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
  
 //    selectViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName];
@@ -82,6 +92,22 @@
    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.array = dataSource[indexPath.section];
+    cell.block = ^(NSString * str1,NSString *str2,NSString * str3,NSString * str4){
+        if(str1==NULL){
+            str1 = @"";
+        } if (str2==NULL){
+            str2 = @"";
+        } if (str3==NULL){
+            str3 = @"";
+        } if (str4==NULL){
+            str4 = @"";
+        }
+        self.btype = str1;
+        self.jtype = str2;
+        self.mtype = str3;
+        self.rtype = str4;
+  //NSLog(@"btype = %@ jtype = %@ mtype= %@ rtype = %@",self.btype,self.jtype,self.mtype,self.rtype);
+    };
         [cell setCollectionView];
     
        return cell;

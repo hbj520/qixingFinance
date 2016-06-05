@@ -97,16 +97,28 @@
       model = [[indexAry objectAtIndex:0]objectForKey:@"num"][kk];
     
     
-    NSLog(@"%@,%@",model.fromname, model.listid);
+   NSLog(@"%@,%@",model.fromname, model.listid);
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     if ([model.fromname isEqualToString:@"4"]) {
-        
+        self.jtype = model.listid;
+        [defaults setObject:model.listid forKey:@"4"];
+        [defaults synchronize];
     }else if ([model.fromname isEqualToString:@"3"]){
-        
+        self.rtype = model.listid;
+        [defaults setObject:model.listid forKey:@"3"];
+        [defaults synchronize];
     }else if ([model.fromname isEqualToString:@"5"]){
-        
+        self.btype = model.listid;
+        [defaults setObject:model.listid forKey:@"5"];
+        [defaults synchronize];
     }else{
-        
+        self.mtype = model.listid;
+        [defaults setObject:model.listid forKey:@"2"];
+        [defaults synchronize];
     }
+ 
+    self.block(self.jtype,self.btype,self.mtype,self.rtype);
+
  //   [_collectionView reloadData];
 }
 //返回这个UICollectionView是否可以被选择
