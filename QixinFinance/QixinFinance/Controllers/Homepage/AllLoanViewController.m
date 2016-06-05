@@ -28,6 +28,7 @@
     NSMutableArray * moreLoanListArray;
     UITableView * _tableView;
     selectView * selectV;
+    __block chdButton * button;
 }
 @end
 
@@ -53,6 +54,9 @@
     __weak AllLoanViewController * weakself = self;
     selectV.block = ^(NSString * str1,NSString * str2,NSString * str3,NSString * str4){
         NSLog(@"%@  %@  %@  %@",str1,str2,str3,str4);
+        //点击完成改变动画效果
+       button.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+        weakself.jtype = str1;
         weakself.mtype =  str2;
         weakself.btype = str3;
         weakself.rtype = str4;
@@ -115,11 +119,12 @@
       CHDDropDownMenu * menu =  [[CHDDropDownMenu alloc] initWithFrame:CGRectMake(0,64,CHD_SCREEN_WIDTH, 40) showOnView:self.view AllDataArr:arr showArr:nil];
       
         
-        chdButton * button = [[chdButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4*3, 64, self.view.frame.size.width/4, 40)];
+         button = [[chdButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4*3, 64, self.view.frame.size.width/4, 40)];
         [button setTitle:@"筛选" forState:UIControlStateNormal];
         button.titleLabel.textAlignment = NSTextAlignmentCenter;
         button.backgroundColor = [UIColor whiteColor];
         button.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
+        button.tag = 10;
         button.layer.borderWidth = 0.4;
         [button setImage:[UIImage imageNamed:@"up1"] forState:UIControlStateNormal];
         button.imageView.transform = CGAffineTransformMakeRotation(M_PI);
@@ -145,9 +150,9 @@
            hide = !hide;
         selectV.hidden = hide;
         if(hide==YES){
-        btn.imageView.transform = CGAffineTransformMakeRotation(0);
+        btn.imageView.transform = CGAffineTransformMakeRotation(M_PI);
         }else{
-            btn.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+            btn.imageView.transform = CGAffineTransformMakeRotation(0);
         }
     }];
 
