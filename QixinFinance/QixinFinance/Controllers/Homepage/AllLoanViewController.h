@@ -13,12 +13,21 @@
 
 
 @interface AllLoanViewController : BaseViewController
-@property(nonatomic,copy)NSString * sort;
-@property(nonatomic,copy)NSString * jtype;
-@property(nonatomic,copy)NSString * mtype;
-@property(nonatomic,copy)NSString * rtype;
-@property(nonatomic,copy)NSString * btype;
-@property(nonatomic,copy)NSString * month;
-@property(nonatomic,copy)NSString * money;
-@property(nonatomic,copy)NSString * page;
+
+@property(nonatomic,copy)NSString * sort;//筛选id
+
+@property(nonatomic,copy)NSString * jtype;//工作类型id
+
+@property(nonatomic,copy)NSString * mtype;//抵押类型id
+
+@property(nonatomic,copy)NSString * rtype;//还款类型id
+
+@property(nonatomic,copy)NSString * btype;//机构类型id
+
+@property(nonatomic,copy)NSString * month;//时间id
+
+@property(nonatomic,copy)NSString * money;//金额id
+
+@property(nonatomic,copy)NSString * page;//页数
+
 @end

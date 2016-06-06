@@ -9,5 +9,8 @@
 #import "BaseViewController.h"
 
 @interface BannerDetailViewController : BaseViewController
+/**
+ *  bannerUrl   轮播图的链接
+ */
 @property (nonatomic,strong) NSString *bannerUrl;
 @end

@@ -22,13 +22,20 @@
 @interface AllLoanViewController ()<chdMenuDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     
-    NSMutableArray * moneyArray;
-    NSMutableArray * monthArray;
-    NSMutableArray * sortArray;
-    NSMutableArray * moreLoanListArray;
-    UITableView * _tableView;
-    selectView * selectV;
-    __block chdButton * button;
+    NSMutableArray * moneyArray;//金额模型数组
+    
+    NSMutableArray * monthArray;//周期模型数组
+    
+    NSMutableArray * sortArray;//筛选模型数组
+    
+    NSMutableArray * moreLoanListArray;//更多贷款模型数组
+    
+    UITableView * _tableView;//更多贷款界面
+    
+    selectView * selectV;//筛选界面
+    
+    __block chdButton * button;//筛选按钮
+    
 }
 @end
 
@@ -54,7 +61,7 @@
     __weak AllLoanViewController * weakself = self;
     selectV.block = ^(NSString * str1,NSString * str2,NSString * str3,NSString * str4){
         NSLog(@"%@  %@  %@  %@",str1,str2,str3,str4);
-        //点击完成改变动画效果
+        //点击完成改变动画效果，并传递数据
        button.imageView.transform = CGAffineTransformMakeRotation(M_PI);
         weakself.jtype = str1;
         weakself.mtype =  str2;
@@ -68,7 +75,7 @@
       }
 
 
-
+//加载数据
 - (void)loadData
 {
     [[MyAPI sharedAPI] requestMoreLoanListWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
@@ -142,6 +149,7 @@
     
    }
 
+//筛选按钮响应事件
 - (void)hideselectV:(UIButton*)btn
 {
    
@@ -158,6 +166,7 @@
 
 }
 
+//加载更多贷款数据
 - (void)loadLoanListData
 {
     [[MyAPI sharedAPI] getMoreLoanWithSort:self.sort jtype:self.jtype mtype:self.mtype rtype:self.rtype btype:self.btype month:self.month money:self.money page:@"1" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
@@ -171,6 +180,7 @@
 
 }
 
+//搭建UI
 - (void)configTableView
 {
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,65, CHD_SCREEN_WIDTH, self.view.frame.size.height-120) style:UITableViewStylePlain];
@@ -210,6 +220,8 @@
     return cell;
 }
 
+
+//跳到更多贷款详情界面
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     moreloaninfoModel * model = moreLoanListArray[indexPath.row];
@@ -243,6 +255,7 @@
     NSLog(@"%@",model.uid);
 }
 
+//回退
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }

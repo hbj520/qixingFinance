@@ -18,7 +18,7 @@
 #import "MyAPI.h"
 @interface FormuViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
-    NSMutableArray * moreloanArray;
+    NSMutableArray * moreloanArray;//存放更多贷款模型的数组
 }
 @property(nonatomic,strong)UITableView * tableView;
 @end
@@ -45,7 +45,7 @@
 
 
 
-
+//加载更多贷款数据
 - (void)loadData
 {
 [[MyAPI sharedAPI] getrecommandIoaninfoWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
@@ -59,6 +59,7 @@
     }];
 }
 
+//搭建界面UI
 - (void)configUI
 {
     [self.tableView registerNib:[UINib nibWithNibName:@"FirstStyleTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell1"];
@@ -89,7 +90,9 @@
         __weak FormuViewController * weakself = self;
         cell.block = ^(JobInfoModel* model){
             
-            
+            /**
+             *  按照职业跳到全部贷款页面
+             */
             
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
             AllLoanViewController *VC = (AllLoanViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
@@ -141,6 +144,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section==1) {
+      
+        //跳到全部贷款界面
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
        AllLoanViewController *VC = (AllLoanViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
         VC.jtype = @"";
@@ -148,6 +153,8 @@
     }
     
    else if (indexPath.section==2) {
+       
+       //跳到贷款详情界面
         moreloaninfoModel * model = moreloanArray[indexPath.row];
         HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
         vc.uid = model.infoId;
@@ -157,13 +164,7 @@
    }
 }
 
-- (void)pushVC
-{
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
-    FormuViewController *VC = (FormuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
-    [self.navigationController pushViewController:VC animated:YES];
-}
+//回退
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }

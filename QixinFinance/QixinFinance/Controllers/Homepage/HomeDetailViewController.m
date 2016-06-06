@@ -10,8 +10,11 @@
 
 @interface HomeDetailViewController ()
 {
-    UIWebView * webView;
-    NSString * urlString;
+    
+    UIWebView * webView;//网页界面
+    
+    NSString * urlString; //网址
+    
 }
 @end
 

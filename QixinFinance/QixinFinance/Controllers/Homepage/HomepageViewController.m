@@ -26,11 +26,16 @@
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 @interface HomepageViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate>
 {
-    NSMutableArray * _imgArray;
-    NSMutableArray * imageArray;
-    NSMutableArray * selectData;
-    NSMutableArray * loaninfoData;
-    SDCycleScrollView * _headView;
+    NSMutableArray * _imgArray;  //存放轮播图图片网址的数组
+    
+    NSMutableArray * imageArray; //存放轮播图模型的数组
+    
+    NSMutableArray * selectData;  //接收轮播图数据模型的数组
+    
+    NSMutableArray * loaninfoData; //接收首页数据模型的数组
+    
+    SDCycleScrollView * _headView;  //轮播图
+    
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -72,6 +77,10 @@
     }];
 
 }
+
+/**
+ *  加载首页数据
+ */
 - (void)loadData
 {
     
@@ -219,10 +228,14 @@
 
 }
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section==2) {
+        /**
+         *  跳到全部贷款页面
+         */
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
        AllLoanViewController *VC = (AllLoanViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
         VC.jtype = @"";
