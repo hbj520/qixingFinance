@@ -60,7 +60,7 @@
            
                 NSMutableArray * adArray = [[adverModel alloc] buildData:data];
             
-            result(YES,@"SUCCESS",adArray);
+            result(YES,@"SUCCESS",@[adArray]);
         }
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         

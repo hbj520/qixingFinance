@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.bannerUrl]];
     [self.webView loadRequest:request];
 
 }

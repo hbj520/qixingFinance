@@ -57,7 +57,7 @@
 - (void)configPageView
 {
     [[MyAPI sharedAPI] getHomepageBannerWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
-        imageArray = arrays;
+        imageArray = arrays[0];
         for(adverModel * model in imageArray){
             [_imgArray addObject:model.adimageUrl];
         }
@@ -283,8 +283,9 @@
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
     BannerDetailViewController *VC = (BannerDetailViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Banner"];
-  adverModel *model = [_imgArray objectAtIndex:index];
-    //VC.bannerUrl = model.link;
+  adverModel *model = [imageArray objectAtIndex:index];
+    
+    VC.bannerUrl = model.link;
     [self.navigationController pushViewController:VC animated:YES];
 }
 
