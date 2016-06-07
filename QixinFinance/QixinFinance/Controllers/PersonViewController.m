@@ -9,6 +9,8 @@
 #import "PersonViewController.h"
 #import "UINavigationBar+Awesome.h"
 #import "UIImage+ImageEffects.h"
+#import "LoginViewController.h"
+
 #define NAVBAR_CHANGE_POINT 50
 
 @interface PersonViewController ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationBarDelegate>
@@ -21,12 +23,14 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *headIcon;
-@property (weak, nonatomic) IBOutlet UIImageView *name;
+
 @property (weak, nonatomic) IBOutlet UIImageView *backGroundImage;
 
 @end
 
 @implementation PersonViewController
+
+//登录
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -125,7 +129,10 @@
 }
 #pragma mark UITableViewDatasource
 
-
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -269,5 +276,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end

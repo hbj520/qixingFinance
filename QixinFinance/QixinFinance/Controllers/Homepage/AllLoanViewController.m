@@ -56,6 +56,7 @@
     [self loadData];
   [self loadLoanListData];
     [self configTableView];
+   
     selectV = [[selectView alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height - 100)];
     selectV.hidden = YES;
     __weak AllLoanViewController * weakself = self;

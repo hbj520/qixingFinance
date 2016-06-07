@@ -86,6 +86,18 @@
 		CCD4D6071CEC9755009B4550 /* financialProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D6051CEC9755009B4550 /* financialProductTableViewCell.xib */; };
 		CCD663D61CF96D9400E83FD2 /* HomeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD663D51CF96D9400E83FD2 /* HomeDetailViewController.m */; };
 		CCEBF12B1CFC3AA200615F10 /* sortModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCEBF12A1CFC3AA200615F10 /* sortModel.m */; };
+		CCF86DB91D052A2800982F5E /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF86DB81D052A2800982F5E /* UserInfoModel.m */; };
+		CCF86DBC1D05471100982F5E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF86DBB1D05471100982F5E /* LoginViewController.m */; };
+		CCF86DFD1D0552C800982F5E /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF86DEF1D0552C800982F5E /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CCF86DFE1D0552C800982F5E /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF86DF21D0552C800982F5E /* NSData+AES.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CCF86DFF1D0552C800982F5E /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF86DF41D0552C800982F5E /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CCF86E001D0552C800982F5E /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF86DF61D0552C800982F5E /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CCF86E011D0552C800982F5E /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF86DF81D0552C800982F5E /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CCF86E021D0552C800982F5E /* SecurityUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF86DFA1D0552C800982F5E /* SecurityUtil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CCF86E031D0552C800982F5E /* StringEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF86DFC1D0552C800982F5E /* StringEncryption.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CCF86E061D055C1300982F5E /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF86E051D055C1300982F5E /* RegisterViewController.m */; };
+		CCF86E091D05702100982F5E /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF86E081D05702100982F5E /* UIViewController+HUD.m */; };
+		CCF86E0D1D057FF500982F5E /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF86E0C1D057FF500982F5E /* Tools.m */; };
 		CCFB22771CF995D100F7892A /* AllLoanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFB22761CF995D100F7892A /* AllLoanViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -248,6 +260,32 @@
 		CCD663D51CF96D9400E83FD2 /* HomeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDetailViewController.m; sourceTree = "<group>"; };
 		CCEBF1291CFC3AA200615F10 /* sortModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sortModel.h; sourceTree = "<group>"; };
 		CCEBF12A1CFC3AA200615F10 /* sortModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sortModel.m; sourceTree = "<group>"; };
+		CCF86DB71D052A2800982F5E /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoModel.h; sourceTree = "<group>"; };
+		CCF86DB81D052A2800982F5E /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoModel.m; sourceTree = "<group>"; };
+		CCF86DBA1D05471100982F5E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = QixinFinance/Models/LoginViewController.h; sourceTree = SOURCE_ROOT; };
+		CCF86DBB1D05471100982F5E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = QixinFinance/Models/LoginViewController.m; sourceTree = SOURCE_ROOT; };
+		CCF86DEE1D0552C800982F5E /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		CCF86DEF1D0552C800982F5E /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		CCF86DF01D0552C800982F5E /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		CCF86DF11D0552C800982F5E /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
+		CCF86DF21D0552C800982F5E /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
+		CCF86DF31D0552C800982F5E /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		CCF86DF41D0552C800982F5E /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		CCF86DF51D0552C800982F5E /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		CCF86DF61D0552C800982F5E /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		CCF86DF71D0552C800982F5E /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		CCF86DF81D0552C800982F5E /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		CCF86DF91D0552C800982F5E /* SecurityUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecurityUtil.h; sourceTree = "<group>"; };
+		CCF86DFA1D0552C800982F5E /* SecurityUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecurityUtil.m; sourceTree = "<group>"; };
+		CCF86DFB1D0552C800982F5E /* StringEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringEncryption.h; sourceTree = "<group>"; };
+		CCF86DFC1D0552C800982F5E /* StringEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringEncryption.m; sourceTree = "<group>"; };
+		CCF86E041D055C1300982F5E /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = QixinFinance/Models/RegisterViewController.h; sourceTree = SOURCE_ROOT; };
+		CCF86E051D055C1300982F5E /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = QixinFinance/Models/RegisterViewController.m; sourceTree = SOURCE_ROOT; };
+		CCF86E071D05702100982F5E /* UIViewController+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HUD.h"; sourceTree = SOURCE_ROOT; };
+		CCF86E081D05702100982F5E /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = SOURCE_ROOT; };
+		CCF86E0A1D05705000982F5E /* Marco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marco.h; sourceTree = "<group>"; };
+		CCF86E0B1D057FF500982F5E /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		CCF86E0C1D057FF500982F5E /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		CCFB22751CF995D100F7892A /* AllLoanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllLoanViewController.h; sourceTree = "<group>"; };
 		CCFB22761CF995D100F7892A /* AllLoanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLoanViewController.m; sourceTree = "<group>"; };
 		DC2CC466DFED286C272AB859 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -331,14 +369,15 @@
 		ABA301DC1CEAFCC700693AC6 /* QixinFinance */ = {
 			isa = PBXGroup;
 			children = (
+				CCF86E0A1D05705000982F5E /* Marco.h */,
 				CC55A5121D015A26001B2CF6 /* Helper */,
-				ABA302211CEB071200693AC6 /* Resource */,
 				CCEBF1261CFC301800615F10 /* Vendor */,
 				ABA302131CEB071200693AC6 /* AppDelegate */,
 				ABA302161CEB071200693AC6 /* Controllers */,
+				ABA3021B1CEB071200693AC6 /* Models */,
 				ABA302201CEB071200693AC6 /* Plist */,
 				ABA302221CEB071200693AC6 /* Util */,
-				ABA302231CEB071200693AC6 /* Vendor */,
+				ABA302211CEB071200693AC6 /* Resource */,
 				ABA302241CEB071200693AC6 /* Views */,
 				ABA301DD1CEAFCC700693AC6 /* Supporting Files */,
 			);
@@ -405,7 +444,6 @@
 				CCD663D51CF96D9400E83FD2 /* HomeDetailViewController.m */,
 				CCFB22751CF995D100F7892A /* AllLoanViewController.h */,
 				CCFB22761CF995D100F7892A /* AllLoanViewController.m */,
-				ABA3021B1CEB071200693AC6 /* Models */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -436,6 +474,10 @@
 				CC8F064A1CED704D00B4D945 /* PersonPageTableViewController.m */,
 				CC05EB661CF05CC3003B4B70 /* PersonViewController.h */,
 				CC05EB671CF05CC3003B4B70 /* PersonViewController.m */,
+				CCF86DBA1D05471100982F5E /* LoginViewController.h */,
+				CCF86DBB1D05471100982F5E /* LoginViewController.m */,
+				CCF86E041D055C1300982F5E /* RegisterViewController.h */,
+				CCF86E051D055C1300982F5E /* RegisterViewController.m */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -446,10 +488,9 @@
 				CCFB22F71CF9ADC500F7892A /* Homepage */,
 				ABA3021C1CEB071200693AC6 /* Forum */,
 				ABA3021E1CEB071200693AC6 /* Information */,
-				ABA3021F1CEB071200693AC6 /* Personal */,
+				CCF86DB61D052A0100982F5E /* Personal */,
 			);
-			name = Models;
-			path = ../../Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ABA3021C1CEB071200693AC6 /* Forum */ = {
@@ -464,13 +505,6 @@
 			children = (
 			);
 			path = Information;
-			sourceTree = "<group>";
-		};
-		ABA3021F1CEB071200693AC6 /* Personal */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Personal;
 			sourceTree = "<group>";
 		};
 		ABA302201CEB071200693AC6 /* Plist */ = {
@@ -497,13 +531,6 @@
 				CC8F06A41CEDC3C800B4D945 /* Category */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		ABA302231CEB071200693AC6 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vendor;
 			sourceTree = "<group>";
 		};
 		ABA302241CEB071200693AC6 /* Views */ = {
@@ -640,6 +667,8 @@
 			children = (
 				CC55A5131D015A43001B2CF6 /* Config.h */,
 				CC55A5141D015A43001B2CF6 /* Config.m */,
+				CCF86E0B1D057FF500982F5E /* Tools.h */,
+				CCF86E0C1D057FF500982F5E /* Tools.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -669,6 +698,8 @@
 		CC8F06A41CEDC3C800B4D945 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				CCF86E071D05702100982F5E /* UIViewController+HUD.h */,
+				CCF86E081D05702100982F5E /* UIViewController+HUD.m */,
 				CC492AF61CFBD38C00FE5568 /* UIView+MJExtension.h */,
 				CC492AF71CFBD38C00FE5568 /* UIView+MJExtension.m */,
 				CC8F06A51CEDC3E600B4D945 /* UIImage+ImageEffects.h */,
@@ -689,6 +720,7 @@
 		CCEBF1261CFC301800615F10 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				CCF86DED1D0552B200982F5E /* security */,
 				CCEBF1281CFC31C600615F10 /* CHDDropDownMenu */,
 				CCEBF1271CFC313E00615F10 /* selectView */,
 				CC8F067E1CED9FE300B4D945 /* SDCycleScrollView */,
@@ -719,6 +751,37 @@
 				CC492AF51CFBD38C00FE5568 /* CHDDropDownMenu.m */,
 			);
 			name = CHDDropDownMenu;
+			sourceTree = "<group>";
+		};
+		CCF86DB61D052A0100982F5E /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				CCF86DB71D052A2800982F5E /* UserInfoModel.h */,
+				CCF86DB81D052A2800982F5E /* UserInfoModel.m */,
+			);
+			name = Personal;
+			sourceTree = "<group>";
+		};
+		CCF86DED1D0552B200982F5E /* security */ = {
+			isa = PBXGroup;
+			children = (
+				CCF86DEE1D0552C800982F5E /* GTMBase64.h */,
+				CCF86DEF1D0552C800982F5E /* GTMBase64.m */,
+				CCF86DF01D0552C800982F5E /* GTMDefines.h */,
+				CCF86DF11D0552C800982F5E /* NSData+AES.h */,
+				CCF86DF21D0552C800982F5E /* NSData+AES.m */,
+				CCF86DF31D0552C800982F5E /* NSData+Base64.h */,
+				CCF86DF41D0552C800982F5E /* NSData+Base64.m */,
+				CCF86DF51D0552C800982F5E /* NSString+MD5.h */,
+				CCF86DF61D0552C800982F5E /* NSString+MD5.m */,
+				CCF86DF71D0552C800982F5E /* NSString+URLEncoding.h */,
+				CCF86DF81D0552C800982F5E /* NSString+URLEncoding.m */,
+				CCF86DF91D0552C800982F5E /* SecurityUtil.h */,
+				CCF86DFA1D0552C800982F5E /* SecurityUtil.m */,
+				CCF86DFB1D0552C800982F5E /* StringEncryption.h */,
+				CCF86DFC1D0552C800982F5E /* StringEncryption.m */,
+			);
+			name = security;
 			sourceTree = "<group>";
 		};
 		CCFB22F71CF9ADC500F7892A /* Homepage */ = {
@@ -953,14 +1016,19 @@
 				CC969A601CFEB03A00FCB736 /* moneyModel.m in Sources */,
 				CC492AF81CFBD38C00FE5568 /* CHDDropDownMenu.m in Sources */,
 				ABA3023D1CEB17F300693AC6 /* BaseViewController.m in Sources */,
+				CCF86E091D05702100982F5E /* UIViewController+HUD.m in Sources */,
 				CC55A5151D015A43001B2CF6 /* Config.m in Sources */,
+				CCF86E011D0552C800982F5E /* NSString+URLEncoding.m in Sources */,
+				CCF86DFD1D0552C800982F5E /* GTMBase64.m in Sources */,
 				AB76A5251CF292C20001D961 /* MyAPI.m in Sources */,
 				CCD4D5ED1CEC943B009B4550 /* recommandLoanTableViewCell.m in Sources */,
 				CC46B6091CF173C300F84FA8 /* InfoLoanViewController.m in Sources */,
 				ABA302401CEB18F300693AC6 /* HomepageViewController.m in Sources */,
 				CC492B0E1CFC21D000FE5568 /* selectViewTableViewCell.m in Sources */,
 				CC8F064B1CED704D00B4D945 /* PersonPageTableViewController.m in Sources */,
+				CCF86DFF1D0552C800982F5E /* NSData+Base64.m in Sources */,
 				CC492AF91CFBD38C00FE5568 /* UIView+MJExtension.m in Sources */,
+				CCF86E0D1D057FF500982F5E /* Tools.m in Sources */,
 				CC46B60F1CF1743A00F84FA8 /* InforMainViewController.m in Sources */,
 				CC46B6061CF173B700F84FA8 /* InfoFinicalViewController.m in Sources */,
 				CC46B60C1CF173D900F84FA8 /* InfoFinialGuardViewController.m in Sources */,
@@ -973,8 +1041,10 @@
 				CC8F06921CEDA17200B4D945 /* TAAnimatedDotView.m in Sources */,
 				CC46B5F91CF1720F00F84FA8 /* TopTabView.m in Sources */,
 				CC969A591CFE8DAA00FCB736 /* LoanInfoTableViewCell.m in Sources */,
+				CCF86DFE1D0552C800982F5E /* NSData+AES.m in Sources */,
 				CCD4D5E81CEC930C009B4550 /* ThreeCollectionViewCell.m in Sources */,
 				CC8F062F1CED58B900B4D945 /* SecondTableViewCell.m in Sources */,
+				CCF86E061D055C1300982F5E /* RegisterViewController.m in Sources */,
 				CC969A631CFEB18300FCB736 /* monthModel.m in Sources */,
 				CC8F06941CEDA17200B4D945 /* TAPageControl.m in Sources */,
 				CCD4D5F21CEC9454009B4550 /* ActivityTableViewCell.m in Sources */,
@@ -988,10 +1058,14 @@
 				CC492B101CFC21D000FE5568 /* selectheaderView.m in Sources */,
 				CC492B0F1CFC21D000FE5568 /* ZHlookHouseSmarFourCell.m in Sources */,
 				CCD4D6011CEC94B6009B4550 /* financialSelectedTableViewCell.m in Sources */,
+				CCF86DBC1D05471100982F5E /* LoginViewController.m in Sources */,
+				CCF86DB91D052A2800982F5E /* UserInfoModel.m in Sources */,
 				CCD663D61CF96D9400E83FD2 /* HomeDetailViewController.m in Sources */,
+				CCF86E001D0552C800982F5E /* NSString+MD5.m in Sources */,
 				CCFB22771CF995D100F7892A /* AllLoanViewController.m in Sources */,
 				CC969A5D1CFE928F00FCB736 /* moreloaninfoModel.m in Sources */,
 				CC97D4A71CF59546007DB11D /* FormuViewController.m in Sources */,
+				CCF86E021D0552C800982F5E /* SecurityUtil.m in Sources */,
 				CC46B6031CF173A100F84FA8 /* InfoCardViewController.m in Sources */,
 				CC8F06841CEDA0C000B4D945 /* SDCycleScrollView.m in Sources */,
 				CCD4D5E41CEC92EE009B4550 /* ThreeTableViewCell.m in Sources */,
@@ -1000,6 +1074,7 @@
 				CC8F06931CEDA17200B4D945 /* TADotView.m in Sources */,
 				CCD4D5F71CEC946D009B4550 /* bankLoanTableViewCell.m in Sources */,
 				CC492AFF1CFBE40A00FE5568 /* gfselectModel.m in Sources */,
+				CCF86E031D0552C800982F5E /* StringEncryption.m in Sources */,
 				CCEBF12B1CFC3AA200615F10 /* sortModel.m in Sources */,
 				CC8F06881CEDA15B00B4D945 /* UIView+SDExtension.m in Sources */,
 			);

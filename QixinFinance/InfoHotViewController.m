@@ -7,7 +7,7 @@
 //
 
 #import "InfoHotViewController.h"
-
+#import "Marco.h"
 @interface InfoHotViewController ()
 {
     UIWebView * _webView;
@@ -19,8 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor yellowColor];
    
+ 
    
     
 }

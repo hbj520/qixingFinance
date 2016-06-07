@@ -8,6 +8,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/AFURLResponseSerialization.h>
 #import "MyAPI.h"
+#import "Config.h"
 #define BaseUrl @"http://60.173.235.34:9999/qixin/app"
 //tools
 
@@ -21,6 +22,7 @@
 #import "moneyModel.h"
 #import "monthModel.h"
 #import "JobInfoModel.h"
+#import "UserInfoModel.h"
 
 @interface MyAPI()
 @property NSString *mBaseUrl;
@@ -49,6 +51,68 @@
 }
 - (void)cancelAllOperation{
     [self.manager.operationQueue cancelAllOperations];
+}
+
+- (void)LoginWithNumber:(NSString *)phoneNumber password:(NSString *)password result:(StateBlock)result errorResult:(ErrorBlock)errorResult
+{
+    NSDictionary * parameters = @{@"phone":phoneNumber,
+                                  @"userpwd":password
+                                  };
+    [self.manager POST:@"nos_login" parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSString *state = responseObject[@"status"];
+        NSString *information = responseObject[@"info"];
+        if ([state isEqualToString:@"1"]) {
+            NSDictionary *data = responseObject[@"data"];
+            UserInfoModel *userinfo = [[UserInfoModel alloc] buildWithDatas:data];
+            //保存个人信息至本地
+            [[Config Instance] saveUserid:userinfo.uid userName:userinfo.username userPhoneNum:userinfo.phoneNum token:userinfo.token icon:userinfo.iconUrl];
+            result(YES,information);
+            
+        }else{
+            result(NO,information);
+        }
+
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        errorResult(error);
+
+    }];
+}
+
+- (void)RegistWithyzm:(NSString *)yzm password:(NSString *)password phoneNumber:(NSString *)phoneNumber result:(StateBlock)result errorResult:(ErrorBlock)errorResult
+{
+    NSDictionary * parameters = @{@"yzm":yzm,@"userpwd":password,@"phone":phoneNumber};
+    [self.manager POST:@"nos_reg" parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSString * state = responseObject[@"status"];
+        NSString * information = responseObject[@"info"];
+        if([state isEqualToString:@"1"]){
+           
+            result(YES,information);
+        }else if([state isEqualToString:@"0"]){
+           
+            result(NO,information);
+        }else{
+            result(NO,information);
+        }
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+}
+
+- (void)sendPhoneYZMWithphoneNumber:(NSString *)phoneNumber result:(StateBlock)result errorResult:(ErrorBlock)errorResult
+{
+    NSDictionary * parameter = @{@"phone":phoneNumber};
+    [self.manager POST:@"nos_sendyzm" parameters:parameter success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSString * state = responseObject[@"status"];
+        NSString * information = responseObject[@"info"];
+        if ([state isEqualToString:@"1"]) {
+            result(YES,information);
+        }else{
+            result(NO,information);
+        }
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
+    
 }
 
 - (void)getHomepageBannerWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult

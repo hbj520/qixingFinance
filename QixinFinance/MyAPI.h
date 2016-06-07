@@ -21,6 +21,32 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 
 
 /**
+ *  登录接口
+ *
+ *  @return
+ */
+- (void)LoginWithNumber:(NSString*)phoneNumber password:(NSString*)password result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
+
+/**
+ *  注册接口
+ *
+ *  @param username    username
+ *  @param yzm         yzm
+ *  @param password    password
+ *  @param phoneNumber phoneNumber
+ */
+- (void)RegistWithyzm:(NSString*)yzm  password:(NSString*)password phoneNumber:(NSString*)phoneNumber result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
+
+/**
+ *  发送手机验证码
+ *
+ *  @param phoneNumber 手机号
+ *  @param result      状态
+ *  @param errorResult 错误
+ */
+- (void)sendPhoneYZMWithphoneNumber:(NSString*)phoneNumber result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
+
+/**
  *  首页banner
  *
  *  @param result      banner模型数组

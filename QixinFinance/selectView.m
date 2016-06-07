@@ -109,7 +109,7 @@
   //NSLog(@"btype = %@ jtype = %@ mtype= %@ rtype = %@",self.btype,self.jtype,self.mtype,self.rtype);
     };
         [cell setCollectionView];
-    
+       
        return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -11,4 +11,5 @@
 @property(strong,nonatomic)UILabel *nameLabel;
 @property(strong,nonatomic)NSString *name;
 @property(nonatomic,assign)BOOL  inx;
+- (void)setSelected:(BOOL)selected;
 @end

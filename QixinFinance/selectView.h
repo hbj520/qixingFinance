@@ -18,4 +18,5 @@ typedef void (^selectViewBlock1)(NSString * str1,NSString * str2,NSString * str3
 @property(nonatomic,copy)NSString * mtype;
 @property(nonatomic,copy)selectViewBlock1 block;
 -(id)initWithFrame:(CGRect)frame;
+
 @end

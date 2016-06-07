@@ -12,6 +12,7 @@
  */
 
 
+
 @interface AllLoanViewController : BaseViewController
 
 @property(nonatomic,copy)NSString * sort;//筛选id
@@ -29,5 +30,6 @@
 @property(nonatomic,copy)NSString * money;//金额id
 
 @property(nonatomic,copy)NSString * page;//页数
+
 
 @end

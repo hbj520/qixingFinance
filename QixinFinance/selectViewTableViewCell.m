@@ -15,7 +15,9 @@
     NSArray *indexAry;
     NSInteger kk;
     NSInteger index;
+   
     NSArray * dataSource;
+    NSString * kkk;
 }
 
 @property(strong,nonatomic)UICollectionView *collectionView;
@@ -27,10 +29,11 @@
     if (self) {
         kk= 100000;
        
-       // [self setCollectionView];
+        [self setCollectionView];
     }
     return self;
 }
+
 -(void)setCollectionView{
     
     indexAry = self.array;
@@ -54,14 +57,16 @@
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ZHlookHouseSmarFourCell *myBig = nil;
+    
     if (!myBig) {
         myBig = [collectionView dequeueReusableCellWithReuseIdentifier:@"Four" forIndexPath:indexPath];
+       
     }
+    
     typelistModel * model = [[[indexAry objectAtIndex:0] objectForKey:@"num"] objectAtIndex:indexPath.row] ;
     [myBig setName:model.dname];
      _collectionView.frame = CGRectMake(0, 0, self.frame.size.width, ([[[indexAry objectAtIndex:0]objectForKey:@"num"] count]/4 + [[[indexAry objectAtIndex:0]objectForKey:@"num"] count]%4) * 40);
-    
-    return myBig;
+       return myBig;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -92,6 +97,7 @@
  */
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     kk=indexPath.row;
+   
     typelistModel * model = [[typelistModel alloc] init];
     
       model = [[indexAry objectAtIndex:0]objectForKey:@"num"][kk];
@@ -99,6 +105,12 @@
     
    NSLog(@"%@,%@",model.fromname, model.listid);
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    /**
+     *  4是职业类型
+        3是还款方式
+        5是机构类型
+        2是抵押类型
+     */
     if ([model.fromname isEqualToString:@"4"]) {
         self.jtype = model.listid;
         [defaults setObject:model.listid forKey:@"4"];
