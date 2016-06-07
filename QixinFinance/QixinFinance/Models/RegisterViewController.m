@@ -8,6 +8,8 @@
 
 #import "RegisterViewController.h"
 #import "MyAPI.h"
+#import "UIViewController+HUD.h"
+
 @interface RegisterViewController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneNum;
@@ -50,8 +52,11 @@
     [[MyAPI sharedAPI] RegistWithyzm:testcode password:userpwd phoneNumber:phonenum result:^(BOOL sucess, NSString *msg) {
         if (sucess) {
             NSLog(@"注册成功");
+            [self showHint:@"注册成功"];
+            [self.navigationController popViewControllerAnimated:YES];
         }else{
-            NSLog(@"%@",msg);
+            [self showHint:msg];
+            
         }
     } errorResult:^(NSError *enginerError) {
         NSLog(@"%@",enginerError.localizedDescription);
@@ -63,9 +68,9 @@
     NSString * phonenum = self.phoneNum.text;
     [[MyAPI sharedAPI] sendPhoneYZMWithphoneNumber:phonenum result:^(BOOL sucess, NSString *msg) {
         if(sucess){
-            NSLog(@"%@",msg);
+            [self showHint:msg];
         }else{
-            NSLog(@"%@",msg);
+            [self showHint:msg];
         }
     } errorResult:^(NSError *enginerError) {
         

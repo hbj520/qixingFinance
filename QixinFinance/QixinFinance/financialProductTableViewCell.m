@@ -20,7 +20,7 @@
     self.titleLabel.text = model.name;
     self.monthNum.text = model.deadline;
     self.precentNum.text = model.earnings;
-    [self.Img sd_setImageWithURL:[NSURL URLWithString:model.imgthumb] placeholderImage:[UIImage imageNamed:@""]];
+    [self.Img sd_setImageWithURL:[NSURL URLWithString:model.imgthumb] placeholderImage:[UIImage imageNamed:@"managefinicalselectedicon"]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

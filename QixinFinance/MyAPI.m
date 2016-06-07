@@ -7,6 +7,7 @@
 //
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/AFURLResponseSerialization.h>
+#import "Marco.h"
 #import "MyAPI.h"
 #import "Config.h"
 #define BaseUrl @"http://60.173.235.34:9999/qixin/app"
@@ -113,6 +114,21 @@
         errorResult(error);
     }];
     
+}
+
+- (void)uploadImage:(NSData *)imageData result:(StateBlock)result errorResult:(ErrorBlock)errorResult
+{
+    NSDictionary * parameter = @{@"token":KToken,@"image":imageData};
+    [self.manager POST:@"nos_userimage" parameters:parameter success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSString * status = responseObject[@"status"];
+        if ([status isEqualToString:@"1"]) {
+            NSDictionary * data = responseObject[@"data"];
+            NSString * imageUrl = data[@"imgthumb"];
+            result(YES,imageUrl);
+        }
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        errorResult(error);
+    }];
 }
 
 - (void)getHomepageBannerWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult

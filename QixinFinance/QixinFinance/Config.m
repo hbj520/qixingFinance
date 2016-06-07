@@ -101,4 +101,13 @@ static Config *instance = nil;
     return [settings stringForKey:@"password"];
 }
 
+- (void)logOut{
+    NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
+    [settings removeObjectForKey:@"userid"];
+    [settings removeObjectForKey:@"username"];
+    [settings removeObjectForKey:@"userPhoneNum"];
+    [settings removeObjectForKey:@"token"];
+
+}
+
 @end

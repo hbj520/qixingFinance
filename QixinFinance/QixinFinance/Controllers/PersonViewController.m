@@ -7,9 +7,13 @@
 //
 
 #import "PersonViewController.h"
+  #import "UIViewController+HUD.h"
 #import "UINavigationBar+Awesome.h"
 #import "UIImage+ImageEffects.h"
 #import "LoginViewController.h"
+#import "SettingViewController.h"
+#import "MyAPI.h"
+#import "Config.h"
 
 #define NAVBAR_CHANGE_POINT 50
 
@@ -26,6 +30,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *backGroundImage;
 
+@property (weak, nonatomic) IBOutlet UIButton *phoneNum;
+
 @end
 
 @implementation PersonViewController
@@ -38,7 +44,8 @@
     imgArray = @[@"PersonProgressSearch",@"PersonEditingLoanInfo",@"PersonCreditCard",@"PersonManageFinical",@"PersonSetting"];
     descArray = @[@"贷款进度查询",@"完善贷款资料",@"信用卡还款提醒",@"我的理财",@"设置"];
     self.tableView.dataSource = self;
-
+  
+    
   }
 
 - (void)tapBackImg:(UIGestureRecognizer *)ges{
@@ -56,6 +63,14 @@
 {
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage *image = info[UIImagePickerControllerOriginalImage];
+   // [self showHudInView:self.view hint:@"上传图片"];
+    NSData * data = UIImageJPEGRepresentation(image, 0.1);
+    [[MyAPI sharedAPI] uploadImage:data result:^(BOOL sucess, NSString *msg) {
+       
+        [self showHint:msg];
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
 }
 
 
@@ -94,6 +109,14 @@
     [self scrollViewDidScroll:self.tableView];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
+    
+    NSString * token = [[Config Instance] getUserid];
+    if (token) {
+        NSString * phoneNum = [[Config Instance] getUserPhoneNum];
+        [self.phoneNum setTitle:phoneNum forState:UIControlStateNormal];
+    }else{
+        [self.phoneNum setTitle:@"未登录" forState:UIControlStateNormal];
+    }
     self.headIcon.userInteractionEnabled = YES;
     UITapGestureRecognizer *TapIcon = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapIconAct:)];
     [self.headIcon addGestureRecognizer:TapIcon];
@@ -232,34 +255,49 @@
     switch (i) {
         case 0:
         {
-            
+            [self showHint:@"正在拼命搭建中"];
         }
             break;
             case 1:
         {
-            
+            [self showHint:@"正在拼命搭建中"];
         }
             break;
             
             case 10:
         {
-            
+            [self showHint:@"正在拼命搭建中"];
         }
             break;
             case 20:
         {
-            
+            [self showHint:@"正在拼命搭建中"];
         }
             break;
             
             case 30:
         {
-            
+          //  [self showHint:@"正在拼命搭建中"];
+            UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Personal" bundle:nil];
+            SettingViewController * vc = [storyboard  instantiateViewControllerWithIdentifier:@"Setting"];
+            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
               default:
             break;
     }
+}
+
+- (IBAction)push:(id)sender {
+    [self showHint:@"拼命搭建中"];
+}
+
+- (IBAction)view:(id)sender {
+    [self showHint:@"拼命搭建中"];
+}
+
+- (IBAction)collect:(id)sender {
+    [self showHint:@"拼命搭建中"];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -50,7 +50,6 @@
 		CC8F062B1CED51A100B4D945 /* FirstStyleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06291CED51A100B4D945 /* FirstStyleTableViewCell.xib */; };
 		CC8F062F1CED58B900B4D945 /* SecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F062D1CED58B900B4D945 /* SecondTableViewCell.m */; };
 		CC8F06301CED58B900B4D945 /* SecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC8F062E1CED58B900B4D945 /* SecondTableViewCell.xib */; };
-		CC8F064B1CED704D00B4D945 /* PersonPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F064A1CED704D00B4D945 /* PersonPageTableViewController.m */; };
 		CC8F06811CEDA04800B4D945 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F06801CEDA04800B4D945 /* SDCollectionViewCell.m */; };
 		CC8F06841CEDA0C000B4D945 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F06831CEDA0C000B4D945 /* SDCycleScrollView.m */; };
 		CC8F06881CEDA15B00B4D945 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F06871CEDA15B00B4D945 /* UIView+SDExtension.m */; };
@@ -69,6 +68,8 @@
 		CCABDA301CFFD13100B5657F /* JobInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCABDA2F1CFFD13100B5657F /* JobInfoModel.m */; };
 		CCABDA341CFFDE4400B5657F /* JobInfoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCABDA321CFFDE4400B5657F /* JobInfoCollectionViewCell.m */; };
 		CCABDA351CFFDE4400B5657F /* JobInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCABDA331CFFDE4400B5657F /* JobInfoCollectionViewCell.xib */; };
+		CCCC0AE91D0699FE000DBD54 /* BoradCastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCC0AE81D0699FE000DBD54 /* BoradCastViewController.m */; };
+		CCCC0AEC1D06B27C000DBD54 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCC0AEB1D06B27C000DBD54 /* SettingViewController.m */; };
 		CCD4D5E41CEC92EE009B4550 /* ThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */; };
 		CCD4D5E81CEC930C009B4550 /* ThreeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD4D5E61CEC930C009B4550 /* ThreeCollectionViewCell.m */; };
 		CCD4D5E91CEC930C009B4550 /* ThreeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD4D5E71CEC930C009B4550 /* ThreeCollectionViewCell.xib */; };
@@ -197,8 +198,6 @@
 		CC8F062C1CED58B900B4D945 /* SecondTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondTableViewCell.h; path = QixinFinance/SecondTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		CC8F062D1CED58B900B4D945 /* SecondTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondTableViewCell.m; path = QixinFinance/SecondTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		CC8F062E1CED58B900B4D945 /* SecondTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SecondTableViewCell.xib; path = QixinFinance/SecondTableViewCell.xib; sourceTree = SOURCE_ROOT; };
-		CC8F06491CED704D00B4D945 /* PersonPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonPageTableViewController.h; path = QixinFinance/PersonPageTableViewController.h; sourceTree = SOURCE_ROOT; };
-		CC8F064A1CED704D00B4D945 /* PersonPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonPageTableViewController.m; path = QixinFinance/PersonPageTableViewController.m; sourceTree = SOURCE_ROOT; };
 		CC8F067F1CEDA04800B4D945 /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
 		CC8F06801CEDA04800B4D945 /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
 		CC8F06821CEDA0C000B4D945 /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = SOURCE_ROOT; };
@@ -233,6 +232,10 @@
 		CCABDA311CFFDE4400B5657F /* JobInfoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobInfoCollectionViewCell.h; path = QixinFinance/Models/JobInfoCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
 		CCABDA321CFFDE4400B5657F /* JobInfoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobInfoCollectionViewCell.m; path = QixinFinance/Models/JobInfoCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
 		CCABDA331CFFDE4400B5657F /* JobInfoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JobInfoCollectionViewCell.xib; path = QixinFinance/Models/JobInfoCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		CCCC0AE71D0699FE000DBD54 /* BoradCastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoradCastViewController.h; sourceTree = "<group>"; };
+		CCCC0AE81D0699FE000DBD54 /* BoradCastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoradCastViewController.m; sourceTree = "<group>"; };
+		CCCC0AEA1D06B27C000DBD54 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingViewController.h; path = QixinFinance/Controllers/SettingViewController.h; sourceTree = SOURCE_ROOT; };
+		CCCC0AEB1D06B27C000DBD54 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingViewController.m; path = QixinFinance/Controllers/SettingViewController.m; sourceTree = SOURCE_ROOT; };
 		CCD4D5E21CEC92EE009B4550 /* ThreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeTableViewCell.h; path = QixinFinance/ThreeTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		CCD4D5E31CEC92EE009B4550 /* ThreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeTableViewCell.m; path = QixinFinance/ThreeTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		CCD4D5E51CEC930C009B4550 /* ThreeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeCollectionViewCell.h; path = QixinFinance/ThreeCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
@@ -470,14 +473,14 @@
 		ABA3021A1CEB071200693AC6 /* Personal */ = {
 			isa = PBXGroup;
 			children = (
-				CC8F06491CED704D00B4D945 /* PersonPageTableViewController.h */,
-				CC8F064A1CED704D00B4D945 /* PersonPageTableViewController.m */,
 				CC05EB661CF05CC3003B4B70 /* PersonViewController.h */,
 				CC05EB671CF05CC3003B4B70 /* PersonViewController.m */,
 				CCF86DBA1D05471100982F5E /* LoginViewController.h */,
 				CCF86DBB1D05471100982F5E /* LoginViewController.m */,
 				CCF86E041D055C1300982F5E /* RegisterViewController.h */,
 				CCF86E051D055C1300982F5E /* RegisterViewController.m */,
+				CCCC0AEA1D06B27C000DBD54 /* SettingViewController.h */,
+				CCCC0AEB1D06B27C000DBD54 /* SettingViewController.m */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -713,6 +716,8 @@
 		CC97D4A41CF59526007DB11D /* Formu */ = {
 			isa = PBXGroup;
 			children = (
+				CCCC0AE71D0699FE000DBD54 /* BoradCastViewController.h */,
+				CCCC0AE81D0699FE000DBD54 /* BoradCastViewController.m */,
 			);
 			name = Formu;
 			sourceTree = "<group>";
@@ -1025,14 +1030,15 @@
 				CC46B6091CF173C300F84FA8 /* InfoLoanViewController.m in Sources */,
 				ABA302401CEB18F300693AC6 /* HomepageViewController.m in Sources */,
 				CC492B0E1CFC21D000FE5568 /* selectViewTableViewCell.m in Sources */,
-				CC8F064B1CED704D00B4D945 /* PersonPageTableViewController.m in Sources */,
 				CCF86DFF1D0552C800982F5E /* NSData+Base64.m in Sources */,
 				CC492AF91CFBD38C00FE5568 /* UIView+MJExtension.m in Sources */,
 				CCF86E0D1D057FF500982F5E /* Tools.m in Sources */,
 				CC46B60F1CF1743A00F84FA8 /* InforMainViewController.m in Sources */,
+				CCCC0AEC1D06B27C000DBD54 /* SettingViewController.m in Sources */,
 				CC46B6061CF173B700F84FA8 /* InfoFinicalViewController.m in Sources */,
 				CC46B60C1CF173D900F84FA8 /* InfoFinialGuardViewController.m in Sources */,
 				CC46B6001CF1738900F84FA8 /* InfoHotViewController.m in Sources */,
+				CCCC0AE91D0699FE000DBD54 /* BoradCastViewController.m in Sources */,
 				CCABDA341CFFDE4400B5657F /* JobInfoCollectionViewCell.m in Sources */,
 				CC492B021CFBE41B00FE5568 /* loaninfoModel.m in Sources */,
 				CC8F06A71CEDC3E600B4D945 /* UIImage+ImageEffects.m in Sources */,

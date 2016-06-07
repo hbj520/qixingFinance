@@ -1,24 +1,24 @@
 //
-//  InfoCardViewController.m
+//  BoradCastViewController.m
 //  QixinFinance
 //
-//  Created by 张哲 on 16/5/22.
+//  Created by 张哲 on 16/6/7.
 //  Copyright © 2016年 youyou. All rights reserved.
 //
 
-#import "InfoCardViewController.h"
+#import "BoradCastViewController.h"
 #import "UIViewController+HUD.h"
 
-@interface InfoCardViewController ()
+@interface BoradCastViewController ()
 
 @end
 
-@implementation InfoCardViewController
+@implementation BoradCastViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self showHudInView:self.view hint:@"正在拼命搭建中"];
+    [self showHudInView:self.view hint:@"拼命搭建中"];
 }
 
 - (void)didReceiveMemoryWarning {

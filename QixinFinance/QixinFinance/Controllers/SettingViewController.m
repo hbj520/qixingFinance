@@ -1,31 +1,32 @@
 //
-//  PersonPageTableViewController.m
+//  SettingViewController.m
 //  QixinFinance
 //
-//  Created by 张哲 on 16/5/19.
+//  Created by 张哲 on 16/6/7.
 //  Copyright © 2016年 youyou. All rights reserved.
 //
 
-#import "PersonPageTableViewController.h"
-#import "UIImage+ImageEffects.h"
-#import "HexColor.h"
-@interface PersonPageTableViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "SettingViewController.h"
+#import "LoginViewController.h"
+#import "Config.h"
+
+@interface SettingViewController ()
 
 @end
 
-@implementation PersonPageTableViewController
+@implementation SettingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-  //  self.tableView.bounces = NO;
-   self.navigationController.navigationBar.translucent = NO;
-    self.tableView.showsVerticalScrollIndicator = NO;
-    self.tableView.allowsMultipleSelection = NO;
-   
     
+    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 50, 30);
+    [btn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     
+    UIBarButtonItem * btnItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    self.navigationItem.leftBarButtonItem = btnItem;
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -33,45 +34,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)viewWillAppear:(BOOL)animated
+
+- (void)back
 {
-  
-    UIImage * bgImg = [UIImage imageNamed:@"启鑫APP个人_01"];
-    UIImage * bgImage = [bgImg applyLightEffect];
-    self.backgroundImg.image = bgImage;
-    self.iconImg.layer.cornerRadius = self.iconImg.frame.size.width/2;
-    [self.iconImg.layer setMasksToBounds:YES];
-    [self.iconImg setImage:[UIImage imageNamed:@"启鑫APP个人_03"]];
-    self.userName.text = @"夏日友人";
-    self.userName.backgroundColor = [UIColor clearColor];
-}
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 10;
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    if (self.view.frame.size.width<=320) {
-        if (scrollView.contentOffset.y>=100) {
-            [UIView animateWithDuration:1 animations:^{
-            self.tabBarController.tabBar.hidden = YES;
-            }];
-            
-        }else{
-            [UIView animateWithDuration:1 animations:^{
-                self.tabBarController.tabBar.hidden = NO;
-            }];
-
-        }
-    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
@@ -81,6 +47,34 @@
 }
 
 #pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#warning Incomplete implementation, return the number of sections
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#warning Incomplete implementation, return the number of rows
+    return 2;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row==0) {
+        
+    }else{
+        [self loginOutConfig];
+    }
+}
+
+- (void)loginOutConfig{
+    [[Config Instance] logOut];
+    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Personal" bundle:nil];
+   LoginViewController * vc = [storyboard  instantiateViewControllerWithIdentifier:@"LOGIN"];
+    [self.navigationController popViewControllerAnimated:YES];
+
+    
+}
 
 
 /*

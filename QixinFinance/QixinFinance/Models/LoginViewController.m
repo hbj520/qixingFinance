@@ -11,6 +11,7 @@
 #import "Tools.h"
 #import "Marco.h"
 #import "Config.h"
+#import "UIViewController+HUD.h"
 @interface LoginViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *numberInput;
 @property (weak, nonatomic) IBOutlet UITextField *codeInput;
@@ -46,16 +47,17 @@
    
     [[MyAPI sharedAPI] LoginWithNumber:phoneNum password:codeNum result:^(BOOL sucess, NSString *msg) {
         if (sucess) {
+        
             [[Config Instance] saveUserPassword:securityString];
-            NSLog(@"成功");
+            [self showHint:msg];
              [self.navigationController popViewControllerAnimated:YES];
         }else{
-            NSLog(@"%@",msg);
+            [self showHint:msg];
         }
         
         
     } errorResult:^(NSError *enginerError) {
-        NSLog(@"%@",enginerError.localizedDescription);
+       
     }];
     
  }

@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="-207" y="321"/>
         </scene>
-        <!--View Controller-->
+        <!--Borad Cast View Controller-->
         <scene sceneID="Aah-Ib-VZF">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="5Cn-hy-7B5" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="5Cn-hy-7B5" customClass="BoradCastViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fZV-QB-q1l"/>
                         <viewControllerLayoutGuide type="bottom" id="wAp-4a-MZm"/>

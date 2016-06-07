@@ -29,7 +29,6 @@
 - (NSString *)getToken;
 - (NSString *)getUserIcon;
 - (NSString *)getPassword;
-
-
+- (void)logOut;
 
 @end

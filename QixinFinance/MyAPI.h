@@ -47,6 +47,15 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)sendPhoneYZMWithphoneNumber:(NSString*)phoneNumber result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
 
 /**
+ *  上传图片
+ *
+ *  @param imageData   imageData
+ *  @param result      result
+ *  @param errorResult error
+ */
+- (void)uploadImage:(NSData*)imageData result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
+
+/**
  *  首页banner
  *
  *  @param result      banner模型数组

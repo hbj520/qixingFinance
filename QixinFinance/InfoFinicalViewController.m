@@ -7,7 +7,7 @@
 //
 
 #import "InfoFinicalViewController.h"
-
+#import "UIViewController+HUD.h"
 @interface InfoFinicalViewController ()
 
 @end
@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor cyanColor];
+    [self showHudInView:self.view hint:@"正在拼命搭建中"];
 }
 
 - (void)didReceiveMemoryWarning {
