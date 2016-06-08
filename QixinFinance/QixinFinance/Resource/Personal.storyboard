@@ -22,7 +22,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wQT-Tt-MdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2030" y="-430"/>
+            <point key="canvasLocation" x="-2338" y="-556"/>
         </scene>
         <!--我的-->
         <scene sceneID="as6-PO-cvM">
@@ -137,6 +137,7 @@
                                                 <color key="titleColor" red="0.19215686274509805" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
+                                                <action selector="pushLoginView:" destination="jud-2K-BMF" eventType="touchUpInside" id="E5I-ND-ke2"/>
                                                 <segue destination="dex-9M-KhS" kind="push" id="A4W-rW-o0a"/>
                                             </connections>
                                         </button>
@@ -189,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWV-G9-MzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1636" y="-508"/>
+            <point key="canvasLocation" x="-1966" y="-556"/>
         </scene>
         <!--登录-->
         <scene sceneID="CTM-BZ-j37">
@@ -316,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lxJ-zX-7fW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1335" y="-430"/>
+            <point key="canvasLocation" x="-1386" y="-556"/>
         </scene>
         <!--注册-->
         <scene sceneID="MdP-NO-TFo">
@@ -502,7 +503,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k00-lf-jYa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-990" y="-430"/>
+            <point key="canvasLocation" x="-1012" y="-556"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="mxL-Kn-B6K">
@@ -576,7 +577,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQi-Uj-Eyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-850" y="-519"/>
+            <point key="canvasLocation" x="-426" y="-601"/>
         </scene>
     </scenes>
     <resources>

@@ -65,11 +65,12 @@
     UIImage *image = info[UIImagePickerControllerOriginalImage];
    // [self showHudInView:self.view hint:@"上传图片"];
     NSData * data = UIImageJPEGRepresentation(image, 0.1);
+  
     [[MyAPI sharedAPI] uploadImage:data result:^(BOOL sucess, NSString *msg) {
        
         [self showHint:msg];
     } errorResult:^(NSError *enginerError) {
-        
+        [self showHint:@"出错"];
     }];
 }
 
@@ -298,6 +299,9 @@
 
 - (IBAction)collect:(id)sender {
     [self showHint:@"拼命搭建中"];
+}
+
+- (IBAction)pushLoginView:(id)sender {
 }
 
 - (void)didReceiveMemoryWarning {
