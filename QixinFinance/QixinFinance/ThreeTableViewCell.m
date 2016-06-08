@@ -73,6 +73,8 @@
     NSLog(@"%ld",indexPath.item);
     if (indexPath.item==0) {
     self.block();
+    }else if (indexPath.item==2){
+        self.block1();
     }
     
 }

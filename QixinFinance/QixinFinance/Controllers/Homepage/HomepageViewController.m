@@ -7,6 +7,7 @@
 //
 
 #import "HomepageViewController.h"
+#import "SelectProductViewController.h"
 #import "UIViewController+HUD.h"
 #import "ThreeTableViewCell.h"
 #import "ActivityTableViewCell.h"
@@ -175,6 +176,9 @@
         cell.block = ^(){
             [weakself clickLoan];
         };
+        cell.block1 = ^(){
+            [weakself clickSelect];
+        };
             return cell;
     }else if (indexPath.section==1){
         ActivityTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"ActivityTableViewCell" owner:self options:nil] lastObject];
@@ -286,6 +290,14 @@
    FormuViewController *VC = (FormuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MoreLoan"];
     [self.navigationController pushViewController:VC animated:YES];
 
+}
+
+
+- (void)clickSelect
+{
+    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
+    SelectProductViewController * vc = (SelectProductViewController*)[storyboard instantiateViewControllerWithIdentifier:@"SELECT"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 /**

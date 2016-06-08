@@ -45,6 +45,8 @@
 		CC492B0E1CFC21D000FE5568 /* selectViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC492B081CFC21D000FE5568 /* selectViewTableViewCell.m */; };
 		CC492B0F1CFC21D000FE5568 /* ZHlookHouseSmarFourCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC492B0A1CFC21D000FE5568 /* ZHlookHouseSmarFourCell.m */; };
 		CC492B101CFC21D000FE5568 /* selectheaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC492B0C1CFC21D000FE5568 /* selectheaderView.m */; };
+		CC5062611D080CAC008D135C /* SelectProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5062601D080CAC008D135C /* SelectProductModel.m */; };
+		CC5062671D0810DE008D135C /* SelectProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5062661D0810DE008D135C /* SelectProductViewController.m */; };
 		CC55A5151D015A43001B2CF6 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = CC55A5141D015A43001B2CF6 /* Config.m */; };
 		CC8F062A1CED51A100B4D945 /* FirstStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F06281CED51A100B4D945 /* FirstStyleTableViewCell.m */; };
 		CC8F062B1CED51A100B4D945 /* FirstStyleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06291CED51A100B4D945 /* FirstStyleTableViewCell.xib */; };
@@ -190,6 +192,10 @@
 		CC492B0A1CFC21D000FE5568 /* ZHlookHouseSmarFourCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHlookHouseSmarFourCell.m; sourceTree = SOURCE_ROOT; };
 		CC492B0B1CFC21D000FE5568 /* selectheaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectheaderView.h; sourceTree = SOURCE_ROOT; };
 		CC492B0C1CFC21D000FE5568 /* selectheaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = selectheaderView.m; sourceTree = SOURCE_ROOT; };
+		CC50625F1D080CAC008D135C /* SelectProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectProductModel.h; sourceTree = "<group>"; };
+		CC5062601D080CAC008D135C /* SelectProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectProductModel.m; sourceTree = "<group>"; };
+		CC5062651D0810DE008D135C /* SelectProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectProductViewController.h; sourceTree = "<group>"; };
+		CC5062661D0810DE008D135C /* SelectProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectProductViewController.m; sourceTree = "<group>"; };
 		CC55A5131D015A43001B2CF6 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		CC55A5141D015A43001B2CF6 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		CC8F06271CED51A100B4D945 /* FirstStyleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstStyleTableViewCell.h; path = QixinFinance/FirstStyleTableViewCell.h; sourceTree = SOURCE_ROOT; };
@@ -445,6 +451,8 @@
 				CC230EFA1D0020D6007933FD /* BannerDetailViewController.m */,
 				CCD663D41CF96D9400E83FD2 /* HomeDetailViewController.h */,
 				CCD663D51CF96D9400E83FD2 /* HomeDetailViewController.m */,
+				CC5062651D0810DE008D135C /* SelectProductViewController.h */,
+				CC5062661D0810DE008D135C /* SelectProductViewController.m */,
 				CCFB22751CF995D100F7892A /* AllLoanViewController.h */,
 				CCFB22761CF995D100F7892A /* AllLoanViewController.m */,
 			);
@@ -796,6 +804,8 @@
 				CC492AFB1CFBE3F500FE5568 /* adverModel.m */,
 				CC492AFD1CFBE40A00FE5568 /* gfselectModel.h */,
 				CC492AFE1CFBE40A00FE5568 /* gfselectModel.m */,
+				CC50625F1D080CAC008D135C /* SelectProductModel.h */,
+				CC5062601D080CAC008D135C /* SelectProductModel.m */,
 				CC492B001CFBE41B00FE5568 /* loaninfoModel.h */,
 				CC492B011CFBE41B00FE5568 /* loaninfoModel.m */,
 				CC969A5B1CFE928F00FCB736 /* moreloaninfoModel.h */,
@@ -1049,6 +1059,7 @@
 				CC969A591CFE8DAA00FCB736 /* LoanInfoTableViewCell.m in Sources */,
 				CCF86DFE1D0552C800982F5E /* NSData+AES.m in Sources */,
 				CCD4D5E81CEC930C009B4550 /* ThreeCollectionViewCell.m in Sources */,
+				CC5062671D0810DE008D135C /* SelectProductViewController.m in Sources */,
 				CC8F062F1CED58B900B4D945 /* SecondTableViewCell.m in Sources */,
 				CCF86E061D055C1300982F5E /* RegisterViewController.m in Sources */,
 				CC969A631CFEB18300FCB736 /* monthModel.m in Sources */,
@@ -1061,6 +1072,7 @@
 				CCD4D6061CEC9755009B4550 /* financialProductTableViewCell.m in Sources */,
 				CC46B5F61CF171E200F84FA8 /* NinaPagerView.m in Sources */,
 				CC05EB681CF05CC3003B4B70 /* PersonViewController.m in Sources */,
+				CC5062611D080CAC008D135C /* SelectProductModel.m in Sources */,
 				CC492B101CFC21D000FE5568 /* selectheaderView.m in Sources */,
 				CC492B0F1CFC21D000FE5568 /* ZHlookHouseSmarFourCell.m in Sources */,
 				CCD4D6011CEC94B6009B4550 /* financialSelectedTableViewCell.m in Sources */,

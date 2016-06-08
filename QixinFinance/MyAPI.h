@@ -83,6 +83,13 @@ typedef void (^ErrorBlock) (NSError *enginerError);
  *  @param result    详情数据模型数组
  *  @param errorResult 错误信息
  */
+/**
+ *  理财精选列表页数据
+ *
+ *  @param result      模型数组
+ *  @param errorResult
+ */
+- (void)requestSelectLoanListWithPage:(NSString*)page  Result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 
 /**
  *  职业身份信息
@@ -99,6 +106,7 @@ typedef void (^ErrorBlock) (NSError *enginerError);
  *  @param errorResult 
  */
 - (void)getrecommandIoaninfoWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
 /**
  *  筛选详情页面
  */

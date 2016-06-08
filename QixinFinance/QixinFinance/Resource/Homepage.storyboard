@@ -115,7 +115,7 @@
                     <navigationItem key="navigationItem" id="p9l-ZB-yQs">
                         <barButtonItem key="leftBarButtonItem" image="back" id="1x8-GQ-Jea">
                             <connections>
-                                <action selector="back:" destination="9rG-9I-Xjo" id="B5G-tf-Ql6"/>
+                                <action selector="back:" destination="9rG-9I-Xjo" id="4TE-lP-Cwr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -167,6 +167,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSF-w9-3gE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="115" y="-66"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Nnw-Tw-nIc">
+            <objects>
+                <navigationController id="QUC-9Q-ZaI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0mj-uC-tHW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sXj-gO-DZJ" kind="relationship" relationship="rootViewController" id="K68-H2-fQg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uUZ-CI-dWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-357" y="578"/>
+        </scene>
+        <!--理财精选-->
+        <scene sceneID="YgJ-Mb-Hg5">
+            <objects>
+                <viewController storyboardIdentifier="SELECT" id="sXj-gO-DZJ" customClass="SelectProductViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oJa-iW-pNO"/>
+                        <viewControllerLayoutGuide type="bottom" id="or4-lY-k8n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gIh-YU-joB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t90-ad-h6d">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="or4-lY-k8n" firstAttribute="top" secondItem="t90-ad-h6d" secondAttribute="bottom" id="3Bq-n9-1ND"/>
+                            <constraint firstAttribute="trailing" secondItem="t90-ad-h6d" secondAttribute="trailing" id="Qiz-mK-OAm"/>
+                            <constraint firstItem="t90-ad-h6d" firstAttribute="top" secondItem="oJa-iW-pNO" secondAttribute="bottom" id="Uia-5U-4ck"/>
+                            <constraint firstItem="t90-ad-h6d" firstAttribute="leading" secondItem="gIh-YU-joB" secondAttribute="leading" id="oHZ-pb-D8w"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="理财精选" id="6xY-b5-sl2">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="fwd-vR-dnv">
+                            <connections>
+                                <action selector="back:" destination="sXj-gO-DZJ" id="nkh-x3-HeM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="t90-ad-h6d" id="aIj-y4-Jqv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BHl-me-mhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="584"/>
         </scene>
         <!--全部贷款-->
         <scene sceneID="r2b-zX-ZHw">

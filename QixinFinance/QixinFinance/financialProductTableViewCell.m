@@ -18,7 +18,9 @@
 -(void)setModel:(gfselectModel *)model
 {
     self.titleLabel.text = model.name;
-    self.monthNum.text = model.deadline;
+    int time = model.deadline.intValue;
+    NSString * month = [NSString stringWithFormat:@"%d",time/30];
+    self.monthNum.text = month;
     self.precentNum.text = model.earnings;
     [self.Img sd_setImageWithURL:[NSURL URLWithString:model.imgthumb] placeholderImage:[UIImage imageNamed:@"managefinicalselectedicon"]];
 }

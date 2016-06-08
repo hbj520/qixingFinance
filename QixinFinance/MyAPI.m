@@ -216,6 +216,20 @@
     }];
 }
 
+- (void)requestSelectLoanListWithPage:(NSString *)page Result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
+{
+    NSDictionary * parameters = @{@"page":page};
+    [self.manager POST:@"nos_qx_financelist" parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary * data = responseObject[@"data"];
+        NSArray * selectproductArray = data[@"financeinfo"];
+        NSMutableArray * selectData = [[gfselectModel alloc] buildWithData:selectproductArray];
+        result(YES,@"SUCCESS",@[selectData]);
+        
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        
+    }];
+}
+
 - (void)getrecommandIoaninfoWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
 {
 [self.manager POST:@"nos_qx_loanrec" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {

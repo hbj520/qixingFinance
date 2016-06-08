@@ -31,8 +31,8 @@
                           @"InfoHotViewController",
                           @"InfoCardViewController",
                           @"InfoFinicalViewController",
-                          @"InfoLoanViewControllerr",
-                          @"InfoFinialGuardViewController",
+                          @"InfoLoanViewController",
+                          @"InfoFinialGuardViewController"
                           ];
 
     NSArray *colorArray = @[
