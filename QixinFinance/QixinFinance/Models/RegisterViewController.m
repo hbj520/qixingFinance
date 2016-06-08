@@ -8,6 +8,7 @@
 
 #import "RegisterViewController.h"
 #import "MyAPI.h"
+#import "LoginViewController.h"
 #import "UIViewController+HUD.h"
 
 @interface RegisterViewController ()<UITextFieldDelegate>
@@ -53,7 +54,9 @@
         if (sucess) {
             NSLog(@"注册成功");
             [self showHint:@"注册成功"];
-            [self.navigationController popViewControllerAnimated:YES];
+            UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Personal" bundle:nil];
+            LoginViewController * VC = [storyboard instantiateViewControllerWithIdentifier:@"LOGIN"];
+            [self  presentViewController:VC animated:YES completion:nil];
         }else{
             [self showHint:msg];
             
@@ -115,9 +118,11 @@
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
 - (IBAction)back:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

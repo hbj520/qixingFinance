@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "RegisterViewController.h"
 #import "MyAPI.h"
 #import "Tools.h"
 #import "Marco.h"
@@ -50,7 +51,8 @@
         
             [[Config Instance] saveUserPassword:securityString];
             [self showHint:msg];
-             [self.navigationController popViewControllerAnimated:YES];
+            UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            [UIApplication sharedApplication].keyWindow.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeTabBarVC"];
         }else{
             [self showHint:msg];
         }
@@ -63,7 +65,9 @@
  }
 
 - (IBAction)Register:(id)sender {
-    
+    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Personal" bundle:nil];
+    RegisterViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"REGISTER"];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 

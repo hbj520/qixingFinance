@@ -15,6 +15,7 @@
     userInfo.username = userName;
     userInfo.phoneNum = phone;
     userInfo.uid = uid;
+    userInfo.token = token;
     userInfo.iconUrl = iconUrl;
     return userInfo;
 }

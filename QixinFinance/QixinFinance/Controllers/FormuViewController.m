@@ -7,6 +7,7 @@
 //
 
 #import "FormuViewController.h"
+#import "UIViewController+HUD.h"
 #import "FirstStyleTableViewCell.h"
 #import "SecondTableViewCell.h"
 #import "LoanInfoTableViewCell.h"
@@ -48,11 +49,13 @@
 //加载更多贷款数据
 - (void)loadData
 {
+    [self showHudInView:self.view hint:@"加载中..."];
 [[MyAPI sharedAPI] getrecommandIoaninfoWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
     if (success) {
       
                 moreloanArray = arrays;
         [self.tableView reloadData];
+        [self hideHud];
     }
 } errorResult:^(NSError *enginerError) {
    

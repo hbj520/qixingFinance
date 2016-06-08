@@ -64,8 +64,9 @@
         NSString *information = responseObject[@"info"];
         if ([state isEqualToString:@"1"]) {
             NSDictionary *data = responseObject[@"data"];
-            UserInfoModel *userinfo = [[UserInfoModel alloc] buildWithDatas:data];
-            //保存个人信息至本地
+          UserInfoModel *userinfo = [[UserInfoModel alloc] buildWithDatas:data];
+       
+           //保存个人信息至本地
             [[Config Instance] saveUserid:userinfo.uid userName:userinfo.username userPhoneNum:userinfo.phoneNum token:userinfo.token icon:userinfo.iconUrl];
             result(YES,information);
             
@@ -118,13 +119,16 @@
 
 - (void)uploadImage:(NSData *)imageData result:(StateBlock)result errorResult:(ErrorBlock)errorResult
 {
-    NSDictionary * parameter = @{@"token":KToken,@"image":imageData};
+   NSString * token = [[Config Instance] getToken];
+    NSDictionary * parameter = @{@"token":token,@"image":imageData};
     [self.manager POST:@"nos_userimage" parameters:parameter success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSString * status = responseObject[@"status"];
         if ([status isEqualToString:@"1"]) {
             NSDictionary * data = responseObject[@"data"];
             NSString * imageUrl = data[@"imgthumb"];
             result(YES,imageUrl);
+        }else {
+           
         }
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         errorResult(error);

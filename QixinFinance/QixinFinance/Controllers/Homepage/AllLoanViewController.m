@@ -7,6 +7,7 @@
 //
 
 #import "AllLoanViewController.h"
+#import "UIViewController+HUD.h"
 #import "CHDDropDownMenu.h"
 #import "MyAPI.h"
 #import "moneyModel.h"
@@ -79,6 +80,7 @@
 //加载数据
 - (void)loadData
 {
+    
     [[MyAPI sharedAPI] requestMoreLoanListWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
         sortArray = arrays[0];
         moneyArray = arrays[6];
@@ -170,11 +172,14 @@
 //加载更多贷款数据
 - (void)loadLoanListData
 {
+    [self showHudInView:self.view hint:@"加载中..."];
     [[MyAPI sharedAPI] getMoreLoanWithSort:self.sort jtype:self.jtype mtype:self.mtype rtype:self.rtype btype:self.btype month:self.month money:self.money page:@"1" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
         NSLog(@"%lu",(unsigned long)arrays.count);
        moreLoanListArray = arrays[0];
        
         [_tableView reloadData];
+        [self hideHud];
+
     } errorResult:^(NSError *enginerError) {
         
     }];
@@ -184,7 +189,7 @@
 //搭建UI
 - (void)configTableView
 {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,65, CHD_SCREEN_WIDTH, self.view.frame.size.height-120) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,100, CHD_SCREEN_WIDTH, self.view.frame.size.height-120) style:UITableViewStylePlain];
     [_tableView registerNib:[UINib nibWithNibName:@"LoanInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell3"];
     _tableView.delegate= self;
     _tableView.dataSource= self;

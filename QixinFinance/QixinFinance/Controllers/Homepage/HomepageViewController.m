@@ -7,6 +7,7 @@
 //
 
 #import "HomepageViewController.h"
+#import "UIViewController+HUD.h"
 #import "ThreeTableViewCell.h"
 #import "ActivityTableViewCell.h"
 #import "recommandLoanTableViewCell.h"
@@ -84,13 +85,14 @@
 - (void)loadData
 {
     
-    
+    [self showHudInView:self.view hint:@"加载中..."];
     [[MyAPI sharedAPI] getHomepageDataWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
         //imageArray = arrays[0];
         selectData = arrays[0];
         loaninfoData = arrays[1];
         [self configPageView];
         [self.tableView reloadData];
+         [self hideHud];
         _imgArray  = [[NSMutableArray alloc] init];
      //   NSString * imgPath = @"cycleviewicon";
         for(NSInteger i = 0 ;i<3;i++){
