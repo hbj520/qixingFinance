@@ -21,6 +21,7 @@
 #import "FormuViewController.h"
 #import "AllLoanViewController.h"
 #import "BannerDetailViewController.h"
+#import "SelectProductDetailViewController.h"
 #import "MyAPI.h"
 #import "loaninfoModel.h"
 #import "gfselectModel.h"
@@ -237,7 +238,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+   [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section==2) {
         /**
          *  跳到全部贷款页面
@@ -261,9 +262,12 @@
     else if (indexPath.section==6){
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         gfselectModel * model = selectData[indexPath.row];
+        SelectProductDetailViewController * VC = [[SelectProductDetailViewController alloc] init];
+        VC.uid = model.selectId;
         HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
-        vc.url= model.url;
-        [self.navigationController pushViewController:vc animated:YES];
+        vc.url= model.selectId;
+        
+        [self.navigationController pushViewController:VC animated:YES];
     }
     
 }

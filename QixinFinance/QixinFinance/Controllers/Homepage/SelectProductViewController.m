@@ -11,6 +11,7 @@
 #import "gfselectModel.h"
 #import "financialProductTableViewCell.h"
 #import "HomeDetailViewController.h"
+#import "SelectProductDetailViewController.h"
 #import <MJRefresh/MJRefresh.h>
 
 @interface SelectProductViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -104,10 +105,11 @@ static NSString * cellID = @"homepageReusedId6";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     gfselectModel * model = dataSource[indexPath.row];
-    HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
-    vc.url= model.url;
-    [self.navigationController pushViewController:vc animated:YES];
+    SelectProductDetailViewController * VC = [[SelectProductDetailViewController alloc] init];
+    VC.uid = model.selectId;
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 

@@ -8,7 +8,7 @@
 
 #import "HomeDetailViewController.h"
 #import "Config.h"
-
+#define BASEURL @"http://60.173.235.34:9999/qixin/app/"
 @interface HomeDetailViewController ()
 {
     
@@ -28,7 +28,7 @@
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(0, 0, 50, 30);
     [btn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    [btn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"back1"] forState:UIControlStateNormal];
     
    
     UIBarButtonItem * btnItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
@@ -54,7 +54,7 @@
         }
 
     }else if (self.url.length!=0){
-        urlString =  self.url;
+        urlString =  [NSString stringWithFormat:@" %@nos_qx_financeinfo/%@",BASEURL,self.url];
     }else{
         urlString = @"";
     }

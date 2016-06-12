@@ -190,6 +190,7 @@
 - (void)configTableView
 {
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,100, CHD_SCREEN_WIDTH, self.view.frame.size.height-64) style:UITableViewStylePlain];
+    _tableView.separatorStyle = NO;
     [_tableView registerNib:[UINib nibWithNibName:@"LoanInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell3"];
     _tableView.delegate= self;
     _tableView.dataSource= self;
@@ -230,6 +231,7 @@
 //跳到更多贷款详情界面
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [_tableView deselectRowAtIndexPath:indexPath animated:YES];
     moreloaninfoModel * model = moreLoanListArray[indexPath.row];
     HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
     vc.uid = model.infoId;

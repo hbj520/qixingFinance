@@ -271,6 +271,7 @@
 #pragma mark -- 写跳转控制器的地方
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSInteger i = indexPath.section * 10 + indexPath.row;
     switch (i) {
         case 0:

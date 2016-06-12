@@ -48,6 +48,7 @@
 		CC5062611D080CAC008D135C /* SelectProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5062601D080CAC008D135C /* SelectProductModel.m */; };
 		CC5062671D0810DE008D135C /* SelectProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5062661D0810DE008D135C /* SelectProductViewController.m */; };
 		CC55A5151D015A43001B2CF6 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = CC55A5141D015A43001B2CF6 /* Config.m */; };
+		CC55EF1E1D0D5A1B00E682D7 /* SelectProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC55EF1D1D0D5A1B00E682D7 /* SelectProductDetailViewController.m */; };
 		CC8F062A1CED51A100B4D945 /* FirstStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F06281CED51A100B4D945 /* FirstStyleTableViewCell.m */; };
 		CC8F062B1CED51A100B4D945 /* FirstStyleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC8F06291CED51A100B4D945 /* FirstStyleTableViewCell.xib */; };
 		CC8F062F1CED58B900B4D945 /* SecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F062D1CED58B900B4D945 /* SecondTableViewCell.m */; };
@@ -198,6 +199,8 @@
 		CC5062661D0810DE008D135C /* SelectProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectProductViewController.m; sourceTree = "<group>"; };
 		CC55A5131D015A43001B2CF6 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		CC55A5141D015A43001B2CF6 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
+		CC55EF1C1D0D5A1B00E682D7 /* SelectProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectProductDetailViewController.h; sourceTree = "<group>"; };
+		CC55EF1D1D0D5A1B00E682D7 /* SelectProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectProductDetailViewController.m; sourceTree = "<group>"; };
 		CC8F06271CED51A100B4D945 /* FirstStyleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstStyleTableViewCell.h; path = QixinFinance/FirstStyleTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		CC8F06281CED51A100B4D945 /* FirstStyleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstStyleTableViewCell.m; path = QixinFinance/FirstStyleTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		CC8F06291CED51A100B4D945 /* FirstStyleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FirstStyleTableViewCell.xib; path = QixinFinance/FirstStyleTableViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -451,6 +454,8 @@
 				CC230EFA1D0020D6007933FD /* BannerDetailViewController.m */,
 				CCD663D41CF96D9400E83FD2 /* HomeDetailViewController.h */,
 				CCD663D51CF96D9400E83FD2 /* HomeDetailViewController.m */,
+				CC55EF1C1D0D5A1B00E682D7 /* SelectProductDetailViewController.h */,
+				CC55EF1D1D0D5A1B00E682D7 /* SelectProductDetailViewController.m */,
 				CC5062651D0810DE008D135C /* SelectProductViewController.h */,
 				CC5062661D0810DE008D135C /* SelectProductViewController.m */,
 				CCFB22751CF995D100F7892A /* AllLoanViewController.h */,
@@ -1043,6 +1048,7 @@
 				CCF86DFF1D0552C800982F5E /* NSData+Base64.m in Sources */,
 				CC492AF91CFBD38C00FE5568 /* UIView+MJExtension.m in Sources */,
 				CCF86E0D1D057FF500982F5E /* Tools.m in Sources */,
+				CC55EF1E1D0D5A1B00E682D7 /* SelectProductDetailViewController.m in Sources */,
 				CC46B60F1CF1743A00F84FA8 /* InforMainViewController.m in Sources */,
 				CCCC0AEC1D06B27C000DBD54 /* SettingViewController.m in Sources */,
 				CC46B6061CF173B700F84FA8 /* InfoFinicalViewController.m in Sources */,
