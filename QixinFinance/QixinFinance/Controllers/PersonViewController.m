@@ -125,6 +125,8 @@
         NSString * phoneNum = [[Config Instance] getUserPhoneNum];
         [self.phoneNum setTitle:phoneNum forState:UIControlStateNormal];
         self.phoneNum.enabled = NO;
+        self.headIcon.userInteractionEnabled = YES;
+        self.backGroundImage.userInteractionEnabled = YES;
         NSString * iconUrl = [[Config Instance] getUserIcon];
         self.headIcon.layer.cornerRadius = 38;
         self.headIcon.layer.masksToBounds = YES;
@@ -132,13 +134,14 @@
     }else{
         [self.phoneNum setTitle:@"未登录" forState:UIControlStateNormal];
         self.phoneNum.enabled = YES;
+          self.headIcon.userInteractionEnabled = NO;
+           self.backGroundImage.userInteractionEnabled = NO;
         [self.headIcon setImage:[UIImage imageNamed:@"login_icon"]];
     }
-    self.headIcon.userInteractionEnabled = YES;
     UITapGestureRecognizer *TapIcon = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapIconAct:)];
     [self.headIcon addGestureRecognizer:TapIcon];
     [self initPickView];
-    self.backGroundImage.userInteractionEnabled = YES;
+ 
     UIImage * backImg = [UIImage imageNamed:@"PersonBackGroundIcon"];
     UIImage * backImage = [backImg applyLightEffect];
     self.backGroundImage.image = backImage;

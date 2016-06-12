@@ -8,10 +8,14 @@
 
 #import "SettingViewController.h"
 #import "LoginViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIViewController+HUD.h"
 #import "Config.h"
 
 @interface SettingViewController ()
-
+{
+    float folderSize;
+}
 @end
 
 @implementation SettingViewController
@@ -61,8 +65,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row==0) {
-        
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        folderSize =[[SDImageCache sharedImageCache] getSize]/1024.0/1024.0;
+        [[SDImageCache sharedImageCache] cleanDisk];
+        [self showHint:[NSString stringWithFormat:@"释放%.2fM内存",folderSize]];
     }else{
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
         [self loginOutConfig];
     }
 }

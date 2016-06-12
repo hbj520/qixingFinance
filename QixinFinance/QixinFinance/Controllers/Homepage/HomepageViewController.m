@@ -252,7 +252,13 @@
         HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
         vc.uid = model.loanId;
         [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.section==6){
+    }else if (indexPath.section==5){
+        UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
+        SelectProductViewController * vc = (SelectProductViewController*)[storyboard instantiateViewControllerWithIdentifier:@"SELECT"];
+        [self.navigationController pushViewController:vc animated:YES];
+
+    }
+    else if (indexPath.section==6){
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         gfselectModel * model = selectData[indexPath.row];
         HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];

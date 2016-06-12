@@ -189,7 +189,7 @@
 //搭建UI
 - (void)configTableView
 {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,100, CHD_SCREEN_WIDTH, self.view.frame.size.height-120) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,100, CHD_SCREEN_WIDTH, self.view.frame.size.height-64) style:UITableViewStylePlain];
     [_tableView registerNib:[UINib nibWithNibName:@"LoanInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell3"];
     _tableView.delegate= self;
     _tableView.dataSource= self;

@@ -20,6 +20,8 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)cancelAllOperation;
 
 
+
+
 /**
  *  登录接口
  *

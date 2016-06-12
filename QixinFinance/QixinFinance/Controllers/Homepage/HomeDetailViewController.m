@@ -7,6 +7,7 @@
 //
 
 #import "HomeDetailViewController.h"
+#import "Config.h"
 
 @interface HomeDetailViewController ()
 {
@@ -29,14 +30,29 @@
     [btn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     [btn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     
-    
+   
     UIBarButtonItem * btnItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.leftBarButtonItem = btnItem;
-    
+
     webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.view addSubview:webView];
     if(self.uid.length!=0){
     urlString = [NSString stringWithFormat:@"http://60.173.235.34:9999/qixin/app/nos_qx_loaninfo/%@",self.uid];
+        self.manager = [[AFHTTPRequestOperationManager alloc] init];
+        self.manager.responseSerializer.acceptableContentTypes =  [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+        [self.manager.requestSerializer setValue:@"123" forHTTPHeaderField:@"x-access-id"];
+        [self.manager.requestSerializer setValue:@"123" forHTTPHeaderField:@"x-signature"];
+        self.manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+        NSString * token = [[Config Instance] getToken];
+        if(token){
+        NSDictionary * parameter = @{@"token":token};
+        [self.manager POST:urlString parameters:parameter success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+       
+        } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+            
+        }];
+        }
+
     }else if (self.url.length!=0){
         urlString =  self.url;
     }else{

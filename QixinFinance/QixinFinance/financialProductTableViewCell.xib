@@ -32,7 +32,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个月 期限" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoQ-9g-ooY">
-                        <rect key="frame" x="140" y="53" width="76" height="20"/>
+                        <rect key="frame" x="146" y="53" width="76" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="gIJ-bJ-GD4"/>
                             <constraint firstAttribute="width" constant="76" id="gtc-KO-v2b"/>
@@ -42,12 +42,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXc-EQ-ttE">
-                        <rect key="frame" x="113" y="53" width="19" height="20"/>
+                        <rect key="frame" x="113" y="53" width="25" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="19" id="MIP-Vo-T6N"/>
+                            <constraint firstAttribute="width" constant="25" id="MIP-Vo-T6N"/>
                             <constraint firstAttribute="height" constant="20" id="d4Q-eV-Yll"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.79607843137254897" green="0.25490196078431371" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>

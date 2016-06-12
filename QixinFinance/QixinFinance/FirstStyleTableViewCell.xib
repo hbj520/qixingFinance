@@ -27,7 +27,7 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3i2-uh-q0v">
-                        <rect key="frame" x="217" y="98" width="88" height="31"/>
+                        <rect key="frame" x="217" y="97" width="88" height="31"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="88" id="Ocs-Qc-OW7"/>
                             <constraint firstAttribute="height" constant="31" id="PIr-TY-jyK"/>
@@ -73,7 +73,7 @@
                     <constraint firstItem="CRi-Sz-PhI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WEK-KT-Xjk"/>
                     <constraint firstItem="eLE-pa-rq6" firstAttribute="centerY" secondItem="Hg2-TM-Yza" secondAttribute="centerY" id="WOj-pj-Vse"/>
                     <constraint firstItem="3i2-uh-q0v" firstAttribute="leading" secondItem="Hg2-TM-Yza" secondAttribute="trailing" id="bHf-60-gx0"/>
-                    <constraint firstAttribute="bottom" secondItem="3i2-uh-q0v" secondAttribute="bottom" constant="120" id="elQ-7G-5Qn"/>
+                    <constraint firstAttribute="bottom" secondItem="3i2-uh-q0v" secondAttribute="bottom" constant="121" id="elQ-7G-5Qn"/>
                     <constraint firstItem="eLE-pa-rq6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="21" id="gfQ-Rw-MCA"/>
                     <constraint firstItem="pdY-nu-KyE" firstAttribute="top" secondItem="Hg2-TM-Yza" secondAttribute="bottom" constant="11" id="gpd-oF-Mx3"/>
                     <constraint firstItem="pdY-nu-KyE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="mhh-tj-GwC"/>
