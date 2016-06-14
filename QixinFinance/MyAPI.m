@@ -10,7 +10,7 @@
 #import "Marco.h"
 #import "MyAPI.h"
 #import "Config.h"
-#define BaseUrl @"http://60.173.235.34:9999/qixin/app"
+#define BaseUrl @"http://36.7.110.253:9999/qixin/app"
 //tools
 
 //models

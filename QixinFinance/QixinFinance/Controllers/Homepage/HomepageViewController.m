@@ -96,10 +96,8 @@
         [self.tableView reloadData];
          [self hideHud];
         _imgArray  = [[NSMutableArray alloc] init];
-     //   NSString * imgPath = @"cycleviewicon";
         for(NSInteger i = 0 ;i<3;i++){
-            //adverModel * model = imageArray[0];
-           // [_imgArray addObject:model.adimageUrl];
+            
         }
         
             } errorResult:^(NSError *enginerError) {
@@ -294,8 +292,6 @@
  */
 - (void)clickLoan
 {
-//    FormuViewController * vc = [[FormuViewController alloc] init];
-//    [self.navigationController pushViewController:vc animated:YES];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
    FormuViewController *VC = (FormuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MoreLoan"];
     [self.navigationController pushViewController:VC animated:YES];
