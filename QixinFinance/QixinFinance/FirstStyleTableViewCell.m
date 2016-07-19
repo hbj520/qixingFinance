@@ -11,13 +11,15 @@
 #import "JobInfoModel.h"
 #import "MyAPI.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "AllLoanViewController.h"
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 @implementation FirstStyleTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-  
+    self.input.keyboardType =  UIKeyboardTypeNumberPad;
+    self.input.delegate = self;
     UICollectionViewFlowLayout * _flowLayout = [[UICollectionViewFlowLayout alloc] init];
     _flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
     _flowLayout.minimumInteritemSpacing = 50;
@@ -37,7 +39,16 @@
     _collectionView.showsHorizontalScrollIndicator = NO;
     _collectionView.backgroundColor = [UIColor whiteColor];
     [self loadData];
+    
     }
+- (IBAction)clip:(id)sender {
+    
+    if (self.fastBlock) {
+        self.fastBlock(self.input.text);
+    }
+    [self.contentView endEditing:YES];
+   
+}
 
 - (void)loadData
 {
@@ -52,6 +63,8 @@
         
     }];
 }
+
+
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -85,6 +98,8 @@
 {
     [self.input endEditing:YES];
 }
+
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

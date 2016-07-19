@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *applyCount;
 @property (weak, nonatomic) IBOutlet UILabel *percentNum;
 @property(nonatomic,strong) loaninfoModel * model;
++(NSString *)countNumAndChangeformat:(NSString *)num;
 @end

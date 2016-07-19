@@ -8,10 +8,28 @@
 
 #import "InfoHotViewController.h"
 #import "UIViewController+HUD.h"
+#import "SDCycleScrollView.h"
+#import "MyAPI.h"
+#import "adverModel.h"
+#import "HotInfoTableViewCell.h"
+#import "InfoDetailViewController.h"
+#import "BannerDetailViewController.h"
 #import "Marco.h"
-@interface InfoHotViewController ()
+
+@interface InfoHotViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate>
 {
-    UIWebView * _webView;
+    UITableView * _tableView;
+    
+    NSMutableArray * _imgArray;  //存放轮播图图片网址的数组
+    
+    NSMutableArray * imageArray; //存放轮播图模型的数组
+    
+    NSMutableArray * selectData;  //接收轮播图数据模型的数组
+    
+    NSMutableArray * loaninfoData; //接收首页数据模型的数组
+    
+    SDCycleScrollView * _headView;  //轮播图
+
 }
 @end
 
@@ -20,8 +38,97 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+  
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 150 ) style:UITableViewStylePlain];
+    _tableView.separatorStyle =  UITableViewCellSeparatorStyleNone;
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    [_tableView registerNib:[UINib nibWithNibName:@"HotInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"HOTCELL"];
+    [self.view addSubview:_tableView];
+    [self configpageView];
+    [self loadData];
+}
 
-    [self showHudInView:self.view hint:@"页面建设中"];
+- (void)configpageView
+{
+    
+    [[MyAPI sharedAPI] getInfoPageBannerWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
+        imageArray  = arrays[0];
+        _imgArray  = [[NSMutableArray alloc] init];
+        for(adverModel * model in imageArray){
+            [_imgArray addObject:model.adimageUrl];
+        }
+        _headView= [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, ScreenWidth,200 ) imageURLStringsGroup:_imgArray];
+        _headView.placeholderImage = [UIImage imageNamed:@"bannerimage"];
+        _headView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
+        _headView.delegate = self;
+        _tableView.tableHeaderView = _headView;
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+}
+
+- (void)loadData
+{
+    [self showHudInView:self.view hint:@"正在加载"];
+    [[MyAPI sharedAPI] requestNewsListWithPage:@"1" cateid:@"190" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        selectData = arrays[0];
+        _imgArray  = [[NSMutableArray alloc] init];
+       // [self configpageView];
+        [_tableView reloadData];
+        [self hideHud];
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return selectData.count;
+    
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellId = @"HOTCELL";
+    HotInfoTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellId forIndexPath:indexPath];
+    InfoCateModel * model = [[InfoCateModel alloc] init];
+    model = selectData[indexPath.row];
+    cell.model = model;
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    InfoDetailViewController * vc = [[InfoDetailViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    InfoCateModel * model = [[InfoCateModel alloc] init];
+    model = selectData[indexPath.row];
+    vc.articleid = model.articleid;
+    vc.titleName = @"热点";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
+{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
+    BannerDetailViewController *VC = (BannerDetailViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Banner"];
+    adverModel *model = [imageArray objectAtIndex:index];
+
+    VC.bannerUrl = model.link;
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

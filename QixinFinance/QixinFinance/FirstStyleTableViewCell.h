@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @class JobInfoModel;
 typedef void (^PushMoreLoanPage)(JobInfoModel * model);
+typedef void (^FastLoanBlock)(NSString *);
 @interface FirstStyleTableViewCell : UITableViewCell<UICollectionViewDelegate,UICollectionViewDataSource>
 {
     NSArray * dataSource;
@@ -18,4 +19,5 @@ typedef void (^PushMoreLoanPage)(JobInfoModel * model);
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property(nonatomic,copy)PushMoreLoanPage  block;
+@property(nonatomic,copy)FastLoanBlock fastBlock;
 @end

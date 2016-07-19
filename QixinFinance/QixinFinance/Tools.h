@@ -26,7 +26,7 @@
  *  @return 路径
  */
 + (NSString *)documentPath:(NSString *)file;
-
++(NSString *)countNumAndChangeformat:(NSString *)num;
 //是否3.5存小屏幕
 + (BOOL) isSmallScreen;
 
@@ -50,6 +50,8 @@
 
 //对登录密码加密(md5+base64)
 + (NSString *)loginPasswordSecurityLock:(NSString *)password;
+
++ (NSString*)loginPasswdSecurityLock:(NSString*)password;
 
 //图片处理，按比例压缩
 +(UIImage *) imageCompressForSize:(UIImage *)sourceImage targetSize:(CGSize)size;

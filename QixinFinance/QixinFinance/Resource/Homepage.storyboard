@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Yx7-Z0-Lxx">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
@@ -19,7 +18,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5d9-zU-5la" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1386" y="-66"/>
+            <point key="canvasLocation" x="-1790" y="-360"/>
         </scene>
         <!--Homepage View Controller-->
         <scene sceneID="obT-vv-6uu">
@@ -49,27 +48,12 @@
                     <navigationItem key="navigationItem" id="huu-XW-wFh"/>
                     <connections>
                         <outlet property="tableView" destination="pKZ-kL-zqZ" id="i6T-MO-F4w"/>
+                        <segue destination="mxX-Tr-zNi" kind="push" identifier="loanSegue" id="rgG-H5-7Z0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pp6-Q6-wSZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1032" y="-66"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="eEY-YC-ykB">
-            <objects>
-                <navigationController id="w7E-oB-fy4" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uxp-MD-1ab">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="mxX-Tr-zNi" kind="relationship" relationship="rootViewController" id="Ghz-5c-xBI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rmP-5K-UQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-625" y="-66"/>
+            <point key="canvasLocation" x="-1301" y="-360"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8Wf-ym-5Ul">
@@ -85,12 +69,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFp-Bc-tyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1176" y="578"/>
+            <point key="canvasLocation" x="-1273" y="374"/>
         </scene>
         <!--Banner Detail View Controller-->
         <scene sceneID="4hS-Hl-RcD">
             <objects>
-                <viewController storyboardIdentifier="Banner" automaticallyAdjustsScrollViewInsets="NO" id="9rG-9I-Xjo" customClass="BannerDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Banner" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="9rG-9I-Xjo" customClass="BannerDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CyK-QH-i5F"/>
                         <viewControllerLayoutGuide type="bottom" id="hho-cC-Mfw"/>
@@ -113,7 +97,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="p9l-ZB-yQs">
-                        <barButtonItem key="leftBarButtonItem" image="back" id="1x8-GQ-Jea">
+                        <barButtonItem key="leftBarButtonItem" image="back1" id="1x8-GQ-Jea">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="back:" destination="9rG-9I-Xjo" id="4TE-lP-Cwr"/>
                             </connections>
@@ -125,12 +110,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pl6-gq-P5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-772" y="578"/>
+            <point key="canvasLocation" x="-840" y="374"/>
         </scene>
         <!--贷款-->
         <scene sceneID="9aO-Ng-JSK">
             <objects>
-                <viewController storyboardIdentifier="MoreLoan" id="mxX-Tr-zNi" customClass="FormuViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoreLoan" hidesBottomBarWhenPushed="YES" id="mxX-Tr-zNi" customClass="FormuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MMQ-K0-jDd"/>
                         <viewControllerLayoutGuide type="bottom" id="CDm-gL-Pyb"/>
@@ -141,32 +126,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="贷款" id="Gp3-JN-pcM">
-                        <barButtonItem key="leftBarButtonItem" image="back" id="gE5-8t-ZbS">
+                        <barButtonItem key="leftBarButtonItem" image="back1" id="gE5-8t-ZbS">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="back:" destination="mxX-Tr-zNi" id="RaO-Hi-e0i"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Xeu-OW-MKi" kind="push" identifier="allLoanSegue" id="dhb-dV-gYg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bsh-i5-hY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-274" y="-66"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="pYb-eF-etZ">
-            <objects>
-                <navigationController id="6RW-Qz-8lQ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wKJ-Jq-RZ3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Xeu-OW-MKi" kind="relationship" relationship="rootViewController" id="nXC-c4-hCD"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BSF-w9-3gE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="115" y="-66"/>
+            <point key="canvasLocation" x="-709" y="-496"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nnw-Tw-nIc">
@@ -182,12 +155,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uUZ-CI-dWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-357" y="578"/>
+            <point key="canvasLocation" x="-20" y="357"/>
         </scene>
         <!--理财精选-->
         <scene sceneID="YgJ-Mb-Hg5">
             <objects>
-                <viewController storyboardIdentifier="SELECT" id="sXj-gO-DZJ" customClass="SelectProductViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SELECT" hidesBottomBarWhenPushed="YES" id="sXj-gO-DZJ" customClass="SelectProductViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oJa-iW-pNO"/>
                         <viewControllerLayoutGuide type="bottom" id="or4-lY-k8n"/>
@@ -210,7 +183,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="理财精选" id="6xY-b5-sl2">
-                        <barButtonItem key="leftBarButtonItem" image="back" id="fwd-vR-dnv">
+                        <barButtonItem key="leftBarButtonItem" image="back1" id="fwd-vR-dnv">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="back:" destination="sXj-gO-DZJ" id="nkh-x3-HeM"/>
                             </connections>
@@ -222,12 +196,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHl-me-mhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="584"/>
+            <point key="canvasLocation" x="387" y="357"/>
         </scene>
         <!--全部贷款-->
         <scene sceneID="r2b-zX-ZHw">
             <objects>
-                <viewController storyboardIdentifier="AllLoan" id="Xeu-OW-MKi" customClass="AllLoanViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllLoan" hidesBottomBarWhenPushed="YES" id="Xeu-OW-MKi" customClass="AllLoanViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EeZ-LG-90w"/>
                         <viewControllerLayoutGuide type="bottom" id="oZ9-LF-a6D"/>
@@ -238,7 +212,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="全部贷款" id="eFv-Dm-SUU">
-                        <barButtonItem key="leftBarButtonItem" image="back" id="9aR-AU-glB">
+                        <barButtonItem key="leftBarButtonItem" image="back1" id="9aR-AU-glB">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="back:" destination="Xeu-OW-MKi" id="P3G-gK-jrF"/>
                             </connections>
@@ -247,10 +222,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qwh-uZ-RyI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="463" y="-66"/>
+            <point key="canvasLocation" x="-94" y="-444"/>
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="13" height="20"/>
+        <image name="back1" width="26" height="40"/>
     </resources>
 </document>

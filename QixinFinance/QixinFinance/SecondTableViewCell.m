@@ -13,7 +13,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    NSString *urlString = [NSString stringWithFormat:@"http://60.173.235.34:9999/qixin/app/nos_qx_loanlist"];
+    NSString *urlString = [NSString stringWithFormat:@"http://60.173.235.34:9090/qixin/app/nos_qx_loanlist"];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     [self.webView loadRequest:request];
 

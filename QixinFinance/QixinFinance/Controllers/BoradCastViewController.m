@@ -8,6 +8,7 @@
 
 #import "BoradCastViewController.h"
 #import "UIViewController+HUD.h"
+#import "FormuViewController.h"
 
 @interface BoradCastViewController ()
 
@@ -18,7 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self showHudInView:self.view hint:@"页面建设中"];
+    //[self showHudInView:self.view hint:@"页面建设中"];
+
+      
 }
 
 - (void)didReceiveMemoryWarning {

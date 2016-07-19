@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
@@ -75,6 +74,9 @@
                     <constraint firstItem="a6F-Pj-ivL" firstAttribute="top" secondItem="GB7-QG-8EC" secondAttribute="bottom" constant="7" id="x1h-E9-zBn"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="img" destination="a6F-Pj-ivL" id="aGl-HF-GJ4"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

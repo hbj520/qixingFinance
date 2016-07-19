@@ -1,44 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Nbg-cl-2Sm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KHw-ie-l9Q">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
-        <scene sceneID="LT3-LQ-ro7">
+        <scene sceneID="kgB-th-1f8">
             <objects>
-                <navigationController id="Nbg-cl-2Sm" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z9h-MQ-cJX">
+                <navigationController id="KHw-ie-l9Q" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kfh-SW-Ftb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="5Cn-hy-7B5" kind="relationship" relationship="rootViewController" id="j6n-7N-tlm"/>
+                        <segue destination="SIS-oh-plJ" kind="relationship" relationship="rootViewController" id="Fi0-f7-c43"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jKv-b6-bb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pty-h5-DND" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-207" y="321"/>
+            <point key="canvasLocation" x="-3065" y="-61"/>
         </scene>
-        <!--Borad Cast View Controller-->
-        <scene sceneID="Aah-Ib-VZF">
+        <!--贷款-->
+        <scene sceneID="9Pb-Jj-dCl">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="5Cn-hy-7B5" customClass="BoradCastViewController" sceneMemberID="viewController">
+                <viewController id="SIS-oh-plJ" customClass="FormuViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fZV-QB-q1l"/>
-                        <viewControllerLayoutGuide type="bottom" id="wAp-4a-MZm"/>
+                        <viewControllerLayoutGuide type="top" id="SNa-66-vdg"/>
+                        <viewControllerLayoutGuide type="bottom" id="kP2-1x-lTj"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bEV-Ru-Aq7">
+                    <view key="view" contentMode="scaleToFill" id="kOz-44-9YQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Gu6-cU-e8O"/>
+                    <navigationItem key="navigationItem" title="贷款" id="Mrr-DW-WSO"/>
+                    <connections>
+                        <segue destination="iNA-Jm-o5T" kind="push" identifier="allLoanSegue" id="87b-0R-RY8"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WF6-Aw-The" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aic-8d-SYO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="148" y="321"/>
+            <point key="canvasLocation" x="-2648" y="-54"/>
+        </scene>
+        <!--全部贷款-->
+        <scene sceneID="xUo-2z-OzF">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="iNA-Jm-o5T" customClass="AllLoanViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KRU-ZD-vb7"/>
+                        <viewControllerLayoutGuide type="bottom" id="9rR-QC-cRa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vxC-g6-IRK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="全部贷款" id="wpT-7u-eQf">
+                        <barButtonItem key="leftBarButtonItem" image="back1" id="zGI-U3-FPW">
+                            <color key="tintColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="Back:" destination="iNA-Jm-o5T" id="6ZY-ka-0KK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mn1-YZ-MVj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2173" y="-54"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back1" width="26" height="40"/>
+    </resources>
 </document>

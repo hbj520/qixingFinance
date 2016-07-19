@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "HomePictureModel.h"
 @interface ActivityTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *Img;
-
+@property(nonatomic,strong)HomePictureModel * model;
 @end

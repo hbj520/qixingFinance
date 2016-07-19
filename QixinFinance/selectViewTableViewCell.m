@@ -39,7 +39,7 @@
     indexAry = self.array;
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width,60) collectionViewLayout:layout];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width,self.contentView.frame.size.height) collectionViewLayout:layout];
     _collectionView.delegate=self;
     _collectionView.dataSource=self;
     _collectionView.backgroundColor = [UIColor whiteColor];
@@ -74,7 +74,7 @@
 }
 // 设置每个cell上下左右相距
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(0, 10, 0, 10);
+    return UIEdgeInsetsMake(10, 10, 0, 10);
 }
 
 // 设置最小行间距，也就是前一行与后一行的中间最小间隔
@@ -113,18 +113,22 @@
      */
     if ([model.fromname isEqualToString:@"4"]) {
         self.jtype = model.listid;
+        [defaults removeObjectForKey:@"4"];
         [defaults setObject:model.listid forKey:@"4"];
         [defaults synchronize];
     }else if ([model.fromname isEqualToString:@"3"]){
         self.rtype = model.listid;
+        [defaults removeObjectForKey:@"3"];
         [defaults setObject:model.listid forKey:@"3"];
         [defaults synchronize];
     }else if ([model.fromname isEqualToString:@"5"]){
         self.btype = model.listid;
+        [defaults removeObjectForKey:@"5"];
         [defaults setObject:model.listid forKey:@"5"];
         [defaults synchronize];
     }else{
         self.mtype = model.listid;
+        [defaults removeObjectForKey:@"2"];
         [defaults setObject:model.listid forKey:@"2"];
         [defaults synchronize];
     }

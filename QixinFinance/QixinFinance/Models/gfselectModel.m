@@ -9,7 +9,7 @@
 #import "gfselectModel.h"
 
 @implementation gfselectModel
-- (id)initWithParameter:(NSString *)selectId  deadline:(NSString *)deadline earnings:(NSString*)earnings imgthumb:(NSString *)imgthumb selectname:(NSString *)selectname selecturl:(NSString *)selecturl
+- (id)initWithParameter:(NSString *)selectId  deadline:(NSString *)deadline earnings:(NSString*)earnings imgthumb:(NSString *)imgthumb selectname:(NSString *)selectname selecturl:(NSString*)selecturl comment:(NSString *)comment
 {
     gfselectModel * model = [[gfselectModel alloc] init];
     model.selectId = selectId;
@@ -18,6 +18,7 @@
     model.imgthumb = imgthumb;
     model.name = selectname;
     model.url = selecturl;
+    model.comment = comment;
     return model;
 }
 
@@ -31,7 +32,8 @@
         NSString *imgthumb = dict[@"imgthumb"];
         NSString * name = dict[@"name"];
         NSString * url = dict[@"url"];
-        gfselectModel * model = [[gfselectModel alloc] initWithParameter:selectId deadline:deadline earnings:earnings imgthumb:imgthumb selectname:name selecturl:url];
+        NSString *comment = dict[@"comment"];
+        gfselectModel * model = [[gfselectModel alloc] initWithParameter:selectId deadline:deadline earnings:earnings imgthumb:imgthumb selectname:name selecturl:url comment:comment];
         [selectArray addObject:model];
         
     }

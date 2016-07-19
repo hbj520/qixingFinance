@@ -13,7 +13,7 @@
 #import "ActivityTableViewCell.h"
 #import "recommandLoanTableViewCell.h"
 #import "bankLoanTableViewCell.h"
-#import "HotCardTableViewCell.h"
+#import"HotCardCommandViewCellTableViewCell.h"
 #import "financialProductTableViewCell.h"
 #import "financialSelectedTableViewCell.h"
 #import "SDCycleScrollView.h"
@@ -33,6 +33,10 @@
     
     NSMutableArray * imageArray; //存放轮播图模型的数组
     
+    NSMutableArray * HomePictureArray1;
+    
+    NSMutableArray * HomePictureArray2;
+
     NSMutableArray * selectData;  //接收轮播图数据模型的数组
     
     NSMutableArray * loaninfoData; //接收首页数据模型的数组
@@ -51,11 +55,17 @@
     // Do any additional setup after loading the view.
     [self showTitleView];
    // [self showCityName];
-    [self cityLocation];
+    //[self cityLocation];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self congfigTableView];
     [self loadData];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    //self.navigationItem.;
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
 }
 
 
@@ -70,6 +80,7 @@
             [_imgArray addObject:model.adimageUrl];
         }
         _headView= [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, ScreenWidth,200 ) imageURLStringsGroup:_imgArray];
+        _headView.placeholderImage = [UIImage imageNamed:@"bannerimage"];
          _headView.delegate = self;
         self.tableView.tableHeaderView = _headView;
         
@@ -105,6 +116,24 @@
             } errorResult:^(NSError *enginerError) {
         
     }];
+    
+    [[MyAPI sharedAPI] getHomePagePictureWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
+    
+        NSMutableArray * HomePictureArray = arrays[0];
+       HomePictureArray1 = HomePictureArray;
+        [self.tableView reloadData];
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+    
+    [[MyAPI sharedAPI] getHomePageCardPictureWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
+        NSMutableArray * HomePageCardPictureArray = arrays[0];
+        HomePictureArray2 = HomePageCardPictureArray;
+        [self.tableView reloadData];
+    } errorResult:^(NSError *enginerError) {
+        
+    }];
+    
 }
 
 - (void)cityLocation
@@ -129,30 +158,13 @@
     [self.tableView registerClass:[ActivityTableViewCell class] forCellReuseIdentifier:@"homepageReused1"];
    // [self.tableView registerClass:[recommandLoanTableViewCell class] forCellReuseIdentifier:@"homepageReused2"];
     [self.tableView registerClass:[bankLoanTableViewCell class] forCellReuseIdentifier:@"homepageReused3"];
-   [ self.tableView registerClass:[HotCardTableViewCell class] forCellReuseIdentifier:@"homepageReused4"];
+   [ self.tableView registerClass:[HotCardCommandViewCellTableViewCell class] forCellReuseIdentifier:@"homepageReused4"];
     [self.tableView registerClass:[financialSelectedTableViewCell class] forCellReuseIdentifier:@"homepageReusedId5"];
     //[self.tableView registerClass:[financialProductTableViewCell class] forCellReuseIdentifier:@"homepageReusedId6"];
    [self.tableView registerNib:[UINib nibWithNibName:@"recommandLoanTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell1"];
       [self.tableView registerNib:[UINib nibWithNibName:@"financialProductTableViewCell" bundle:nil] forCellReuseIdentifier:@"homepageReusedId6"];
-    UIView * footView = [[UIView alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width-20, 30)];
-    footView.backgroundColor =[UIColor whiteColor];
-    UILabel * label1 = [[UILabel alloc] initWithFrame:CGRectMake(16, 2, 60, 26)];
-    label1.textColor = [UIColor colorWithRed:236.0/255.0 green:138.0/255.0 blue:119.0/255.0 alpha:100];
-    label1.backgroundColor =  [UIColor colorWithRed:235.0/255.0 green:235.0/255.0 blue:235.0/255.0 alpha:100];
-
-    label1.text = @"小编点评";
-    label1.font = [UIFont systemFontOfSize:9];
-    UILabel * label2 = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(label1.frame),2, ScreenWidth-40-80+7, 26)];
-    label2.textColor = [UIColor colorWithRed:59.0/255.0 green:56.0/255.0 blue:56.0/255.0 alpha:100];
-    label2.text = @"自动投标，操作方便；本息复投，提高资金利用率。";
-    label2.backgroundColor = [UIColor colorWithRed:235.0/255.0 green:235.0/255.0 blue:235.0/255.0 alpha:100];
-
-    label2.font = [UIFont systemFontOfSize:9];
-    [footView addSubview:label1];
-    [footView addSubview:label2];
-    self.tableView.tableFooterView = footView;
     
-   
+    
 }
 
 
@@ -180,9 +192,15 @@
         cell.block1 = ^(){
             [weakself clickSelect];
         };
+        cell.block2 = ^(){
+            [weakself clickCredit];
+        };
             return cell;
     }else if (indexPath.section==1){
         ActivityTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"ActivityTableViewCell" owner:self options:nil] lastObject];
+        HomePictureModel * model =[[HomePictureModel alloc] init];
+        model =HomePictureArray1[0];
+        cell.model = model;
         return cell;
 
     }else if (indexPath.section==2){
@@ -195,7 +213,11 @@
         cell.model = model;
         return cell;
     }else if (indexPath.section==4){
-        HotCardTableViewCell * cell =  [[[NSBundle mainBundle] loadNibNamed:@"HotCardTableViewCell" owner:self options:nil] lastObject];
+        HotCardCommandViewCellTableViewCell * cell =  [[[NSBundle mainBundle] loadNibNamed:@"HotCardCommandViewCellTableViewCell" owner:self options:nil] lastObject];
+        HomePictureModel * model = [[HomePictureModel alloc] init];
+        model = HomePictureArray2[0];
+        cell.model = model;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
 
     }else if (indexPath.section==5){
@@ -214,14 +236,14 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section==0||section==1||section==2||section==4||section==5) {
-        return 20;
+        return 10;
     }else{
         return 1;
     }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section==0||indexPath.section==1||indexPath.section==3||indexPath.section==6) {
+    if (indexPath.section==0||indexPath.section==1||indexPath.section==3) {
         return 106;
     }else if (indexPath.section ==  4){
         return 230;
@@ -229,7 +251,11 @@
     
     else if (indexPath.section==2||indexPath.section==5){
         return 44;
-    }else{
+    }else if (indexPath.section==6){
+        
+        return 132;
+    }
+    else{
         return 200;
     }
 
@@ -243,14 +269,16 @@
         /**
          *  跳到全部贷款页面
          */
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
-       AllLoanViewController *VC = (AllLoanViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
-        VC.jtype = @"";
-        [self.navigationController pushViewController:VC animated:YES];    }
+        [self performSegueWithIdentifier:@"loanSegue" sender:nil];
+    
+    }
+    
+    
     if (indexPath.section==3) {
         loaninfoModel * model = loaninfoData[indexPath.row];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
         vc.uid = model.loanId;
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section==5){
@@ -264,8 +292,7 @@
         gfselectModel * model = selectData[indexPath.row];
         SelectProductDetailViewController * VC = [[SelectProductDetailViewController alloc] init];
         VC.uid = model.selectId;
-        HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
-        vc.url= model.selectId;
+        VC.hidesBottomBarWhenPushed = YES;
         
         [self.navigationController pushViewController:VC animated:YES];
     }
@@ -282,7 +309,7 @@
     barButtonItem.tintColor = [UIColor grayColor];
     UIBarButtonItem *barbuttonItemImg = self.navigationItem.rightBarButtonItem;
     NSArray *buttonItems = @[barButtonItem,barbuttonItemImg];
-   // [buttonItems addObject:barButtonItem];
+ 
     self.navigationItem.rightBarButtonItems = buttonItems;
 }
 - (void)cityAct:(id)sender{
@@ -294,14 +321,17 @@
  */
 - (void)clickLoan
 {
-//    FormuViewController * vc = [[FormuViewController alloc] init];
-//    [self.navigationController pushViewController:vc animated:YES];
+
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
    FormuViewController *VC = (FormuViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MoreLoan"];
     [self.navigationController pushViewController:VC animated:YES];
 
 }
 
+- (void)clickCredit
+{
+    [self showHint:@"页面建设中"];
+}
 
 - (void)clickSelect
 {

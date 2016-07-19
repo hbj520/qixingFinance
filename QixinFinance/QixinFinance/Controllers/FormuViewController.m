@@ -29,9 +29,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
-       [self.view addSubview:self.tableView];
+  
+ 
+    //[[self navigationController] setNavigationBarHidden:YES animated:YES];
    
+      self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    
+        [self.view addSubview:self.tableView];
+   
+  
    // [self addMJRefreshHasHeader:NO withHasFooter:YES];
     self.tableView.separatorStyle = NO;
     self.tableView.delegate = self;
@@ -40,10 +46,12 @@
    [self loadData];
     [self configUI];
 }
-
-
-
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+      
+}
 
 
 //加载更多贷款数据
@@ -103,6 +111,13 @@
             [weakself.navigationController pushViewController:VC animated:YES];
             
         };
+        //点击快速贷款跳转到跳转到全部贷款
+      //  __weak FormuViewController *weakself = self;
+        cell.fastBlock = ^(NSString *loanMoney){
+          
+            [self performSegueWithIdentifier:@"allLoanSegue" sender:loanMoney];
+            
+        };
              return cell;
     }else if(indexPath.section==1){
         SecondTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"celltwo" forIndexPath:indexPath];
@@ -160,10 +175,15 @@
        //跳到贷款详情界面
         moreloaninfoModel * model = moreloanArray[indexPath.row];
         HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
+       vc.hidesBottomBarWhenPushed = YES;
         vc.uid = model.infoId;
         [self.navigationController pushViewController:vc animated:YES];
    }else{
-       
+
+       UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
+       AllLoanViewController *VC = (AllLoanViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AllLoan"];
+       VC.jtype = @"";
+       [self.navigationController pushViewController:VC animated:YES];
    }
 }
 
@@ -177,14 +197,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    AllLoanViewController *allLoanVC = (AllLoanViewController *)segue.destinationViewController;
+   
+    allLoanVC.sort = @"";
+    allLoanVC.jtype = @"";
+    allLoanVC.mtype = @"";
+    allLoanVC.rtype = @"";
+    allLoanVC.btype = @"";
+    allLoanVC.month = @"";
+    allLoanVC.money = sender;
+    allLoanVC.page = @"1";
 }
-*/
+
 
 @end

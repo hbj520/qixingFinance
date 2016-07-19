@@ -12,6 +12,7 @@
 #import "financialProductTableViewCell.h"
 #import "HomeDetailViewController.h"
 #import "SelectProductDetailViewController.h"
+#import "UIViewController+HUD.h"
 #import <MJRefresh/MJRefresh.h>
 
 @interface SelectProductViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -57,16 +58,19 @@
 - (void)loadData
 {
     NSString * pagestr = [NSString stringWithFormat:@"%ld",(long)page];
+    
+    [self showHudInView:self.view hint:@"正在加载"];
     [[MyAPI  sharedAPI] requestSelectLoanListWithPage:pagestr Result:^(BOOL success, NSString *msg, NSArray *arrays) {
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
        // [dataSource addObjectsFromArray:arrays[0]];
         dataSource = arrays[0];
         [self.tableView reloadData];
+        [self hideHud];
     } errorResult:^(NSError *enginerError) {
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
-
+        
     }];
 }
 
@@ -90,7 +94,7 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-static NSString * cellID = @"homepageReusedId6";
+    static NSString * cellID = @"homepageReusedId6";
     financialProductTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     gfselectModel * model = [[gfselectModel alloc] init];
     model = dataSource[indexPath.row];
@@ -100,7 +104,7 @@ static NSString * cellID = @"homepageReusedId6";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 132;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -108,6 +112,7 @@ static NSString * cellID = @"homepageReusedId6";
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     gfselectModel * model = dataSource[indexPath.row];
     SelectProductDetailViewController * VC = [[SelectProductDetailViewController alloc] init];
+    VC.hidesBottomBarWhenPushed = YES;
     VC.uid = model.selectId;
     [self.navigationController pushViewController:VC animated:YES];
 }

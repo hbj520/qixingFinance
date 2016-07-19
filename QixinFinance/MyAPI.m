@@ -10,7 +10,7 @@
 #import "Marco.h"
 #import "MyAPI.h"
 #import "Config.h"
-#define BaseUrl @"http://60.173.235.34:9999/qixin/app"
+#define BaseUrl @"http://60.173.235.34:9090/qixin/app"
 //tools
 
 //models
@@ -24,6 +24,9 @@
 #import "monthModel.h"
 #import "JobInfoModel.h"
 #import "UserInfoModel.h"
+#import "InfoCateModel.h"
+#import "MyLoanModel.h"
+#import "HomePictureModel.h"
 
 @interface MyAPI()
 @property NSString *mBaseUrl;
@@ -80,6 +83,25 @@
     }];
 }
 
+-  (void)modifyPwdWithOldPassword:(NSString *)oldpassword mpassword:(NSString*)mpassword result:(StateBlock)result errorResult:(ErrorBlock)errorResult
+{
+    NSString * token = [[Config Instance] getToken];
+    
+    NSDictionary * parameter = @{@"token":token,@"oldpasswd":oldpassword,@"passwd":mpassword};
+    [self.manager POST:@"qx_modipwd" parameters:parameter success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSString * status = responseObject[@"status"];
+        NSString * info = responseObject[@"info"];
+        if ([status isEqualToString:@"1"]) {
+        
+            result(YES,info);
+        }else{
+            result(NO,info);
+        }
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        
+    }];
+}
+
 - (void)RegistWithyzm:(NSString *)yzm password:(NSString *)password phoneNumber:(NSString *)phoneNumber result:(StateBlock)result errorResult:(ErrorBlock)errorResult
 {
     NSDictionary * parameters = @{@"yzm":yzm,@"userpwd":password,@"phone":phoneNumber};
@@ -97,6 +119,35 @@
         }
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         errorResult(error);
+    }];
+}
+
+- (void)sendZhaoYZMWithPhoneNumber:(NSString *)phoneNumber result:(StateBlock)result errorResult:(ErrorBlock)errorResult
+{
+    NSDictionary * parameter = @{@"phone":phoneNumber};
+    [self.manager POST:@"nos_sendzhyzm" parameters:parameter success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSString * state = responseObject[@"status"];
+        NSString * information = responseObject[@"info"];
+        if ([state isEqualToString:@"1"]) {
+            result(YES,information);
+        }
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        
+    }];
+    
+}
+
+- (void)FindBackPasswordWithYZM:(NSString *)YZM phoneNumber:(NSString *)phoneNumber NewPassWord:(NSString *)newPassWord RePassWord:(NSString *)RePassWord Result:(StateBlock)result errorResult:(ErrorBlock)errorResult
+{
+    NSDictionary * parameter = @{@"yzm":YZM,@"phone":phoneNumber,@"passwd":newPassWord,@"repasswd":RePassWord};
+    [self.manager POST:@"nos_qx_getpwd" parameters:parameter success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSString * state = responseObject[@"status"];
+        NSString * info = responseObject[@"info"];
+        if ([state isEqualToString:@"1"]) {
+            result(YES,info);
+        }
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        
     }];
 }
 
@@ -135,6 +186,7 @@
     }];
 }
 
+
 - (void)getHomepageBannerWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
 {
     [self.manager POST:@"nos_qx_indexbanner" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -144,6 +196,54 @@
            
                 NSMutableArray * adArray = [[adverModel alloc] buildData:data];
             
+            result(YES,@"SUCCESS",@[adArray]);
+        }
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        
+    }];
+}
+
+- (void)getHomePagePictureWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
+{
+[self.manager POST:@"nos_qx_adimagef" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    NSString * status = responseObject[@"status"];
+    if ([status isEqualToString:@"1"]) {
+        NSArray * adImageArray = responseObject[@"data"][@"adimage"];
+        
+        NSMutableArray * HomePictureArray = [[HomePictureModel alloc] buildWithData:adImageArray];
+        
+        result(YES,@"SUCCESS",@[HomePictureArray]);
+    }
+} failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+    
+}];
+    
+}
+
+- (void)getHomePageCardPictureWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
+{
+[self.manager POST:@"nos_qx_adimages" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+    NSString * status = responseObject[@"status"];
+    if ([status isEqualToString:@"1"]) {
+        NSArray * cardArray = responseObject[@"data"][@"adimage"];
+        
+        NSMutableArray * homecardArray = [[HomePictureModel alloc] buildWithData:cardArray];
+        
+        result(YES,@"SUCCESS",@[homecardArray]);
+    }
+} failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+    
+}];
+    
+}
+
+- (void)getInfoPageBannerWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
+{
+    [self.manager POST:@"nos_qx_newsbanner" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSString * status = responseObject[@"status"];
+        if ([status isEqualToString:@"1"]) {
+            NSArray * data = responseObject[@"data"][@"news_ban"];
+            NSMutableArray * adArray = [[adverModel alloc] buildData:data];
             result(YES,@"SUCCESS",@[adArray]);
         }
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
@@ -177,6 +277,8 @@
     }];
 }
 
+
+//筛选
 - (void)requestMoreLoanListWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
 {
     [self.manager POST:@"nos_qx_select" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -216,6 +318,7 @@
     }];
 }
 
+//理财精选
 - (void)requestSelectLoanListWithPage:(NSString *)page Result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
 {
     NSDictionary * parameters = @{@"page":page};
@@ -230,6 +333,22 @@
     }];
 }
 
+- (void)requestNewsListWithPage:(NSString *)page cateid:(NSString *)cateid Result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
+{
+    NSDictionary * parameter = @{@"page":page};
+    NSString * URL = [NSString stringWithFormat:@"nos_qx_articlelist/%@",cateid];
+    [self.manager POST:URL parameters:parameter success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary * data = responseObject[@"data"];
+        NSArray * newsArray = data[@"articlelist"];
+        NSMutableArray * newsData = [[InfoCateModel alloc] buildWithData:newsArray];
+        result(YES,@"SUCCESS",@[newsData]);
+        
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        
+    }];
+}
+
+//推荐贷款
 - (void)getrecommandIoaninfoWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
 {
 [self.manager POST:@"nos_qx_loanrec" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -242,6 +361,7 @@
 }];
 }
 
+//身份
 - (void)getJobInfoWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
 {
     [self.manager POST:@"nos_qx_jobtype" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
@@ -270,6 +390,23 @@
 
 - (void)getMoreLoanWithSort:(NSString*)sort jtype:(NSString*)jtype mtype:(NSString*)mtype rtype:(NSString*)rtype btype:(NSString*)btype month:(NSString*)month money:(NSString*)money page:(NSString *)page  Result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
 {
+    
+    if([sort isKindOfClass:[NSNull class]]){
+        sort = @"";
+    } if ([jtype isKindOfClass:[NSNull class]]){
+        jtype = @"";
+    } if ([mtype isKindOfClass:[NSNull class]]){
+        mtype = @"";
+    }if ([rtype isKindOfClass:[NSNull class]]) {
+        rtype = @"";
+    }if([month isKindOfClass:[NSNull class]]){
+        month = @"";
+    }if ([money isKindOfClass:[NSNull class]]) {
+        money = @"";
+    }if ([page isKindOfClass:[NSNull class]]) {
+        page = @"";
+    }
+    
     NSDictionary * parameters = @{
                                   @"sort":sort,
                                   @"jtype":jtype,
@@ -289,6 +426,34 @@
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         
     }];
+}
+
+- (void)getMyLoanListWithPage:(NSString *)page Result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult
+{
+    NSString * token = [[Config Instance] getToken];
+    NSDictionary * parameter = @{@"token":token,@"page":page};
+    [self.manager POST:@"qx_myborrow" parameters:parameter success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSString * status = responseObject[@"status"];
+        NSString *info = responseObject[@"info"];
+        if ([status isEqualToString:@"-1"]) {
+                      return ;
+        }
+        
+        NSDictionary * data = responseObject[@"data"];
+        if( data == [NSNull null]) {
+      
+            result(NO,info,nil);
+            
+            
+        }else{
+            NSArray * myloanArray =data[@"borrowinfo"];
+            NSMutableArray * MyLoanArray = [[MyLoanModel alloc] buildWithData:myloanArray];
+            result(YES,@"SUCCESS",@[MyLoanArray,status]);
+        }
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        
+    }];
+    
 }
 
 @end

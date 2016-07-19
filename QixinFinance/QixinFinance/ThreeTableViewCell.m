@@ -30,11 +30,11 @@
     //初始化自定义的layout
     UICollectionViewFlowLayout * _flowLayout = [[UICollectionViewFlowLayout alloc] init];
     _flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    _flowLayout.minimumInteritemSpacing = 12;
-    _flowLayout.minimumLineSpacing = 10;
-    _flowLayout.itemSize = CGSizeMake((ScreenWidth-30)/3, 106);
+    _flowLayout.minimumInteritemSpacing = 0;
+    _flowLayout.minimumLineSpacing = 0;
+    _flowLayout.itemSize = CGSizeMake((ScreenWidth)/3, 106);
     _flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(12, 0, ScreenWidth, 106) collectionViewLayout:_flowLayout];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 106) collectionViewLayout:_flowLayout];
     //注册cell
     UINib *cellNib = [UINib nibWithNibName:@"ThreeCollectionViewCell" bundle:[NSBundle mainBundle]];
     [_collectionView registerNib:cellNib forCellWithReuseIdentifier:cellReuseId];
@@ -60,11 +60,17 @@
     return 1;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSArray * imgArray = @[@"loanmoneybtn",@"creditcardbtn",@"managefinicalbtn"];
+    NSArray * imgArray = @[@"loan",@"credict",@"finance"];
+    NSArray * nameArray = @[@"贷 款",@"信用卡",@"理 财"];
+    NSArray * detailArray = @[@"急需看这里",@"快乐生活看这里",@"赚钱看这里"];
     //重用cell
     ThreeCollectionViewCell *cell = [_collectionView dequeueReusableCellWithReuseIdentifier:cellReuseId forIndexPath:indexPath];
+    if(indexPath.item == 2){
+        cell.line.hidden = YES;
+    }
     cell.imgView.image = [UIImage imageNamed:imgArray[indexPath.item]];
-  
+    cell.name.text = nameArray[indexPath.item];
+    cell.detail.text = detailArray[indexPath.item];
     return cell;
 }
 
@@ -75,6 +81,8 @@
     self.block();
     }else if (indexPath.item==2){
         self.block1();
+    }else{
+        self.block2();
     }
     
 }

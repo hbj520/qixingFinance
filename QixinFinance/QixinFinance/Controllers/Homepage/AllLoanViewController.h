@@ -31,5 +31,6 @@
 
 @property(nonatomic,copy)NSString * page;//页数
 
+@property (nonatomic,copy)NSString *fastMoney;//快速贷款金额
 
 @end

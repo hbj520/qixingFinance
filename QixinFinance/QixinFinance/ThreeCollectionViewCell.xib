@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,38 +14,66 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="140" height="106"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="启鑫app首页_12.png" translatesAutoresizingMaskIntoConstraints="NO" id="qOT-rz-NPJ">
-                        <rect key="frame" x="0.0" y="20" width="138" height="66"/>
-                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ol-J2-LqF">
-                        <rect key="frame" x="138" y="13" width="2" height="80"/>
+                        <rect key="frame" x="139" y="13" width="1" height="80"/>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="80" id="2GK-Kc-enq"/>
-                            <constraint firstAttribute="width" constant="2" id="CR2-U3-f9a"/>
+                            <constraint firstAttribute="width" constant="1" id="CR2-U3-f9a"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="贷  款" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zw1-mz-koo">
+                        <rect key="frame" x="67" y="35" width="70" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="ZgE-x9-lNW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="启鑫app首页_12.png" translatesAutoresizingMaskIntoConstraints="NO" id="qOT-rz-NPJ">
+                        <rect key="frame" x="12" y="29" width="47" height="47"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="qOT-rz-NPJ" secondAttribute="height" multiplier="1:1" id="2No-G1-ZQf"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="急需用钱看这里" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86c-DO-cqK">
+                        <rect key="frame" x="67" y="55" width="77" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="2SG-N1-cHK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="6Ol-J2-LqF" secondAttribute="trailing" id="3ek-cx-NIj"/>
-                <constraint firstItem="qOT-rz-NPJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Bed-SQ-vz9"/>
+                <constraint firstItem="qOT-rz-NPJ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="5pG-YB-m12"/>
+                <constraint firstItem="86c-DO-cqK" firstAttribute="leading" secondItem="qOT-rz-NPJ" secondAttribute="trailing" constant="8" id="BXm-3B-vBN"/>
+                <constraint firstItem="zw1-mz-koo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="35" id="Bi4-Ou-ScE"/>
+                <constraint firstItem="qOT-rz-NPJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="Dtg-Se-G8C"/>
+                <constraint firstItem="86c-DO-cqK" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="1.1:2" id="EaK-t4-6Lk"/>
                 <constraint firstItem="6Ol-J2-LqF" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="GvT-WC-ewp"/>
-                <constraint firstItem="qOT-rz-NPJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="I9e-F9-pIo"/>
-                <constraint firstItem="6Ol-J2-LqF" firstAttribute="leading" secondItem="qOT-rz-NPJ" secondAttribute="trailing" id="MZO-PW-uQi"/>
+                <constraint firstItem="zw1-mz-koo" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="1:2" id="Ib7-97-rst"/>
+                <constraint firstItem="zw1-mz-koo" firstAttribute="leading" secondItem="qOT-rz-NPJ" secondAttribute="trailing" constant="8" id="MH1-98-r8k"/>
                 <constraint firstAttribute="trailing" secondItem="6Ol-J2-LqF" secondAttribute="trailing" id="TDB-pe-W7r"/>
-                <constraint firstItem="qOT-rz-NPJ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="XQ3-HQ-jtP"/>
-                <constraint firstAttribute="bottom" secondItem="qOT-rz-NPJ" secondAttribute="bottom" constant="20" id="wiZ-5B-Dya"/>
+                <constraint firstItem="86c-DO-cqK" firstAttribute="top" secondItem="zw1-mz-koo" secondAttribute="bottom" id="ojD-SS-Izq"/>
+                <constraint firstItem="qOT-rz-NPJ" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="1:3" id="q5z-1u-ZpJ"/>
             </constraints>
             <size key="customSize" width="140" height="106"/>
             <connections>
+                <outlet property="detail" destination="86c-DO-cqK" id="nGR-Kb-N64"/>
                 <outlet property="imgView" destination="qOT-rz-NPJ" id="ylh-if-KHp"/>
+                <outlet property="line" destination="6Ol-J2-LqF" id="fFI-25-Oce"/>
+                <outlet property="name" destination="zw1-mz-koo" id="1po-1h-Ir5"/>
             </connections>
             <point key="canvasLocation" x="413" y="405"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="启鑫app首页_12.png" width="13" height="20"/>
+        <image name="启鑫app首页_12.png" width="134" height="126"/>
     </resources>
 </document>

@@ -47,21 +47,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.money = @"";
+   // self.money = @"";
+    if (self.money==NULL) {
+        self.money = @"";
+    }else{
+        
+    }
     self.month = @"";
     self.sort = @"";
     self.mtype = @"";
     self.rtype = @"";
     self.btype = @"";
+    
     // Do any additional setup after loading the view.
     [self loadData];
   [self loadLoanListData];
     [self configTableView];
-   
+    
     selectV = [[selectView alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height - 100)];
     selectV.hidden = YES;
     __weak AllLoanViewController * weakself = self;
     selectV.block = ^(NSString * str1,NSString * str2,NSString * str3,NSString * str4){
+        
         NSLog(@"%@  %@  %@  %@",str1,str2,str3,str4);
         //点击完成改变动画效果，并传递数据
        button.imageView.transform = CGAffineTransformMakeRotation(M_PI);
@@ -76,6 +83,13 @@
     //列表展示的模型
       }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    //self.navigationItem.;
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+}
+
 
 //加载数据
 - (void)loadData
@@ -87,10 +101,13 @@
         monthArray = arrays[7];
         NSMutableArray *arr = [NSMutableArray array];
        
-             NSMutableArray *temp1 = [NSMutableArray array];
+        NSMutableArray *temp1 = [NSMutableArray array];
         NSMutableArray *temp2 = [NSMutableArray array];
         NSMutableArray *temp3 = [NSMutableArray array];
         NSMutableArray *temp4 = [NSMutableArray array];
+        
+        
+        
         for(int i = 0;i<moneyArray.count;i++){
             moneyModel * model1 = [[moneyModel alloc] init];
             model1 = moneyArray[i];
@@ -156,6 +173,7 @@
 - (void)hideselectV:(UIButton*)btn
 {
    
+    [btn setTitleColor:[UIColor colorWithRed:25/255.0 green:51/255.0 blue:123/255.0 alpha:100] forState:UIControlStateNormal];
     [UIView animateWithDuration:0.2 animations:^{
          bool hide = selectV.hidden;
            hide = !hide;
@@ -189,7 +207,7 @@
 //搭建UI
 - (void)configTableView
 {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,100, CHD_SCREEN_WIDTH, self.view.frame.size.height-64) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0,100, CHD_SCREEN_WIDTH, self.view.frame.size.height-64-45) style:UITableViewStylePlain];
     _tableView.separatorStyle = NO;
     [_tableView registerNib:[UINib nibWithNibName:@"LoanInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell3"];
     _tableView.delegate= self;
@@ -268,6 +286,9 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)Back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

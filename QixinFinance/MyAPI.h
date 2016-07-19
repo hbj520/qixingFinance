@@ -49,6 +49,37 @@ typedef void (^ErrorBlock) (NSError *enginerError);
 - (void)sendPhoneYZMWithphoneNumber:(NSString*)phoneNumber result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
 
 /**
+ *
+ *修改密码
+ *  @param token       登录令牌
+ *  @param OldPassword    密码
+ *  @param repassword  新密码
+ *  @param result      返回结果
+ *  @param errorResult 错误描述
+ */
+-  (void)modifyPwdWithOldPassword:(NSString *)oldpassword mpassword:(NSString*)mpassword  result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
+/**
+ *  找回密码时发送验证码
+ *
+ *  @param phoneNumber 手机号码
+ *  @param result      发送状态
+ *  @param errorResult 错误描述
+ */
+- (void)sendZhaoYZMWithPhoneNumber:(NSString*)phoneNumber result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
+
+/**
+ *  找回密码
+ *
+ *  @param YZM         验证码
+ *  @param phoneNumber 手机号码
+ *  @param newPassWord 新密码
+ *  @param RePassWord  确认密码
+ *  @param result      返回状态
+ *  @param errorResult 错误描述
+ */
+- (void)FindBackPasswordWithYZM:(NSString*)YZM phoneNumber:(NSString*)phoneNumber NewPassWord:(NSString*)newPassWord RePassWord:(NSString*)RePassWord Result:(StateBlock)result errorResult:(ErrorBlock)errorResult;
+
+/**
  *  上传图片
  *
  *  @param imageData   imageData
@@ -69,6 +100,24 @@ typedef void (^ErrorBlock) (NSError *enginerError);
  *
  *  @return
  */
+/**
+ *  新闻banner
+ *
+ *  @param result      banner模型数组
+ *  @param errorResult 
+ */
+- (void)getInfoPageBannerWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
+/**
+ *  首页广告图片
+ *
+ *  @param result      模型数组
+ *  @param errorResult 错误描述
+ */
+- (void)getHomePagePictureWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
+
+- (void)getHomePageCardPictureWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 
 - (void)getHomepageDataWithResult:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 /**
@@ -92,6 +141,16 @@ typedef void (^ErrorBlock) (NSError *enginerError);
  *  @param errorResult
  */
 - (void)requestSelectLoanListWithPage:(NSString*)page  Result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
+/**
+ *  新闻列表
+ *
+ *  @param page        页数
+ *  @param cateid      分类id
+ *  @param result      模型数组
+ *  @param errorResult 
+ */
+- (void)requestNewsListWithPage:(NSString *)page cateid:(NSString*)cateid Result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
 
 /**
  *  职业身份信息
@@ -124,4 +183,14 @@ typedef void (^ErrorBlock) (NSError *enginerError);
  *  @param money money的id
  */
 - (void)getMoreLoanWithSort:(NSString*)sort jtype:(NSString*)jtype mtype:(NSString*)mtype rtype:(NSString*)rtype btype:(NSString*)btype month:(NSString*)month money:(NSString*)money page:(NSString*)page  Result:(ArrayBlock)result  errorResult:(ErrorBlock)errorResult;
+
+/**
+ *  我的贷款列表
+ *
+ *  @param page        页数
+ *  @param result      模型数组
+ *  @param errorResult 错误描述
+ */
+- (void)getMyLoanListWithPage:(NSString*)page Result:(ArrayBlock)result errorResult:(ErrorBlock)errorResult;
+
 @end

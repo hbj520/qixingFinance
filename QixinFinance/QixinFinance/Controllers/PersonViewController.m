@@ -45,11 +45,65 @@
     self.headIcon.layer.cornerRadius = 38;
     self.headIcon.layer.masksToBounds = YES;
     imgArray = @[@"PersonProgressSearch",@"PersonEditingLoanInfo",@"PersonCreditCard",@"PersonManageFinical",@"PersonSetting"];
-    descArray = @[@"贷款进度查询",@"完善贷款资料",@"信用卡还款提醒",@"我的理财",@"设置"];
+    descArray = @[@"我的贷款",@"完善贷款资料",@"信用卡还款提醒",@"我的理财",@"设置"];
     self.tableView.dataSource = self;
     
     
   }
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    self.tableView.delegate = self;
+    [self scrollViewDidScroll:self.tableView];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
+    
+    NSString * token = [[Config Instance] getToken];
+
+    if (token) {
+        
+        NSString * iconUrl = [[Config Instance] getUserIcon];
+        NSString * phoneNum = [[Config Instance] getUserPhoneNum];
+        
+        
+        [self.phoneNum setTitle:phoneNum forState:UIControlStateNormal];
+        self.phoneNum.enabled = NO;
+        self.headIcon.userInteractionEnabled = YES;
+        self.backGroundImage.userInteractionEnabled = YES;
+        self.headIcon.layer.cornerRadius = 38;
+        self.headIcon.layer.masksToBounds = YES;
+        
+        [self.headIcon sd_setImageWithURL:[NSURL URLWithString:iconUrl] placeholderImage:[UIImage imageNamed:@"login_icon"]];
+    }else{
+        [self.phoneNum setTitle:@"未登录" forState:UIControlStateNormal];
+        self.phoneNum.enabled = YES;
+        self.headIcon.userInteractionEnabled = NO;
+        self.backGroundImage.userInteractionEnabled = NO;
+        [self.headIcon setImage:[UIImage imageNamed:@"login_icon"]];
+    }
+    UITapGestureRecognizer *TapIcon = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapIconAct:)];
+    [self.headIcon addGestureRecognizer:TapIcon];
+    [self initPickView];
+    
+    UIImage * backImg = [UIImage imageNamed:@"PersonBackGroundIcon"];
+    UIImage * backImage = [backImg applyLightEffect];
+    self.backGroundImage.image = backImage;
+    UITapGestureRecognizer *TapBackImg = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackImg:)];
+   // [self.backGroundImage addGestureRecognizer:TapBackImg];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.tableView.delegate = nil;
+    [self.navigationController.navigationBar lt_reset];
+}
+
+- (void)initPickView{
+    _picker = [[UIImagePickerController alloc] init];
+    _picker.delegate = self;
+}
 
 - (void)tapBackImg:(UIGestureRecognizer *)ges{
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"打开照相机",@"从相册选取", nil];
@@ -101,66 +155,16 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
-    CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY > NAVBAR_CHANGE_POINT) {
-        CGFloat alpha = MIN(1, 1 - ((NAVBAR_CHANGE_POINT + 64 - offsetY) / 64));
-        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
-    } else {
-        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:0]];
-    }
+//    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
+//    CGFloat offsetY = scrollView.contentOffset.y;
+//    if (offsetY > NAVBAR_CHANGE_POINT) {
+//        CGFloat alpha = MIN(1, 1 - ((NAVBAR_CHANGE_POINT + 64 - offsetY) / 64));
+//        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
+//    } else {
+//        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:0]];
+//    }
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:YES];
-    self.tableView.delegate = self;
-    [self scrollViewDidScroll:self.tableView];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
-    
-    NSString * token = [[Config Instance] getToken];
-    if (token) {
-        
-        NSString * phoneNum = [[Config Instance] getUserPhoneNum];
-        [self.phoneNum setTitle:phoneNum forState:UIControlStateNormal];
-        self.phoneNum.enabled = NO;
-        self.headIcon.userInteractionEnabled = YES;
-        self.backGroundImage.userInteractionEnabled = YES;
-        NSString * iconUrl = [[Config Instance] getUserIcon];
-        self.headIcon.layer.cornerRadius = 38;
-        self.headIcon.layer.masksToBounds = YES;
-        [self.headIcon sd_setImageWithURL:[NSURL URLWithString:iconUrl]];
-    }else{
-        [self.phoneNum setTitle:@"未登录" forState:UIControlStateNormal];
-        self.phoneNum.enabled = YES;
-          self.headIcon.userInteractionEnabled = NO;
-           self.backGroundImage.userInteractionEnabled = NO;
-        [self.headIcon setImage:[UIImage imageNamed:@"login_icon"]];
-    }
-    UITapGestureRecognizer *TapIcon = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapIconAct:)];
-    [self.headIcon addGestureRecognizer:TapIcon];
-    [self initPickView];
- 
-    UIImage * backImg = [UIImage imageNamed:@"PersonBackGroundIcon"];
-    UIImage * backImage = [backImg applyLightEffect];
-    self.backGroundImage.image = backImage;
-    UITapGestureRecognizer *TapBackImg = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackImg:)];
-    [self.backGroundImage addGestureRecognizer:TapBackImg];
-
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    self.tableView.delegate = nil;
-    [self.navigationController.navigationBar lt_reset];
-}
-
-- (void)initPickView{
-    _picker = [[UIImagePickerController alloc] init];
-    _picker.delegate = self;
-}
 
 - (void)openPhotoAlbum{
     _picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -179,16 +183,14 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (section==0) {
-        return 20;
-    }
-    return 5;
+
+    return 20;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section==0) {
-        return 2;
+        return 4;
     }else{
         return 1;
     }
@@ -197,55 +199,73 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   
     if (indexPath.section==0) {
+        if(indexPath.row == 0){
         UITableViewCell *cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 45)];
         UIImageView * imgView  = [[UIImageView alloc] initWithFrame:CGRectMake(25,8, 35,30)];
-        imgView.image = [UIImage imageNamed: imgArray[indexPath.row]];
+        imgView.image = [UIImage imageNamed: imgArray[0]];
         UILabel * descLab = [[UILabel alloc] initWithFrame:CGRectMake(85, 8, 200, 29)];
         descLab.textColor = [UIColor blackColor];
         descLab.font = [UIFont systemFontOfSize:17];
-        descLab.text = descArray[indexPath.row];
+        descLab.text = descArray[0];
           cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         [cell.contentView addSubview:imgView];
         [cell.contentView addSubview:descLab];
-        return cell;
-    }else if (indexPath.section==1){
-        UITableViewCell *cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 45)];
-        UIImageView * imgView  = [[UIImageView alloc] initWithFrame:CGRectMake(25, 8, 35, 25)];
-        imgView.image = [UIImage imageNamed: imgArray[2]];
-        UILabel * descLab = [[UILabel alloc] initWithFrame:CGRectMake(85, 8, 200, 29)];
-        descLab.textColor = [UIColor blackColor];
-        descLab.font = [UIFont systemFontOfSize:17];
-        descLab.text = descArray[2];
-          cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        [cell.contentView addSubview:imgView];
-        [cell.contentView addSubview:descLab];
-        return cell;
-    }else if (indexPath.section==2){
-        UITableViewCell *cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 45)];
+            return cell;
+        }else if (indexPath.row == 1){
+            UITableViewCell *cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 45)];
+            UIImageView * imgView  = [[UIImageView alloc] initWithFrame:CGRectMake(25,8, 35,30)];
+            imgView.image = [UIImage imageNamed: imgArray[1]];
+            UILabel * descLab = [[UILabel alloc] initWithFrame:CGRectMake(85, 8, 200, 29)];
+            descLab.textColor = [UIColor blackColor];
+            descLab.font = [UIFont systemFontOfSize:17];
+            descLab.text = descArray[1];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            [cell.contentView addSubview:imgView];
+            [cell.contentView addSubview:descLab];
+            return cell;
+        }
+        
+        else if (indexPath.row == 2 ){
+            UITableViewCell *cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 45)];
+            UIImageView * imgView  = [[UIImageView alloc] initWithFrame:CGRectMake(25, 8, 35, 25)];
+            imgView.image = [UIImage imageNamed: imgArray[2]];
+            UILabel * descLab = [[UILabel alloc] initWithFrame:CGRectMake(85, 8, 200, 29)];
+            descLab.textColor = [UIColor blackColor];
+            descLab.font = [UIFont systemFontOfSize:17];
+            descLab.text = descArray[2];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            [cell.contentView addSubview:imgView];
+            [cell.contentView addSubview:descLab];
+            return cell;
+        
+        }else{
+            UITableViewCell *cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 45)];
+            
+            UIImageView * imgView  = [[UIImageView alloc] initWithFrame:CGRectMake(25, 8, 35, 25)];
+            imgView.image = [UIImage imageNamed: imgArray[3]];
+            UILabel * descLab = [[UILabel alloc] initWithFrame:CGRectMake(85, 8, 200, 29)];
+            descLab.textColor = [UIColor blackColor];
+            descLab.font = [UIFont systemFontOfSize:17];
+            descLab.text = descArray[3];
+            UILabel * labelright = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.view.frame) - 140, 10, 120, 25)];
+            labelright.textColor = [UIColor colorWithRed:138/255.0 green:139/255.0 blue:140/255.0 alpha:100];
+            labelright.font = [UIFont systemFontOfSize:13];
+            labelright.text = @"昨日收益 0.00元";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            [cell.contentView addSubview:labelright];
+            [cell.contentView addSubview:imgView];
+            [cell.contentView addSubview:descLab];
+            return cell;
+        }
 
-        UIImageView * imgView  = [[UIImageView alloc] initWithFrame:CGRectMake(25, 8, 35, 25)];
-        imgView.image = [UIImage imageNamed: imgArray[3]];
-        UILabel * descLab = [[UILabel alloc] initWithFrame:CGRectMake(85, 8, 200, 29)];
-        descLab.textColor = [UIColor blackColor];
-        descLab.font = [UIFont systemFontOfSize:17];
-        descLab.text = descArray[3];
-        UILabel * labelright = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.view.frame) - 140, 10, 120, 25)];
-        labelright.textColor = [UIColor colorWithRed:138/255.0 green:139/255.0 blue:140/255.0 alpha:100];
-        labelright.font = [UIFont systemFontOfSize:13];
-        labelright.text = @"昨日收益 0.00元";
-          cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        [cell.contentView addSubview:labelright];
-        [cell.contentView addSubview:imgView];
-        [cell.contentView addSubview:descLab];
-        return cell;
-    }else{
+        }else{
         UITableViewCell *cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 45)];
         UIImageView * imgView  = [[UIImageView alloc] initWithFrame:CGRectMake(25, 8, 35, 25)];
         imgView.image = [UIImage imageNamed: imgArray[4]];
@@ -276,7 +296,13 @@
     switch (i) {
         case 0:
         {
-            [self showHint:@"页面建设中"];
+            NSString * token = [[Config Instance] getToken];
+            if(token){
+            [self performSegueWithIdentifier:@"loanprogressenquirysegue" sender:nil];
+            }else{
+                [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+                
+            }
         }
             break;
             case 1:
@@ -285,23 +311,29 @@
         }
             break;
             
-            case 10:
+            case 2:
         {
             [self showHint:@"页面建设中"];
         }
             break;
-            case 20:
+            case 3:
         {
             [self showHint:@"页面建设中"];
         }
             break;
             
-            case 30:
+            case 10:
         {
           //  [self showHint:@"正在拼命搭建中"];
-            UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Personal" bundle:nil];
-            SettingViewController * vc = [storyboard  instantiateViewControllerWithIdentifier:@"Setting"];
-            [self.navigationController pushViewController:vc animated:YES];
+            NSString * token = [[Config Instance] getToken];
+            if (!token) {
+                [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+            }else{
+                UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Personal" bundle:nil];
+                SettingViewController * vc = [storyboard  instantiateViewControllerWithIdentifier:@"Setting"];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+           
         }
             break;
               default:
@@ -322,9 +354,10 @@
 }
 
 - (IBAction)pushLoginView:(id)sender {
-    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Personal" bundle:nil];
-    LoginViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"LOGIN"];
-    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
+    [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+//    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Personal" bundle:nil];
+//    LoginViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"LOGIN"];
+//    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
 }
 
 - (void)didReceiveMemoryWarning {

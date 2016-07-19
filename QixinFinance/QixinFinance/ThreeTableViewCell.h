@@ -18,5 +18,6 @@ static NSString *cellReuseId = @"cellId";
     UICollectionView *_collectionView;
 }
 @property(nonatomic,copy)pushVC block;
+@property(nonatomic,copy)pushVC block2;
 @property(nonatomic,copy)pushSelect block1;
 @end

@@ -19,6 +19,7 @@
     return model;
 }
 
+
 - (NSMutableArray *)buildData:(NSArray *)data
 {
     NSMutableArray *bannerArray = [NSMutableArray array];
@@ -32,6 +33,10 @@
     }
    
     return bannerArray;
+}
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    
 }
 
 @end

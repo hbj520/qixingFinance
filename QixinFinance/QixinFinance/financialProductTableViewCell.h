@@ -13,5 +13,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *precentNum;
 @property (weak, nonatomic) IBOutlet UILabel *monthNum;
+
+@property (weak, nonatomic) IBOutlet UILabel *comment;
+@property (weak, nonatomic) IBOutlet UILabel *commentLab;
+
 @property(nonatomic,strong) gfselectModel * model;
 @end

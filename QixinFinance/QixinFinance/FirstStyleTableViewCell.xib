@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
@@ -26,14 +25,6 @@
                             <constraint firstAttribute="height" constant="31" id="2g4-Q8-iWH"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3i2-uh-q0v">
-                        <rect key="frame" x="217" y="97" width="88" height="31"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="88" id="Ocs-Qc-OW7"/>
-                            <constraint firstAttribute="height" constant="31" id="PIr-TY-jyK"/>
-                        </constraints>
-                        <state key="normal" image="resultImg"/>
-                    </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdY-nu-KyE">
                         <rect key="frame" x="159" y="140" width="2" height="101"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,6 +50,17 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3i2-uh-q0v">
+                        <rect key="frame" x="217" y="98" width="88" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="88" id="Ocs-Qc-OW7"/>
+                            <constraint firstAttribute="height" constant="31" id="PIr-TY-jyK"/>
+                        </constraints>
+                        <state key="normal" image="resultImg"/>
+                        <connections>
+                            <action selector="clip:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="u5R-BJ-CeM"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="FlI-xv-qjV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="2RZ-01-ihf"/>
@@ -91,7 +93,7 @@
                 <outlet property="collectionView" destination="FlI-xv-qjV" id="0iR-uY-lAx"/>
                 <outlet property="input" destination="eLE-pa-rq6" id="XA6-0q-cit"/>
             </connections>
-            <point key="canvasLocation" x="351" y="416"/>
+            <point key="canvasLocation" x="458" y="437"/>
         </tableViewCell>
     </objects>
     <resources>

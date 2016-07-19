@@ -7,12 +7,19 @@
 //
 
 #import "ActivityTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation ActivityTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+
+}
+
+- (void)setModel:(HomePictureModel *)model
+{
+        [self.Img sd_setImageWithURL:[NSURL URLWithString:model.imgthumb] placeholderImage:[UIImage imageNamed:@"smallimage"]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

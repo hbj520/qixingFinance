@@ -6,9 +6,12 @@
 //  Copyright © 2016年 youyou. All rights reserved.
 //
 
+//理财详情
+
 #import "SelectProductDetailViewController.h"
-#define BASEURL @"http://60.173.235.34:9999/qixin/app/nos_qx_financeinfo/"
-@interface SelectProductDetailViewController ()
+#import "UIViewController+HUD.h"
+#define BASEURL @"http://60.173.235.34:9090/qixin/app/nos_qx_financeinfo/"
+@interface SelectProductDetailViewController ()<UIWebViewDelegate>
 {
     UIWebView * webView;
 }
@@ -21,7 +24,7 @@
     // Do any additional setup after loading the view.
     self.automaticallyAdjustsScrollViewInsets = NO;
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(0, 0, 50, 30);
+    btn.frame = CGRectMake(0, 0, 45, 45);
     [btn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     [btn setImage:[UIImage imageNamed:@"back1"] forState:UIControlStateNormal];
     
@@ -29,12 +32,23 @@
     UIBarButtonItem * btnItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.leftBarButtonItem = btnItem;
     webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height-64)];
+    webView.delegate = self;
     [self.view addSubview:webView];
     NSString * urlStr = [NSString stringWithFormat:@"%@%@",BASEURL,self.uid];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
     [webView loadRequest:request];
 
     
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [self showHudInView:self.view hint:@"正在加载"];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [self hideHud];
 }
 
 - (void)back

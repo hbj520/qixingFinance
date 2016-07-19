@@ -23,13 +23,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(0, 0, 50, 30);
-    [btn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem * btnItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
-    self.navigationItem.leftBarButtonItem = btnItem;
+//    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    btn.frame = CGRectMake(0, 0, 50, 30);
+//    [btn setImage:[UIImage imageNamed:@"back1"] forState:UIControlStateNormal];
+//    [btn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    UIBarButtonItem * btnItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+//    self.navigationItem.leftBarButtonItem = btnItem;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -39,8 +39,11 @@
 }
 
 
-- (void)back
-{
+//- (void)back
+//{
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
+- (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -59,24 +62,32 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 2;
+    return 3;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
      [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row==0) {
+        if (indexPath.row==0) {
        
         folderSize =[[SDImageCache sharedImageCache] getSize]/1024.0/1024.0;
-        [[SDImageCache sharedImageCache] cleanDisk];
-        [self showHint:[NSString stringWithFormat:@"释放%.2fM内存",folderSize]];
-    }else{
+            if(folderSize>0){
+                [self showHint:[NSString stringWithFormat:@"清理缓存成功"]];
+                 [[SDImageCache sharedImageCache] cleanDisk];
+            }
+            
+            
+       
+    }else if(indexPath.row==2){
         [self loginOutConfig];
+        [self showHint:@"退出登录成功！"];
     }
+    
 }
 
 - (void)loginOutConfig{
     [[Config Instance] logOut];
+    
     UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Personal" bundle:nil];
    LoginViewController * vc = [storyboard  instantiateViewControllerWithIdentifier:@"LOGIN"];
     [self.navigationController popViewControllerAnimated:YES];

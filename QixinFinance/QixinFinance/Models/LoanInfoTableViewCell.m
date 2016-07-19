@@ -7,6 +7,7 @@
 //
 
 #import "LoanInfoTableViewCell.h"
+#import "Tools.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 @implementation LoanInfoTableViewCell
 
@@ -17,11 +18,17 @@
 
 - (void)setModel:(moreloaninfoModel *)model
 {
-    [self.iconImg sd_setImageWithURL:[NSURL URLWithString:model.thumbimg]];
+    [self.iconImg sd_setImageWithURL:[NSURL URLWithString:model.thumbimg] placeholderImage:[UIImage imageNamed:@"smallimage"]];
     self.name.text = model.name;
     int applycount = [model.number intValue];
+    if(applycount>=1000){
+   NSString * apply  = [Tools countNumAndChangeformat:model.number.stringValue];
+        self.applyCount.text = apply;
+    }else{
     self.applyCount.text = [NSString stringWithFormat:@"%d",applycount];
-    self.precentNum.text = model.mrate;
+    }
+    NSString * percentNum = [NSString stringWithFormat:@"%@%%",model.mrate];
+    self.precentNum.text = percentNum;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
