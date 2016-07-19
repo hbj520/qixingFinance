@@ -29,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     page = 1;
+    dataSource = [NSMutableArray array];
     // Do any additional setup after loading the view.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -45,10 +46,13 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
       
         page = 1;
+        if(dataSource.count > 0){
+            [dataSource removeAllObjects];
+        }
         [weakself loadData];
     }];
     MJRefreshAutoNormalFooter * footerRefresh = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        
+        page++;
         [weakself loadData];
     }];
     footerRefresh.automaticallyRefresh = NO;
@@ -63,9 +67,13 @@
     [[MyAPI  sharedAPI] requestSelectLoanListWithPage:pagestr Result:^(BOOL success, NSString *msg, NSArray *arrays) {
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
-       // [dataSource addObjectsFromArray:arrays[0]];
-        dataSource = arrays[0];
+       
+      //  [dataSource addObjectsFromArray:arrays[0]];
+       //dataSource = arrays[0];
+        
+        [dataSource addObjectsFromArray:arrays[0]];
         [self.tableView reloadData];
+        
         [self hideHud];
     } errorResult:^(NSError *enginerError) {
         [self.tableView.mj_header endRefreshing];
@@ -113,6 +121,7 @@
     gfselectModel * model = dataSource[indexPath.row];
     SelectProductDetailViewController * VC = [[SelectProductDetailViewController alloc] init];
     VC.hidesBottomBarWhenPushed = YES;
+    VC.titlename = @"理财精选";
     VC.uid = model.selectId;
     [self.navigationController pushViewController:VC animated:YES];
 }

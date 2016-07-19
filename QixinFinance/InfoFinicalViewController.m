@@ -10,6 +10,7 @@
 #import "UIViewController+HUD.h"
 #import "HotInfoTableViewCell.h"
 #import "InfoDetailViewController.h"
+#import <MJRefresh/MJRefresh.h>
 #import "MyAPI.h"
 #import "Marco.h"
 @interface InfoFinicalViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -17,6 +18,8 @@
     UITableView * _tableView;
     
     NSMutableArray * selectData;
+    
+    NSInteger page;
     
 }
 @end
@@ -30,22 +33,48 @@
      _tableView.separatorStyle =  UITableViewCellSeparatorStyleNone;
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    
+    page = 1;
     [_tableView registerNib:[UINib nibWithNibName:@"HotInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"HOTCELL"];
     [self.view addSubview:_tableView];
+    selectData = [NSMutableArray array];
+    [self addRefresh];
     [self loadData];
 
 }
 
+- (void)addRefresh
+{
+    __weak InfoFinicalViewController * weakself = self;
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        page = 1;
+        if(selectData.count > 0){
+            [selectData removeAllObjects];
+        }
+        [weakself loadData];
+    }];
+    MJRefreshAutoNormalFooter * footerRefresh = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        page++;
+        [weakself loadData];
+    }];
+    footerRefresh.automaticallyRefresh = NO;
+    _tableView.mj_footer = footerRefresh;
+}
+
+
 - (void)loadData
 {
     [self showHudInView:self.view hint:@"正在加载"];
-    [[MyAPI sharedAPI] requestNewsListWithPage:@"1" cateid:@"192" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
-        selectData = arrays[0];
+     NSString * pageindex = [NSString stringWithFormat:@"%ld",page];
+    [[MyAPI sharedAPI] requestNewsListWithPage:pageindex cateid:@"192" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        [selectData addObjectsFromArray:arrays[0]];
         [_tableView reloadData];
+        [_tableView.mj_header endRefreshing];
+        [_tableView.mj_footer endRefreshing];
         [self hideHud];
     } errorResult:^(NSError *enginerError) {
-        
+        [_tableView.mj_header endRefreshing];
+        [_tableView.mj_footer endRefreshing];
     }];
 }
 

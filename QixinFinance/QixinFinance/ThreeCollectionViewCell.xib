@@ -38,7 +38,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="急需用钱看这里" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86c-DO-cqK">
-                        <rect key="frame" x="67" y="55" width="77" height="16"/>
+                        <rect key="frame" x="67" y="55" width="70" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="2SG-N1-cHK"/>
                         </constraints>
@@ -55,7 +55,7 @@
                 <constraint firstItem="86c-DO-cqK" firstAttribute="leading" secondItem="qOT-rz-NPJ" secondAttribute="trailing" constant="8" id="BXm-3B-vBN"/>
                 <constraint firstItem="zw1-mz-koo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="35" id="Bi4-Ou-ScE"/>
                 <constraint firstItem="qOT-rz-NPJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="Dtg-Se-G8C"/>
-                <constraint firstItem="86c-DO-cqK" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="1.1:2" id="EaK-t4-6Lk"/>
+                <constraint firstItem="86c-DO-cqK" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="1:2" id="EaK-t4-6Lk"/>
                 <constraint firstItem="6Ol-J2-LqF" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="GvT-WC-ewp"/>
                 <constraint firstItem="zw1-mz-koo" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="1:2" id="Ib7-97-rst"/>
                 <constraint firstItem="zw1-mz-koo" firstAttribute="leading" secondItem="qOT-rz-NPJ" secondAttribute="trailing" constant="8" id="MH1-98-r8k"/>

@@ -69,6 +69,10 @@
         cell.line.hidden = YES;
     }
     cell.imgView.image = [UIImage imageNamed:imgArray[indexPath.item]];
+    if(ScreenWidth == 320){
+        cell.name.font = [UIFont systemFontOfSize:14];
+        cell.detail.font = [UIFont systemFontOfSize:6];
+    }
     cell.name.text = nameArray[indexPath.item];
     cell.detail.text = detailArray[indexPath.item];
     return cell;

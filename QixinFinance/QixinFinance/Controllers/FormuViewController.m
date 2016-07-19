@@ -175,6 +175,7 @@
        //跳到贷款详情界面
         moreloaninfoModel * model = moreloanArray[indexPath.row];
         HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
+       vc.titlename = @"贷款";
        vc.hidesBottomBarWhenPushed = YES;
         vc.uid = model.infoId;
         [self.navigationController pushViewController:vc animated:YES];

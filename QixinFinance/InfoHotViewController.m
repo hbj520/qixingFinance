@@ -14,6 +14,7 @@
 #import "HotInfoTableViewCell.h"
 #import "InfoDetailViewController.h"
 #import "BannerDetailViewController.h"
+#import <MJRefresh/MJRefresh.h>
 #import "Marco.h"
 
 @interface InfoHotViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate>
@@ -29,6 +30,7 @@
     NSMutableArray * loaninfoData; //接收首页数据模型的数组
     
     SDCycleScrollView * _headView;  //轮播图
+    NSInteger page;
 
 }
 @end
@@ -38,13 +40,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-  
+    page = 1;
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 150 ) style:UITableViewStylePlain];
     _tableView.separatorStyle =  UITableViewCellSeparatorStyleNone;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerNib:[UINib nibWithNibName:@"HotInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"HOTCELL"];
     [self.view addSubview:_tableView];
+    selectData = [NSMutableArray array];
+    [self addRefresh];
     [self configpageView];
     [self loadData];
 }
@@ -63,22 +67,48 @@
         _headView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
         _headView.delegate = self;
         _tableView.tableHeaderView = _headView;
+       
     } errorResult:^(NSError *enginerError) {
-        
+       
     }];
 }
+
+- (void)addRefresh
+{
+    __weak InfoHotViewController * weakself = self;
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        page = 1;
+        if(selectData.count>0){
+            [selectData removeAllObjects];
+        }
+        [weakself loadData];
+        //[weakself configpageView];
+    }];
+    MJRefreshAutoNormalFooter * footerRefresh = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        page++;
+        [weakself loadData];
+    }];
+    footerRefresh.automaticallyRefresh = NO;
+    _tableView.mj_footer = footerRefresh;
+}
+
 
 - (void)loadData
 {
     [self showHudInView:self.view hint:@"正在加载"];
-    [[MyAPI sharedAPI] requestNewsListWithPage:@"1" cateid:@"190" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
-        selectData = arrays[0];
-        _imgArray  = [[NSMutableArray alloc] init];
-       // [self configpageView];
+    NSString * pageindex = [NSString stringWithFormat:@"%ld",page];
+    [[MyAPI sharedAPI] requestNewsListWithPage:pageindex cateid:@"190" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
+        //selectData = arrays[0];
+        [selectData addObjectsFromArray:arrays[0]];
+        
         [_tableView reloadData];
+        [_tableView.mj_header endRefreshing];
+        [_tableView.mj_footer endRefreshing];
         [self hideHud];
     } errorResult:^(NSError *enginerError) {
-        
+        [_tableView.mj_header endRefreshing];
+        [_tableView.mj_footer endRefreshing];
     }];
 }
 
@@ -104,9 +134,11 @@
     static NSString *CellId = @"HOTCELL";
     HotInfoTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellId forIndexPath:indexPath];
     InfoCateModel * model = [[InfoCateModel alloc] init];
+   
     model = selectData[indexPath.row];
     cell.model = model;
     return cell;
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

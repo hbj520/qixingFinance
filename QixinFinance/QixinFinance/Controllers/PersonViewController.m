@@ -155,14 +155,14 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-//    UIColor * color = [UIColor colorWithRed:0/255.0 green:175/255.0 blue:240/255.0 alpha:1];
-//    CGFloat offsetY = scrollView.contentOffset.y;
-//    if (offsetY > NAVBAR_CHANGE_POINT) {
-//        CGFloat alpha = MIN(1, 1 - ((NAVBAR_CHANGE_POINT + 64 - offsetY) / 64));
-//        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
-//    } else {
-//        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:0]];
-//    }
+    UIColor * color = [UIColor whiteColor];
+    CGFloat offsetY = scrollView.contentOffset.y;
+    if (offsetY > NAVBAR_CHANGE_POINT) {
+        CGFloat alpha = MIN(1, 1 - ((NAVBAR_CHANGE_POINT + 64 - offsetY) / 64));
+        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:alpha]];
+    } else {
+        [self.navigationController.navigationBar lt_setBackgroundColor:[color colorWithAlphaComponent:0]];
+    }
 }
 
 
@@ -267,7 +267,7 @@
 
         }else{
         UITableViewCell *cell = [[UITableViewCell alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 45)];
-        UIImageView * imgView  = [[UIImageView alloc] initWithFrame:CGRectMake(25, 8, 35, 25)];
+        UIImageView * imgView  = [[UIImageView alloc] initWithFrame:CGRectMake(25, 8, 35, 34)];
         imgView.image = [UIImage imageNamed: imgArray[4]];
         UILabel * descLab = [[UILabel alloc] initWithFrame:CGRectMake(85, 8, 200, 29)];
         descLab.textColor = [UIColor blackColor];

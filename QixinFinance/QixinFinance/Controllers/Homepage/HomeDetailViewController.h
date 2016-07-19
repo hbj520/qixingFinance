@@ -16,6 +16,8 @@
 
 @property(nonatomic,copy)NSString * url; //链接网址
 
+@property (nonatomic,copy)NSString * titlename;
+
 @property (nonatomic, strong) AFHTTPRequestOperationManager *manager;
 
 @end

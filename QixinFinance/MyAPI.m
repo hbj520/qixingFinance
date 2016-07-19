@@ -324,10 +324,14 @@
     NSDictionary * parameters = @{@"page":page};
     [self.manager POST:@"nos_qx_financelist" parameters:parameters success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary * data = responseObject[@"data"];
+        if([data isKindOfClass:[NSNull class]]){
+            result(NO,@"fail",nil);
+        }else{
         NSArray * selectproductArray = data[@"financeinfo"];
+        
         NSMutableArray * selectData = [[gfselectModel alloc] buildWithData:selectproductArray];
         result(YES,@"SUCCESS",@[selectData]);
-        
+        }
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         
     }];
@@ -339,10 +343,13 @@
     NSString * URL = [NSString stringWithFormat:@"nos_qx_articlelist/%@",cateid];
     [self.manager POST:URL parameters:parameter success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         NSDictionary * data = responseObject[@"data"];
+        if([data isKindOfClass:[NSNull class]]){
+            result(NO,@"fail",nil);
+        }else{
         NSArray * newsArray = data[@"articlelist"];
         NSMutableArray * newsData = [[InfoCateModel alloc] buildWithData:newsArray];
         result(YES,@"SUCCESS",@[newsData]);
-        
+        }
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         
     }];

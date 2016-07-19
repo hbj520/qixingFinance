@@ -18,6 +18,7 @@
 #import "HomeDetailViewController.h"
 #import "selectView.h"
 #import "Config.h"
+#import <MJRefresh/MJRefresh.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #define CHD_SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 @interface AllLoanViewController ()<chdMenuDelegate,UITableViewDelegate,UITableViewDataSource>
@@ -36,6 +37,8 @@
     selectView * selectV;//筛选界面
     
     __block chdButton * button;//筛选按钮
+    
+    NSInteger page;
     
 }
 @end
@@ -58,12 +61,15 @@
     self.mtype = @"";
     self.rtype = @"";
     self.btype = @"";
-    
+    page = 1;
     // Do any additional setup after loading the view.
     [self loadData];
+    
   [self loadLoanListData];
     [self configTableView];
-    
+    [self addRefresh];
+    moreLoanListArray = [NSMutableArray array];
+   
     selectV = [[selectView alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height - 100)];
     selectV.hidden = YES;
     __weak AllLoanViewController * weakself = self;
@@ -187,19 +193,42 @@
 
 }
 
+
+- (void)addRefresh
+{
+    __weak AllLoanViewController * weakself = self;
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        page = 1;
+        if(moreLoanListArray.count > 0){
+            [moreLoanListArray removeAllObjects];
+        }
+        [weakself loadLoanListData];
+    }];
+    MJRefreshAutoNormalFooter * footerRefresh = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        page++;
+        [weakself loadLoanListData];
+    }];
+    footerRefresh.automaticallyRefresh = NO;
+    _tableView.mj_footer = footerRefresh;
+}
 //加载更多贷款数据
 - (void)loadLoanListData
 {
     [self showHudInView:self.view hint:@"加载中..."];
-    [[MyAPI sharedAPI] getMoreLoanWithSort:self.sort jtype:self.jtype mtype:self.mtype rtype:self.rtype btype:self.btype month:self.month money:self.money page:@"1" Result:^(BOOL success, NSString *msg, NSArray *arrays) {
+    NSString * pagestr = [NSString stringWithFormat:@"%ld",page];
+    [[MyAPI sharedAPI] getMoreLoanWithSort:self.sort jtype:self.jtype mtype:self.mtype rtype:self.rtype btype:self.btype month:self.month money:self.money page:pagestr Result:^(BOOL success, NSString *msg, NSArray *arrays) {
         NSLog(@"%lu",(unsigned long)arrays.count);
-       moreLoanListArray = arrays[0];
+        [moreLoanListArray addObjectsFromArray:arrays[0]];
        
         [_tableView reloadData];
+        [_tableView.mj_header endRefreshing];
+        [_tableView.mj_footer endRefreshing];
         [self hideHud];
 
     } errorResult:^(NSError *enginerError) {
-        
+        [_tableView.mj_header endRefreshing];
+        [_tableView.mj_footer endRefreshing];
     }];
 
 }
@@ -213,6 +242,7 @@
     _tableView.delegate= self;
     _tableView.dataSource= self;
     [self.view addSubview:_tableView];
+    
     
     
 }
@@ -252,6 +282,7 @@
     [_tableView deselectRowAtIndexPath:indexPath animated:YES];
     moreloaninfoModel * model = moreLoanListArray[indexPath.row];
     HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
+    vc.titlename = @"贷款";
     vc.uid = model.infoId;
     [self.navigationController pushViewController:vc animated:YES];
 }

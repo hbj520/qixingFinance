@@ -41,6 +41,12 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationItem.title = self.titlename;
+}
+
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
     [self showHudInView:self.view hint:@"正在加载"];

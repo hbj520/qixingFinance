@@ -10,4 +10,5 @@
 
 @interface SelectProductDetailViewController : UIViewController
 @property(nonatomic,copy)NSString * uid;
+@property (nonatomic,copy)NSString * titlename;
 @end

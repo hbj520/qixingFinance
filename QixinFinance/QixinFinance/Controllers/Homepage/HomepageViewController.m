@@ -22,6 +22,7 @@
 #import "AllLoanViewController.h"
 #import "BannerDetailViewController.h"
 #import "SelectProductDetailViewController.h"
+#import <MJRefresh/MJRefresh.h>
 #import "MyAPI.h"
 #import "loaninfoModel.h"
 #import "gfselectModel.h"
@@ -59,6 +60,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self congfigTableView];
+    [self addRefresh];
     [self loadData];
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -68,7 +70,15 @@
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
 }
 
-
+- (void)addRefresh
+{
+    __weak HomepageViewController * weakself = self;
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+    [weakself loadData];
+    
+    }];
+}
 /**
  *  创建滚动视图
  */
@@ -81,6 +91,9 @@
         }
         _headView= [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, ScreenWidth,200 ) imageURLStringsGroup:_imgArray];
         _headView.placeholderImage = [UIImage imageNamed:@"bannerimage"];
+        _headView.pageControlDotSize = CGSizeMake(10, 7.3);
+        _headView.currentPageDotImage = [UIImage imageNamed:@"point1"];
+        _headView.pageDotImage = [UIImage imageNamed:@"point2"];
          _headView.delegate = self;
         self.tableView.tableHeaderView = _headView;
         
@@ -105,6 +118,8 @@
         loaninfoData = arrays[1];
         [self configPageView];
         [self.tableView reloadData];
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
          [self hideHud];
         _imgArray  = [[NSMutableArray alloc] init];
         for(NSInteger i = 0 ;i<3;i++){
@@ -112,7 +127,8 @@
         }
         
             } errorResult:^(NSError *enginerError) {
-        
+                [self.tableView.mj_header endRefreshing];
+                [self.tableView.mj_footer endRefreshing];
     }];
     
     [[MyAPI sharedAPI] getHomePagePictureWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
@@ -120,8 +136,13 @@
         NSMutableArray * HomePictureArray = arrays[0];
        HomePictureArray1 = HomePictureArray;
         [self.tableView reloadData];
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+
     } errorResult:^(NSError *enginerError) {
-        
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+
     }];
     
     [[MyAPI sharedAPI] getHomePageCardPictureWithResult:^(BOOL success, NSString *msg, NSArray *arrays) {
@@ -173,8 +194,10 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (section ==3||section==6) {
+    if (section ==3) {
         return 2;
+    }if(section == 6){
+        return selectData.count;
     }
     return 1;
 }
@@ -244,7 +267,7 @@
     if (indexPath.section==0||indexPath.section==1||indexPath.section==3) {
         return 106;
     }else if (indexPath.section ==  4){
-        return 230;
+        return 180;
     }
     
     else if (indexPath.section==2||indexPath.section==5){
@@ -263,6 +286,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if(indexPath.section == 1){
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
+        BannerDetailViewController *VC = (BannerDetailViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Banner"];
+        HomePictureModel * model =[[HomePictureModel alloc] init];
+        model =HomePictureArray1[0];
+
+        
+        VC.bannerUrl = model.link;
+        if(model.link.length){
+        [self.navigationController pushViewController:VC animated:YES];
+        }else{
+            return;
+        }
+
+    }
     if (indexPath.section==2) {
         /**
          *  跳到全部贷款页面
@@ -278,8 +316,21 @@
         HomeDetailViewController * vc = [[HomeDetailViewController alloc] init];
         vc.hidesBottomBarWhenPushed = YES;
         vc.uid = model.loanId;
+        vc.titlename = @"贷款";
         [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.section==5){
+    }else if (indexPath.section == 4){
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
+        BannerDetailViewController *VC = (BannerDetailViewController *)[storyboard instantiateViewControllerWithIdentifier:@"Banner"];
+        HomePictureModel * model = [[HomePictureModel alloc] init];
+        model = HomePictureArray2[0];
+        VC.bannerUrl = model.link;
+        if(model.link.length){
+        [self.navigationController pushViewController:VC animated:YES];
+        }else{
+            return;
+        }
+    }
+    else if (indexPath.section==5){
         UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
         SelectProductViewController * vc = (SelectProductViewController*)[storyboard instantiateViewControllerWithIdentifier:@"SELECT"];
         [self.navigationController pushViewController:vc animated:YES];
@@ -289,6 +340,7 @@
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         gfselectModel * model = selectData[indexPath.row];
         SelectProductDetailViewController * VC = [[SelectProductDetailViewController alloc] init];
+        VC.titlename = @"理财精选";
         VC.uid = model.selectId;
         VC.hidesBottomBarWhenPushed = YES;
         
