@@ -107,10 +107,8 @@
         [self.tableView reloadData];
          [self hideHud];
         _imgArray  = [[NSMutableArray alloc] init];
-     //   NSString * imgPath = @"cycleviewicon";
         for(NSInteger i = 0 ;i<3;i++){
-            //adverModel * model = imageArray[0];
-           // [_imgArray addObject:model.adimageUrl];
+            
         }
         
             } errorResult:^(NSError *enginerError) {
